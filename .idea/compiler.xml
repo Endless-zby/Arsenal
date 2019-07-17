@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="armstype" />
         <module name="commen" />
+        <module name="config" />
         <module name="projecteureka" />
         <module name="userinfo" />
         <module name="zuul" />
@@ -18,6 +19,7 @@
       <module name="ArmsType" target="1.8" />
       <module name="arsenal" target="1.5" />
       <module name="commen" target="6" />
+      <module name="config" target="1.5" />
       <module name="eureka" target="1.5" />
       <module name="projecteureka" target="1.5" />
       <module name="userinfo" target="1.5" />

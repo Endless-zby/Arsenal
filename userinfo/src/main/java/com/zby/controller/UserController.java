@@ -9,6 +9,7 @@ import com.zby.service.UserService;
 import com.zby.util.IdWorker;
 import com.zby.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,11 +32,13 @@ public class UserController {
     private JwtUtil jwtUtil;
     @Autowired
     private client client;
+    @Value("${zby.name}")
+    private String name;
 
 
     @GetMapping("hello")
     public String hello(){
-
+        System.out.println(name);//测试config是否正常
         return "user_login";
     }
 

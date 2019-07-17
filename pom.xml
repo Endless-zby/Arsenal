@@ -16,6 +16,7 @@
         <module>userinfo</module>
         <module>projecteureka</module>
         <module>zuul</module>
+        <module>config</module>
     </modules>
 
 
