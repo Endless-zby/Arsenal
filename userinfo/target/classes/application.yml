@@ -1,0 +1,49 @@
+server:
+  port: 9001
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9999/eureka
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: userinfo
+
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://cdb-6kot9g5e.cd.tencentcdb.com:10007/arms?characterEncoding=utf-8&useSSL=true
+#    url: jdbc:mysql://localhost:3306/arms?characterEncoding=utf-8
+    username: root
+    password: zby123456
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+
+  jpa:
+    database-platform:
+      # spring boot 2.0 的坑， spring boot2.+后默认使用的是MyISAM引擎
+      org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MySQL
+    generate-ddl: true
+    show-sql: true
+
+    hibernate:
+      ddl-auto: update
+
+# 添盐加密
+jwt:
+  config:
+    key: zby      # 盐
+    expire: 120000       #过期时间
+
+#熔断保护机制
+feign:
+  hystrix:
+    enabled: true

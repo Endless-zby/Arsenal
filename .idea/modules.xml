@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/armstype/armstype.iml" filepath="$PROJECT_DIR$/armstype/armstype.iml" />
+      <module fileurl="file://$PROJECT_DIR$/arsenal.iml" filepath="$PROJECT_DIR$/arsenal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commen/commen.iml" filepath="$PROJECT_DIR$/commen/commen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projecteureka/projecteureka.iml" filepath="$PROJECT_DIR$/projecteureka/projecteureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userinfo/userinfo.iml" filepath="$PROJECT_DIR$/userinfo/userinfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
+    </modules>
+  </component>
+</project>

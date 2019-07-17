@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    用户名：<span th:text="${result.data.username}"></span><br/>
+    状态：<span th:text="${result.flag}"></span><br/>
+    状态码：<span th:text="${result.code}"></span><br/>
+    结果：<span th:text="${result.message}"></span><br/>
+    编号：<span th:text="${result.data}"></span><br/>
+    <div th:each="user:${result.data.type}">
+        轻兵器编号：<span th:text="${user.cold_Weapon}"></span><br/>
+    </div>
+</div>
+
+</body>
+</html>

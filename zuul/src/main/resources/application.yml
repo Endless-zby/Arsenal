@@ -1,0 +1,30 @@
+server:
+  port: 8889
+
+spring:
+  application:
+    name: zuul
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9999/eureka
+  instance:
+    prefer-ip-address: true
+
+zuul:
+  routes:
+    armstype:
+      path: /armstype/**  #请求的规则（给请求增加了前缀）
+      serviceId: armstype #Eureka中服务的id值
+    userinfo:
+      path: /userinfo/**
+      serviceId: userinfo
+
+
+jwt:
+  config:
+    key: zby
+    expire: 3600000
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="armstype" />
+        <module name="commen" />
+        <module name="projecteureka" />
+        <module name="userinfo" />
+        <module name="zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="armstype" target="7" />
+      <module name="ArmsType" target="1.8" />
+      <module name="arsenal" target="1.5" />
+      <module name="commen" target="6" />
+      <module name="eureka" target="1.5" />
+      <module name="projecteureka" target="1.5" />
+      <module name="userinfo" target="1.5" />
+      <module name="zuul" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
