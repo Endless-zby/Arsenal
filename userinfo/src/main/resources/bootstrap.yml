@@ -5,3 +5,7 @@ spring:
       profile: dev
       label: master
       uri: http://127.0.0.1:10010
+
+    bus:
+      trace:
+        enabled: true #开启消息跟踪

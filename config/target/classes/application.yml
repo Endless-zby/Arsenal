@@ -1,6 +1,13 @@
 server:
   port: 10010
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9999/eureka
+  instance:
+    prefer-ip-address: true
+
 spring:
   application:
     name: config
@@ -10,4 +17,12 @@ spring:
         git:
           uri: https://github.com/zby123456/Arsenal_Config.git
 
+  rabbitmq:
+    host: 39.96.160.110
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
 

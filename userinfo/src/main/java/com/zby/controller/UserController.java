@@ -10,6 +10,7 @@ import com.zby.util.IdWorker;
 import com.zby.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,9 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 
-
-//@RefreshScope
+//@RefreshScope注解的作用: 如果刷新了bean，那么下一次访问bean(即执行一个方法)时就会创建一个新实例。
+@RefreshScope
 @Controller
 @RequestMapping("user")
 public class UserController {
@@ -32,8 +34,15 @@ public class UserController {
     private JwtUtil jwtUtil;
     @Autowired
     private client client;
+
     @Value("${zby.name}")
     private String name;
+
+    @Value("${zby.age}")
+    private String age;
+
+    @Value("${zby.sex}")
+    private String sex;
 
 
     @GetMapping("hello")
@@ -85,6 +94,20 @@ public class UserController {
         }
         return new Result(false,20001,"登录失败","error");
 
+    }
+
+    /**
+     * config测试方法
+     * @return
+     */
+    @GetMapping("config")
+    public ModelAndView Config(){
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("name",name);
+        map.put("age",age);
+        map.put("sex",sex);
+        Result result = new Result(true, 20000, "成功", map);
+        return new ModelAndView("config_test","result",result);
     }
 
     /**

@@ -12,6 +12,9 @@ spring:
   application:
     name: userinfo
 
+  rabbitmq:
+    host: 39.96.160.110
+
   datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://cdb-6kot9g5e.cd.tencentcdb.com:10007/arms?characterEncoding=utf-8&useSSL=true
@@ -47,3 +50,8 @@ jwt:
 feign:
   hystrix:
     enabled: true
+
+zby:
+  name: 赵博
+  age: 21
+  sex: 男

@@ -9,8 +9,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 //配置拦截器
-@Component
-@Configuration
+//@Component
+//@Configuration
 public class JwtConfiguration extends WebMvcConfigurationSupport {
 
     @Autowired
@@ -25,7 +25,7 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
          * */
         //加载jwtInterceptor拦截规则
         registry.addInterceptor(jwtInterceptor).addPathPatterns("/**")
-                .excludePathPatterns("/user/login/**","/arsenal/**","/user/index/**");//因为login之后才会生成token
+                .excludePathPatterns("/user/login/**","/arsenal/**","/user/index/**","/user/config/**");//因为login之后才会生成token
     }
 
 
