@@ -9,11 +9,13 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
-@EnableDiscoveryClient//开启“在注册中心里 发现其他微服务”的功能 user -> qa
+@EnableDiscoveryClient//开启“在注册中心里 发现其他微服务”的功能
 @SpringBootApplication
 @EnableFeignClients
+@EnableSwagger2
 public class UserinfoApplication extends WebMvcConfigurationSupport {
 
     public static void main(String[] args) {

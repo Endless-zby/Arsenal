@@ -17,6 +17,7 @@
         <module>projecteureka</module>
         <module>zuul</module>
         <module>config</module>
+        <module>testall</module>
     </modules>
 
 

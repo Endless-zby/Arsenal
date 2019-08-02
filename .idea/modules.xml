@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/commen/commen.iml" filepath="$PROJECT_DIR$/commen/commen.iml" />
       <module fileurl="file://$PROJECT_DIR$/config/config.iml" filepath="$PROJECT_DIR$/config/config.iml" />
       <module fileurl="file://$PROJECT_DIR$/projecteureka/projecteureka.iml" filepath="$PROJECT_DIR$/projecteureka/projecteureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testall/testall.iml" filepath="$PROJECT_DIR$/testall/testall.iml" />
       <module fileurl="file://$PROJECT_DIR$/userinfo/userinfo.iml" filepath="$PROJECT_DIR$/userinfo/userinfo.iml" />
       <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
     </modules>

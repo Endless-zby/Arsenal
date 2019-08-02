@@ -52,6 +52,9 @@ feign:
     enabled: true
 
 zby:
-  name: 赵博
+  name: 赵博雅
   age: 21
   sex: 男
+
+file:
+  url: G:\

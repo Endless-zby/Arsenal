@@ -10,6 +10,7 @@
         <module name="commen" />
         <module name="config" />
         <module name="projecteureka" />
+        <module name="testall" />
         <module name="userinfo" />
         <module name="zuul" />
       </profile>
@@ -22,7 +23,8 @@
       <module name="config" target="1.5" />
       <module name="eureka" target="1.5" />
       <module name="projecteureka" target="1.5" />
-      <module name="userinfo" target="1.5" />
+      <module name="testall" target="1.8" />
+      <module name="userinfo" target="8" />
       <module name="zuul" target="1.5" />
     </bytecodeTargetLevel>
   </component>

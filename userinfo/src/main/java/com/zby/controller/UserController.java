@@ -8,6 +8,11 @@ import com.zby.service.UserService;
 
 import com.zby.util.IdWorker;
 import com.zby.util.JwtUtil;
+import io.netty.handler.codec.json.JsonObjectDecoder;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -24,6 +29,7 @@ import java.util.HashMap;
 @RefreshScope
 @Controller
 @RequestMapping("user")
+@Api(value = "api测试接口")
 public class UserController {
 
     @Autowired
@@ -50,6 +56,11 @@ public class UserController {
         System.out.println(name);//测试config是否正常
         return "user_login";
     }
+    @GetMapping("file")
+    public String file(){
+
+        return "file";
+    }
 
     /**
      * 注册
@@ -72,7 +83,7 @@ public class UserController {
     }
 
     /**
-     *
+     * 登录
      * @param user
      * @param request
      * @return
@@ -108,6 +119,27 @@ public class UserController {
         map.put("sex",sex);
         Result result = new Result(true, 20000, "成功", map);
         return new ModelAndView("config_test","result",result);
+    }
+
+
+
+    @ResponseBody
+    @ApiOperation(value="查询用户数据", notes="根据用户username查询用户数据")
+    @GetMapping("apiTest")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType="query", name = "username", value = "用户名",
+                              required = true, dataType = "String")
+    })
+    public Result apiTest(String username){
+
+        User user = userservice.query(username);
+
+        return new Result(true,20000,"查询成功",
+                " | 用户ID：" +user.getId() + " | 邮箱：" +
+                user.getEmail() + " | 联系电话：" +
+                        user.getPhone() + " | 年龄：" +
+                        user.getAge()
+        );
     }
 
     /**

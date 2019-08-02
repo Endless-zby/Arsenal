@@ -120,4 +120,19 @@ public class User {
     public void setActive(boolean active) {
         this.active = active;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", type=" + type +
+                ", age=" + age +
+                ", sex=" + sex +
+                ", active=" + active +
+                '}';
+    }
 }

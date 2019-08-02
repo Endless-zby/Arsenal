@@ -4,13 +4,14 @@ import com.zby.interceptor.JwtInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 //配置拦截器
-//@Component
-//@Configuration
+@Component
+@Configuration
 public class JwtConfiguration extends WebMvcConfigurationSupport {
 
     @Autowired
@@ -25,9 +26,9 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
          * */
         //加载jwtInterceptor拦截规则
         registry.addInterceptor(jwtInterceptor).addPathPatterns("/**")
-                .excludePathPatterns("/user/login/**","/arsenal/**","/user/index/**","/user/config/**");//因为login之后才会生成token
+                .excludePathPatterns("/user/login/**","/arsenal/**","/user/index/**"
+                        ,"/user/config/**","/swagger-ui.html/**","**/webjars/**","/file.html/**");//因为login之后才会生成token
     }
-
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -35,8 +36,14 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
                 .addResourceLocations("classpath:/static/");
         registry.addResourceHandler("/templates/**")
                 .addResourceLocations("classpath:/templates/");
+        registry.addResourceHandler("swagger-ui.html").addResourceLocations(
+                "classpath:/META-INF/resources/");
+        registry.addResourceHandler("/webjars/**").addResourceLocations(
+                "classpath:/META-INF/resources/webjars/");
+
         super.addResourceHandlers(registry);
     }
+
 
     /**
      * 以下WebMvcConfigurerAdapter 比较常用的重写接口
