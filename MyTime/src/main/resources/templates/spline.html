@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container" ></div>
+
+
+
+<!--<script th:src="@{/static/js/jquery-1.8.0.min.js}" type="text/javascript"></script>-->
+<script th:src="@{http://cdn.staticfile.org/jquery/2.1.4/jquery.min.js}"></script>
+<script th:src="@{http://code.highcharts.com/highcharts.js}"></script>
+<!--<script th:src="@{/static/js/highcharts.js}" type="text/javascript" ></script>-->
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    $(document).ready(function () {
+
+        $.ajax({
+            type: "POST",
+            url: "/time/splinedate",
+            dataType: "json",
+
+            success: function (data) {
+
+                var appTime = new Array();
+                var appDate = new Array();
+
+
+
+                if (data.code == 20000) {
+
+                    for (var i = 0; i < data.data.length; i++) {
+                        // var money = data.data[i].money;
+                        // var time = data.data[i].time;
+                        // appMoney += (money + ",");
+                        // appTime  += ("'"+time  + "',");
+                        appTime.push(new Date(data.data[i].appDate + " " + data.data[i].appTime).getTime());
+                        appDate.push(data.data[i].appDate);
+                    }
+
+                    // var money = "[" + appMoney.substring(0,appMoney.length-1) + "]";
+                    // var time = "[" + appTime.substring(0,appTime.length-1) + "]";
+                    // var money = appMoney.substring(0,appMoney.length-1).split(",");
+                    // var time = appTime.substring(0,appTime.length-1).split(",");
+
+
+                    var title = {
+                        text: '睡眠时间'
+                    };
+                    var subtitle = {
+                        text: 'Source: 鸹貔'
+                    };
+                    var xAxis = {
+                        categories: appTime
+                    };
+                    var yAxis = {
+                        title: {
+                            text: 'time (/小时)'
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 1,
+                            color: '#808080'
+                        }]
+                    };
+
+                    var tooltip = {
+                        valueSuffix: '时'
+                    }
+
+                    var legend = {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'middle',
+                        borderWidth: 0
+                    };
+
+                    var series =  [
+                        {
+                            name: '时间',
+                            data: appTime
+                        }
+                    ];
+
+                    var json = {};
+
+                    json.title = title;
+                    json.subtitle = subtitle;
+                    json.xAxis = xAxis;
+                    json.yAxis = yAxis;
+                    json.tooltip = tooltip;
+                    json.legend = legend;
+                    json.series = series;
+
+                    $('#container').highcharts(json);
+
+                } else if (data.code == 20001) {
+                    alert(data.message);
+                }
+
+            },
+            error: function () {
+                alert('哎呀！出错了！');
+            }
+        });
+
+    });
+    /*]]>*/
+</script>
+</body>
+</html>

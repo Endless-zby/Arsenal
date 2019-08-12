@@ -47,3 +47,5 @@ spring:
 #    expire: 120000       #过期时间
 
 
+zby:
+  name: zhaoboya

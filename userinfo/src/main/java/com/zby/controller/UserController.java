@@ -4,11 +4,11 @@ import com.zby.client.client;
 import com.zby.entity.Result;
 
 import com.zby.entity.User;
+import com.zby.entity.testdate;
 import com.zby.service.UserService;
 
 import com.zby.util.IdWorker;
 import com.zby.util.JwtUtil;
-import io.netty.handler.codec.json.JsonObjectDecoder;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.HashMap;
 
 //@RefreshScope注解的作用: 如果刷新了bean，那么下一次访问bean(即执行一个方法)时就会创建一个新实例。
@@ -141,6 +142,20 @@ public class UserController {
                         user.getAge()
         );
     }
+
+    /**
+     * 孙国彪
+     * @param
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("test12")
+    public Result test12(@RequestBody testdate testdate1){
+
+        return new Result(true,200,"成功", testdate1.toString());
+
+    }
+
 
     /**
      * 跨服务调用

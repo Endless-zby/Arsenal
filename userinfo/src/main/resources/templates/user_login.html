@@ -10,6 +10,7 @@
     <script type="text/javascript" th:src="@{/static/js/jquery.min.js} "></script>
     <script type="text/javascript" th:src="@{/static/js/vector.js}"></script>
     <script type="text/javascript" th:src="@{/static/js/login2.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/My97DatePicker/WdatePicker.js}"></script>
 
 
 
@@ -26,9 +27,56 @@
 				<button type="button" id="login">登录</button>
 				<div id="prompt" class="prompt"></div>
 			</form>
+			<!--<h1>test</h1>-->
+			<!--<form class="form" id="date_form">-->
+				<!--起始时间：<input type="text" id="date1" name="date1" th:value="${startDate}" onFocus="WdatePicker({startDate:'{%y-19}-%M-%d',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:true})"/>-->
+				<!--截止时间：<input type="text" id="date2" name="date2" th:value="${endDate}"  onFocus="WdatePicker({endDate:'%y-%M-%d',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:true})"/>-->
+				<!--<button type="button"id="date">button提交</button>-->
+				<!--<button onclick="myFunction()" href="javascript:void(0);">onclick提交</button>-->
+			<!--</form>-->
 		</div>
 	</div>
 </div>
+
+
+
+<!--<script type="text/javascript">
+    $(function(){
+        $("#date").unbind("click").bind("click", function(){
+            var start=$("input[name=date1]").val();
+            var end=$("input[name=date2]").val();
+            alert(start + end);
+                $.ajax({
+                    url:"/user/test12",
+                    dataType:'json',
+                    contentType: "application/json;charset=utf-8",
+                    type:"post",
+                    data:JSON.stringify({"start":start,"end":end}),
+                    success:function(Result){
+                        alert("ajax返回结果：" + Result.message + "\n" + "ajax返回内容：" + Result.data);
+                    }
+                });
+        });
+    });
+    function myFunction() {
+        var start=$("input[name=date1]").val();
+        var end=$("input[name=date2]").val();
+        alert(start + end);
+        $.ajax({
+            url:"/user/test12",
+            dataType:'json',
+            contentType: "application/json;charset=utf-8",
+            type:"post",
+            data:JSON.stringify({"start":start,"end":end}),
+            success:function(Result){
+                alert("ajax返回结果：" + Result.message + "\n" + "ajax返回内容：" + Result.data);
+            }
+        });
+
+    }
+</script>-->
+
+
 
 <script type="text/javascript">
     $(function(){

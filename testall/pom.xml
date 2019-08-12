@@ -26,58 +26,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
     </dependencies>
-
-
-
-    <!--通过maven构建docker镜像 (刚才手工 jdk->docker；现在通过maven自动将 某个项目->docker) -->
-   <!-- <build>
-        <finalName>testall</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                &lt;!&ndash; 以下configuration 解决 maven一个bug：no main manifest attribute&ndash;&gt;
-                <configuration>
-                    &lt;!&ndash; 指定该Main Class为全局的唯一入口 &ndash;&gt;
-                    <mainClass>com.zby.RedisTestApplication</mainClass>
-                    <layout>ZIP</layout>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.13</version>
-
-                <configuration>
-
-                    <imageName>
-                        39.96.160.110:5000/testall:${project.version}
-                    </imageName>
-                    &lt;!&ndash;docker的tag为项目版本号、latest&ndash;&gt;
-                    <baseImage>jdk1.8</baseImage>
-                    <entryPoint>["java","-jar","/${project.build.finalName}.jar"] </entryPoint>
-                    <resources>
-                        <rescource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </rescource>
-
-                    </resources>
-                    <dockerHost>https://39.96.160.110:2375</dockerHost>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>-->
-
 
 
     <properties>

@@ -1,7 +1,9 @@
 package com.zby;
 
+import com.zby.redis.config.IdWorker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -17,4 +19,8 @@ public class RedisTestApplication extends WebMvcConfigurationSupport {
         SpringApplication.run(RedisTestApplication.class, args);
     }
 
+    @Bean
+    public IdWorker idWorker(){
+        return new IdWorker(1,1);
+    }
 }

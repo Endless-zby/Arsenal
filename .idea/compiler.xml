@@ -9,6 +9,7 @@
         <module name="armstype" />
         <module name="commen" />
         <module name="config" />
+        <module name="MyTime" />
         <module name="projecteureka" />
         <module name="testall" />
         <module name="userinfo" />
@@ -22,6 +23,7 @@
       <module name="commen" target="6" />
       <module name="config" target="1.5" />
       <module name="eureka" target="1.5" />
+      <module name="MyTime" target="1.8" />
       <module name="projecteureka" target="1.5" />
       <module name="testall" target="1.8" />
       <module name="userinfo" target="8" />

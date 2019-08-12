@@ -2,6 +2,7 @@ package com.zby.redis.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -41,7 +42,7 @@ public class Swagger2Config {
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Spring Boot中使用Swagger2构建RESTful APIs")
+                .title("赵博雅redisTemplate部分功能测试")
                 .description("更多请关注https://www.zby123.club")
                 .termsOfServiceUrl("https://www.zby123.club")
                 .version("1.0")

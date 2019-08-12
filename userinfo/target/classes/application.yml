@@ -22,12 +22,6 @@ spring:
     username: root
     password: zby123456
 
-  thymeleaf:
-    cache: false
-    prefix: classpath:/templates/
-    suffix: .html
-    encoding: UTF-8
-    mode: HTML5
 
   jpa:
     database-platform:
@@ -39,6 +33,16 @@ spring:
 
     hibernate:
       ddl-auto: update
+
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+
+
 
 # 添盐加密
 jwt:
