@@ -1,13 +1,15 @@
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\config\StatusCode.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\entity\myTime.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\config\Result.java
-G:\self-study\arsenal\MyTime\src\main\java\com\zby\entity\log.java
+G:\self-study\arsenal\MyTime\src\main\java\com\zby\entity\Red.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\entity\ourFinance.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\dao\ourFinanceDao.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\service\financeService.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\service\timeService.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\config\JwtConfiguration.java
+G:\self-study\arsenal\MyTime\src\main\java\com\zby\service\redService.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\controller\timeController.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\dao\timeDao.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\TimeApplication.java
+G:\self-study\arsenal\MyTime\src\main\java\com\zby\dao\redDao.java
 G:\self-study\arsenal\MyTime\src\main\java\com\zby\config\IdWorker.java

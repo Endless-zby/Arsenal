@@ -74,6 +74,7 @@
             var purpose=$("#purpose").val();
             var money=$("input[name=money]").val();
             var time=$("input[name=appDateTime]").val();
+            var name=$("input[name=name]").val();
             var remark=$("textarea[name=remark]").val();
             var status = $('#status').val();
             var vlue = $("#money").val();
@@ -107,7 +108,7 @@
                     dataType:'json',
                     contentType: "application/json;charset=utf-8",
                     type:"post",
-                    data:JSON.stringify({"purpose":purpose,"money":money,"time":time,"remark":remark,"status":status}),
+                    data:JSON.stringify({"purpose":purpose,"money":money,"time":time,"remark":remark,"status":status,"tag1":name}),
                     async:false,
                     success:function(Result){
                         if(Result.flag == true){

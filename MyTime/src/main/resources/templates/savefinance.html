@@ -27,6 +27,11 @@
 <div style="padding: 100px 100px 10px;">
     <form role="form">
         <div class="form-group">
+            <select id="name" name="name" class="form-control">
+                <option value="展玮璇">展玮璇</option>
+                <option value="赵博雅">赵博雅</option>
+            </select>
+            <br/>
             <!--<label name = "purposes"></label>-->
             <select id="purpose" name="purpose" class="form-control">
                 <option value="吃饭">吃饭</option>
@@ -79,6 +84,7 @@
                 <thead>
                 <tr>
                     <th>日期</th>
+                    <th>是谁</th>
                     <th>类型</th>
                     <th>用途</th>
                     <th>金额</th>
@@ -88,6 +94,18 @@
                 <tbody>
                 <tr class="active" th:each="splinedate:${result.data}">
                     <td th:text="${splinedate.time}"></td>
+
+
+
+                    <span th:if="${splinedate.tag1 == '赵博雅'} ">
+                        <td th:text="赵博雅" style="color: mediumslateblue"></td>
+                    </span>
+                    <span th:if="${splinedate.tag1 == '展玮璇'} ">
+                        <td th:text="展玮璇" style="color: deeppink"></td>
+                    </span>
+
+
+
                     <span th:if="${splinedate.status == 0} ">
                         <td th:text="支出" style="color: brown"></td>
                     </span>
