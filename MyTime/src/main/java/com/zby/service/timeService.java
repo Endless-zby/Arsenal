@@ -4,6 +4,8 @@ import com.zby.config.IdWorker;
 import com.zby.dao.timeDao;
 import com.zby.entity.myTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -30,11 +32,17 @@ public class timeService {
         myTime save = timedao.save(mytime);
         return save;
     }
+    public Page<myTime> splinedate1(int start,int pageSize){
+        PageRequest pagerequest = PageRequest.of(start-1, pageSize);
+        Page<myTime> myTimes = timedao.findAll(pagerequest);
+
+        return myTimes;
+    }
     public List<myTime> splinedate(){
 
-        List<myTime> all = timedao.findAll();
+        List<myTime> save = timedao.findAll();
 
-        return all;
+        return save;
     }
 
 

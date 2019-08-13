@@ -32,3 +32,5 @@ spring:
     encoding: UTF-8
     mode: HTML5
 
+page:
+  size: 4

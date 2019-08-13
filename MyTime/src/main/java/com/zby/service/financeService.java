@@ -6,6 +6,8 @@ import com.zby.dao.ourFinanceDao;
 import com.zby.dao.timeDao;
 import com.zby.entity.ourFinance;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -40,6 +42,14 @@ public class financeService {
 
         System.out.println(all.toString());
 
+        return all;
+    }
+
+
+    @Transactional
+    public Page<ourFinance> queryfinance1(int start,int pageSize){
+        PageRequest pagerequest = PageRequest.of(start-1, pageSize);
+        Page<ourFinance> all = ourfinancedao.findAll(pagerequest);
         return all;
     }
 

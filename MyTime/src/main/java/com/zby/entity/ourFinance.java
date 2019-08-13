@@ -117,4 +117,18 @@ public class ourFinance implements Serializable {
     public void setTag2(String tag2) {
         this.tag2 = tag2;
     }
+
+    @Override
+    public String toString() {
+        return "ourFinance{" +
+                "id='" + id + '\'' +
+                ", status=" + status +
+                ", time='" + time + '\'' +
+                ", purpose='" + purpose + '\'' +
+                ", money=" + money +
+                ", remark='" + remark + '\'' +
+                ", tag1='" + tag1 + '\'' +
+                ", tag2='" + tag2 + '\'' +
+                '}';
+    }
 }

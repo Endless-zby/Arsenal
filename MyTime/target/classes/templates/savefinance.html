@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:if="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>开销记录</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link th:href="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script th:src="@{https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js}"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/js/jquery.1.7.2.min.js}"></script>
+    <script th:src="@{/static/js/mobiscroll_002.js}" type="text/javascript"></script>
+    <script th:src="@{/static/js/mobiscroll_004.js}" type="text/javascript"></script>
+    <link th:href="@{/static/css/mobiscroll_002.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/static/css/mobiscroll.css}" rel="stylesheet" type="text/css">
+    <script th:src="@{/static/js/mobiscroll.js}" type="text/javascript"></script>
+    <script th:src="@{/static/js/mobiscroll_003.js}" type="text/javascript"></script>
+    <script th:src="@{/static/js/mobiscroll_005.js}" type="text/javascript"></script>
+    <link th:href="@{/static/css/mobiscroll_003.css}" rel="stylesheet" type="text/css">
+    <script th:src="@{/static/js/time.js}" type="text/javascript"></script>
+</head>
+<body>
+
+<div style="padding: 100px 100px 10px;">
+    <form role="form">
+        <div class="form-group">
+            <!--<label name = "purposes"></label>-->
+            <select id="purpose" name="purpose" class="form-control">
+                <option value="吃饭">吃饭</option>
+                <option value="其他">其他</option>
+                <option value="交通">交通</option>
+                <option value="饮水">饮水</option>
+                <option value="约会">约会</option>
+                <option value="电费">电费</option>
+                <option value="天然气">天然气</option>
+                <option value="房租">房租</option>
+                <option value="生活用水">生活用水</option>
+            </select>
+            <br/>
+            <div class="input-group">
+                <span class="input-group-addon">金额</span>
+                <input type="text" name="money" id="money" class="form-control">
+                <span class="input-group-addon">.00</span>
+            </div>
+            <br/>
+            <select id="status" name="status" class="form-control">
+                <option value="0">支出</option>
+                <option value="1">收入</option>
+            </select>
+            <br/>
+            <!--<div class="input-group">-->
+            <!--<span class="input-group-addon">时间</span>-->
+            <!--<input type="date" name="time" class="form-control">-->
+            <!--<span class="input-group-addon">clock</span>-->
+            <!--</div>-->
+
+
+            <div class="input-group">
+                <span class="input-group-addon">日期</span>
+                <input class="form-control" name="appDateTime" id="appDateTime" type="text">
+                <span class="input-group-addon">clock</span>
+            </div>
+
+
+            <br/>
+            <div class="form-group">
+                <label>备注</label>
+                <textarea name="remark" class="form-control" rows="3"></textarea>
+            </div>
+            <br/>
+            <div id="myAlert" class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>提交成功！</strong>已保存。
+            </div>
+            <br/>
+            <button type="button" id="onclick1" class="btn btn-success">提交</button>
+            <button type="button" id="onclick2" class="btn btn-info">查看</button>
+            <br/>
+            <table class="table" th:if="${result.flag}">
+                <caption>详细记录</caption>
+                <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>类型</th>
+                    <th>用途</th>
+                    <th>金额</th>
+                    <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="active" th:each="splinedate:${result.data}">
+                    <td th:text="${splinedate.time}"></td>
+                    <span th:if="${splinedate.status == 0} ">
+                        <td th:text="支出" style="color: brown"></td>
+                    </span>
+                    <span th:if="${splinedate.status == 1} ">
+                        <td th:text="收入" style="color: #2f9c0a"></td>
+                    </span>
+                    <td th:text="${splinedate.purpose}"></td>
+                    <td th:text="${splinedate.money}"></td>
+                    <td th:text="${splinedate.remark}"></td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+
+            <ul class="pagination pagination-sm" style="">
+                <li th:class="${indexPage==1}?'disabled' : ''"><a th:href="@{'/time/savefinance/' + ${indexPage-1}}">上一页</a></li>
+                <li th:if="${indexPage-3 >=1}" ><a th:href="@{'/time/savefinance/' + ${indexPage-3}}" th:text="${indexPage -3}" >1</a></li>
+                <li th:if="${indexPage-2 >=1}" ><a th:href="@{'/time/savefinance/' + ${indexPage-2}}" th:text="${indexPage -2}" >1</a></li>
+                <li th:if="${indexPage-1 >=1}" ><a th:href="@{'/time/savefinance/' + ${indexPage-1}}" th:text="${indexPage -1}" >1</a></li>
+                <li class="active"><a href="#" th:text="${indexPage}" >1</a></li>
+                <li th:if="${indexPage+1 <=totalPage}" ><a th:href="@{'/time/savefinance/' + ${indexPage+1}}" th:text="${indexPage +1}" >1</a></li>
+                <li th:if="${indexPage+2 <=totalPage}" ><a th:href="@{'/time/savefinance/' + ${indexPage+2}}" th:text="${indexPage +2}" >1</a></li>
+                <li th:if="${indexPage+3 <=totalPage}" ><a th:href="@{'/time/savefinance/' + ${indexPage+3}}" th:text="${indexPage +3}" >1</a></li>
+
+                <li th:class="${indexPage==totalPage}?'disabled' : ''" ><a th:href="@{'/time/savefinance/' + ${indexPage+1}}">下一页</a></li>
+            </ul><br>
+
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var currYear = (new Date()).getFullYear();
+        var opt = {};
+        opt.date = {preset: 'date'};
+        opt.datetime = {preset: 'datetime'};
+        opt.time = {preset: 'time'};
+        opt.default = {
+            theme: 'android-ics light', //皮肤样式
+            display: 'modal', //显示方式
+            mode: 'scroller', //日期选择模式
+            dateFormat: 'yyyy-mm-dd',
+            lang: 'zh',
+            showNow: true,
+            nowText: "今天",
+            startYear: currYear - 10, //开始年份
+            endYear: currYear + 10 //结束年份
+        };
+
+        $("#appDate").mobiscroll($.extend(opt['date'], opt['default']));
+        var optDateTime = $.extend(opt['datetime'], opt['default']);
+        var optTime = $.extend(opt['time'], opt['default']);
+        $("#appDateTime").mobiscroll(optDateTime).datetime(optDateTime);
+        $("#appTime").mobiscroll(optTime).time(optTime);
+    });
+</script>
+<script type="text/javascript">
+    function moneyConfine() {
+        var vlue = $("#money").val();
+        var str = vlue.indexOf(".");
+        var numlength = 0;
+        if (str != -1) {
+            index = vlue.substring(str + 1, vlue.length);
+            numlength = index.length;
+        }
+        if (isNaN(vlue) || (vlue <= 0) || (numlength > 2)) {
+            alert("金额必须大于0且最多有两位小数！");
+            return false;
+        }else {
+            return true;
+        }
+        return true;
+    }
+</script>
+
+
+</body>
+</html>
