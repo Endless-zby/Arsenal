@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @Author: 赵博雅
@@ -51,6 +52,14 @@ public class financeService {
         PageRequest pagerequest = PageRequest.of(start-1, pageSize);
         Page<ourFinance> all = ourfinancedao.findAll(pagerequest);
         return all;
+    }
+
+    @Transactional
+    public boolean delete(ourFinance ourfinance){
+
+        ourfinancedao.deleteById(ourfinance.getId());
+
+        return true;
     }
 
 }

@@ -16,5 +16,4 @@ import org.springframework.data.jpa.repository.Query;
 public interface ourFinanceDao extends JpaRepository<ourFinance,String>, JpaSpecificationExecutor<ourFinance> {
 
 
-
 }

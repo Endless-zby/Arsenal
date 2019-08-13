@@ -180,6 +180,19 @@ public class timeController {
 
     }
 
+    @ResponseBody
+    @PostMapping("delete")
+    public Result delete(@RequestBody ourFinance ourfinance){
+
+        System.out.println(ourfinance.getId());
+
+        boolean delete = financeService.delete(ourfinance);
+
+        if(delete){
+            return new Result(true,20000,"删除成功",delete);
+        }
+        return new Result(false,2000,"删除失败",delete);
+    }
 
 
 

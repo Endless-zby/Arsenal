@@ -89,12 +89,12 @@
                     <th>用途</th>
                     <th>金额</th>
                     <th>备注</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr class="active" th:each="splinedate:${result.data}">
                     <td th:text="${splinedate.time}"></td>
-
 
 
                     <span th:if="${splinedate.tag1 == '赵博雅'} ">
@@ -115,6 +115,8 @@
                     <td th:text="${splinedate.purpose}"></td>
                     <td th:text="${splinedate.money}"></td>
                     <td th:text="${splinedate.remark}"></td>
+                    <td><button th:value="${splinedate.id}" name="delete" th:id="delete" onclick="deletes(this.value)" type="button" class="btn btn-danger btn-sm">删除</button></td>
+
                 </tr>
 
                 </tbody>
@@ -181,6 +183,26 @@
             return true;
         }
         return true;
+    }
+
+
+    function deletes(id) {
+        $.ajax({
+            url:"/time/delete",
+            dataType:'json',
+            contentType: "application/json;charset=utf-8",
+            type:"post",
+            data:JSON.stringify({"id":id}),
+            async:false,
+            success:function(Result){
+                if(Result.flag == true){
+                    alert("删除成功！")
+                    window.location.href="/time/savefinance/1";//跳转
+                }else {
+                    alert("错误代码：" + Result.code + Result.message);
+                }
+            }
+        });
     }
 </script>
 
