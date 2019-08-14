@@ -20,6 +20,16 @@
             window.location.href="/time/savefinance/1";//跳转
         });
     });
+    $(document).ready(function(){
+        $('#red').click(function () {
+            window.location.href="/time/redpage/1";//跳转
+        });
+    });
+    $(document).ready(function(){
+        $('#queryred').click(function () {
+            window.location.href="showred";//跳转
+        });
+    });
 
     function getDateStr(date) {
         var month = date.getMonth() + 1;
@@ -54,7 +64,7 @@
                     success:function(Result){
                         if(Result.flag == true){
                             alert("提交成功！")
-                            window.location.href="/time/sleep";//跳转
+                            window.location.href="/time/sleep/1";//跳转
                             // alert("跳转成功")
                         }else {
                             alert("错误代码：" + Result.code + Result.message);
@@ -74,7 +84,7 @@
             var purpose=$("#purpose").val();
             var money=$("input[name=money]").val();
             var time=$("input[name=appDateTime]").val();
-            var name=$("input[name=name]").val();
+            var name=$("#name").val();
             var remark=$("textarea[name=remark]").val();
             var status = $('#status').val();
             var vlue = $("#money").val();
@@ -142,4 +152,92 @@
         });
     });
 
+    function deletesleep(id) {
+        $.ajax({
+            url:"/time/deletesleep",
+            dataType:'json',
+            contentType: "application/json;charset=utf-8",
+            type:"post",
+            data:JSON.stringify({"id":id}),
+            async:false,
+            success:function(Result){
+                if(Result.flag == true){
+                    window.location.href="/time/sleep/1";//跳转
+                }else {
+                    alert("错误代码：" + Result.code + Result.message);
+                }
+            }
+        });
+    }
 
+    function deletered(id) {
+        $.ajax({
+            url:"/time/deletered",
+            dataType:'json',
+            contentType: "application/json;charset=utf-8",
+            type:"post",
+            data:JSON.stringify({"id":id}),
+            async:false,
+            success:function(Result){
+                if(Result.flag == true){
+                    window.location.href="/time/redpage/1";//跳转
+                }else {
+                    alert("错误代码：" + Result.code + Result.message);
+                }
+            }
+        });
+    }
+
+    $(function(){
+        //提交开销
+        $("#onclick3").unbind("click").bind("click", function(){
+
+
+            var starttime=$("input[name=starttime]").val();
+            var outtime=$("input[name=outtime]").val();
+            var remark=$("textarea[name=remark]").val();
+
+            var start = new Date($("#starttime").val());
+            var end = new Date($("#outtime").val());
+            if(end < start){
+                alert('你确定时间是倒着的？');
+                return false;
+            }
+            if(starttime==""||starttime==null){
+                alert("把开始时间选上");
+                return false;
+            }else if(remark==""||remark==null){
+                alert("具体用途写一下吧");
+                return false;
+            }else if (outtime==""||outtime==null){
+                alert("把结束时间选上");
+                return false;
+            } else{
+                $.ajax({  // ajax登陆请求
+                    url:"/time/red",
+                    dataType:'json',
+                    contentType: "application/json;charset=utf-8",
+                    type:"post",
+                    data:JSON.stringify({"starttime":starttime,"outtime":outtime,"remark":remark}),
+                    async:false,
+                    success:function(Result){
+                        if(Result.flag == true){
+                            alert("提交成功！");
+                            window.location.href="/time/redpage/1";//跳转
+                        }else {
+                            alert("错误代码：" + Result.code + Result.message);
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+    $(function(){
+        //提交开销
+        $("#onclick4").unbind("click").bind("click", function() {
+
+            window.location.href="/time/showred";
+
+        });
+    });

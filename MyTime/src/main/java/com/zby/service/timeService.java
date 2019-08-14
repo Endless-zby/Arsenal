@@ -32,17 +32,26 @@ public class timeService {
         myTime save = timedao.save(mytime);
         return save;
     }
+    @Transactional
     public Page<myTime> splinedate1(int start,int pageSize){
         PageRequest pagerequest = PageRequest.of(start-1, pageSize);
         Page<myTime> myTimes = timedao.findAll(pagerequest);
 
         return myTimes;
     }
+    @Transactional
     public List<myTime> splinedate(){
 
         List<myTime> save = timedao.findAll();
 
         return save;
+    }
+    @Transactional
+    public boolean deletesleep(myTime mytime){
+
+    timedao.deleteById(mytime.getId());
+
+    return true;
     }
 
 

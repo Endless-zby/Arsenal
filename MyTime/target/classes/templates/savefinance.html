@@ -23,7 +23,6 @@
     <script th:src="@{/static/js/time.js}" type="text/javascript"></script>
 </head>
 <body>
-
 <div style="padding: 100px 100px 10px;">
     <form role="form">
         <div class="form-group">
@@ -46,7 +45,7 @@
             </select>
             <br/>
             <div class="input-group">
-                <span class="input-group-addon">金额</span>
+                <span class="input-group-addon ">金额</span>
                 <input type="text" name="money" id="money" class="form-control">
                 <span class="input-group-addon">.00</span>
             </div>
@@ -79,11 +78,12 @@
             <button type="button" id="onclick1" class="btn btn-success">提交</button>
             <button type="button" id="onclick2" class="btn btn-info">查看</button>
             <br/>
-            <table class="table" th:if="${result.flag}">
+            <table id="tableid" class="table" th:if="${result.flag}">
                 <caption>详细记录</caption>
                 <thead>
                 <tr>
                     <th>日期</th>
+                    <th>ID</th>
                     <th>是谁</th>
                     <th>类型</th>
                     <th>用途</th>
@@ -95,16 +95,13 @@
                 <tbody>
                 <tr class="active" th:each="splinedate:${result.data}">
                     <td th:text="${splinedate.time}"></td>
-
-
+                    <td th:text="${splinedate.id}"></td>
                     <span th:if="${splinedate.tag1 == '赵博雅'} ">
                         <td th:text="赵博雅" style="color: mediumslateblue"></td>
                     </span>
                     <span th:if="${splinedate.tag1 == '展玮璇'} ">
                         <td th:text="展玮璇" style="color: deeppink"></td>
                     </span>
-
-
 
                     <span th:if="${splinedate.status == 0} ">
                         <td th:text="支出" style="color: brown"></td>
@@ -116,9 +113,7 @@
                     <td th:text="${splinedate.money}"></td>
                     <td th:text="${splinedate.remark}"></td>
                     <td><button th:value="${splinedate.id}" name="delete" th:id="delete" onclick="deletes(this.value)" type="button" class="btn btn-danger btn-sm">删除</button></td>
-
                 </tr>
-
                 </tbody>
             </table>
 
@@ -196,7 +191,6 @@
             async:false,
             success:function(Result){
                 if(Result.flag == true){
-                    alert("删除成功！")
                     window.location.href="/time/savefinance/1";//跳转
                 }else {
                     alert("错误代码：" + Result.code + Result.message);

@@ -73,6 +73,12 @@ public class timeController {
         return "showfinance";
     }
 
+    @GetMapping("showred")
+    public String showred(){
+        return "showred";
+    }
+
+
     @GetMapping("savefinance/{page}")
     public ModelAndView savefinance(@PathVariable(value = "page") Integer page){
         if (page == 0 || page == null ){
@@ -93,6 +99,28 @@ public class timeController {
     }
 
 
+
+    @GetMapping("redpage/{page}")
+    public ModelAndView redpage(@PathVariable(value = "page") Integer page){
+        if (page == 0 || page == null ){
+            page = 1;
+        }
+        Slice<Red> queryred = redservice.red1(page,size);
+        Result result;
+        if(queryred.getContent().size() == 0){
+            result = new Result(false, 20001, "查询失败", null);
+        }else{
+            result = new Result(true, 20000, "查询成功", queryred.getContent());
+        }
+        ModelAndView modelAndView = new ModelAndView("red");
+        modelAndView.addObject(result);
+        modelAndView.addObject("indexPage",queryred.getNumber() + 1);
+        modelAndView.addObject("totalPage",((Page<Red>) queryred).getTotalPages());
+        return modelAndView;
+    }
+
+
+
     /**
      * 保存睡眠时间
      * @param mytime
@@ -107,6 +135,22 @@ public class timeController {
 
         return new Result(true,20000,"保存成功",savedate);
     }
+
+    /**
+     * 删除睡眠时间记录
+     * @param mytime
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("deletesleep")
+    public Result deletesleep(@RequestBody myTime mytime){
+
+        timeservice.deletesleep(mytime);
+
+        return new Result(true,20000,"删除成功",null);
+    }
+
+
 
     /**
      * 图表表示睡眠时间
@@ -194,6 +238,14 @@ public class timeController {
         return new Result(false,2000,"删除失败",delete);
     }
 
+    @ResponseBody
+    @PostMapping("deletered")
+    public Result deletered(@RequestBody Red red){
+
+        redservice.deletered(red);
+
+        return new Result(true,20000,"删除成功",null);
+    }
 
 
 

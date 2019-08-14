@@ -22,19 +22,29 @@ public class Red implements Serializable {
 
     private String outtime;
 
-    public Red(String id, String starttime, String outtime) {
+    private String remark;
+
+    public Red(String id, String starttime, String outtime, String remark) {
         this.id = id;
         this.starttime = starttime;
         this.outtime = outtime;
+        this.remark = remark;
     }
-
-    public Red(String starttime, String outtime) {
+    public Red(String starttime, String outtime, String remark) {
         this.starttime = starttime;
         this.outtime = outtime;
+        this.remark = remark;
     }
-
     public Red() {
 
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public String getId() {

@@ -51,14 +51,18 @@
 		<caption>详细记录</caption>
 		<thead>
 		<tr>
+			<th>ID</th>
 			<th>日期</th>
 			<th>时间</th>
+			<th>操作</th>
 		</tr>
 		</thead>
 		<tbody>
 		<tr class="active" th:each="splinedate:${result.data}">
+			<td th:text="${splinedate.id}"></td>
 			<td th:text="${splinedate.appDate}"></td>
 			<td th:text="${splinedate.appTime}"></td>
+			<td><button th:value="${splinedate.id}" name="delete" id="deletesleep" onclick="deletesleep(this.value)" type="button" class="btn btn-danger btn-sm">删除</button></td>
 		</tr >
 
 		</tbody>
@@ -79,22 +83,6 @@
 	</ul><br>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	 <script type="text/javascript">
         $(function () {
 			var currYear = (new Date()).getFullYear();	
