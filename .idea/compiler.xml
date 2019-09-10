@@ -6,14 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="armstype" />
-        <module name="commen" />
-        <module name="config" />
         <module name="MyTime" />
-        <module name="projecteureka" />
+        <module name="zuul" />
+        <module name="newplansms" />
+        <module name="armstype" />
+        <module name="newplan" />
+        <module name="commen" />
         <module name="testall" />
         <module name="userinfo" />
-        <module name="zuul" />
+        <module name="projecteureka" />
+        <module name="config" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +26,8 @@
       <module name="config" target="1.5" />
       <module name="eureka" target="1.5" />
       <module name="MyTime" target="1.8" />
+      <module name="newplan" target="1.8" />
+      <module name="newplansms" target="1.5" />
       <module name="projecteureka" target="1.5" />
       <module name="testall" target="1.8" />
       <module name="userinfo" target="8" />

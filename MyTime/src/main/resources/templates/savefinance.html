@@ -25,7 +25,7 @@
 <body>
 <div style="padding: 100px 100px 10px;">
     <form role="form">
-        <div class="form-group">
+        <div id="div1" class="form-group">
             <select id="name" name="name" class="form-control">
                 <option value="展玮璇">展玮璇</option>
                 <option value="赵博雅">赵博雅</option>
@@ -114,7 +114,7 @@
 
             <ul class="pagination pagination-sm" style="">
                 <li th:class="${indexPage==1}?'disabled' : ''"><a th:href="@{'/time/savefinance/' + ${indexPage-1}}">上一页</a></li>
-                <li th:if="${indexPage-3 >=1}" ><a th:href="@{'/time/savefinance/' + ${indexPage-3}}" th:text="${indexPage -3}" >1</a></li>
+                <li th:if="${indexPage-3 >=1}" ><a th:onclick="page(${indexPage-3})" href="javascript:void(0);" th:text="${indexPage -3}" >1</a></li>
                 <li th:if="${indexPage-2 >=1}" ><a th:href="@{'/time/savefinance/' + ${indexPage-2}}" th:text="${indexPage -2}" >1</a></li>
                 <li th:if="${indexPage-1 >=1}" ><a th:href="@{'/time/savefinance/' + ${indexPage-1}}" th:text="${indexPage -1}" >1</a></li>
                 <li class="active"><a href="#" th:text="${indexPage}" >1</a></li>
@@ -130,6 +130,7 @@
 </div>
 
 <script type="text/javascript">
+
     $(function () {
         var currYear = (new Date()).getFullYear();
         var opt = {};
@@ -191,6 +192,14 @@
             }
         });
     }
+
+    function page(page){
+        var url = 'time/savefinance/' + page;
+        $('#div1').load(url);
+
+    }
+
+
 </script>
 
 

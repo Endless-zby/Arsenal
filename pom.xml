@@ -19,6 +19,8 @@
         <module>config</module>
         <module>testall</module>
         <module>MyTime</module>
+        <module>newplan</module>
+        <module>newplansms</module>
     </modules>
 
 

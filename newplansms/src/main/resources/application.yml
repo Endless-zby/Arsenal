@@ -1,0 +1,26 @@
+server:
+  port: 9111
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9999/eureka
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: sms
+
+  rabbitmq:
+    host: 39.96.160.110
+    password: guest
+    username: guest
+    port: 5672
+
+aliyun:
+  sms:
+    accessKeyId : LTAILeEkYHKWhrPt
+    accessKeySecret : oKfBo1QIxRKKFFeCSLl51wUPehokFT
+    templateCode: SMS_163851264
+    signName: 蓝桥电商
