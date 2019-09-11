@@ -1,7 +1,7 @@
 package club.zby.newplan.config;
 
 
-import club.zby.newplan.interceptor.JwtInterceptor;
+import club.zby.newplan.Interceptor.JwtInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -27,10 +27,11 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
          * excludePathPatterns ：加入白名单（此请求不拦截）
          * */
         registry.addInterceptor(jwtInterceptor).addPathPatterns("")
-                .excludePathPatterns(Arrays.asList("/check/**","/user/register/**","user/login/**"))
+                .excludePathPatterns(Arrays.asList("/check/**","/user/register/**","user/login/**","user/reg/**"))
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
                 .excludePathPatterns("/check/**")
-                .excludePathPatterns("/user/**");
+                .excludePathPatterns("/user/**")
+                .excludePathPatterns("/qq/**");
     }
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

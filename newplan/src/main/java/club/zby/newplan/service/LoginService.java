@@ -1,7 +1,7 @@
 package club.zby.newplan.service;
 
 import club.zby.newplan.Dao.UserDao;
-import club.zby.newplan.entity.User;
+import club.zby.newplan.Entity.User;
 import club.zby.newplan.result.Result;
 import club.zby.newplan.result.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +30,18 @@ public class LoginService {
             return new Result(true, StatusCode.OK,"登录成功",users);
         }
         return new Result(false, StatusCode.LOGINERROR,"没有找到该用户",null);
+    }
+
+    @Transactional
+    public Result checkOpenId(String openid){
+        //查询是否存在openid
+        User user = userDao.findAllByQqopenid(openid);
+        if(user == null){
+           //首次使用qq登录的用户
+        }
+
+        //密码解密验证
+
     }
 
 }

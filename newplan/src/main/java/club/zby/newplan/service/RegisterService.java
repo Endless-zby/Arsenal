@@ -2,19 +2,15 @@ package club.zby.newplan.service;
 
 
 import club.zby.newplan.Dao.UserDao;
-import club.zby.newplan.EmailTemplate.EmailTemplate;
 import club.zby.newplan.EmailTemplate.HttpEmail;
 import club.zby.newplan.config.IdWorker;
-import club.zby.newplan.entity.MailBean;
-import club.zby.newplan.entity.User;
+import club.zby.newplan.Entity.User;
 import club.zby.newplan.result.Result;
 import club.zby.newplan.result.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.context.Context;
 
 import javax.transaction.Transactional;
 import java.util.Date;

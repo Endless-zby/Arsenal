@@ -1,6 +1,6 @@
 package club.zby.newplan.Dao;
 
-import club.zby.newplan.entity.User;
+import club.zby.newplan.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
@@ -15,5 +15,6 @@ public interface UserDao extends JpaRepository<User,String>, JpaSpecificationExe
     boolean existsByPhone(String phone);
     User findByUsername(String username);
     boolean existsByUsername(String username);
+    User findAllByQqopenid(String openid);
 
 }

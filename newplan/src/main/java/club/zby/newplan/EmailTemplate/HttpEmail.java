@@ -1,9 +1,8 @@
 package club.zby.newplan.EmailTemplate;
 
 
-import club.zby.newplan.entity.MailBean;
+import club.zby.newplan.Entity.MailBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;

@@ -1,111 +1,121 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8" />
-    <title>登录界面</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" th:src="@{/static/js/jquery.min.js}"></script>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="height=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <title></title>
+    <link th:href="@{/static/css/common.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/static/css/register.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<script>
+    function send() {
+        var phone = $("#phone").val();
+        if(phone==""||phone==null){
+            alert("手机号不能为空！");
+            return false;
+        }
+        $.ajax({
+            url:"/check/sms/" + phone,
+            dataType:'json',
+            contentType: "application/json;charset=utf-8",
+            type:"get",
+            async:false,
+            success:function(Result){
 
-    <!-- 新 Bootstrap4 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
-
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
-    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
-
-    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
-    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-    <script>
-        function register() {
-            //跳转到注册界面register.html进行注册
-            // window.open("register.html", "_blank");  //_self,_parent,_top,_blank
-            var username=$("#username").val();
-            var password=$("#password").val();
-            var passwords=$("#passwords").val();
-            var email=$("#email").val();
-            var smsCode=$("#smsCode").val();
-            var phone=$("#phone").val();
-
-            if(username==""||username==null){
-                alert("用户名不能为空！");
-                return false;
-            }else if(password==""||password==null){
-                alert("密码不能为空！");
-                return false;
-            }else if (password != passwords ){
-                alert("密码不一致");
-            }else {
-                $.ajax({  // ajax登陆请求
-                    url:"/user/register/" + smsCode,
-                    dataType:'json',
-                    contentType: "application/json;charset=utf-8",
-                    type:"post",
-                    data:JSON.stringify({"username":username,
-                                         "password":password,
-                                         "email":email,
-                                         "phone":phone
-                    }),
-                    async:false,
-                    success:function(Result){
-                        if(Result.flag == true){
-                            alert(Result.message)
-                        }else {
-                            alert(Result.code + Result.message);
-                        }
-                    }
-                });
             }
+        });
+    }
 
+    function register() {
+        //跳转到注册界面register.html进行注册
+        // window.open("register.html", "_blank");  //_self,_parent,_top,_blank
+        var phone=$("#phone").val();
+        var username=phone;
+        var password=$("#password").val();
+        var passwords=$("#passwords").val();
+        var email=$("#email").val();
+        var smsCode=$("#smsCode").val();
 
-        }
-        function login() {
-            //登录逻辑
-        }
-        function send() {
-            var phone = $("#phone").val();
-            $.ajax({
-                url:"/check/sms/" + phone,
+        if(username==""||username==null){
+            alert("用户名不能为空！");
+            return false;
+        }else if(password==""||password==null){
+            alert("密码不能为空！");
+            return false;
+        }else if (password != passwords ){
+            alert("密码不一致");
+            return false;
+        }else if(phone==""||phone==null){
+            alert("手机号不能为空！");
+            return false;
+        }else if(smsCode==""||smsCode==null){
+            alert("验证码不能为空！");
+            return false;
+        }else{
+            $.ajax({  // ajax登陆请求
+                url:"/user/register/" + smsCode,
                 dataType:'json',
                 contentType: "application/json;charset=utf-8",
-                type:"get",
+                type:"post",
+                data:JSON.stringify({"username":username,
+                    "password":password,
+                    "email":email,
+                    "phone":phone
+                }),
                 async:false,
                 success:function(Result){
-
+                    if(Result.flag == true){
+                        alert(Result.message);
+                        window.open("/user/login", "_blank");
+                    }else {
+                        alert(Result.code + Result.message);
+                    }
                 }
             });
         }
-    </script>
-</head>
-<body>
-<!-- 登录表单 -->
-<form style="margin-left:500px;margin-top:200px;">
-    <div class="form-group">
-        <label for="username" stype="display:inline;">用户名：</label>
-        <input type="text" class="form-control" id="username" style="display:inline;width:300px;"autocomplete="off" />
+
+
+    }
+</script>
+    <div class="register">
+        <div class="regTop">
+            <span>用户注册</span>
+            <a class="back" href="/user/index">&lt;&nbsp;返回</a>
+        </div>
+        <div class="content">
+            <div class="point">
+                <span>注册成功后，手机号也可为登录账号。</span>
+            </div>
+            <form>
+                <div class="message">
+                    <input id="phone" type="tel" placeholder="输入手机号" pattern="[0-9]{11}" required/>
+                    <input id="email" type="email" placeholder="输入邮箱" required/>
+                    <input id="password" type="password" placeholder="请输入6-25位密码" pattern="[0-9A-Za-z]{6,25}" required/>
+                    <input id="passwords" type="password" placeholder="请再次输入密码" pattern="[0-9A-Za-z]{6,25}" required/>
+                    <input id="smsCode" type="text" placeholder="输入验证码" pattern="[0-9]{4}" required/>
+                    <select id="type" name="type">
+                        <option value="choose">选择角色</option>
+                        <option value="0">用户</option>
+                        <option value="1">管理员</option>
+                    </select>
+                    <div class="icons">
+                        <b><img th:src="@{/static/images/zc-1.jpg}" alt=""/></b>
+                        <b><img th:src="@{/static/images/zc-1.jpg}" alt=""/></b>
+                        <b><img th:src="@{/static/images/zc-2.jpg}" alt=""/></b>
+                        <b><img th:src="@{/static/images/zc-3.jpg}" alt=""/></b>
+                        <b><img th:src="@{/static/images/zc-3.jpg}" alt=""/></b>
+                    </div>
+                    <a class="code" onclick="send()" required>获取验证码</a>
+                </div>
+                <div class="agree">
+                    <input type="checkbox"/><span>&nbsp;同意&nbsp;</span><a href="">《注册协议》</a>
+                </div>
+                <button class="submit" type="submit" onclick="register()">注册</button>
+            </form>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="phone" stype="display:inline;">手机号：</label>
-        <input type="text" class="form-control" id="phone" maxlength="11" style="display:inline;width:300px;"autocomplete="off" />
-        <button type="submit" class="btn btn-primary" onclick="send()">发送验证码</button>
-    </div>
-    <div class="form-group">
-        <label for="smsCode" stype="display:inline;">验证码：</label>
-        <input type="number" class="form-control" id="smsCode" maxlength="4" style="display:inline;width:300px;"autocomplete="off" />
-    </div>
-    <div class="form-group">
-        <label for="email" stype="display:inline;">邮 箱：</label>
-        <input type="email" class="form-control" id="email" style="display:inline;width:300px;"autocomplete="off" />
-    </div>
-    <div class="form-group">
-        <label for="password" style="display:inline;">密 码：</label>
-        <input type="password" class="form-control" id="password" style="display:inline;width:300px;"autocomplete="off" />
-    </div>
-    <div class="form-group">
-        <label for="passwords" style="display:inline;">确认密码：</label>
-        <input type="password" class="form-control" id="passwords" style="display:inline;width:300px;"autocomplete="off" />
-    </div>
-    <button type="submit" class="btn btn-primary" onclick="register()">注册</button>
-</form>
 </body>
 </html>

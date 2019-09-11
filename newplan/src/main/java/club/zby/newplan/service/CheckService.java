@@ -1,7 +1,7 @@
 package club.zby.newplan.service;
 
 import club.zby.newplan.Dao.UserDao;
-import club.zby.newplan.entity.User;
+import club.zby.newplan.Entity.User;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

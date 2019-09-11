@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript" th:src="@{/static/js/jquery.min.js}"></script>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/common.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/login.css}"/>
+
+
+
+    <script>
+        function login() {
+            // window.open("register.html", "_blank");  //_self,_parent,_top,_blank
+            var username=$("#username").val();
+            var password=$("#password").val();
+
+            if(username==""||username==null){
+                alert("用户名不能为空！");
+                return false;
+            }else if(password==""||password==null){
+                alert("密码不能为空！");
+                return false;
+            }else {
+                $.ajax({  // ajax登陆请求
+                    url:"/user/login/",
+                    dataType:'json',
+                    contentType: "application/json;charset=utf-8",
+                    type:"post",
+                    data:JSON.stringify({"username":username,
+                        "password":password
+                    }),
+                    async:false,
+                    success:function(Result){
+                        if(Result.flag == true){
+                            window.open("/view/index", "_blank");
+                        }else {
+                            alert(Result.code + Result.message);
+                        }
+                    }
+                });
+            }
+
+
+        }
+    </script>
+
+
+</head>
+<body>
+    <div id="login"></div>
+    <div class="login_bg">
+        <div id="logo">
+            <img th:src="@{/static/images/logo.png}" alt=""/>
+        </div>
+        <form>
+            <div class="userName">
+                <lable>用户名：</lable>
+                <input type="text" name="username" placeholder="请输入用户名" pattern="[0-9A-Za-z]{6,16}" required/>
+            </div>
+            <div class="passWord">
+                <lable>密&nbsp;&nbsp;&nbsp;码：</lable>
+                <input type="password" name="password" placeholder="请输入密码" pattern="[0-9A-Za-z]{6,25}" required/>
+            </div>
+            <div class="choose_box">
+                <div>
+                    <input type="checkbox" checked="checked" name="checkbox"/>
+                    <lable>记住密码</lable>
+                </div>
+                <a href="user/newPassword">忘记密码</a>
+            </div>
+            <button class="login_btn" type="submit" onclick="login()">登&nbsp;&nbsp;录</button>
+        </form>
+        <div class="other_login">
+            <div class="other"></div>
+            <span>其他方式登录</span>
+            <div class="other"></div>
+        </div>
+        <div class="other_choose">
+            <a th:href="${url}">
+                <img th:src="@{/static/images/qq.png}" alt=""/>
+            </a>
+            <a href="">
+                <img th:src="@{/static/images/wx.png}" alt=""/>
+            </a>
+            <a href="">
+                <img th:src="@{/static/images/wb.png}" alt=""/>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

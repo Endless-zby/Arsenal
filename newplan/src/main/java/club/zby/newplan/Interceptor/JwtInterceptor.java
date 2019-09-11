@@ -1,4 +1,4 @@
-package club.zby.newplan.interceptor;
+package club.zby.newplan.Interceptor;
 
 
 import club.zby.newplan.config.JwtUtil;

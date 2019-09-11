@@ -2,7 +2,7 @@ package club.zby.newplan.controller;
 
 
 import club.zby.newplan.EmailTemplate.EmailTemplate;
-import club.zby.newplan.entity.User;
+import club.zby.newplan.Entity.User;
 import club.zby.newplan.result.Result;
 import club.zby.newplan.service.RegisterService;
 import io.swagger.annotations.Api;
@@ -36,6 +36,10 @@ public class ControllerRegister {
         return register;
     }
 
+    /**
+     * 跳转注册
+     * @return
+     */
     @GetMapping(value = "reg")
     public String reg(){
         return "register";

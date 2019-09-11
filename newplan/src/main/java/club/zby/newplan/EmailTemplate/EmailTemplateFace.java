@@ -1,6 +1,6 @@
 package club.zby.newplan.EmailTemplate;
 
-import club.zby.newplan.entity.MailBean;
+import club.zby.newplan.Entity.MailBean;
 import org.springframework.stereotype.Component;
 
 @Component

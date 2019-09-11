@@ -1,50 +1,55 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>test</title>
-
-<link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/common.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/login.css}"/>
     <script type="text/javascript" th:src="@{/static/js/jquery.min.js}"></script>
-    <script type="text/javascript" th:src="@{/static/js/vector.js}"></script>
-    <script type="text/javascript" th:src="@{/static/js/login2.js}"></script>
 
-
-
-
-
-
+    <style>
+        .login_bg{
+            background: #ffffff;
+        }
+        .login_btn{
+            width: 80%;
+            margin: 10%;
+        }
+        .other_login{
+            top: 70%;
+        }
+        .other_choose{
+            top: 80%;
+        }
+    </style>
 </head>
 <body>
-
-<div id="container">
-	<div id="output">
-		<div class="containerT">
-			<h1>用户登录</h1>
-			<form class="form" id="entry_form">
-				<input type="text" placeholder="用户名" id="username" name="username" >
-				<input type="password" placeholder="密码" id="password" name="password">
-				<button type="button" id="login">登录</button>
-				<div id="prompt" class="prompt"></div>
-			</form>
-		</div>
-	</div>
+<div class="login_bg">
+    <div id="logo">
+        <img th:src="@{/static/images/logo.png}" alt=""/>
+    </div>
+    <a class="login_btn" href="/user/login">登&nbsp;&nbsp;录</a>
+    <a class="login_btn" href="/user/reg">新&nbsp;&nbsp;手&nbsp;&nbsp;注&nbsp;&nbsp;册</a>
+    <div class="other_login">
+        <div class="other"></div>
+        <span>其他方式登录</span>
+        <div class="other"></div>
+    </div>
+    <div class="other_choose">
+        <a href="">
+            <img th:src="@{/static/images/qq.png}" alt=""/>
+        </a>
+        <a href="">
+            <img th:src="@{/static/images/wx.png}" alt=""/>
+        </a>
+        <a href="">
+            <img th:src="@{/static/images/wb.png}" alt=""/>
+        </a>
+    </div>
 </div>
-
-<script type="text/javascript">
-    $(function(){
-        Victor("container", "output");   //登录背景函数
-        $("#entry_name").focus();
-        $(document).keydown(function(event){
-            if(event.keyCode==13){
-                $("#entry_btn").click();
-            }
-        });
-    });
-</script>
 <div style="text-align:center;">
+
 </div>
 </body>
 </html>

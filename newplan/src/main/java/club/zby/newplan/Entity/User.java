@@ -1,4 +1,4 @@
-package club.zby.newplan.entity;
+package club.zby.newplan.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,7 +15,7 @@ public class User implements Serializable {
     private String password;
     private String phone;
     private String email;
-    private String token;
+    private String qqopenid;
     private Date regtime;   //注册日期
     private Date updatetime;    //更新日期，最近登录时间
     private String checkmethod;     //注册验证方式    0:手机 1:邮件
@@ -62,12 +62,20 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getToken() {
-        return token;
+    public String getQqopenid() {
+        return qqopenid;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setQqopenid(String qqopenid) {
+        this.qqopenid = qqopenid;
+    }
+
+    public Date getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
     }
 
     public Date getRegtime() {
@@ -110,13 +118,13 @@ public class User implements Serializable {
         this.type = type;
     }
 
-    public User(String id, String username, String password, String phone, String email, String token, Date regtime, Date update, String checkmethod, String status, String type) {
+    public User(String id, String username, String password, String phone, String email, String qqopenid, Date regtime, Date update, String checkmethod, String status, String type) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.phone = phone;
         this.email = email;
-        this.token = token;
+        this.qqopenid = qqopenid;
         this.regtime = regtime;
         this.updatetime = update;
         this.checkmethod = checkmethod;
@@ -124,12 +132,12 @@ public class User implements Serializable {
         this.type = type;
     }
 
-    public User(String username, String password, String phone, String email, String token, Date regtime, Date update, String checkmethod, String status, String type) {
+    public User(String username, String password, String phone, String email, String qqopenid, Date regtime, Date update, String checkmethod, String status, String type) {
         this.username = username;
         this.password = password;
         this.phone = phone;
         this.email = email;
-        this.token = token;
+        this.qqopenid = qqopenid;
         this.regtime = regtime;
         this.updatetime = update;
         this.checkmethod = checkmethod;

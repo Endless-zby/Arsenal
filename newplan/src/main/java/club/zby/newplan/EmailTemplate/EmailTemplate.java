@@ -1,6 +1,6 @@
 package club.zby.newplan.EmailTemplate;
 
-import club.zby.newplan.entity.MailBean;
+import club.zby.newplan.Entity.MailBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
 import javax.mail.internet.MimeMessage;
-import javax.naming.Context;
 import java.io.File;
 
 @Component

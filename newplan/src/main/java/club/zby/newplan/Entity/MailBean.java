@@ -1,4 +1,4 @@
-package club.zby.newplan.entity;
+package club.zby.newplan.Entity;
 
 import java.io.Serializable;
 

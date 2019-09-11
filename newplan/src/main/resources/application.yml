@@ -65,6 +65,21 @@ spring:
     check-template-location: true
 
     #freemarker配置
+
+
+### QQ
+constants:
+  qqAppId: 101523068
+  qqAppSecret: f821795af3380faf8099365da5333772
+  qqRedirectUrl: http://zby1.wezoz.com/qq/QQLogin
+  ### 微信
+  weCatAppId:
+  weCatAppSecret:
+  weCatRedirectUrl:
+
+
+
+
 #熔断保护机制
 feign:
   hystrix:
