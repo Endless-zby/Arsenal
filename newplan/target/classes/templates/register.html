@@ -38,6 +38,7 @@
         var passwords=$("#passwords").val();
         var email=$("#email").val();
         var smsCode=$("#smsCode").val();
+        var id=$("#id").val();
 
         if(username==""||username==null){
             alert("用户名不能为空！");
@@ -56,7 +57,7 @@
             return false;
         }else{
             $.ajax({  // ajax登陆请求
-                url:"/user/register/" + smsCode,
+                url:"/user/register/" + smsCode + "/" + id,
                 dataType:'json',
                 contentType: "application/json;charset=utf-8",
                 type:"post",
@@ -96,6 +97,7 @@
                     <input id="password" type="password" placeholder="请输入6-25位密码" pattern="[0-9A-Za-z]{6,25}" required/>
                     <input id="passwords" type="password" placeholder="请再次输入密码" pattern="[0-9A-Za-z]{6,25}" required/>
                     <input id="smsCode" type="text" placeholder="输入验证码" pattern="[0-9]{4}" required/>
+                    <input id="id" type="hidden" th:value="${id} ==''?'1':${id}"/>
                     <select id="type" name="type">
                         <option value="choose">选择角色</option>
                         <option value="0">用户</option>

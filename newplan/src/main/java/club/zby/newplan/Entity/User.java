@@ -21,6 +21,24 @@ public class User implements Serializable {
     private String checkmethod;     //注册验证方式    0:手机 1:邮件
     private String status;      //注册状态   0:未激活 1:激活
     private String type;        //账号类型   0:用户   1:管理员
+    private String photo;       //头像
+    private String nickname;       //昵称
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
     public String getId() {
         return id;
@@ -118,7 +136,7 @@ public class User implements Serializable {
         this.type = type;
     }
 
-    public User(String id, String username, String password, String phone, String email, String qqopenid, Date regtime, Date update, String checkmethod, String status, String type) {
+    public User(String id, String username, String password, String phone, String email, String qqopenid, Date regtime, Date updatetime, String checkmethod, String status, String type, String photo, String nickname) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -126,23 +144,27 @@ public class User implements Serializable {
         this.email = email;
         this.qqopenid = qqopenid;
         this.regtime = regtime;
-        this.updatetime = update;
+        this.updatetime = updatetime;
         this.checkmethod = checkmethod;
         this.status = status;
         this.type = type;
+        this.photo = photo;
+        this.nickname = nickname;
     }
 
-    public User(String username, String password, String phone, String email, String qqopenid, Date regtime, Date update, String checkmethod, String status, String type) {
+    public User(String username, String password, String phone, String email, String qqopenid, Date regtime, Date updatetime, String checkmethod, String status, String type, String photo, String nickname) {
         this.username = username;
         this.password = password;
         this.phone = phone;
         this.email = email;
         this.qqopenid = qqopenid;
         this.regtime = regtime;
-        this.updatetime = update;
+        this.updatetime = updatetime;
         this.checkmethod = checkmethod;
         this.status = status;
         this.type = type;
+        this.photo = photo;
+        this.nickname = nickname;
     }
 
     public User(String username, String password) {

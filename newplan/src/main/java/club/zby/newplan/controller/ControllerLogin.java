@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -63,28 +64,28 @@ public class ControllerLogin {
      * @return
      * @throws Exception
      */
-    @GetMapping("/QQLogin")
+    @GetMapping(value = "QQLogin")
     @ResponseBody
-    public String QQeLogin(String code,Model model) throws Exception {
-        if (code != null) {
-            return "error";
+    public ModelAndView QQeLogin(String code, Model model) throws Exception {
+
+        System.out.println(1);
+        if (code == null) {
+            return new ModelAndView("error");
         }
         //获取tocket
+        System.out.println(2);
         Map<String, Object> qqProperties = qqService.getToken(code);
         //获取openId(每个用户的openId都是唯一不变的)
         String openId = qqService.getOpenId(qqProperties);
         //根据qqopenid查找是否存在该用户
-
-        if(){
-
+        Result result = loginService.checkOpenId(openId,qqProperties);
+        if(result.isFlag()){
+            return new ModelAndView("view","data",result.getData());
+        }else if((!result.isFlag()) && result.getData() == null) {
+            return new ModelAndView("error");
+        }else {
+            return new ModelAndView("register","id",((User)result.getData()).getId());
         }
-
-        qqProperties.put("openId",openId);
-        //tocket过期刷新token
-        //Map<String, Object> refreshToken = refreshToken(qqProperties);
-        //获取数据
-        QQUserInfo	userInfo =  qqService.getUserInfo(qqProperties);
-        return userInfo;
     }
 
     /**

@@ -129,18 +129,17 @@ public class QQService  {
     /**
      * 根据token,openId获取用户信息
      */
-    public QQUserInfo getUserInfo(Map<String,Object> qqProperties) throws Exception {
+    public QQUserInfo getUserInfo(String openid,Map<String,Object> qqProperties) throws Exception {
         // 取token
         String accessToken = (String) qqProperties.get("accessToken");
-        String openId = (String) qqProperties.get("openId");
-        if (!StringUtils.isNotEmpty(accessToken) || !StringUtils.isNotEmpty(openId)) {
+        if (!StringUtils.isNotEmpty(accessToken) || !StringUtils.isNotEmpty(openid)) {
             return null;
         }
         //拼接url
         StringBuilder url = new StringBuilder("https://graph.qq.com/user/get_user_info?");
         url.append("access_token=" + accessToken);
         url.append("&oauth_consumer_key=" + constants.getQqAppId());
-        url.append("&openid=" + openId);
+        url.append("&openid=" + openid);
         // 获取qq相关数据
         String result = HttpClientUtils.get(url.toString(), "UTF-8");
         Object json = JSON.parseObject(result, QQUserInfo.class);

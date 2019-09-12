@@ -32,18 +32,23 @@ public class RegisterService {
     private HttpEmail httpEmail;
 
     @Transactional
-    public Result register(User user, String smsCode){
-
-        String id = idWorker.nextId() + "";
+    public Result register(User user, String smsCode,String idcode){
 
         String code = (String) redisTemplate.opsForValue().get("sms_" + user.getPhone());
 
         if(!smsCode.equals(code)){
-            return new Result(false, StatusCode.REPEATERROR,"手机验证超时！未通过！",user.getPhone());
+            return new Result(false, StatusCode.PHONEERROR,"手机验证超时！未通过！",user.getPhone());
         }
         if (userDao.existsByPhone(user.getPhone())){
-            return new Result(false,StatusCode.REPEATERROR,"该号码已经注册,请直接登录，或找回密码",user.getPhone());
+            return new Result(false,StatusCode.PHONEERROR,"该号码已经注册,请直接登录，或找回密码",user.getPhone());
         }
+        if(idcode != "1" && userDao.existsById(idcode)){
+            //不用邮箱验证了
+            userDao.updateInfoById(user.getUsername(), encoder.encode(user.getPassword()), user.getPhone(), user.getEmail(), new Date(), new Date(), "0", "1", "0", idcode);
+            User users = userDao.findAllById(idcode);
+            return new Result(true,StatusCode.OK,"注册成功",users);
+        }
+        String id = idWorker.nextId() + "";
         user.setId(id);
         user.setPassword(encoder.encode(user.getPassword()));   //密码加密
         user.setStatus("0");

@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Api(value = "测试注册环节，生成验证码，发送，确认，完成")
 @Controller
@@ -26,14 +27,14 @@ public class ControllerRegister {
 
     @ResponseBody
     @ApiOperation(value="注册数据", notes="验证邮箱或者电话")
-    @PostMapping(value = "register/{smsCode}",produces = "application/json;charset=utf-8")
-    public Result register(@RequestBody User user,@PathVariable("smsCode") String smsCode){
+    @PostMapping(value = "register/{smsCode}/{id}",produces = "application/json;charset=utf-8")
+    public ModelAndView register(@RequestBody User user, @PathVariable("smsCode") String smsCode, @PathVariable("id") String id){
         logger.debug("注册开始");
-        Result register = registerService.register(user, smsCode);
+        Result register = registerService.register(user, smsCode,id);
         if (register.isFlag()){
-            return register;
+            return new ModelAndView("login","data",register);
         }
-        return register;
+        return new ModelAndView("error","data",register);
     }
 
     /**

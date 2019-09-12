@@ -2,70 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/QQUserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Untlis/HttpClientUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Untlis/URLEncodeUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/QQController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/QQService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/css/common.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/css/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/bj.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/icon_list.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/open.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/qq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/qqLogin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/show.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/wb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/wx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/zc-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/zc-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/zc-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/login2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/newPassword.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/register2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/newplan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/newplan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/EmailTemplate/EmailTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/EmailTemplate/EmailTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/EmailTemplate/EmailTemplateFace.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/EmailTemplate/EmailTemplateFace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/EmailTemplate/HttpEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/EmailTemplate/HttpEmail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/QQUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/QQUserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/entity/MailBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/MailBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/interceptor/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Interceptor/JwtInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/result/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/result/StatusCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/QQService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/QQService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/RegisterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/EmailTemplate/EmailTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/EmailTemplate/EmailTemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/EmailTemplate/EmailTemplateFace.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/EmailTemplate/EmailTemplateFace.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/EmailTemplate/HttpEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/EmailTemplate/HttpEmail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/QQLogin/AfterLoginRedirectServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/QQLogin/IndexServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/QQLogin/ShuoShuoServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerLogin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/entity/MailBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/entity/MailBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/QQController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/interceptor/JwtInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/interceptor/JwtInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/CheckService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/CheckService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/result/StatusCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/result/StatusCode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/LoginService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/RegisterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -430,6 +391,10 @@
       <workItem from="1568095542618" duration="14762000" />
       <workItem from="1568164324616" duration="11791000" />
       <workItem from="1568188855949" duration="8206000" />
+      <workItem from="1568197271788" duration="106000" />
+      <workItem from="1568251314315" duration="10303000" />
+      <workItem from="1568263873137" duration="1113000" />
+      <workItem from="1568267950239" duration="10177000" />
     </task>
     <servers />
   </component>
@@ -463,38 +428,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerRegister.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="3" />
+          <line>33</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/RegisterService.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="5" />
+          <line>44</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/RegisterService.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerCheck.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/QQController.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="12" />
+          <line>48</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

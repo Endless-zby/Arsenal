@@ -9,7 +9,7 @@ public class QQUserInfo {
 	private Integer ret;
 	private String msg;
 	private Integer is_lost;
-	private String nickname;
+	private String nickname;	//昵称
 	private String gender;
 	private String province;
 	private String city;
