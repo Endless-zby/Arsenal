@@ -57,16 +57,17 @@ public class LoginService {
     @Transactional
     public Result checkOpenId(String openid, Map<String, Object> qqProperties){
         //查询是否存在openid
-        System.out.println(3);
         User user = userDao.findAllByQqopenid(openid);
         if(user == null){
-            System.out.println(4);
+            //不存在，直接注册
             //获取数据
             User users = new User();
             try {
                 QQUserInfo userInfo =  qqService.getUserInfo(openid,qqProperties);
                 users.setId(idWorker.nextId() + "");
                 users.setRegtime(new Date());
+                users.setStatus("1");
+                users.setType("0");
                 users.setUpdatetime(new Date());
                 users.setQqopenid(openid);
                 users.setPhoto(userInfo.getFigureurl_qq());
@@ -75,31 +76,32 @@ public class LoginService {
                 e.printStackTrace();
             }
             //首次使用qq登录的用户，给其注册
-
             User save = userDao.save(users);
             if(save.getId() != null){
                 System.out.println(5);
                 //结束后跳转到手机验证界面，完成注册流程
-                return new Result(false, StatusCode.PHONEERROR,"请进行手机验证",save);
+                return new Result(true, StatusCode.OK,"注册成功",save);
             }
 
         }
-        if(null != user.getQqopenid()){
-            System.out.println(6);
-            User users = userDao.findAllByQqopenid(openid);
-            if("" != user.getPhone() || null != user.getPhone()){
-                System.out.println(7);
-                //手机号验证过了，直接登录吧
-                return new Result(true, StatusCode.OK,"登录成功",users);
-            }else {
-                System.out.println(8);
-                User save = userDao.findAllByQqopenid(openid);
-                //手机还没验证过，先去验证手机号吧
-                return new Result(false, StatusCode.PHONEERROR,"请进行手机验证",users);
-            }
+//        if(null != user.getQqopenid()){
+//            System.out.println(6);
+//            User users = userDao.findAllByQqopenid(openid);
+//            if(user.getPhone() != null){
+//                System.out.println(7);
+//                //手机号验证过了，直接登录吧
+//                return new Result(true, StatusCode.OK,"登录成功",users);
+//            }else {
+//                System.out.println(8);
+//                User save = userDao.findAllByQqopenid(openid);
+//                //手机还没验证过，先去验证手机号吧
+//                return new Result(false, StatusCode.PHONEERROR,"请进行手机验证",users);
+//            }
+//        }
+        if(user != null && user.getId() != null){
+            return new Result(true, StatusCode.OK,"登录成功",user);
         }
-        System.out.println(10);
-        return new Result(false, StatusCode.ERROR,"注册失败",null);
+        return new Result(false, StatusCode.ERROR,"未知错误",null);
     }
 
 }

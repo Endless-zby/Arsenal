@@ -18,6 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,12 +32,10 @@ public class ControllerLogin {
     @Autowired
     private JwtUtil jwtUtil;
     @Autowired
-    private Constants constants;
-    @Autowired
     private QQService qqService;
 
     /**
-     * Login的主逻辑
+     * Login账号的主逻辑
      * @param user
      * @param response
      * @return
@@ -60,31 +60,29 @@ public class ControllerLogin {
 
     /**
      * qq登录回调地址（处理回调逻辑，）
+     * 有：直接登录  没有：注册后直接登录
      * @param code
      * @return
      * @throws Exception
      */
     @GetMapping(value = "QQLogin")
     @ResponseBody
-    public ModelAndView QQeLogin(String code, Model model) throws Exception {
+    public ModelAndView QQLogin(String code) throws Exception {
 
         System.out.println(1);
         if (code == null) {
             return new ModelAndView("error");
         }
         //获取tocket
-        System.out.println(2);
         Map<String, Object> qqProperties = qqService.getToken(code);
         //获取openId(每个用户的openId都是唯一不变的)
         String openId = qqService.getOpenId(qqProperties);
         //根据qqopenid查找是否存在该用户
         Result result = loginService.checkOpenId(openId,qqProperties);
-        if(result.isFlag()){
-            return new ModelAndView("view","data",result.getData());
-        }else if((!result.isFlag()) && result.getData() == null) {
-            return new ModelAndView("error");
+        if(result.isFlag()) {
+            return new ModelAndView("view", "result", result);
         }else {
-            return new ModelAndView("register","id",((User)result.getData()).getId());
+            return new ModelAndView("login");
         }
     }
 
@@ -103,26 +101,36 @@ public class ControllerLogin {
     }
 
     /**
+     * 页面跳转后的预加载
+     * @param response
+     */
+    @GetMapping(value = "getCode")
+    public void getCode(HttpServletResponse response) {
+        //三方登录状态默认为false
+        String code = qqService.getCode();
+        try {
+            PrintWriter writer = response.getWriter();
+            writer.println(code);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * 跳转index
-     * @param model
      * @return
      */
     @GetMapping(value = "index")
-    public String index(Model model){
-        // 拼接url
-        model.addAttribute("url", qqService.getCode());
+    public String index(){
         return "index";
     }
 
     /**
-     * 跳转登录
-     * @param model
+     * 跳转login
      * @return
      */
     @GetMapping(value = "login")
-    public String login(Model model){
-        // 拼接url
-        model.addAttribute("url", qqService.getCode());
+    public String login(){
         return "login";
     }
 

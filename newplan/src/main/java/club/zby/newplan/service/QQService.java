@@ -43,11 +43,9 @@ public class QQService  {
     /**
      * 获得token信息（授权，每个用户的都不一致） --> 获得token信息该步骤返回的token期限为一个月
      * (保存到Map<String,String> qqProperties)
-     * @param
-     * @author wangsong
+     * @param code
      * @return
      * @throws Exception
-     * @date 2019年6月18日 下午8:56:45
      */
     public Map<String, Object> getToken(String code) throws Exception {
         StringBuilder url = new StringBuilder();

@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 这是主页面
+
+欢迎:<span th:text="${result.data.nickname}">
+
+</span>
+<div>
+    <img th:src="${result.data.photo}">
+</div>
+
 </body>
 </html>

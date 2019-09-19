@@ -8,7 +8,24 @@
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/common.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/login.css}"/>
 
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        $(document).ready(function () {
 
+            $.ajax({
+                url:"/user/getCode",
+                type:"get",
+                dataType:"text",
+                success:function(code){
+                    if(code != null){
+                        document.getElementById("qqcode").href = code;
+                    }else{
+                        document.getElementById("qqcode").href = "www.zby123.club";
+                    }
+                }
+            })
+        });
+</script>
 
     <script>
         function login() {
@@ -24,7 +41,7 @@
                 return false;
             }else {
                 $.ajax({  // ajax登陆请求
-                    url:"/user/login/",
+                    url:"/user/login",
                     dataType:'json',
                     contentType: "application/json;charset=utf-8",
                     type:"post",
@@ -78,7 +95,7 @@
             <div class="other"></div>
         </div>
         <div class="other_choose">
-            <a th:href="${url}">
+            <a id="qqcode" href="">
                 <img th:src="@{/static/images/qq.png}" alt=""/>
             </a>
             <a href="">

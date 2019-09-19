@@ -55,10 +55,7 @@ public class CheckService {
     @Transactional
     public boolean onclock(String username){
 
-        if(userDao.existsByUsername(username)){
-            return false;
-        }
-        return true;
+        return userDao.existsByUsername(username);
     }
 
 }

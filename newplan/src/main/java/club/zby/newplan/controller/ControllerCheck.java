@@ -42,14 +42,16 @@ public class ControllerCheck {
     @ApiOperation(value="短信验证", notes="发送短信，redis缓存，默认过期时间为五分钟")
     @GetMapping("sms/{phone}")
     public void smsCheck(@PathVariable("phone") String phone, HttpServletResponse response){
-        checkService.smsService(phone);
         PrintWriter writer = null;
         try {
+            checkService.smsService(phone);
             writer = response.getWriter();
+            writer.print(true);
         } catch (IOException e) {
             e.printStackTrace();
+            writer.print(false);
         }
-        writer.print(true);
+
     }
 
     @ResponseBody
@@ -57,6 +59,7 @@ public class ControllerCheck {
     @GetMapping("username/{username}")
     public void username(@PathVariable("username") String username, HttpServletResponse response) throws IOException {
         boolean onclock = checkService.onclock(username);
+        System.out.println(onclock);
         PrintWriter writer = response.getWriter();
         writer.print(onclock);
     }

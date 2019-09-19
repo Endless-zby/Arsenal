@@ -8,6 +8,24 @@
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/login.css}"/>
     <script type="text/javascript" th:src="@{/static/js/jquery.min.js}"></script>
 
+    <script>
+
+        $(document).ready(function () {
+            $.ajax({
+                url:"/user/getCode",
+                type:"get",
+                dataType:"text",
+                success:function(code){
+                    if(code != null){
+                        document.getElementById("qqcode").href = code;
+                    }else{
+                        document.getElementById("qqcode").href = "www.zby123.club";
+                    }
+                }
+            })
+        });
+    </script>
+
     <style>
         .login_bg{
             background: #ffffff;
@@ -37,7 +55,7 @@
         <div class="other"></div>
     </div>
     <div class="other_choose">
-        <a href="">
+        <a id="qqcode" href="">
             <img th:src="@{/static/images/qq.png}" alt=""/>
         </a>
         <a href="">

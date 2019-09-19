@@ -11,7 +11,8 @@
 </head>
 <body>
 <script>
-    function send() {
+    var countdown = 60;
+    function send(obj) {
         var phone = $("#phone").val();
         if(phone==""||phone==null){
             alert("手机号不能为空！");
@@ -19,67 +20,110 @@
         }
         $.ajax({
             url:"/check/sms/" + phone,
-            dataType:'json',
+            dataType:'text',
             contentType: "application/json;charset=utf-8",
             type:"get",
-            async:false,
             success:function(Result){
-
+               if (Result){
+                   obj.onclick = "return false";
+                   obj.style.color = "#8B7D6B";
+               }else {
+                    obj.innerHTML = '点击重试！';
+               }
             }
         });
+        setTime(obj);//开始倒计时
     }
+
+
+    var countdown = 60;
+    function setTime(obj) {
+        if (countdown == 1) {
+            obj.text = '点击重试！';
+            obj.onclick = send(this);
+            countdown = 60;//60秒过后button上的文字初始化,计时器初始化;
+            return;
+        } else {
+            obj.text = "("+countdown+"s)后重新发送" ;
+            countdown--;
+        }
+        setTimeout(function() { setTime(obj) },1000) //每1000毫秒执行一次
+    }
+
+
 
     function register() {
         //跳转到注册界面register.html进行注册
         // window.open("register.html", "_blank");  //_self,_parent,_top,_blank
         var phone=$("#phone").val();
-        var username=phone;
-        var password=$("#password").val();
-        var passwords=$("#passwords").val();
-        var email=$("#email").val();
         var smsCode=$("#smsCode").val();
-        var id=$("#id").val();
+        var type=$("#type").val();
 
-        if(username==""||username==null){
-            alert("用户名不能为空！");
-            return false;
-        }else if(password==""||password==null){
-            alert("密码不能为空！");
-            return false;
-        }else if (password != passwords ){
-            alert("密码不一致");
-            return false;
-        }else if(phone==""||phone==null){
-            alert("手机号不能为空！");
-            return false;
-        }else if(smsCode==""||smsCode==null){
-            alert("验证码不能为空！");
-            return false;
-        }else{
+
             $.ajax({  // ajax登陆请求
-                url:"/user/register/" + smsCode + "/" + id,
+                url:"/user/register/" + smsCode,
                 dataType:'json',
                 contentType: "application/json;charset=utf-8",
                 type:"post",
-                data:JSON.stringify({"username":username,
-                    "password":password,
-                    "email":email,
-                    "phone":phone
+                data:JSON.stringify({
+                    "phone":phone,
+                    "type":type
                 }),
-                async:false,
-                success:function(Result){
-                    if(Result.flag == true){
-                        alert(Result.message);
-                        window.open("/user/login", "_blank");
+                success:function(register){
+                    if(register.flag){
+                        window.location.href="/user/login";//跳转login
                     }else {
-                        alert(Result.code + Result.message);
+                        document.getElementById('phonecode').innerText = '注册失败！联系管理员' ;
                     }
                 }
+
             });
-        }
+    }
+
+    function bluree(phone) {
+        $.ajax({  // ajax登陆请求
+            url:"/check/username/" + phone,
+            dataType:'text',
+            contentType: "application/json;charset=utf-8",
+            type:"get",
+            // async:false,
+            success:function(Result){
+                if(Result == 'true'){
+                    // document.getElementById('phone').style.background = '#8B2500' ;
+                    document.getElementById('phone').value = '' ;
+                    document.getElementById('phonecode').style.color = '#8B2500' ;
+                    document.getElementById('phonecode').innerText = '该号码已被注册！' ;
+                }else {
+                    // document.getElementById('phone').style.background = '#32CD32' ;
+                    document.getElementById('phonecode').style.color = '#32CD32' ;
+                    document.getElementById('phonecode').innerText = '账号校验通过' ;
+                }
+            }
+        });
 
 
     }
+
+
+    function settime(obj) {
+        if (countdown == 0) {
+            obj.removeAttribute("disabled");
+            obj.value="免费获取验证码";
+            countdown = 60;
+            return;
+        } else {
+            obj.setAttribute("disabled", true);
+            obj.value="重新发送(" + countdown + ")";
+            countdown--;
+        }
+        setTimeout(function() {
+                settime(obj) }
+            ,1000)
+    }
+
+
+
+
 </script>
     <div class="register">
         <div class="regTop">
@@ -88,34 +132,32 @@
         </div>
         <div class="content">
             <div class="point">
-                <span>注册成功后，手机号也可为登录账号。</span>
+                <span id="phonecode">使用qq登录可以更加便捷</span>
             </div>
             <form>
                 <div class="message">
-                    <input id="phone" type="tel" placeholder="输入手机号" pattern="[0-9]{11}" required/>
-                    <input id="email" type="email" placeholder="输入邮箱" required/>
-                    <input id="password" type="password" placeholder="请输入6-25位密码" pattern="[0-9A-Za-z]{6,25}" required/>
-                    <input id="passwords" type="password" placeholder="请再次输入密码" pattern="[0-9A-Za-z]{6,25}" required/>
+                    <input id="phone" type="tel" placeholder="输入手机号" pattern="[0-9]{11}" onblur="bluree(this.value)"  required/>
+<!--                    <input id="email" type="email" placeholder="输入邮箱" required/>-->
+<!--                    <input id="password" type="password" placeholder="请输入6-25位密码" pattern="[0-9A-Za-z]{6,25}" required/>-->
                     <input id="smsCode" type="text" placeholder="输入验证码" pattern="[0-9]{4}" required/>
-                    <input id="id" type="hidden" th:value="${id} ==''?'1':${id}"/>
+<!--                    <input id="id" type="hidden" th:value="${id} ==''?'1':${id}"/>-->
                     <select id="type" name="type">
-                        <option value="choose">选择角色</option>
+                        <option value="0">选择角色</option>
                         <option value="0">用户</option>
                         <option value="1">管理员</option>
                     </select>
                     <div class="icons">
                         <b><img th:src="@{/static/images/zc-1.jpg}" alt=""/></b>
-                        <b><img th:src="@{/static/images/zc-1.jpg}" alt=""/></b>
-                        <b><img th:src="@{/static/images/zc-2.jpg}" alt=""/></b>
-                        <b><img th:src="@{/static/images/zc-3.jpg}" alt=""/></b>
+                        <b></b>
                         <b><img th:src="@{/static/images/zc-3.jpg}" alt=""/></b>
                     </div>
-                    <a class="code" onclick="send()" required>获取验证码</a>
+                    <a class="code" onclick="send(this)" required>获取验证码</a>
                 </div>
                 <div class="agree">
-                    <input type="checkbox"/><span>&nbsp;同意&nbsp;</span><a href="">《注册协议》</a>
+                    <input id="box" type="checkbox"/><span>&nbsp;同意&nbsp;</span><a href="www">《注册协议》</a>
+                    <span id="agreement"></span>
                 </div>
-                <button class="submit" type="submit" onclick="register()">注册</button>
+                <button class="submit" type="submit" onclick="document.getElementById('box').checked ? register() : document.getElementById('agreement').innerText = '请同意注册协议'">注册</button>
             </form>
         </div>
     </div>
