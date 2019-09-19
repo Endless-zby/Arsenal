@@ -2,33 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/js/qrcode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/js/qrcode.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerCheck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/QQController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/QQService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/QQService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/RegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/static/images/show.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerCheck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/CheckService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/CheckService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/LoginService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/QQService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/QQService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/RegisterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/static/images/show.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/view.html" afterDir="false" />
@@ -59,9 +48,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -111,12 +100,12 @@
     <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\js" />
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\templates" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\images" />
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\css" />
       <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\controller" />
+      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\js" />
+      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\images" />
+      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\css" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="club.zby.newplan.config" />
@@ -125,12 +114,12 @@
       <recent name="com.zby" />
       <recent name="com.zby.redis.config" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\controller" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\js" />
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\templates" />
       <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\images" />
-      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\js" />
-      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\images" />
-      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\css" />
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\css" />
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -146,12 +135,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.NewApplication">
-    <configuration name="test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zby.userzuul.filter.test" />
-      <module name="zuul" />
+    <configuration name="query" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="club.zby.newplan.test.query" />
+      <module name="newplan" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zby.userzuul.filter.*" />
+          <option name="PATTERN" value="club.zby.newplan.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,12 +148,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zby.test" />
-      <module name="userinfo" />
+    <configuration name="test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zby.userzuul.filter.test" />
+      <module name="zuul" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zby.*" />
+          <option name="PATTERN" value="com.zby.userzuul.filter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -307,7 +296,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.test" />
       <item itemvalue="Application.test (1)" />
       <item itemvalue="Spring Boot.ArsenalApplication" />
       <item itemvalue="Spring Boot.EurekaApplication" />
@@ -320,14 +308,15 @@
       <item itemvalue="Spring Boot.UserinfoApplication" />
       <item itemvalue="Spring Boot.EurekaApplication (1)" />
       <item itemvalue="Spring Boot.TimeApplication" />
+      <item itemvalue="Application.query" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.query" />
         <item itemvalue="Spring Boot.EurekaApplication (1)" />
         <item itemvalue="Application.test (1)" />
         <item itemvalue="Spring Boot.TimeApplication" />
         <item itemvalue="Spring Boot.UserinfoApplication" />
-        <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -410,7 +399,8 @@
       <workItem from="1568708145545" duration="5856000" />
       <workItem from="1568768650641" duration="8947000" />
       <workItem from="1568790579753" duration="9617000" />
-      <workItem from="1568855962468" duration="11626000" />
+      <workItem from="1568855962468" duration="11886000" />
+      <workItem from="1568873610965" duration="20406000" />
     </task>
     <servers />
   </component>
@@ -443,9 +433,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerRegister.java</url>
+          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java</url>
           <line>39</line>
-          <option name="timeStamp" value="74" />
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

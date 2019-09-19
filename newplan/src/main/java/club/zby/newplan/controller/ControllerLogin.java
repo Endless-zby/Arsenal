@@ -1,8 +1,5 @@
 package club.zby.newplan.controller;
 
-import club.zby.newplan.Entity.Constants;
-import club.zby.newplan.Entity.QQUserInfo;
-import club.zby.newplan.Untlis.URLEncodeUtil;
 import club.zby.newplan.config.JwtUtil;
 import club.zby.newplan.Entity.User;
 import club.zby.newplan.result.Result;
@@ -12,7 +9,6 @@ import club.zby.newplan.service.QQService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -49,13 +45,11 @@ public class ControllerLogin {
             return result;
         }
         User userinfo = (User) result.getData();
-
         String token = jwtUtil.creatJWT(userinfo.getId(), userinfo.getUsername(), String.valueOf(userinfo.getType()));
-        HashMap map = new HashMap();
-        map.put("token",token);
-        map.put("user",userinfo);
+        System.out.println(token);
         response.setHeader("Authrorization","Bearer "+token);
-        return new Result(true,StatusCode.OK,"登录成功",map);
+        result.setData(token);
+        return result;
     }
 
     /**
@@ -67,7 +61,7 @@ public class ControllerLogin {
      */
     @GetMapping(value = "QQLogin")
     @ResponseBody
-    public ModelAndView QQLogin(String code) throws Exception {
+    public ModelAndView QQLogin(String code,HttpServletResponse response) throws Exception {
 
         System.out.println(1);
         if (code == null) {
@@ -80,6 +74,10 @@ public class ControllerLogin {
         //根据qqopenid查找是否存在该用户
         Result result = loginService.checkOpenId(openId,qqProperties);
         if(result.isFlag()) {
+            User user = (User)result.getData();
+            String token = jwtUtil.creatJWT(user.getId(), user.getUsername(), String.valueOf(user.getType()));
+            response.setHeader("Authrorization","Bearer "+token);
+            System.out.println(token);
             return new ModelAndView("view", "result", result);
         }else {
             return new ModelAndView("login");
@@ -96,8 +94,8 @@ public class ControllerLogin {
     @GetMapping(value = "test",produces = "application/json;charset=utf-8")
     public Result test(HttpServletRequest request){
         String bearer_ = request.getHeader("Authrorization");
-        String contextPath = request.getContextPath();
-        return new Result(true,StatusCode.OK,"test",contextPath);
+        System.out.println("获取到的token：" + bearer_);
+        return new Result(true,StatusCode.OK,"test",bearer_);
     }
 
     /**

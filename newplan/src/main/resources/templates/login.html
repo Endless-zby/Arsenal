@@ -33,33 +33,37 @@
             var username=$("#username").val();
             var password=$("#password").val();
 
-            if(username==""||username==null){
-                alert("用户名不能为空！");
-                return false;
-            }else if(password==""||password==null){
-                alert("密码不能为空！");
-                return false;
-            }else {
                 $.ajax({  // ajax登陆请求
                     url:"/user/login",
                     dataType:'json',
                     contentType: "application/json;charset=utf-8",
                     type:"post",
-                    data:JSON.stringify({"username":username,
+                    data:JSON.stringify({
+                        "username":username,
                         "password":password
                     }),
-                    async:false,
                     success:function(Result){
                         if(Result.flag == true){
-                            window.open("/view/index", "_blank");
+                            headerSetup(Result.data);
+                            // request.setRequestHeader("Authorization", "Bearer " +Result.data);
+                            window.location.href="/pages/mainview";//view
                         }else {
-                            alert(Result.code + Result.message);
+                            document.getElementById('password').value = '' ;
+                            return false;
                         }
                     }
                 });
+        }
+
+        function headerSetup(token)
+        {
+            var storage = window.localStorage;
+            if(!storage){
+                alert("浏览器不支持localstorage");
+                return false;
             }
-
-
+            storage.setItem("Authorization", "Bearer " +token);
+            storage.setItem("user_login_time", new Date().getTime());//保存登录时间
         }
     </script>
 
@@ -74,11 +78,11 @@
         <form>
             <div class="userName">
                 <lable>用户名：</lable>
-                <input type="text" name="username" placeholder="请输入用户名" pattern="[0-9A-Za-z]{6,16}" required/>
+                <input type="text" name="username" id="username" placeholder="请输入用户名" pattern="[0-9A-Za-z]{6,16}" required/>
             </div>
             <div class="passWord">
                 <lable>密&nbsp;&nbsp;&nbsp;码：</lable>
-                <input type="password" name="password" placeholder="请输入密码" pattern="[0-9A-Za-z]{6,25}" required/>
+                <input type="password" name="password" id="password" placeholder="请输入密码" pattern="[0-9A-Za-z]{6,25}" required/>
             </div>
             <div class="choose_box">
                 <div>
@@ -87,7 +91,7 @@
                 </div>
                 <a href="user/newPassword">忘记密码</a>
             </div>
-            <button class="login_btn" type="submit" onclick="login()">登&nbsp;&nbsp;录</button>
+            <button class="login_btn" type="submit" onclick="return login()">登&nbsp;&nbsp;录</button>
         </form>
         <div class="other_login">
             <div class="other"></div>

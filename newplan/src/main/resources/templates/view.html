@@ -3,16 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" th:src="@{/static/js/jquery.min.js}"></script>
 </head>
 <body>
 这是主页面
 
-欢迎:<span th:text="${result.data.nickname}">
+<!--欢迎:<span th:text="${result.data.nickname}">-->
 
-</span>
+<!--</span>-->
+<!--<div>-->
+<!--    <img th:src="${result.data.photo}">-->
+<!--</div>-->
+
+
+<input type="button" onclick="token()" value="token"/>
 <div>
-    <img th:src="${result.data.photo}">
+    <span id="cc">
+
+    </span>
 </div>
+<script th:inline="javascript">
+   function token() {
+       $.ajax({
+           url:"/user/test",
+           type:"get",
+           dataType:"json",
+           headers:{
+               token:localStorage.getItem("Authrorization")//将token放到请求头中
+           },
+           success:function(code){
+               document.getElementById('cc').innerText = code.toString() ;
+           }
+       });
+   }
+</script>
 
 </body>
 </html>

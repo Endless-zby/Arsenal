@@ -27,12 +27,12 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
          * excludePathPatterns ：加入白名单（此请求不拦截）
          * */
         registry.addInterceptor(jwtInterceptor).addPathPatterns("")
-                .excludePathPatterns(Arrays.asList("/check/**","/user/register/**","user/login/**","user/reg/**"))
+                .excludePathPatterns(Arrays.asList("/check/**","/user/register/**","user/login/**","user/reg/**","pages/mainview/**"))
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
                 .excludePathPatterns("/check/**")
                 .excludePathPatterns("/user/**")
                 .excludePathPatterns("/qq/**")
-                .excludePathPatterns("/wx/**");
+                .excludePathPatterns("/pages/**");
     }
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

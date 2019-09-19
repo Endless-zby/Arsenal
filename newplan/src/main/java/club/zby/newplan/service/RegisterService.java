@@ -37,11 +37,11 @@ public class RegisterService {
         String code = (String) redisTemplate.opsForValue().get("sms_" + user.getPhone());
 
         if(!smsCode.equals(code)){
-            return new Result(false, StatusCode.PHONEERROR,"手机验证超时！未通过！",user.getPhone());
+            return new Result(false, StatusCode.PHONEERROR,"验证码错误！",user.getPhone());
         }
         String id = idWorker.nextId() + "";
         user.setId(id);
-//        user.setPassword(encoder.encode(user.getPassword()));   //密码加密
+        user.setPassword(encoder.encode(user.getPassword()));   //密码加密
         user.setUsername(user.getPhone());
         if(user.getType() == "1"){
             user.setStatus("0");

@@ -58,6 +58,21 @@
         var phone=$("#phone").val();
         var smsCode=$("#smsCode").val();
         var type=$("#type").val();
+        var password=$("#password").val();
+        var passwords=$("#passwords").val();
+
+        if(document.getElementById('box').checked){
+        }else {
+            document.getElementById('agreement').innerText = '请同意注册协议';
+            return false;
+        }
+        if(password == passwords){
+        }else {
+            document.getElementById('passwords').value = '';
+            document.getElementById('phonecode').innerText = '密码不一致';
+            document.getElementById('phonecode').style.color = '#8B2500' ;
+            return false;
+        }
 
 
             $.ajax({  // ajax登陆请求
@@ -67,14 +82,16 @@
                 type:"post",
                 data:JSON.stringify({
                     "phone":phone,
-                    "type":type
+                    "type":type,
+                    "password":password
                 }),
                 success:function(register){
-                    alert(register);
                     if(register.flag){
                         window.location.href="/user/login";//跳转login
                     }else {
-                        document.getElementById('phonecode').innerText = '注册失败！联系管理员' ;
+                        document.getElementById('phonecode').innerText = '注册失败！验证码错误' ;
+                        return false;
+
                     }
                 }
 
@@ -138,8 +155,10 @@
             <form>
                 <div class="message">
                     <input id="phone" type="tel" placeholder="输入手机号" pattern="[0-9]{11}" onblur="bluree(this.value)"  required/>
+
 <!--                    <input id="email" type="email" placeholder="输入邮箱" required/>-->
-<!--                    <input id="password" type="password" placeholder="请输入6-25位密码" pattern="[0-9A-Za-z]{6,25}" required/>-->
+                    <input id="password" type="password" placeholder="请输入6-25位密码" pattern="[0-9A-Za-z]{6,25}" required/>
+                    <input id="passwords" type="password" placeholder="确认密码" pattern="[0-9A-Za-z]{6,25}" required/>
                     <input id="smsCode" type="text" placeholder="输入验证码" pattern="[0-9]{4}" required/>
 <!--                    <input id="id" type="hidden" th:value="${id} ==''?'1':${id}"/>-->
                     <select id="type" name="type">
@@ -149,16 +168,18 @@
                     </select>
                     <div class="icons">
                         <b><img th:src="@{/static/images/zc-1.jpg}" alt=""/></b>
-                        <b></b>
+                        <b><img th:src="@{/static/images/zc-3.jpg}" alt=""/></b>
+                        <b><img th:src="@{/static/images/zc-3.jpg}" alt=""/></b>
                         <b><img th:src="@{/static/images/zc-3.jpg}" alt=""/></b>
                     </div>
                     <a class="code" onclick="send(this)" required>获取验证码</a>
                 </div>
                 <div class="agree">
-                    <input id="box" type="checkbox"/><span>&nbsp;同意&nbsp;</span><a href="www">《注册协议》</a>
+                    <input id="box" type="checkbox"/><span>&nbsp;同意&nbsp;</span><a href="https://www.zby123.club/index.php/2019/09/19/%e6%b3%a8%e5%86%8c%e5%8d%8f%e8%ae%ae/">《注册协议》</a>
                     <span id="agreement"></span>
                 </div>
-                <button class="submit" type="submit" onclick="document.getElementById('box').checked ? register() : document.getElementById('agreement').innerText = '请同意注册协议'">注册</button>
+<!--                document.getElementById('box').checked ? register() : document.getElementById('agreement').innerText = '请同意注册协议'-->
+                <button class="submit" type="submit" onclick="return register()">注册</button>
             </form>
         </div>
     </div>
