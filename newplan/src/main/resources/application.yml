@@ -91,7 +91,7 @@ page:
 jwt:
   config:
     key: zby
-    expire: 3600000
+    expire: 86400000
 
 #设置一个邮件发送人
 lance:

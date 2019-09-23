@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>About</title>
+    <!--Custom Theme files-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+            },
+            false);
+        function hideURLbar(){
+            window.scrollTo(0,1);
+        }
+
+    </script>
+    <!--Custom Theme files-->
+    <link th:href="@{/static/css/style1.css}" rel="stylesheet" type="text/css" media="all" />
+    <link  th:href="@{/static/css/jquery.mmenu.all.css}"  rel="stylesheet" type="text/css"/>
+    <link th:href="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet">
+    <script th:src="@{https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js}"></script>
+    <script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <!--//Custom Theme files-->
+    <!--web-fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+    <!--js-->
+    <script th:src="@{/static/js/jquery-1.11.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/jquery.mmenu.min.all.js}"></script>
+    <!-- //js -->
+</head>
+<body>
+<div class=" mm-wrapper"  id="page">
+    <div class="push-menu ">
+        <div class="banner">
+<!--            <div class="header-top">-->
+<!--                <ul>-->
+<!--                    <li><span></span></li>-->
+<!--                    <li><span class="chrg"></span> </li>-->
+<!--                    <li>10:00 </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+            <div class="banner-text">
+                <div class="menu">
+                    <a href="#menu"><img th:src="@{/static/images/menu-icon.png}" alt=""/></a>
+                    <nav id="menu">
+                        <ul class="">
+                            <li class="menu-title">MENU</li>
+                            <li><a href="#"><span class="icons"> </span>Dashboard</a></li>
+                            <li><a href="#"><span class="icons icn2"> </span> Activity</a></li>
+                            <li><a href="#"><span class="icons icn3"> </span> Tasks</a></li>
+                            <li><a href="#"><span class="icons icn4"> </span> Gallery</a></li>
+                            <li><a href="#"><span class="icons icn5"> </span> Account settings</a></li>
+                        </ul>
+                    </nav>
+                    <script type="text/javascript">
+                        $(function() {
+                            $("#menu")
+                                .mmenu({
+                                    extensions 	: [ "theme-dark", "effect-listitems-slide" ],
+                                    iconPanels	: {
+                                        add 		: true,
+                                        visible		: 1
+                                    },
+                                    navbar		: {
+                                        add 		: false
+                                    },
+                                    counters	: true
+                                }).on( 'click',
+                                'a[href^="#/"]',
+                                function() {
+                                    alert( "Thank you for clicking, but that's a demo link." );
+                                    return false;
+                                }
+                            );
+                        });
+                    </script>
+                    <!-- /script-for-menu -->
+                </div>
+                <div class="title">
+                    <div class="title-left">
+                        <img th:src="${result.data.photo}" alt=""/>
+                    </div>
+                    <div class="title-right">
+                        <h2 th:text="${result.data.nickname}" ></h2>
+                        <h6 th:text="${result.data.gender}"></h6>
+                    </div>
+                    <div class="clear"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"> </div>
+        <div class="banner-bottom">
+            <div class="banner-bottom-left">
+                <h3>13</h3>
+                <p>Remaining tasks </p>
+            </div>
+            <div class="banner-bottom-right">
+                <h3>25</h3>
+                <p>Completed tasks</p>
+            </div>
+            <div class="clear"> </div>
+        </div>
+        <div class="work-text">
+            <h3>TODAY</h3>
+            <section class="ac-container">
+                <div>
+                    <input id="ac-1" name="accordion-1" type="checkbox" />
+                    <label for="ac-1" class="grid1"><i></i>开销记录</label>
+
+<!--                        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>-->
+                        <div class="form-group">
+                            <label for="name">名称</label>
+                            <input type="text" class="form-control" id="name" placeholder="请输入名称">
+                        </div>
+
+
+                </div>
+                <div>
+                    <input id="ac-2" name="accordion-1" type="checkbox" />
+                    <label for="ac-2" class="grid2"><i></i>Design app illustrations</label>
+                    <article class="ac-small">
+                        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
+                    </article>
+                </div>
+                <div>
+                    <input id="ac-3" name="accordion-1" type="checkbox" />
+                    <label for="ac-3" class="grid3"><i></i>Javascript training</label>
+                    <article class="ac-small">
+                        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
+                    </article>
+                </div>
+                <div>
+                    <input id="ac-4" name="accordion-1" type="checkbox" />
+                    <label for="ac-4" class="grid4"><i></i>Surprise Party for Meet</label>
+                    <article class="ac-small">
+                        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+</html>

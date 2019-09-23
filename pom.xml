@@ -21,6 +21,7 @@
         <module>MyTime</module>
         <module>newplan</module>
         <module>newplansms</module>
+        <module>newplan_finance</module>
     </modules>
 
 

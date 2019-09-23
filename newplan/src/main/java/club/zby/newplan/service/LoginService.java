@@ -40,9 +40,7 @@ public class LoginService {
         User users = userDao.findByUsername(user.getUsername());
         //密码解密验证
         if(users != null && encoder.matches(user.getPassword(),users.getPassword())){
-            if("0".equals(users.getStatus())){
-                return new Result(false, StatusCode.LOGINERROR,"账号未激活，使用邮件激活账号",users.getId());
-            }
+
             return new Result(true, StatusCode.OK,"登录成功",users);
         }
         return new Result(false, StatusCode.LOGINERROR,"没有找到该用户",null);
@@ -70,6 +68,7 @@ public class LoginService {
                 users.setType("0");
                 users.setUpdatetime(new Date());
                 users.setQqopenid(openid);
+                users.setGender(userInfo.getGender());
                 users.setPhoto(userInfo.getFigureurl_qq());
                 users.setNickname(userInfo.getNickname());
             } catch (Exception e) {
@@ -78,30 +77,36 @@ public class LoginService {
             //首次使用qq登录的用户，给其注册
             User save = userDao.save(users);
             if(save.getId() != null){
-                System.out.println(5);
                 //结束后跳转到手机验证界面，完成注册流程
                 return new Result(true, StatusCode.OK,"注册成功",save);
             }
 
         }
-//        if(null != user.getQqopenid()){
-//            System.out.println(6);
-//            User users = userDao.findAllByQqopenid(openid);
-//            if(user.getPhone() != null){
-//                System.out.println(7);
-//                //手机号验证过了，直接登录吧
-//                return new Result(true, StatusCode.OK,"登录成功",users);
-//            }else {
-//                System.out.println(8);
-//                User save = userDao.findAllByQqopenid(openid);
-//                //手机还没验证过，先去验证手机号吧
-//                return new Result(false, StatusCode.PHONEERROR,"请进行手机验证",users);
-//            }
-//        }
+
         if(user != null && user.getId() != null){
-            return new Result(true, StatusCode.OK,"登录成功",user);
+            try {
+                QQUserInfo userInfo =  qqService.getUserInfo(openid,qqProperties);
+                System.out.println(userInfo);
+                user.setPhoto(userInfo.getFigureurl_qq());
+                user.setNickname(userInfo.getNickname());
+                return new Result(true, StatusCode.OK,"登录成功",user);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
         return new Result(false, StatusCode.ERROR,"未知错误",null);
+    }
+
+
+    /**
+     * 登陆后获取userinfo
+     * @param userid
+     * @return
+     */
+    @Transactional
+    public User userInfo(String userid){
+        return  userDao.findAllById(userid);
     }
 
 }

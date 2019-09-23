@@ -6,6 +6,7 @@ import club.zby.newplan.result.Result;
 import club.zby.newplan.result.StatusCode;
 import club.zby.newplan.service.LoginService;
 import club.zby.newplan.service.QQService;
+import io.jsonwebtoken.Claims;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -47,13 +47,12 @@ public class ControllerLogin {
         User userinfo = (User) result.getData();
         String token = jwtUtil.creatJWT(userinfo.getId(), userinfo.getUsername(), String.valueOf(userinfo.getType()));
         System.out.println(token);
-        response.setHeader("Authrorization","Bearer "+token);
-        result.setData(token);
+        result.setMessage(token);
         return result;
     }
 
     /**
-     * qq登录回调地址（处理回调逻辑，）
+     * qq登录回调地址（处理回调逻辑）
      * 有：直接登录  没有：注册后直接登录
      * @param code
      * @return
@@ -76,27 +75,15 @@ public class ControllerLogin {
         if(result.isFlag()) {
             User user = (User)result.getData();
             String token = jwtUtil.creatJWT(user.getId(), user.getUsername(), String.valueOf(user.getType()));
-            response.setHeader("Authrorization","Bearer "+token);
             System.out.println(token);
-            return new ModelAndView("view", "result", result);
+            return new ModelAndView("view2", "result", result);
         }else {
             return new ModelAndView("login");
         }
     }
 
-    /**
-     * 测试token
-     * @param request
-     * @return
-     */
-    @ResponseBody
-    @ApiOperation(value="登陆后测试token", notes="查看浏览器中保存的token")
-    @GetMapping(value = "test",produces = "application/json;charset=utf-8")
-    public Result test(HttpServletRequest request){
-        String bearer_ = request.getHeader("Authrorization");
-        System.out.println("获取到的token：" + bearer_);
-        return new Result(true,StatusCode.OK,"test",bearer_);
-    }
+
+
 
     /**
      * 页面跳转后的预加载

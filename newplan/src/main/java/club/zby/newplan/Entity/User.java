@@ -16,6 +16,7 @@ public class User implements Serializable {
     private String phone;
     private String email;
     private String qqopenid;
+    private String gender;  //性别 中文---> '男'或'女'    如果为空  默认返回‘男’
     private Date regtime;   //注册日期
     private Date updatetime;    //更新日期，最近登录时间
     private String checkmethod;     //注册验证方式    0:手机 1:邮件
@@ -23,6 +24,14 @@ public class User implements Serializable {
     private String type;        //账号类型   0:用户   1:管理员
     private String photo;       //头像
     private String nickname;       //昵称
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public String getPhoto() {
         return photo;
@@ -136,13 +145,14 @@ public class User implements Serializable {
         this.type = type;
     }
 
-    public User(String id, String username, String password, String phone, String email, String qqopenid, Date regtime, Date updatetime, String checkmethod, String status, String type, String photo, String nickname) {
+    public User(String id, String username, String password, String phone, String email, String qqopenid, String gender, Date regtime, Date updatetime, String checkmethod, String status, String type, String photo, String nickname) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.phone = phone;
         this.email = email;
         this.qqopenid = qqopenid;
+        this.gender = gender;
         this.regtime = regtime;
         this.updatetime = updatetime;
         this.checkmethod = checkmethod;
@@ -152,12 +162,13 @@ public class User implements Serializable {
         this.nickname = nickname;
     }
 
-    public User(String username, String password, String phone, String email, String qqopenid, Date regtime, Date updatetime, String checkmethod, String status, String type, String photo, String nickname) {
+    public User(String username, String password, String phone, String email, String qqopenid, String gender, Date regtime, Date updatetime, String checkmethod, String status, String type, String photo, String nickname) {
         this.username = username;
         this.password = password;
         this.phone = phone;
         this.email = email;
         this.qqopenid = qqopenid;
+        this.gender = gender;
         this.regtime = regtime;
         this.updatetime = updatetime;
         this.checkmethod = checkmethod;

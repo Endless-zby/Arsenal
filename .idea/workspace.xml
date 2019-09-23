@@ -2,25 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/css/jquery.mmenu.all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/css/style1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/arrow_up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/i1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/i10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/i2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/i3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/i4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/i5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/i6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/i7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/i8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/i9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/img2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/images/menu-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/js/Chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/js/jquery-1.11.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/js/jquery.mmenu.min.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/js/responsiveslides.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/FinanceList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/ShowFinance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/view2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_finance/newplan_finance.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_finance/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Controller/FinanceConroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Dao/FinanceDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Entity/Finance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Service/FinanceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_finance/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/QQUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/QQUserInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Interceptor/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Interceptor/JwtInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Untlis/HttpClientUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Untlis/HttpClientUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/RegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/static/images/show.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/index2.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/login2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/register2.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/META-INF/newplan.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerLogin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/entity/QQUserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/entity/QQUserInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/interceptor/JwtInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/interceptor/JwtInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/LoginService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/RegisterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/static/images/show.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/index2.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/login2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/register2.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,9 +102,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -89,10 +143,10 @@
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565765160347" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/newplan/src/main/resources/static/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/newplan_finance/src/main/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -115,11 +169,11 @@
       <recent name="com.zby.redis.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Arsenal\Arsenal\newplan_finance\src\main\resources" />
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\css" />
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\images" />
       <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\js" />
       <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\templates" />
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\images" />
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\css" />
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -297,6 +351,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.test (1)" />
+      <item itemvalue="Application.query" />
       <item itemvalue="Spring Boot.ArsenalApplication" />
       <item itemvalue="Spring Boot.EurekaApplication" />
       <item itemvalue="Spring Boot.UserZuulApplication" />
@@ -308,12 +363,11 @@
       <item itemvalue="Spring Boot.UserinfoApplication" />
       <item itemvalue="Spring Boot.EurekaApplication (1)" />
       <item itemvalue="Spring Boot.TimeApplication" />
-      <item itemvalue="Application.query" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.query" />
         <item itemvalue="Spring Boot.EurekaApplication (1)" />
+        <item itemvalue="Application.query" />
         <item itemvalue="Application.test (1)" />
         <item itemvalue="Spring Boot.TimeApplication" />
         <item itemvalue="Spring Boot.UserinfoApplication" />
@@ -401,6 +455,14 @@
       <workItem from="1568790579753" duration="9617000" />
       <workItem from="1568855962468" duration="11886000" />
       <workItem from="1568873610965" duration="20406000" />
+      <workItem from="1568897007980" duration="77000" />
+      <workItem from="1568942003026" duration="11218000" />
+      <workItem from="1568960152144" duration="13420000" />
+      <workItem from="1569064246313" duration="1167000" />
+      <workItem from="1569145975648" duration="697000" />
+      <workItem from="1569201385506" duration="1316000" />
+      <workItem from="1569202729468" duration="9692000" />
+      <workItem from="1569218918146" duration="11822000" />
     </task>
     <servers />
   </component>
@@ -428,124 +490,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>commen</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

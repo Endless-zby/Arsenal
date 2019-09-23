@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>About</title>
+    <!--Custom Theme files-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+                setTimeout(hideURLbar, 0);
+            },
+            false);
+        function hideURLbar(){
+            window.scrollTo(0,1);
+        }
+
+    </script>
+    <!--Custom Theme files-->
+    <link th:href="@{/static/css/style1.css}" rel="stylesheet" type="text/css" media="all" />
+    <link  th:href="@{/static/css/jquery.mmenu.all.css}"  rel="stylesheet" type="text/css"/>
+
+    <script th:src="@{http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js}"></script>
+    <script th:src="@{http://code.highcharts.com/highcharts.js}"></script>
+    <!--//Custom Theme files-->
+    <!--web-fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+    <!--js-->
+    <script th:src="@{/static/js/jquery-1.11.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/jquery.mmenu.min.all.js}"></script>
+    <!-- //js -->
+</head>
+<body>
+<div class=" mm-wrapper"  id="page">
+    <div class="push-menu ">
+        <div class="banner">
+
+            <div class="banner-text">
+                <div class="menu">
+                    <a href="#menu"><img th:src="@{/static/images/menu-icon.png}" alt=""/></a>
+                    <nav id="menu">
+                        <ul class="">
+                            <li class="menu-title">MENU</li>
+                            <li><a href="#"><span class="icons"> </span>Dashboard</a></li>
+                            <li><a href="#"><span class="icons icn2"> </span> Activity</a></li>
+                            <li><a href="#"><span class="icons icn3"> </span> Tasks</a></li>
+                            <li><a href="#"><span class="icons icn4"> </span> Gallery</a></li>
+                            <li><a href="#"><span class="icons icn5"> </span> Account settings</a></li>
+                        </ul>
+                    </nav>
+                    <script type="text/javascript">
+                        $(function() {
+                            $("#menu")
+                                .mmenu({
+                                    extensions 	: [ "theme-dark", "effect-listitems-slide" ],
+                                    iconPanels	: {
+                                        add 		: true,
+                                        visible		: 1
+                                    },
+                                    navbar		: {
+                                        add 		: false
+                                    },
+                                    counters	: true
+                                }).on( 'click',
+                                'a[href^="#/"]',
+                                function() {
+                                    alert( "Thank you for clicking, but that's a demo link." );
+                                    return false;
+                                }
+                            );
+                        });
+                    </script>
+                    <!-- /script-for-menu -->
+                </div>
+                <div class="title">
+                    <div class="title-left">
+                        <img th:src="${result.data.photo}" alt=""/>
+                    </div>
+                    <div class="title-right">
+                        <h2 th:text="${result.data.nickname}" ></h2>
+                        <h6 th:text="${result.data.gender}"></h6>
+                    </div>
+                    <div class="clear"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"> </div>
+        <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+
+        <script language="JavaScript">
+            $(document).ready(function() {
+
+                $.ajax({
+                    url:"",
+                    dataType:'json',
+                    type:"get",
+                    success:function(Result){
+
+                        var chart = {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false
+                        };
+                        var title = {
+                            text: '消费详情'
+                        };
+                        var tooltip = {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        };
+                        var plotOptions = {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}%</b>: {point.percentage:.1f} %',
+                                    style: {
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                    }
+                                }
+                            }
+                        };
+                        var series= [{
+                            type: 'pie',
+                            name: 'Browser share',
+                            data: [
+                                ['Firefox',   45.0],
+                                ['IE',       26.8],
+                                {
+                                    name: 'Chrome',
+                                    y: 12.8,
+                                    sliced: true,
+                                    selected: true
+                                },
+                                ['Safari',    8.5],
+                                ['Opera',     6.2],
+                                ['Others',   0.7]
+                            ]
+                        }];
+
+                        var json = {};
+                        json.chart = chart;
+                        json.title = title;
+                        json.tooltip = tooltip;
+                        json.series = series;
+                        json.plotOptions = plotOptions;
+                        $('#container').highcharts(json);
+
+                    },
+                    error:function (Result) {
+
+                    }
+                });
+
+
+            });
+        </script>
+    </div>
+</div>
+</body>
+</html>

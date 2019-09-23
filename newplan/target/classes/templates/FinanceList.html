@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>About</title>
+    <!--Custom Theme files-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+                setTimeout(hideURLbar, 0);
+            },
+            false);
+        function hideURLbar(){
+            window.scrollTo(0,1);
+        }
+
+    </script>
+    <!--Custom Theme files-->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link th:href="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script th:src="@{https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js}"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <link th:href="@{/static/css/style1.css}" rel="stylesheet" type="text/css" media="all" />
+    <link  th:href="@{/static/css/jquery.mmenu.all.css}"  rel="stylesheet" type="text/css"/>
+    <!--//Custom Theme files-->
+    <!--web-fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+    <!--js-->
+    <script th:src="@{/static/js/jquery-1.11.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/jquery.mmenu.min.all.js}"></script>
+    <!-- //js -->
+</head>
+<body>
+<div class=" mm-wrapper"  id="page">
+    <div class="push-menu ">
+        <div class="banner">
+
+            <div class="banner-text">
+                <div class="menu">
+                    <a href="#menu"><img th:src="@{/static/images/menu-icon.png}" alt=""/></a>
+                    <nav id="menu">
+                        <ul class="">
+                            <li class="menu-title">MENU</li>
+                            <li><a href="#"><span class="icons"> </span>Dashboard</a></li>
+                            <li><a href="#"><span class="icons icn2"> </span> Activity</a></li>
+                            <li><a href="#"><span class="icons icn3"> </span> Tasks</a></li>
+                            <li><a href="#"><span class="icons icn4"> </span> Gallery</a></li>
+                            <li><a href="#"><span class="icons icn5"> </span> Account settings</a></li>
+                        </ul>
+                    </nav>
+                    <script type="text/javascript">
+                        $(function() {
+                            $("#menu")
+                                .mmenu({
+                                    extensions 	: [ "theme-dark", "effect-listitems-slide" ],
+                                    iconPanels	: {
+                                        add 		: true,
+                                        visible		: 1
+                                    },
+                                    navbar		: {
+                                        add 		: false
+                                    },
+                                    counters	: true
+                                }).on( 'click',
+                                'a[href^="#/"]',
+                                function() {
+                                    alert( "Thank you for clicking, but that's a demo link." );
+                                    return false;
+                                }
+                            );
+                        });
+                    </script>
+                    <!-- /script-for-menu -->
+                </div>
+                <div class="title">
+<!--                    <div class="title-left">-->
+<!--                        <img th:src="${result.data.photo}" alt=""/>-->
+<!--                    </div>-->
+<!--                    <div class="title-right">-->
+<!--                        <h2 th:text="${result.data.nickname}" ></h2>-->
+<!--                        <h6 th:text="${result.data.gender}"></h6>-->
+<!--                    </div>-->
+<!--                    <div class="clear"> </div>-->
+                </div>
+            </div>
+        </div>
+
+
+
+            <form role="form">
+                <div id="div1" class="form-group">
+                    <select id="name" name="name" class="form-control">
+                        <option value="展玮璇">展玮璇</option>
+                        <option value="赵博雅">赵博雅</option>
+                    </select>
+                    <br/>
+                    <!--<label name = "purposes"></label>-->
+                    <select id="purpose" name="purpose" class="form-control">
+                        <option value="吃饭">吃饭</option>
+                        <option value="其他">其他</option>
+                        <option value="交通">交通</option>
+                        <option value="饮水">饮水</option>
+                        <option value="约会">约会</option>
+                        <option value="电费">电费</option>
+                        <option value="天然气">天然气</option>
+                        <option value="房租">房租</option>
+                        <option value="生活用水">生活用水</option>
+                    </select>
+                    <br/>
+                    <div class="input-group">
+                        <span class="input-group-addon">金额</span>
+                        <input type="text" name="money" id="money" class="form-control">
+                        <span class="input-group-addon">.00</span>
+                    </div>
+                    <br/>
+                    <select id="status" name="status" class="form-control">
+                        <option value="0">支出</option>
+                        <option value="1">收入</option>
+                    </select>
+                    <br/>
+                    <div class="input-group">
+                        <span class="input-group-addon">日期</span>
+                        <input class="form-control" name="appDateTime" id="appDateTime" type="text">
+                        <span class="input-group-addon">clock</span>
+                    </div>
+
+
+                    <br/>
+                    <div class="form-group">
+                        <label>备注</label>
+                        <textarea name="remark" class="form-control" rows="3"></textarea>
+                    </div>
+                    <br/>
+                    <button type="button" id="onclick1" class="btn btn-success">提交</button>
+                    <button type="button" id="onclick2" class="btn btn-info">查看</button>
+                    <br/>
+                    <table id="tableid" class="table">
+                        <caption>详细记录</caption>
+                        <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>ID</th>
+                            <th>是谁</th>
+                            <th>类型</th>
+                            <th>用途</th>
+                            <th>金额</th>
+                            <th>备注</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="active" >
+                            <td th:text="12"></td>
+                            <td th:text="5"></td>
+                            <td th:text="赵博雅" style="color: mediumslateblue"></td>
+                            <td th:text="支出" style="color: brown"></td>
+                            <td th:text="55"></td>
+                            <td th:text="5"></td>
+                            <td th:text="55"></td>
+                            <td><button th:value="1223456444" name="delete" th:id="delete" onclick="deletes(this.value)" type="button" class="btn btn-danger btn-sm">删除</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+
+
+
+
+
+    </div>
+</div>
+</body>
+</html>

@@ -43,7 +43,7 @@ public class RegisterService {
         user.setId(id);
         user.setPassword(encoder.encode(user.getPassword()));   //密码加密
         user.setUsername(user.getPhone());
-        if(user.getType() == "1"){
+        if("1".equals(user.getType())){
             user.setStatus("0");
         }else {
             user.setStatus("1");

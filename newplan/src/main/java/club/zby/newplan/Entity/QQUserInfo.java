@@ -187,4 +187,29 @@ public class QQUserInfo {
 		this.is_yellow_year_vip = is_yellow_year_vip;
 	}
 
+	@Override
+	public String toString() {
+		return "QQUserInfo{" +
+				"ret=" + ret +
+				", msg='" + msg + '\'' +
+				", is_lost=" + is_lost +
+				", nickname='" + nickname + '\'' +
+				", gender='" + gender + '\'' +
+				", province='" + province + '\'' +
+				", city='" + city + '\'' +
+				", year='" + year + '\'' +
+				", constellation='" + constellation + '\'' +
+				", figureurl='" + figureurl + '\'' +
+				", figureurl_1='" + figureurl_1 + '\'' +
+				", figureurl_2='" + figureurl_2 + '\'' +
+				", figureurl_qq='" + figureurl_qq + '\'' +
+				", figureurl_qq_1='" + figureurl_qq_1 + '\'' +
+				", figureurl_qq_2='" + figureurl_qq_2 + '\'' +
+				", is_yellow_vip='" + is_yellow_vip + '\'' +
+				", vip='" + vip + '\'' +
+				", yellow_vip_level='" + yellow_vip_level + '\'' +
+				", level='" + level + '\'' +
+				", is_yellow_year_vip='" + is_yellow_year_vip + '\'' +
+				'}';
+	}
 }

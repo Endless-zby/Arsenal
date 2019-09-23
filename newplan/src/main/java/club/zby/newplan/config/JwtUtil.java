@@ -52,6 +52,7 @@ public class JwtUtil {
              claims = Jwts.parser().setSigningKey(key.getBytes()).parseClaimsJws(token).getBody();
         }catch(ExpiredJwtException e){
             System.out.println("超时...");
+            return null;
         }catch(Exception e){
             e.printStackTrace();
         }

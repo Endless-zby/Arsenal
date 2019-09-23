@@ -19,9 +19,10 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
     //处理权限问题：给request请求贴角色标签 （admin或user）
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("拦截器...");
+        System.out.println("拦截校验");
         //前缀 + token
         String authrorization = request.getHeader("Authrorization");
+        System.out.println("拦截器中的token打印："+authrorization);
         //abcdsfdfs
         if (authrorization != null &&  authrorization.startsWith("Bearer ")) {
             //获取token
@@ -32,17 +33,21 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
                 //管理员
                if("1".equals(claims.get("roles"))   )      {
                    request.setAttribute("admin_claims" ,claims );
+                   request.setAttribute("userid",claims.get("jti"));
+                   System.out.println("拦截器中的info打印："+claims +"+++" + claims.get("iss"));
                 //普通
                }else if( "0".equals(claims.get("roles")) ){
                    request.setAttribute("user_claims" ,claims );
-               }else
-               {
+                   request.setAttribute("userid",claims.get("jti"));
+                   System.out.println("拦截器中的info打印："+claims +"+++" + claims.get("iss"));
+               }else {
                     throw new RuntimeException("角色有误！") ;
                }
+                request.setAttribute("status" ,"200" );
             }
-            return true ;
+            return true;
         }
-
-        return true ;//放行
+        request.setAttribute("status" ,"404" );
+        return true;//放行
     }
 }

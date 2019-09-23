@@ -44,9 +44,11 @@
                     }),
                     success:function(Result){
                         if(Result.flag == true){
-                            headerSetup(Result.data);
+                            headerSetup(Result.message);
                             // request.setRequestHeader("Authorization", "Bearer " +Result.data);
-                            window.location.href="/pages/mainview";//view
+                            alert("看放进去没：" + window.localStorage.getItem("Authrorization"));
+                            window.location.href="/pages/mainview/" + Result.data.id;//view
+
                         }else {
                             document.getElementById('password').value = '' ;
                             return false;
@@ -62,7 +64,7 @@
                 alert("浏览器不支持localstorage");
                 return false;
             }
-            storage.setItem("Authorization", "Bearer " +token);
+            storage.setItem("Authrorization", "Bearer " +token);
             storage.setItem("user_login_time", new Date().getTime());//保存登录时间
         }
     </script>
