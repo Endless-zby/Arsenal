@@ -26,12 +26,13 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
          * addPathPatterns ：添加拦截请求路径（/** ：拦截一切请求）
          * excludePathPatterns ：加入白名单（此请求不拦截）
          * */
-        registry.addInterceptor(jwtInterceptor).addPathPatterns("/pages/mainview")
+        registry.addInterceptor(jwtInterceptor).addPathPatterns("/pages/mainview/**")
                 .excludePathPatterns(Arrays.asList("/check/**","/user/register/**","/user/login/**","/user/reg/**"))
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
                 .excludePathPatterns("/check/**")
                 .excludePathPatterns("/user/**")
                 .excludePathPatterns("/qq/**");
+
 //                .excludePathPatterns("/pages/view2");
     }
     @Override

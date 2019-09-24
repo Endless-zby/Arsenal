@@ -83,11 +83,6 @@
 
             <form role="form">
                 <div id="div1" class="form-group">
-                    <select id="name" name="name" class="form-control">
-                        <option value="展玮璇">展玮璇</option>
-                        <option value="赵博雅">赵博雅</option>
-                    </select>
-                    <br/>
                     <!--<label name = "purposes"></label>-->
                     <select id="purpose" name="purpose" class="form-control">
                         <option value="吃饭">吃饭</option>
@@ -106,11 +101,6 @@
                         <input type="text" name="money" id="money" class="form-control">
                         <span class="input-group-addon">.00</span>
                     </div>
-                    <br/>
-                    <select id="status" name="status" class="form-control">
-                        <option value="0">支出</option>
-                        <option value="1">收入</option>
-                    </select>
                     <br/>
                     <div class="input-group">
                         <span class="input-group-addon">日期</span>
@@ -132,23 +122,17 @@
                         <caption>详细记录</caption>
                         <thead>
                         <tr>
-
-
-                            <th>是谁</th>
-                            <th>类型</th>
                             <th>用途</th>
                             <th>金额</th>
+                            <th>日期</th>
                             <th>备注</th>
                             <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr class="active" >
-
-
-                            <td th:text="赵博雅" style="color: mediumslateblue"></td>
-                            <td th:text="支出" style="color: brown"></td>
                             <td th:text="55"></td>
+                            <td th:text="5"></td>
                             <td th:text="5"></td>
                             <td th:text="55"></td>
                             <td><button th:value="1223456444" name="delete" th:id="delete" onclick="deletes(this.value)" type="button" class="btn btn-danger btn-sm">删除</button></td>

@@ -9,14 +9,14 @@
         <module name="MyTime" />
         <module name="zuul" />
         <module name="newplan_finance" />
-        <module name="armstype" />
         <module name="newplan" />
-        <module name="config" />
         <module name="commen" />
-        <module name="userinfo" />
         <module name="newplansms" />
-        <module name="projecteureka" />
+        <module name="userinfo" />
         <module name="testall" />
+        <module name="armstype" />
+        <module name="projecteureka" />
+        <module name="config" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -28,7 +28,7 @@
       <module name="eureka" target="1.5" />
       <module name="MyTime" target="1.8" />
       <module name="newplan" target="1.8" />
-      <module name="newplan_finance" target="1.5" />
+      <module name="newplan_finance" target="6" />
       <module name="newplansms" target="1.5" />
       <module name="projecteureka" target="1.5" />
       <module name="testall" target="1.8" />

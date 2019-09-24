@@ -1,4 +1,4 @@
-package club.zby.finance.Entity;
+package club.zby.newplan.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -33,7 +33,6 @@ public class Finance implements Serializable {
         this.tag1 = tag1;
         this.time = time;
     }
-
 
     public Finance() {
 
