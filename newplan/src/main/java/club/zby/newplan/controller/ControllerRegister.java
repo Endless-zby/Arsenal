@@ -4,6 +4,7 @@ package club.zby.newplan.controller;
 import club.zby.newplan.EmailTemplate.EmailTemplate;
 import club.zby.newplan.Entity.User;
 import club.zby.newplan.result.Result;
+import club.zby.newplan.result.StatusCode;
 import club.zby.newplan.service.QQService;
 import club.zby.newplan.service.RegisterService;
 import io.swagger.annotations.Api;
@@ -41,7 +42,7 @@ public class ControllerRegister {
         if(register.isFlag()){
             return register;
         }else {
-            return new Result(false,20001,"失败",null);
+            return new Result(false, StatusCode.RESERROR,"失败",null);
         }
     }
 

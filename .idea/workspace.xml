@@ -2,26 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/Finance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/FinanceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/FinanceClientImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/IdWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/StatusCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/FinanceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/FinanceList.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/FinanceList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/FinanceList.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/FinanceList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/newplan_finance.iml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/newplan_finance.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/FinanceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/FinanceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/FinanceClientImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/FinanceClientImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Controller/FinanceConroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Controller/FinanceConroller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Entity/Finance.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Entity/Finance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Dao/FinanceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Dao/FinanceDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Service/FinanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Service/FinanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Controller/FinanceConroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Controller/FinanceConroller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Dao/FinanceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Dao/FinanceDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Service/FinanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Service/FinanceService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +127,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.NewApplication">
+  <component name="RunManager" selected="Spring Boot.FinanceApplication">
     <configuration name="query" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="club.zby.newplan.test.query" />
       <module name="newplan" />
@@ -420,7 +412,7 @@
       <workItem from="1569218918146" duration="13484000" />
       <workItem from="1569288278353" duration="8511000" />
       <workItem from="1569296838932" duration="1968000" />
-      <workItem from="1569306179488" duration="8370000" />
+      <workItem from="1569306179488" duration="12838000" />
     </task>
     <servers />
   </component>
@@ -454,12 +446,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java</url>
-          <line>24</line>
+          <line>25</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java</url>
-          <line>28</line>
+          <line>29</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -474,17 +466,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java</url>
-          <line>36</line>
+          <line>37</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java</url>
-          <line>39</line>
+          <line>40</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java</url>
-          <line>40</line>
+          <line>41</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

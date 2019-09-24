@@ -31,7 +31,7 @@ public class ControllerView {
     @GetMapping(value = "mainview/{userid}")
     public ModelAndView viewIndex(@PathVariable("userid") String userid){
         User user = loginService.userInfo(userid);
-        return new ModelAndView("view2", "result", new Result(true,20000,"查询成功",user));
+        return new ModelAndView("view2", "result", new Result(true,StatusCode.OK,"查询成功",user));
     }
 
     /**

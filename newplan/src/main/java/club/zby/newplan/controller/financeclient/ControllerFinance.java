@@ -2,6 +2,7 @@ package club.zby.newplan.controller.financeclient;
 
 import club.zby.newplan.Entity.Finance;
 import club.zby.newplan.result.Result;
+import club.zby.newplan.result.StatusCode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class ControllerFinance {
     public Result finAllByWho(@PathVariable("who") String who,HttpServletRequest request){
         String status = (String) request.getAttribute("status");
         if("404".equals(status) || status == null){
-            return new Result(false,10000,"滚去登录",null);
+            return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
         }
         return financeClient.findAllByWho(who);
     }
@@ -35,9 +36,20 @@ public class ControllerFinance {
     public Result saveFinance(@RequestBody Finance finance,HttpServletRequest request){
         String status = (String) request.getAttribute("status");
         if("404".equals(status) || status == null){
-            return new Result(false,10000,"滚去登录",null);
+            return new Result(false,StatusCode.LOGINERROR,"登录异常",null);
         }
         finance.setWho((String) request.getAttribute("userid"));
         return financeClient.saveFinance(finance);
+    }
+
+    @ResponseBody
+    @ApiOperation(value="开销", notes="删除")
+    @PostMapping(value = "delfinance/{id}")
+    public Result delFinance(@PathVariable("id") String id,HttpServletRequest request){
+        String status = (String) request.getAttribute("status");
+        if("404".equals(status) || status == null){
+            return new Result(false,StatusCode.LOGINERROR,"登录异常",null);
+        }
+        return financeClient.delFinance(id);
     }
 }

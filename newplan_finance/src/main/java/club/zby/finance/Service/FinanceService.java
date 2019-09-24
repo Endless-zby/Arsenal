@@ -34,4 +34,13 @@ public class FinanceService {
         return financeDao.save(finance);
     }
 
+    /**
+     * 删除记录
+     * @param id
+     */
+    @Transactional
+    public int delFinance(String id){
+        return financeDao.delById(id);
+    }
+
 }
