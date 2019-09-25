@@ -34,12 +34,12 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
                if("1".equals(claims.get("roles"))   )      {
                    request.setAttribute("admin_claims" ,claims );
                    request.setAttribute("userid",claims.get("jti"));
-                   System.out.println("拦截器中的info打印："+claims +"+++" + claims.get("iss"));
+                   System.out.println("拦截器中的info打印："+claims +"+++" + claims.get("jti"));
                 //普通
                }else if( "0".equals(claims.get("roles")) ){
                    request.setAttribute("user_claims" ,claims );
                    request.setAttribute("userid",claims.get("jti"));
-                   System.out.println("拦截器中的info打印："+claims +"+++" + claims.get("iss"));
+                   System.out.println("拦截器中的info打印："+claims +"+++" + claims.get("jti"));
                }else {
                     throw new RuntimeException("角色有误！") ;
                }

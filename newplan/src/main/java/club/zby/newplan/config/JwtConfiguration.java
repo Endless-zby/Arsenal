@@ -29,6 +29,7 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
         registry.addInterceptor(jwtInterceptor)
                 .addPathPatterns("/pages/mainview/**")
                 .addPathPatterns("/ExperssHandle/**")
+                .addPathPatterns("/pages/express")
 
 
                 .excludePathPatterns(Arrays.asList("/check/**","/user/register/**","/user/login/**","/user/reg/**"))

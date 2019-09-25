@@ -38,7 +38,7 @@ public class ControllerExpress {
     }
 
     @ResponseBody
-    @ApiOperation(value="快递", notes="即时查询")
+    @ApiOperation(value="快递", notes="单号识别")
     @GetMapping("getOrderShipperCode")
     public Result getOrderShipperCode(@RequestParam("shipSn") String shipSn, HttpServletRequest request){
         String status = (String) request.getAttribute("status");
@@ -48,6 +48,9 @@ public class ControllerExpress {
         return expressClient.getOrderShipperCode(shipSn);
 
     }
+
+
+
 
 
 }

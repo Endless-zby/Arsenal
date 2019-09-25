@@ -32,7 +32,22 @@
     <!-- //js -->
 </head>
 <body>
+<script>
+
+    $(document).ready(function () {
+        var token = $("#tokenid").val();
+        var storage = window.localStorage;
+        if(!storage){
+            alert("浏览器不支持localstorage");
+            return false;
+        }
+        storage.setItem("Authrorization", "Bearer " +token);
+        storage.setItem("user_login_time", new Date().getTime());//保存登录时间
+    });
+</script>
+
 <div class=" mm-wrapper"  id="page">
+    <input id="tokenid" type="hidden" th:value="${result.message} ">
     <div class="push-menu ">
         <div class="banner">
 <!--            <div class="header-top">-->
@@ -48,9 +63,9 @@
                     <nav id="menu">
                         <ul class="">
                             <li class="menu-title">MENU</li>
-                            <li><a href="#"><span class="icons"> </span>Dashboard</a></li>
-                            <li><a href="#"><span class="icons icn2"> </span> Activity</a></li>
-                            <li><a href="#"><span class="icons icn3"> </span> Tasks</a></li>
+                            <li><a href="/user/index"><span class="icons"> </span> 登录</a></li>
+                            <li><a href="/pages/express" ><span class="icons icn2"> </span> 寄快递</a></li>
+                            <li><a href="#"><span class="icons icn3"> </span> 查快递</a></li>
                             <li><a href="#"><span class="icons icn4"> </span> Gallery</a></li>
                             <li><a href="#"><span class="icons icn5"> </span> Account settings</a></li>
                         </ul>
@@ -81,11 +96,12 @@
                 </div>
                 <div class="title">
                     <div class="title-left">
-                        <img th:src="${result.data.photo}" alt=""/>
+
+                        <img th:src="${result.data.photo} == '' ? @{/static/images/loginerror.png} : ${result.data.photo}" alt=""/>
                     </div>
                     <div class="title-right">
-                        <h2 th:text="${result.data.nickname}" ></h2>
-                        <h6 th:text="${result.data.gender}"></h6>
+                        <h2 th:text="${result.data.nickname} == '' ? '昵称' : ${result.data.nickname}"></h2>
+                        <h6 th:text="${result.data.gender} == '' ? '' : ${result.data.gender}"></h6>
                     </div>
                     <div class="clear"> </div>
                 </div>

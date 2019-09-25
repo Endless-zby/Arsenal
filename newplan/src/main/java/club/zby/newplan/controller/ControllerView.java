@@ -44,6 +44,17 @@ public class ControllerView {
         return "view2";
     }
 
+    /**
+     * 发快递
+     * 权限：所有人都可以使用该功能，不需要校验权限
+     * @param request
+     * @return
+     */
+    @GetMapping(value = "express")
+    public String express(HttpServletRequest request){
+        return "express";
+    }
+
 
     @GetMapping(value = "FinanceList")
     public String er(HttpServletRequest request){

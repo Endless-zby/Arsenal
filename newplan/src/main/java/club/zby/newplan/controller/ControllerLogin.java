@@ -76,6 +76,7 @@ public class ControllerLogin {
             User user = (User)result.getData();
             String token = jwtUtil.creatJWT(user.getId(), user.getUsername(), String.valueOf(user.getType()));
             System.out.println(token);
+            result.setMessage(token);
             return new ModelAndView("view2", "result", result);
         }else {
             return new ModelAndView("login");

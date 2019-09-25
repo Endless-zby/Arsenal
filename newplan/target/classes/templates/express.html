@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>寄快递</title>
+    <link rel="stylesheet" href="http://www.kdniao.com/OutDemo/KDNWidget/KDNWidget.css" />
+</head>
+<body>
+<script th:src="@{http://www.kdniao.com/OutDemo/KDNWidget/KDNWidget.js}"></script>
+
+<script>
+    window.onload = function () {
+        KDNWidget.run({
+            "serviceType": "E"
+        })
+    }
+</script>
+</body>
+</html>
