@@ -7,6 +7,8 @@
     <title></title>
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/common.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/login.css}"/>
+    <link th:href="@{https://www.huangwx.cn/css/sweetalert.css}" rel="stylesheet">
+    <script th:src="@{https://www.huangwx.cn/js/sweetalert-dev.js}" ></script>
 
     <script th:inline="javascript">
         /*<![CDATA[*/
@@ -46,7 +48,8 @@
                         if(Result.flag == true){
                             headerSetup(Result.message);
                             // request.setRequestHeader("Authorization", "Bearer " +Result.data);
-                            alert("看放进去没：" + window.localStorage.getItem("Authrorization"));
+                            // alert("看放进去没：" + window.localStorage.getItem("Authrorization"));
+                            swal("测试阶段，看一下token！",window.localStorage.getItem("Authrorization"));
                             window.location.href="/pages/mainview/" + Result.data.id;//view
 
                         }else {
@@ -61,7 +64,8 @@
         {
             var storage = window.localStorage;
             if(!storage){
-                alert("浏览器不支持localstorage");
+                // alert("浏览器不支持localstorage");
+                swal("完蛋","您的浏览器不支持Storage","error");
                 return false;
             }
             storage.setItem("Authrorization", "Bearer " +token);

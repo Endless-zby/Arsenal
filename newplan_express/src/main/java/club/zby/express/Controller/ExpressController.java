@@ -4,6 +4,8 @@ import club.zby.express.Config.Result;
 import club.zby.express.Config.StatusCode;
 import club.zby.express.Entity.Express;
 import club.zby.express.Untlis.ExpressUntlis;
+import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -45,9 +47,10 @@ public class ExpressController {
         params.put("DataType", "2");    //请求、返回数据类型：2-json；
 
         String result=expressUntlis.sendPost(express.getReqURL(), params);
-        System.out.println("返回报文：" + result);
-        //根据公司业务处理返回的信息......
-        return new Result(true, StatusCode.OK,"查询结果集",result);
+        Object parse = JSON.parse(result);
+        System.out.println("返回报文：" + parse);
+
+        return new Result(true, StatusCode.OK,"查询结果集",parse);
     }
 
 
@@ -69,8 +72,10 @@ public class ExpressController {
         params.put("DataType", "2");
 
         String result=expressUntlis.sendPost(express.getReqURL(), params);
-        //根据公司业务处理返回的信息......
-        return new Result(true, StatusCode.OK,"查询结果集",result);
+        Object parse = JSON.parse(result);
+        System.out.println("返回报文：" + parse);
+
+        return new Result(true, StatusCode.OK,"查询结果集",parse);
     }
 
 

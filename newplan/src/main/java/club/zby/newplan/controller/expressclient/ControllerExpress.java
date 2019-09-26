@@ -30,6 +30,7 @@ public class ControllerExpress {
     @ApiOperation(value="快递", notes="即时查询")
     @GetMapping("getOrderTracesByJson")
     public Result getOrderTracesByJson(@RequestParam("shipChannel") String shipChannel, @RequestParam("shipSn") String shipSn, HttpServletRequest request){
+        System.out.println(222);
         String status = (String) request.getAttribute("status");
         if("404".equals(status) || status == null){
             return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
@@ -41,6 +42,7 @@ public class ControllerExpress {
     @ApiOperation(value="快递", notes="单号识别")
     @GetMapping("getOrderShipperCode")
     public Result getOrderShipperCode(@RequestParam("shipSn") String shipSn, HttpServletRequest request){
+        System.out.println(111);
         String status = (String) request.getAttribute("status");
         if("404".equals(status) || status == null){
             return new Result(false, StatusCode.LOGINERROR,"登录异常",null);

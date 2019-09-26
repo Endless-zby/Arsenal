@@ -55,6 +55,17 @@ public class ControllerView {
         return "express";
     }
 
+    /**
+     * 查询快递
+     * 目前测试阶段需要权限，用来证明用户已经登录
+     * @return
+     */
+    @GetMapping(value = "SelectExpress")
+    public String SelectExpress(){
+        return "SelectExpress";
+    }
+
+
 
     @GetMapping(value = "FinanceList")
     public String er(HttpServletRequest request){

@@ -17,6 +17,8 @@
 
     </script>
     <!--Custom Theme files-->
+    <link th:href="@{https://www.huangwx.cn/css/sweetalert.css}" rel="stylesheet">
+    <script th:src="@{https://www.huangwx.cn/js/sweetalert-dev.js}" ></script>
     <link th:href="@{/static/css/style1.css}" rel="stylesheet" type="text/css" media="all" />
     <link  th:href="@{/static/css/jquery.mmenu.all.css}"  rel="stylesheet" type="text/css"/>
     <link th:href="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet">
@@ -27,7 +29,8 @@
     <link href='https://fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'>
     <!--//web-fonts-->
     <!--js-->
-    <script th:src="@{/static/js/jquery-1.11.1.min.js}"></script>
+<!--    <script th:src="@{/static/js/jquery-1.11.1.min.js}"></script>-->
+    <script th:src="@{http://libs.baidu.com/jquery/2.0.0/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/static/js/jquery.mmenu.min.all.js}"></script>
     <!-- //js -->
 </head>
@@ -37,8 +40,11 @@
     $(document).ready(function () {
         var token = $("#tokenid").val();
         var storage = window.localStorage;
+        if(token == '' || token == null){
+            return false;
+        }
         if(!storage){
-            alert("浏览器不支持localstorage");
+            swal("完蛋","您的浏览器不支持Storage","error");
             return false;
         }
         storage.setItem("Authrorization", "Bearer " +token);
@@ -47,7 +53,7 @@
 </script>
 
 <div class=" mm-wrapper"  id="page">
-    <input id="tokenid" type="hidden" th:value="${result.message} ">
+    <input id="tokenid" type="hidden" th:value="${result} == null ? '' : ${result.message} ">
     <div class="push-menu ">
         <div class="banner">
 <!--            <div class="header-top">-->
@@ -65,7 +71,7 @@
                             <li class="menu-title">MENU</li>
                             <li><a href="/user/index"><span class="icons"> </span> 登录</a></li>
                             <li><a href="/pages/express" ><span class="icons icn2"> </span> 寄快递</a></li>
-                            <li><a href="#"><span class="icons icn3"> </span> 查快递</a></li>
+                            <li><a href="/pages/SelectExpress"><span class="icons icn3"> </span> 查快递</a></li>
                             <li><a href="#"><span class="icons icn4"> </span> Gallery</a></li>
                             <li><a href="#"><span class="icons icn5"> </span> Account settings</a></li>
                         </ul>
@@ -97,11 +103,11 @@
                 <div class="title">
                     <div class="title-left">
 
-                        <img th:src="${result.data.photo} == '' ? @{/static/images/loginerror.png} : ${result.data.photo}" alt=""/>
+                        <img th:src="${result} == null ? @{/static/images/loginerror.png} : ${result.data.photo}" alt=""/>
                     </div>
                     <div class="title-right">
-                        <h2 th:text="${result.data.nickname} == '' ? '昵称' : ${result.data.nickname}"></h2>
-                        <h6 th:text="${result.data.gender} == '' ? '' : ${result.data.gender}"></h6>
+                        <h2 th:text="${result} == null ? '未登录' : ${result.data.nickname}"></h2>
+                        <h6 th:text="${result} == null ? '' : ${result.data.gender}"></h6>
                     </div>
                     <div class="clear"> </div>
                 </div>
