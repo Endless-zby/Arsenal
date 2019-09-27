@@ -49,8 +49,115 @@
         }
         storage.setItem("Authrorization", "Bearer " +token);
         storage.setItem("user_login_time", new Date().getTime());//保存登录时间
+
     });
 </script>
+
+
+<script th:inline="javascript">
+    $(function () {
+
+        var phone = [[${result.data.phone}]];
+
+        if(phone == null) {
+
+            swal({
+                title: "账号绑定",
+                text: "请先绑定您的手机号码",
+                type: "input",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                animation: "slide-from-top",
+                inputPlaceholder: "Write something"
+            },
+                function(inputValue){
+                if (inputValue === false)
+                    return false;
+                if(!(/^1[3456789]\d{9}$/.test(inputValue))){
+                    swal.showInputError("这玩意不是手机号吧！");
+                        return false;
+                }
+                    if (inputValue === "") {
+                    swal.showInputError("兄弟，总得写点什么吧");
+                    return false;
+                }
+                    $.ajax({
+                        url:'/check/sms/' + inputValue,
+                        type:'get',
+                        dataType:'json',
+                        success:function(Result){
+                            if(Result.flag == true){
+                                swal("Nice!", "短信验证码已经发送至您的手机：" + inputValue, "success");
+                                swal({
+                                    title: "号码验证",
+                                    text: "请输入4位验证码",
+                                    type: "input",
+                                    showCancelButton: true,
+                                    closeOnConfirm: false,
+                                    animation: "slide-from-top",
+                                    inputPlaceholder: "Write something"
+                                },function(inputValue){
+                                    var reg = /^\d{4}$/;
+
+                                    if(!reg.test(inputValue)){
+                                        swal.showInputError("验证码是四位的！");
+                                        return false;
+                                    }
+                                    if (inputValue === "") {
+                                        swal.showInputError("兄弟，总得写点什么吧");
+                                        return false;
+                                    }
+                                    $.ajax({
+                                        url:'/check/smscheck/phone',
+                                        dataType:'json',
+                                        type:"get",
+                                        data:{
+                                            "phone":Result.data,
+                                            "phonecode":inputValue
+                                        },
+                                        headers:{
+                                            'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
+                                        },
+                                        success:function(res){
+                                            if(res.flag == true){
+                                                swal("NICE!", "手机绑定成功！", "success");
+                                            }else{
+                                                swal("ERROR", "手机绑定失败！", "error");
+                                            }
+                                        }
+
+                                    })
+
+
+                                });
+
+
+
+                            }else {
+                                return false;
+                            }
+                        }
+
+                    })
+            });
+
+        }
+    })
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
 
 <div class=" mm-wrapper"  id="page">
     <input id="tokenid" type="hidden" th:value="${result} == null ? '' : ${result.message} ">

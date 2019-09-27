@@ -40,9 +40,14 @@ public class CheckService {
         return true;
     }
 
+    /**
+     * 发送验证码
+     * @param phone
+     */
     @Transactional
     public void smsService(String phone){
         String smsCode = ((int)(Math.random()*9000)+1000) + "";
+        System.out.println("手机号：" + phone);
         System.out.println("验证码：" + smsCode);
         redisTemplate.opsForValue().set("sms_" + phone,smsCode, time,TimeUnit.MINUTES);
         Map<String, String> map = new HashMap<>();
@@ -50,6 +55,26 @@ public class CheckService {
         map.put("smscode",smsCode);
         rabbitTemplate.convertAndSend("sms",map);
     }
+
+    /**
+     * 接受验证码 并记录手机号到当前的用户
+     * @param phone
+     * @param phonecheck
+     */
+    @Transactional
+    public boolean smsCheckOut(String phone , String phonecheck,String userid){
+        String phonecheck_redis  = (String)redisTemplate.opsForValue().get("sms_" + phone);
+        if(phonecheck.equals(phonecheck_redis)){
+            int num = userDao.updatePhoneById(phone, userid);
+            System.out.println("更改数据：" + num);
+            if (num != 0){
+               return true;
+            }
+        }
+        return false;
+    }
+
+
 
 
     @Transactional

@@ -2,34 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/SelectExpress.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerCheck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/expressclient/ControllerExpress.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/expressclient/ControllerExpress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/ShowFinance.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/ShowFinance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/newPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/newPassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/registerError.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/registerError.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/registerSuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/registerSuccess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/SelectExpress.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/SelectExpress.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/view2.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/view2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/Dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerCheck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/expressclient/ControllerExpress.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/expressclient/ControllerExpress.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/ShowFinance.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/ShowFinance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/newPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/newPassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/registerError.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/registerError.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/registerSuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/registerSuccess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/CheckService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/CheckService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/SelectExpress.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/SelectExpress.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/view2.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/view2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/newplan_express.iml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/newplan_express.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Controller/ExpressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Controller/ExpressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/target/classes/club/zby/express/Controller/ExpressController.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/target/classes/club/zby/express/Controller/ExpressController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/target/classes/static/2019快递鸟接口支持快递公司编码.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/target/classes/static/~$2019快递鸟接口支持快递公司编码.xlsx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -458,7 +445,8 @@
       <workItem from="1569387695962" duration="1345000" />
       <workItem from="1569392502365" duration="12282000" />
       <workItem from="1569460381300" duration="10282000" />
-      <workItem from="1569478703049" duration="15486000" />
+      <workItem from="1569478703049" duration="16349000" />
+      <workItem from="1569547406314" duration="10682000" />
     </task>
     <servers />
   </component>

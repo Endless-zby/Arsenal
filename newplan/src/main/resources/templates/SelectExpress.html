@@ -13,8 +13,15 @@
     <script th:src="@{https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js}"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <link th:href="@{/static/css/register.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<div class="regTop">
+    <span>快递查询</span>
+<!--    <a class="back" href="/user/index">&lt;&nbsp;返回</a>-->
+    <a class="back" href="#" onclick="javascript:history.back(-1);">&lt;&nbsp;返回</a>
+</div>
+
 <div id="myCarousel" class="carousel slide">
     <!-- 轮播（Carousel）指标 -->
     <ol class="carousel-indicators">
@@ -91,18 +98,6 @@
               }else {
                   if(result.code == '20002'){
                       swal("异常","您好像还没登录哦！","warning");
-
-                      // swal({
-                      //     title: "登录",
-                      //     type: 'input',
-                      //     text:
-                      //         "<input type='text' name='username' id='username' placeholder='请输入用户名' pattern='[0-9A-Za-z]{6,16}' maxlength='16' required/>\n" +
-                      //         "</br>\n"+
-                      //         "<input type='password' name='password' id='password' placeholder='请输入密码' maxlength='16' pattern='[0-9A-Za-z]{6,25}' required/>\n" +
-                      //         "<button class='login_btn' type='submit' onclick=return login()>登&nbsp;&nbsp;录</button>",
-                      //
-                      //     html: true
-                      // });
                       return false;
                   }
                   swal("异常","意料之外的异常！请重试","error");
@@ -111,52 +106,6 @@
         })
     }
 </script>
-
-
-<!--<script>
-    function login() {
-        // window.open("register.html", "_blank");  //_self,_parent,_top,_blank
-        var username=$("#username").val();
-        var password=$("#password").val();
-
-        $.ajax({  // ajax登陆请求
-            url:"/user/login",
-            dataType:'json',
-            contentType: "application/json;charset=utf-8",
-            type:"post",
-            data:JSON.stringify({
-                "username":username,
-                "password":password
-            }),
-            success:function(Result){
-                if(Result.flag == true){
-                    headerSetup(Result.message);
-                    // request.setRequestHeader("Authorization", "Bearer " +Result.data);
-                    // alert("看放进去没：" + window.localStorage.getItem("Authrorization"));
-                    swal("测试阶段，看一下token！",window.localStorage.getItem("Authrorization"));
-                }else {
-                    document.getElementById('password').value = '' ;
-                    return false;
-                }
-            }
-        });
-    }
-
-    function headerSetup(token)
-    {
-        var storage = window.localStorage;
-        if(!storage){
-            // alert("浏览器不支持localstorage");
-            swal("完蛋","您的浏览器不支持Storage","error");
-            return false;
-        }
-        storage.setItem("Authrorization", "Bearer " +token);
-        storage.setItem("user_login_time", new Date().getTime());//保存登录时间
-    }
-</script>-->
-
-
-
 
 </body>
 </html>

@@ -31,7 +31,9 @@ public class ControllerView {
     @GetMapping(value = "mainview/{userid}")
     public ModelAndView viewIndex(@PathVariable("userid") String userid){
         User user = loginService.userInfo(userid);
-        return new ModelAndView("view2", "result", new Result(true,StatusCode.OK,"查询成功",user));
+        String token = jwtUtil.creatJWT(user.getId(), user.getUsername(), String.valueOf(user.getType()));
+        System.out.println(token);
+        return new ModelAndView("view2", "result", new Result(true,StatusCode.OK,token,user));
     }
 
     /**

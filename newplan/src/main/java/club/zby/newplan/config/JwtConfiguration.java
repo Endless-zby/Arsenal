@@ -30,11 +30,11 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
                 .addPathPatterns("/pages/mainview/**")
                 .addPathPatterns("/ExperssHandle/**")
                 .addPathPatterns("/pages/express")
+                .addPathPatterns("/check/smscheck/phone")
 
 
-                .excludePathPatterns(Arrays.asList("/check/**","/user/register/**","/user/login/**","/user/reg/**"))
+                .excludePathPatterns(Arrays.asList("/user/register/**","/user/login/**","/user/reg/**"))
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
-                .excludePathPatterns("/check/**")
                 .excludePathPatterns("/user/**")
                 .excludePathPatterns("/qq/**");
 
