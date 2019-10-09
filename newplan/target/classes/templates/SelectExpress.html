@@ -66,7 +66,7 @@
     <button type="button" class="btn btn-success" onclick="return sel()">查询快递公司</button>
     <div class="form-group">
         <label for="showshipChannel">快递公司 </label>
-        <input type="text" class="form-control" id="showshipChannel" placeholder="输入单号自动匹配" required/>
+        <input type="text" class="form-control" id="showshipChannel" placeholder="输入单号自动匹配" disabled/>
     </div>
 
 <!--    不显示，在正式查询的时候作为快递公司的编码进行传参-->
@@ -159,7 +159,7 @@
                             "            <div class=\"tl-circ\"></div>\n" +
                             "            <div class=\"timeline-panel\">\n" +
                             "                <div class=\"tl-heading\">\n" +
-                            "                    <h4>当前第"+ i +"站</h4>\n" +
+                            "                    <h4>当前第"+ Number(i)+Number(1) +"站</h4>\n" +
                             "                    <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>"+ traces[i].AcceptTime +"</small></p>\n" +
                             "                </div>\n" +
                             "                <div class=\"tl-body\">\n" +
@@ -167,8 +167,6 @@
                             "                </div>\n" +
                             "            </div>\n" +
                             "        </li>";
-
-
                     }
                     ul.innerHTML=res;
 
