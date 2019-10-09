@@ -58,7 +58,8 @@
     $(function () {
 
         var phone = $("#existPhone").val();
-        if(phone == null || phone == '') {
+        var token = window.localStorage.getItem("Authrorization");
+        if((phone == null || phone == '') && token != null) {
 
             swal({
                 title: "账号绑定",

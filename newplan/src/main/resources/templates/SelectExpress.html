@@ -79,36 +79,21 @@
 <br>
 <div class="container">
     <header class="page-header">
-        <h1>Dark Responsive Timeline with Bootstrap</h1>
+        <h1>物流追踪</h1>
     </header>
 
-    <ul class="timeline">
+    <ul class="timeline" id="ul">
         <li><div class="tldate">2019</div></li>
 
         <li>
             <div class="tl-circ"></div>
             <div class="timeline-panel">
                 <div class="tl-heading">
-                    <h4>Surprising Headline Right Here</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3 hours ago</small></p>
+                    <h4>包裹最新状态</h4>
+                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>时间</small></p>
                 </div>
                 <div class="tl-body">
-                    <p>Lorem Ipsum and such.</p>
-                </div>
-            </div>
-        </li>
-
-        <li class="timeline-inverted">
-            <div class="tl-circ"></div>
-            <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h4>Breaking into Spring!</h4>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 4/07/2014</small></p>
-                </div>
-                <div class="tl-body">
-                    <p>Hope the weather gets a bit nicer...</p>
-
-                    <p>Y'know, with more sunlight.</p>
+                    <p>详细情况</p>
                 </div>
             </div>
         </li>
@@ -164,9 +149,26 @@
                 'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
             },
             success:function(result){
+                var traces = result.data.Traces;
+                var ul = document.getElementById("ul");
+                var res = '';
                 if(result.data.Success){
+                    for (var i = 0; i < traces.length; i++) {
 
-
+                        res += "<li>\n" +
+                            "            <div class=\"tl-circ\"></div>\n" +
+                            "            <div class=\"timeline-panel\">\n" +
+                            "                <div class=\"tl-heading\">\n" +
+                            "                    <h4>当前第"+ i+1 +"站</h4>\n" +
+                            "                    <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>"+ traces[i].AcceptTime +"</small></p>\n" +
+                            "                </div>\n" +
+                            "                <div class=\"tl-body\">\n" +
+                            "                    <p>"+ traces[i].AcceptStation +"</p>\n" +
+                            "                </div>\n" +
+                            "            </div>\n" +
+                            "        </li>";
+                    }
+                    ul.innerHTML=res;
 
                 }else {
                     if(result.code == '20002'){

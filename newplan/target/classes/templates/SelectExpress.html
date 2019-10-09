@@ -14,6 +14,8 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
     <link th:href="@{/static/css/register.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/static/css/bootstrap-glyphicons.css}" rel="stylesheet" type="text/css" media="all" >
+    <link th:href="@{/static/css/kdstyles.css}" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
 <div class="regTop">
@@ -61,7 +63,7 @@
        <input type="text" class="form-control" id="shipSn" placeholder="请输入单号" maxlength="30" required/>
     </div>
     <br/>
-    <button type="button" class="btn btn-success" onclick="return sel()">查询</button>
+    <button type="button" class="btn btn-success" onclick="return sel()">查询快递公司</button>
     <div class="form-group">
         <label for="showshipChannel">快递公司 </label>
         <input type="text" class="form-control" id="showshipChannel" placeholder="输入单号自动匹配" required/>
@@ -72,9 +74,31 @@
         <label for="shipChannel"> </label>
         <input type="hidden" class="form-control" id="shipChannel"  required/>
     </div>
-
+    <button type="button" class="btn btn-success" onclick="return Status()">查询快递状态</button>
 </form>
+<br>
+<div class="container">
+    <header class="page-header">
+        <h1>物流追踪</h1>
+    </header>
 
+    <ul class="timeline" id="ul">
+        <li><div class="tldate">2019</div></li>
+
+        <li>
+            <div class="tl-circ"></div>
+            <div class="timeline-panel">
+                <div class="tl-heading">
+                    <h4>包裹最新状态</h4>
+                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>时间</small></p>
+                </div>
+                <div class="tl-body">
+                    <p>详细情况</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
 
 
 
@@ -106,6 +130,55 @@
                   }
                   swal("异常","意料之外的异常！请重试","error");
               }
+            }
+        })
+    }
+
+
+    function Status() {
+        var shipSn = $("#shipSn").val();
+        var shipChannel = $("#shipChannel").val();
+        $.ajax({
+            url:'/ExperssHandle/getOrderTracesByJson',
+            type:'get',
+            dataType:'json',
+            // contentType: "application/json;charset=utf-8",
+            data: {"shipSn":shipSn,
+                    "shipChannel":shipChannel},
+            headers:{
+                'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
+            },
+            success:function(result){
+                var traces = result.data.Traces;
+                var ul = document.getElementById("ul");
+                var res = '';
+                if(result.data.Success){
+                    for (var i = 0; i < traces.length; i++) {
+
+                        res += "<li>\n" +
+                            "            <div class=\"tl-circ\"></div>\n" +
+                            "            <div class=\"timeline-panel\">\n" +
+                            "                <div class=\"tl-heading\">\n" +
+                            "                    <h4>当前第"+ i +"站</h4>\n" +
+                            "                    <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>"+ traces[i].AcceptTime +"</small></p>\n" +
+                            "                </div>\n" +
+                            "                <div class=\"tl-body\">\n" +
+                            "                    <p>"+ traces[i].AcceptStation +"</p>\n" +
+                            "                </div>\n" +
+                            "            </div>\n" +
+                            "        </li>";
+
+
+                    }
+                    ul.innerHTML=res;
+
+                }else {
+                    if(result.code == '20002'){
+                        swal("异常","您好像还没登录哦！","warning");
+                        return false;
+                    }
+                    swal("异常","意料之外的异常！请重试","error");
+                }
             }
         })
     }
