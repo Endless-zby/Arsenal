@@ -13,7 +13,7 @@ spring:
     name: sms
 
   rabbitmq:
-    host: 39.96.160.110
+    host: 106.54.231.246
     password: guest
     username: guest
     port: 5672

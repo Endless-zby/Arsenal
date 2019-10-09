@@ -40,15 +40,15 @@
     $(document).ready(function () {
         var token = $("#tokenid").val();
         var storage = window.localStorage;
-        if(token == '' || token == null){
-            return false;
-        }
         if(!storage){
             swal("完蛋","您的浏览器不支持Storage","error");
             return false;
         }
-        storage.setItem("Authrorization", "Bearer " +token);
-        storage.setItem("user_login_time", new Date().getTime());//保存登录时间
+        if(token != null && token != '' ){
+            storage.setItem("Authrorization", "Bearer " +token);
+            storage.setItem("user_login_time", new Date().getTime());//保存登录时间
+        }
+        return true;
 
     });
 </script>
@@ -57,9 +57,8 @@
 <script th:inline="javascript">
     $(function () {
 
-        var phone = [[${result.data.phone}]];
-
-        if(phone == null) {
+        var phone = $("#existPhone").val();
+        if(phone == null || phone == '') {
 
             swal({
                 title: "账号绑定",
@@ -143,16 +142,6 @@
 
         }
     })
-
-
-
-
-
-
-
-
-
-
 </script>
 
 
@@ -207,6 +196,7 @@
                     </script>
                     <!-- /script-for-menu -->
                 </div>
+                <input style="display: none" id="existPhone" th:value="${result} == null ? null : ${result.data.phone}"/>
                 <div class="title">
                     <div class="title-left">
 

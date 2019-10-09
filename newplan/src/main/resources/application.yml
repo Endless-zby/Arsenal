@@ -23,7 +23,7 @@ spring:
     host: 39.96.160.110
 
   rabbitmq:
-    host: 39.96.160.110
+    host: 106.54.231.246
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect

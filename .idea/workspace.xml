@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/css/bootstrap-glyphicons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan/src/main/resources/static/css/kdstyles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/SelectExpress.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/SelectExpress.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/view2.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/view2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/CheckService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/CheckService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/SelectExpress.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/SelectExpress.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/view2.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/view2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_express/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplansms/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplansms/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +84,7 @@
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565765160347" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/newplan_express/src/main/resources/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/newplan/src/main/resources/static/css" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -97,12 +95,12 @@
     <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\images" />
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\controller" />
-      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\js" />
-      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\images" />
-      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\css" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\css" />
+      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\resources\static" />
+      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\resources" />
+      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\java\club\zby\express\Config" />
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\Untlis" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="club.zby.express.Config" />
@@ -111,12 +109,12 @@
       <recent name="club.zby.newplan.Entity" />
       <recent name="club.zby.finance" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\resources\static" />
-      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\resources" />
-      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\java\club\zby\express\Config" />
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\Untlis" />
-      <recent name="E:\Arsenal\Arsenal\newplan_finance\src\main\java\club\zby\finance\Config" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\images" />
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\controller" />
+      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\js" />
+      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\images" />
+      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -446,7 +444,14 @@
       <workItem from="1569392502365" duration="12282000" />
       <workItem from="1569460381300" duration="10282000" />
       <workItem from="1569478703049" duration="16349000" />
-      <workItem from="1569547406314" duration="10682000" />
+      <workItem from="1569547406314" duration="11420000" />
+      <workItem from="1569565262755" duration="3132000" />
+      <workItem from="1569597701301" duration="830000" />
+      <workItem from="1570364377754" duration="3603000" />
+      <workItem from="1570377102648" duration="40000" />
+      <workItem from="1570501010380" duration="36000" />
+      <workItem from="1570505332642" duration="836000" />
+      <workItem from="1570601955087" duration="12030000" />
     </task>
     <servers />
   </component>

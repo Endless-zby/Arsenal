@@ -14,6 +14,8 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
     <link th:href="@{/static/css/register.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/static/css/bootstrap-glyphicons.css}" rel="stylesheet" type="text/css" media="all" >
+    <link th:href="@{/static/css/kdstyles.css}" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
 <div class="regTop">
@@ -60,17 +62,61 @@
         <label for="shipSn">快递单号 </label>
        <input type="text" class="form-control" id="shipSn" placeholder="请输入单号" maxlength="30" required/>
     </div>
+    <br/>
+    <button type="button" class="btn btn-success" onclick="return sel()">查询快递公司</button>
     <div class="form-group">
         <label for="showshipChannel">快递公司 </label>
         <input type="text" class="form-control" id="showshipChannel" placeholder="输入单号自动匹配" required/>
     </div>
+
 <!--    不显示，在正式查询的时候作为快递公司的编码进行传参-->
     <div class="form-group">
         <label for="shipChannel"> </label>
         <input type="hidden" class="form-control" id="shipChannel"  required/>
     </div>
-    <button type="button" class="btn btn-success" onclick="return sel()">查询</button>
+    <button type="button" class="btn btn-success" onclick="return Status()">查询快递状态</button>
 </form>
+<br>
+<div class="container">
+    <header class="page-header">
+        <h1>Dark Responsive Timeline with Bootstrap</h1>
+    </header>
+
+    <ul class="timeline">
+        <li><div class="tldate">2019</div></li>
+
+        <li>
+            <div class="tl-circ"></div>
+            <div class="timeline-panel">
+                <div class="tl-heading">
+                    <h4>Surprising Headline Right Here</h4>
+                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3 hours ago</small></p>
+                </div>
+                <div class="tl-body">
+                    <p>Lorem Ipsum and such.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="timeline-inverted">
+            <div class="tl-circ"></div>
+            <div class="timeline-panel">
+                <div class="tl-heading">
+                    <h4>Breaking into Spring!</h4>
+                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 4/07/2014</small></p>
+                </div>
+                <div class="tl-body">
+                    <p>Hope the weather gets a bit nicer...</p>
+
+                    <p>Y'know, with more sunlight.</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
 <script>
     function sel() {
         var shipSn = $("#shipSn").val();
@@ -79,9 +125,6 @@
             type:'get',
             dataType:'json',
             // contentType: "application/json;charset=utf-8",
-            /*data:JSON.stringify({
-                "shipSn":shipSn
-            }),*/
             data: {"shipSn":shipSn},
             headers:{
                 'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
@@ -102,6 +145,36 @@
                   }
                   swal("异常","意料之外的异常！请重试","error");
               }
+            }
+        })
+    }
+
+
+    function Status() {
+        var shipSn = $("#shipSn").val();
+        var shipChannel = $("#shipChannel").val();
+        $.ajax({
+            url:'/ExperssHandle/getOrderTracesByJson',
+            type:'get',
+            dataType:'json',
+            // contentType: "application/json;charset=utf-8",
+            data: {"shipSn":shipSn,
+                    "shipChannel":shipChannel},
+            headers:{
+                'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
+            },
+            success:function(result){
+                if(result.data.Success){
+
+
+
+                }else {
+                    if(result.code == '20002'){
+                        swal("异常","您好像还没登录哦！","warning");
+                        return false;
+                    }
+                    swal("异常","意料之外的异常！请重试","error");
+                }
             }
         })
     }
