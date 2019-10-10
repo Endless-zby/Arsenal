@@ -39,6 +39,7 @@
 
     $(document).ready(function () {
         var token = $("#tokenid").val();
+        var phone = $("#existPhone").val();
         var storage = window.localStorage;
         if(!storage){
             swal("完蛋","您的浏览器不支持Storage","error");
@@ -47,6 +48,7 @@
         if(token != null && token != '' ){
             storage.setItem("Authrorization", "Bearer " +token);
             storage.setItem("user_login_time", new Date().getTime());//保存登录时间
+            storage.setItem("phone",phone)
         }
         return true;
 
@@ -57,7 +59,7 @@
 <script th:inline="javascript">
     $(function () {
 
-        var phone = $("#existPhone").val();
+        var phone = window.localStorage.getItem("phone");
         var token = window.localStorage.getItem("Authrorization");
         if((phone == null || phone == '') && token != null) {
 
@@ -134,6 +136,7 @@
 
 
                             }else {
+                                swal("ERROR", Result.message, "error");
                                 return false;
                             }
                         }
@@ -229,14 +232,14 @@
                 <div>
                     <input id="ac-1" name="accordion-1" type="checkbox" />
                     <label for="ac-1" class="grid1"><i></i>开销记录</label>
-
-<!--                        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>-->
-                        <div class="form-group">
-                            <label for="name">名称</label>
-                            <input type="text" class="form-control" id="name" placeholder="请输入名称">
-                        </div>
-
-
+                    <article class="ac-medium" th:if="${result} == null">
+<!--                        <p th:text="${result} == null ? '请先登录' : '增加记录'">请先登录</p>-->
+                        <p>请先登录</p>
+                    </article>
+                    <article class="ac-medium" th:if="${result} != null">
+                        <p><a href="www.baidu.com">编辑记录</a></p>
+                        <p><a href="www.baidu.com">图表详情</a></p>
+                    </article>
                 </div>
                 <div>
                     <input id="ac-2" name="accordion-1" type="checkbox" />

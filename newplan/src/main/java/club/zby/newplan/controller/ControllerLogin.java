@@ -32,23 +32,25 @@ public class ControllerLogin {
 
     /**
      * Login账号的主逻辑
-     * @param user
-     * @param response
+     * @param username
+     * @param password
      * @return
      */
     @ResponseBody
     @ApiOperation(value="登录", notes="输入用户名和密码")
-    @PostMapping(value = "login",produces = "application/json;charset=utf-8")
-    public Result login(@RequestBody User user, HttpServletResponse response){
-        Result result = loginService.login(user);
+    @PostMapping(value = "UUlogin")
+    public ModelAndView login(@RequestParam("username") String username, @RequestParam("password") String password){
+        System.out.println(username);
+        Result result = loginService.login(username,password);
         if(!result.isFlag()){
-            return result;
+            return new ModelAndView("error");
         }
         User userinfo = (User) result.getData();
         String token = jwtUtil.creatJWT(userinfo.getId(), userinfo.getUsername(), String.valueOf(userinfo.getType()));
         System.out.println(token);
         result.setMessage(token);
-        return result;
+        System.out.println(result);
+        return new ModelAndView("view2", "result", result);
     }
 
     /**
@@ -60,7 +62,7 @@ public class ControllerLogin {
      */
     @GetMapping(value = "QQLogin")
     @ResponseBody
-    public ModelAndView QQLogin(String code,HttpServletResponse response) throws Exception {
+    public ModelAndView QQLogin(String code) throws Exception {
 
         System.out.println(1);
         if (code == null) {

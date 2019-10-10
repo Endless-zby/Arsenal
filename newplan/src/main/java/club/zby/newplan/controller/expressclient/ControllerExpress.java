@@ -33,7 +33,7 @@ public class ControllerExpress {
         System.out.println(222);
         String status = (String) request.getAttribute("status");
         if("404".equals(status) || status == null){
-            return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
+            return new Result(false, StatusCode.LOGINERROR,"请先登录后操作",null);
         }
         return expressClient.getOrderTracesByJson(shipChannel, shipSn);
     }
@@ -45,7 +45,7 @@ public class ControllerExpress {
         System.out.println(111);
         String status = (String) request.getAttribute("status");
         if("404".equals(status) || status == null){
-            return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
+            return new Result(false, StatusCode.LOGINERROR,"请先登录后操作",null);
         }
         return expressClient.getOrderShipperCode(shipSn);
 

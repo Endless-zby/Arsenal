@@ -6,6 +6,7 @@ import club.zby.newplan.Entity.User;
 import club.zby.newplan.config.IdWorker;
 import club.zby.newplan.result.Result;
 import club.zby.newplan.result.StatusCode;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -31,18 +32,20 @@ public class LoginService {
 
     /**
      * 账号登录逻辑
-     * @param user
+     * @param username
+     * @param password
      * @return
      */
     @Transactional
-    public Result login(User user){
+    public Result login(String username,String password){
         //数据库查询
-        User users = userDao.findByUsername(user.getUsername());
+        User users = userDao.findByUsername(username);
         //密码解密验证
-        if(users != null && encoder.matches(user.getPassword(),users.getPassword())){
-
+        if(users != null && encoder.matches(password,users.getPassword())){
+            System.out.println(00);
             return new Result(true, StatusCode.OK,"登录成功",users);
         }
+        System.out.println(11);
         return new Result(false, StatusCode.LOGINERROR,"没有找到该用户",null);
     }
 

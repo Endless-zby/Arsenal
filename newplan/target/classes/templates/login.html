@@ -81,7 +81,7 @@
         <div id="logo">
             <img th:src="@{/static/images/logo.png}" alt=""/>
         </div>
-        <form>
+        <form action="/user/UUlogin" method="post">
             <div class="userName">
                 <lable>用户名：</lable>
                 <input type="text" name="username" id="username" placeholder="请输入用户名" pattern="[0-9A-Za-z]{6,16}" required/>
@@ -97,7 +97,8 @@
                 </div>
                 <a href="user/newPassword">忘记密码</a>
             </div>
-            <button class="login_btn" type="submit" onclick="return login()">登&nbsp;&nbsp;录</button>
+<!--            <button class="login_btn" type="submit" onclick="return login()">登&nbsp;&nbsp;录</button>-->
+            <button class="login_btn" type="submit">登&nbsp;&nbsp;录</button>
         </form>
         <div class="other_login">
             <div class="other"></div>

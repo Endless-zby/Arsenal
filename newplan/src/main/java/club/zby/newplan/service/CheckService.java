@@ -2,6 +2,8 @@ package club.zby.newplan.service;
 
 import club.zby.newplan.Dao.UserDao;
 import club.zby.newplan.Entity.User;
+import club.zby.newplan.result.Result;
+import club.zby.newplan.result.StatusCode;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -45,7 +47,10 @@ public class CheckService {
      * @param phone
      */
     @Transactional
-    public void smsService(String phone){
+    public Result smsService(String phone){
+        if(userDao.existsByPhone(phone)){
+            return new Result(false, StatusCode.PHONEERROR,"该号码已被注册，请更换或直接登录",phone);
+        }
         String smsCode = ((int)(Math.random()*9000)+1000) + "";
         System.out.println("手机号：" + phone);
         System.out.println("验证码：" + smsCode);
@@ -54,6 +59,7 @@ public class CheckService {
         map.put("phone",phone);
         map.put("smscode",smsCode);
         rabbitTemplate.convertAndSend("sms",map);
+        return new Result(true,StatusCode.OK,"发送成功",phone);
     }
 
     /**

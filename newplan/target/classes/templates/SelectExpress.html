@@ -125,10 +125,10 @@
                   }
               }else {
                   if(result.code == '20002'){
-                      swal("异常","您好像还没登录哦！","warning");
+                      swal("异常",result.message,"warning");
                       return false;
                   }
-                  swal("异常","意料之外的异常！请重试","error");
+                  swal("异常",result.message,"error");
               }
             }
         })
@@ -159,7 +159,7 @@
                             "            <div class=\"tl-circ\"></div>\n" +
                             "            <div class=\"timeline-panel\">\n" +
                             "                <div class=\"tl-heading\">\n" +
-                            "                    <h4>当前第"+ Number(i)+Number(1) +"站</h4>\n" +
+                            "                    <h4>当前第"+ (Number(i + 1)) +"站</h4>\n" +
                             "                    <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>"+ traces[i].AcceptTime +"</small></p>\n" +
                             "                </div>\n" +
                             "                <div class=\"tl-body\">\n" +
@@ -172,10 +172,10 @@
 
                 }else {
                     if(result.code == '20002'){
-                        swal("异常","您好像还没登录哦！","warning");
+                        swal("异常",result.message,"warning");
                         return false;
                     }
-                    swal("异常","意料之外的异常！请重试","error");
+                    swal("异常",result.message,"error");
                 }
             }
         })

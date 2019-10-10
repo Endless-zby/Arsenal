@@ -45,9 +45,7 @@ public class ControllerCheck {
     @ApiOperation(value="短信验证", notes="发送短信，redis缓存，默认过期时间为五分钟")
     @GetMapping("sms/{phone}")
     public Result smsCheck(@PathVariable("phone") String phone){
-        checkService.smsService(phone);
-        return new Result(true,StatusCode.OK,"发送成功",phone);
-
+        return checkService.smsService(phone);
     }
 
     @ResponseBody
