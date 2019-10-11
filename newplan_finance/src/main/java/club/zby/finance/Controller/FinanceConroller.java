@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import club.zby.finance.Config.Result;
 import club.zby.finance.Config.StatusCode;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -80,7 +81,7 @@ public class FinanceConroller {
 
     /**
      * 记录的视图展示  数据处理
-     * @param userid
+     * @param request
      * @return
      */
     @ApiOperation(value = "记录的视图展示", notes = "数据处理", httpMethod = "GET")
@@ -89,9 +90,9 @@ public class FinanceConroller {
     })
     @ResponseBody
     @GetMapping("financeview")
-    public Result financeView(@RequestParam("userid") String userid){
-
-        ArrayList<String> allByid = financeService.findAllByid(userid);
-        return new Result(true,StatusCode.OK,"返回成功",allByid);
+    public Result financeView(HttpServletRequest request){
+        //返回提示被放置在financeService中！
+        String userid = (String) request.getAttribute("userid");
+        return financeService.findAllByid("66341505371082752");
     }
 }

@@ -61,8 +61,8 @@ public class ControllerFinance {
         if("404".equals(status) || status == null){
             return new Result(false,StatusCode.LOGINERROR,"登录异常",null);
         }
-        String userid = (String) request.getAttribute("userid");
-        return financeClient.financeView(userid);
+//        String userid = (String) request.getAttribute("userid");
+        return financeClient.financeView(request);
     }
 
 }

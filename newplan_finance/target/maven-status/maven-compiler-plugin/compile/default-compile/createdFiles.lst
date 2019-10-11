@@ -1,8 +1,0 @@
-club\zby\finance\Entity\Finance.class
-club\zby\finance\Controller\FinanceConroller.class
-club\zby\finance\FinanceApplication.class
-club\zby\finance\Config\IdWorker.class
-club\zby\finance\Config\Result.class
-club\zby\finance\Config\StatusCode.class
-club\zby\finance\Dao\FinanceDao.class
-club\zby\finance\Service\FinanceService.class

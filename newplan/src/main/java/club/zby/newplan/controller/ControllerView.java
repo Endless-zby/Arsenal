@@ -68,12 +68,20 @@ public class ControllerView {
     }
 
 
-
+    /**
+     * 开销列表
+     * @param request
+     * @return
+     */
     @GetMapping(value = "FinanceList")
-    public String er(HttpServletRequest request){
+    public String financeList(HttpServletRequest request){
         return "FinanceList";
     }
 
+    @GetMapping(value = "ShowFinance")
+    public String showFinance(HttpServletRequest request){
+        return "ShowFinance";
+    }
 
 
     /**

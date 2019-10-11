@@ -1,5 +1,7 @@
 package club.zby.finance.Service;
 
+import club.zby.finance.Config.Result;
+import club.zby.finance.Config.StatusCode;
 import club.zby.finance.Dao.FinanceDao;
 import club.zby.finance.Entity.Finance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,10 +50,14 @@ public class FinanceService {
     }
 
     @Transactional
-    public ArrayList<String> findAllByid(String id){
+    public Result findAllByid(String id){
         //前端数据处理太慢，放到后端，但是保留前端处理逻辑，必要时候切换逻辑处理的时机
         List<Finance> allfinance = financeDao.findAllByWho(id);
+        if(allfinance.size() == 0){
+            return new Result(false, StatusCode.RESERROR,"您还没有过数据哦！",null);
+        }
         //找出所有的分类
+
         HashMap<String, BigDecimal> map = new HashMap<String, BigDecimal>();
         //每次循环顺便计算总金额
         BigDecimal money = new BigDecimal("0");
@@ -68,10 +74,10 @@ public class FinanceService {
         System.out.println("map分类及其各分类的总金额：" + map.toString());
         System.out.println("总金额：" + money.toString());
 
-        ArrayList<String> all = new ArrayList<String>();
-        all.add(map.toString());
-        all.add(money.toString());
-        return all;
+        HashMap<String, Object> all = new HashMap<String, Object>();
+        all.put("info",map);
+        all.put("money",money);
+        return new Result(true,StatusCode.OK,"返回成功",all);
         //
     }
 }

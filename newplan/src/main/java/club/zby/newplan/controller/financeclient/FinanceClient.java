@@ -25,5 +25,5 @@ public interface FinanceClient {
     Result delFinance(@PathVariable("id") String id);
 
     @GetMapping(value = "Finance/financeview")
-    Result financeView(String userid);
+    Result financeView(HttpServletRequest request);
 }

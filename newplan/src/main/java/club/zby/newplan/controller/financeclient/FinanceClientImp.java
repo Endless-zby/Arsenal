@@ -28,7 +28,7 @@ public class FinanceClientImp implements FinanceClient {
     }
 
     @Override
-    public Result financeView(String userid) {
+    public Result financeView(HttpServletRequest request) {
         return new Result(false,  StatusCode.RESERROR, "网络开小差了，请重试", null);
     }
 
