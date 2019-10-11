@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableDiscoveryClient//开启“在注册中心里 发现其他微服务”的功能
 @SpringBootApplication
 @EnableFeignClients
-//@EnableSwagger2
+@EnableSwagger2
 public class FinanceApplication extends WebMvcConfigurationSupport {
 
     public static void main(String[] args) {

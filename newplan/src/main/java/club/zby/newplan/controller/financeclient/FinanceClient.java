@@ -24,4 +24,6 @@ public interface FinanceClient {
     @DeleteMapping(value = "Finance/delfinance/{id}")
     Result delFinance(@PathVariable("id") String id);
 
+    @GetMapping(value = "Finance/financeview")
+    Result financeView(String userid);
 }

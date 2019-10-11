@@ -5,7 +5,6 @@ import club.zby.express.Config.StatusCode;
 import club.zby.express.Entity.Express;
 import club.zby.express.Untlis.ExpressUntlis;
 import com.alibaba.fastjson.JSON;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -77,18 +76,5 @@ public class ExpressController {
 
         return new Result(true, StatusCode.OK,"查询结果集",parse);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

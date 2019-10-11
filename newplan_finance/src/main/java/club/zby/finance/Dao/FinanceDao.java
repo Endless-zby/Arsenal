@@ -15,4 +15,6 @@ public interface FinanceDao extends JpaRepository<Finance,String>, JpaSpecificat
     @Modifying
     @Query(nativeQuery = true,value = "delete from tb_finance where id = ? ")
     int delById(String id);
+
+    List<Finance> findAllById(String id);
 }

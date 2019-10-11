@@ -30,7 +30,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("club.zby.newplan.controller"))
+                .apis(RequestHandlerSelectors.basePackage("club.zby.finance.Controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -42,7 +42,7 @@ public class Swagger2Config {
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("newplan部分功能测试")
+                .title("赵博雅——finance部分功能测试")
                 .description("更多请关注https://www.zby123.club")
                 .termsOfServiceUrl("https://www.zby123.club")
                 .version("1.0")

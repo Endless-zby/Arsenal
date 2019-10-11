@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="修补了一些小BUG">
+      <change afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/JwtConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ControllerLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/expressclient/ControllerExpress.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/expressclient/ControllerExpress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/CheckService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/service/RegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/SelectExpress.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/SelectExpress.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/newPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/newPassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/view2.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/view2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ControllerLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/expressclient/ControllerExpress.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/expressclient/ControllerExpress.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/CheckService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/CheckService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/LoginService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/service/RegisterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/SelectExpress.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/SelectExpress.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/newPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/newPassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/view2.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/view2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projecteureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projecteureka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projecteureka/projecteureka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/projecteureka/projecteureka.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projecteureka/target/classes/com/zby/eureka/EurekaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/projecteureka/target/classes/com/zby/eureka/EurekaApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTime/src/main/resources/templates/showfinance.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyTime/src/main/resources/templates/showfinance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/FinanceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/FinanceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/FinanceClientImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/financeclient/FinanceClientImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Config/Swagger2Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Controller/ExpressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Controller/ExpressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/Swagger2Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Controller/FinanceConroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Controller/FinanceConroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Dao/FinanceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Dao/FinanceDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/FinanceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/FinanceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Service/FinanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Service/FinanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Controller/FinanceConroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Controller/FinanceConroller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Dao/FinanceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Dao/FinanceDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/FinanceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/FinanceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Service/FinanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Service/FinanceService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +89,7 @@
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565765160347" />
-    <property name="last_opened_file_path" value="E:/vue_test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/newplan_finance/src/main/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -112,26 +100,26 @@
     <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\css" />
-      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\resources\static" />
-      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\resources" />
-      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\java\club\zby\express\Config" />
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\Untlis" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="club.zby.express.Config" />
-      <recent name="club.zby.finance.Config" />
-      <recent name="club.zby.express" />
-      <recent name="club.zby.newplan.Entity" />
-      <recent name="club.zby.finance" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\images" />
       <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\controller" />
       <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\js" />
       <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\images" />
       <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\css" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="club.zby.finance.Config" />
+      <recent name="club.zby.express.Config" />
+      <recent name="club.zby.express" />
+      <recent name="club.zby.newplan.Entity" />
+      <recent name="club.zby.finance" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Arsenal\Arsenal\newplan_finance\src\main\resources" />
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\css" />
+      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\resources\static" />
+      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\resources" />
+      <recent name="E:\Arsenal\Arsenal\newplan_express\src\main\java\club\zby\express\Config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -146,7 +134,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.NewApplication">
+  <component name="RunManager" selected="Spring Boot.FinanceApplication">
     <configuration name="KdniaoTrackQueryAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="club.zby.newplan.Untlis.KdniaoTrackQueryAPI" />
       <module name="newplan" />
@@ -470,7 +458,9 @@
       <workItem from="1570505332642" duration="836000" />
       <workItem from="1570601955087" duration="12482000" />
       <workItem from="1570669652498" duration="7126000" />
-      <workItem from="1570688354127" duration="11880000" />
+      <workItem from="1570688354127" duration="13409000" />
+      <workItem from="1570757301544" duration="5160000" />
+      <workItem from="1570775321370" duration="7218000" />
     </task>
     <servers />
   </component>
@@ -498,5 +488,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修补了一些小BUG" />
+    <option name="LAST_COMMIT_MESSAGE" value="修补了一些小BUG" />
   </component>
 </project>

@@ -42,7 +42,7 @@ public class Swagger2Config {
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("express部分功能测试")
+                .title("赵博雅——express部分功能测试")
                 .description("更多请关注https://www.zby123.club")
                 .termsOfServiceUrl("https://www.zby123.club")
                 .version("1.0")

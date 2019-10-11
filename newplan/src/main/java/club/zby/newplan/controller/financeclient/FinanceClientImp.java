@@ -26,4 +26,10 @@ public class FinanceClientImp implements FinanceClient {
     public Result delFinance(String id) {
         return new Result(false,  StatusCode.RESERROR, "网络开小差了，请重试", null);
     }
+
+    @Override
+    public Result financeView(String userid) {
+        return new Result(false,  StatusCode.RESERROR, "网络开小差了，请重试", null);
+    }
+
 }

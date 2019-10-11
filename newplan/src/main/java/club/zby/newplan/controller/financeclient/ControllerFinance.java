@@ -52,4 +52,17 @@ public class ControllerFinance {
         }
         return financeClient.delFinance(id);
     }
+
+    @ResponseBody
+    @ApiOperation(value="开销", notes="视图")
+    @GetMapping(value = "financeview")
+    public Result financeView(HttpServletRequest request){
+        String status = (String) request.getAttribute("status");
+        if("404".equals(status) || status == null){
+            return new Result(false,StatusCode.LOGINERROR,"登录异常",null);
+        }
+        String userid = (String) request.getAttribute("userid");
+        return financeClient.financeView(userid);
+    }
+
 }
