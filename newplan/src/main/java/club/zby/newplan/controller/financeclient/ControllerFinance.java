@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Api(value = "finance")
 @Controller
@@ -62,7 +63,7 @@ public class ControllerFinance {
             return new Result(false,StatusCode.LOGINERROR,"登录异常",null);
         }
 //        String userid = (String) request.getAttribute("userid");
-        return financeClient.financeView(request);
+        return financeClient.financeView();
     }
 
 }

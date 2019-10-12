@@ -77,6 +77,8 @@ public class FinanceService {
         HashMap<String, Object> all = new HashMap<String, Object>();
         all.put("info",map);
         all.put("money",money);
+
+
         return new Result(true,StatusCode.OK,"返回成功",all);
         //
     }

@@ -1,6 +1,7 @@
 package club.zby.newplan.controller.financeclient;
 
 import club.zby.newplan.Entity.Finance;
+import club.zby.newplan.Interceptor.FeignInterceptor;
 import club.zby.newplan.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Component
-@FeignClient(name = "finance",fallback = FinanceClientImp.class)//uereka中的注册服务名，
+@FeignClient(name = "finance",fallback = FinanceClientImp.class,configuration = {FeignInterceptor.class})//uereka中的注册服务名，
 public interface FinanceClient {
 
     @GetMapping(value = "Finance/showfinance/{who}")
@@ -25,5 +26,5 @@ public interface FinanceClient {
     Result delFinance(@PathVariable("id") String id);
 
     @GetMapping(value = "Finance/financeview")
-    Result financeView(HttpServletRequest request);
+    Result financeView();
 }

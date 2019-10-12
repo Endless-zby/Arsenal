@@ -28,6 +28,8 @@ public class FinanceConroller {
     private FinanceService financeService;
     @Autowired
     private IdWorker idWorker;
+    @Autowired
+    private HttpServletRequest request;
 
     /**
      * 展示所有的记录
@@ -81,18 +83,25 @@ public class FinanceConroller {
 
     /**
      * 记录的视图展示  数据处理
-     * @param request
+     * @param
      * @return
      */
     @ApiOperation(value = "记录的视图展示", notes = "数据处理", httpMethod = "GET")
-    @ApiImplicitParams({
-            @ApiImplicitParam(paramType="query",name = "userid",required = true, value = "用户标识", dataType = "String" )
-    })
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(paramType="query",name = "userid",required = true, value = "用户标识", dataType = "String" )
+//    })
     @ResponseBody
     @GetMapping("financeview")
-    public Result financeView(HttpServletRequest request){
+    public Result financeView(){
         //返回提示被放置在financeService中！
+        String authrorization = request.getHeader("Authrorization");
+        String aaa = request.getHeader("aaa");
         String userid = (String) request.getAttribute("userid");
+
+        System.out.println("转发的heard：" + authrorization);
+        System.out.println("转发的heard：" + aaa);
+        System.out.println("转发的userid：" + userid);
         return financeService.findAllByid("66341505371082752");
     }
+
 }

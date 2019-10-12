@@ -16,6 +16,7 @@
     <link th:href="@{/static/css/register.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/static/css/bootstrap-glyphicons.css}" rel="stylesheet" type="text/css" media="all" >
     <link th:href="@{/static/css/kdstyles.css}" rel="stylesheet" type="text/css" media="all">
+    <script th:src="@{http://code.highcharts.com/highcharts.js}"></script>
 </head>
 <body>
 <div class="regTop">
@@ -71,6 +72,7 @@
             },
             success:function(result){
                 if(result.flag){
+
 
                     // alert(list.length);
 
