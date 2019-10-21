@@ -13,9 +13,9 @@ spring:
     name: sms
 
   rabbitmq:
-    host: 39.96.160.110
-    password: guest
-    username: guest
+    host: 121.199.31.35
+    password: root
+    username: root
     port: 5672
 
 aliyun:

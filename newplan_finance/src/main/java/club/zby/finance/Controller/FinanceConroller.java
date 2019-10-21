@@ -41,9 +41,11 @@ public class FinanceConroller {
     @GetMapping("showfinance/{who}")
     public Result findAllByWho(@PathVariable("who") String who){
         List<Finance> finances = financeService.findAllByWho(who);
+        System.out.println("---" + finances.size());
         if(finances.size() == 0){
             return new Result(false,StatusCode.RESERROR,"查询失败",null);
         }
+
         return new Result(true,StatusCode.OK,"返回成功",finances);
     }
 

@@ -70,16 +70,8 @@ public class FinanceService {
                 map.put(finance.getPurpose(),finance.getMoney());
             }
         }
-
-        System.out.println("map分类及其各分类的总金额：" + map.toString());
-        System.out.println("总金额：" + money.toString());
-
-        HashMap<String, Object> all = new HashMap<String, Object>();
-        all.put("info",map);
-        all.put("money",money);
-
-
-        return new Result(true,StatusCode.OK,"返回成功",all);
+        //massage中暂时存放总金额
+        return new Result(true,StatusCode.OK,money.toString(),map);
         //
     }
 }

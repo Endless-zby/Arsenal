@@ -10,6 +10,8 @@ import java.util.List;
 
 public interface FinanceDao extends JpaRepository<Finance,String>, JpaSpecificationExecutor<Finance> {
 
+    @Modifying
+    @Query(nativeQuery = true,value = "select * from tb_finance where who = ? order by time ")
     List<Finance> findAllByWho(String who);
 
     @Modifying

@@ -25,6 +25,7 @@ public class ControllerFinance {
     @GetMapping("showfinance/{who}")
     public Result finAllByWho(@PathVariable("who") String who,HttpServletRequest request){
         String status = (String) request.getAttribute("status");
+        System.out.println(status);
         if("404".equals(status) || status == null){
             return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
         }

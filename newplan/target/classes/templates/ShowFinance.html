@@ -60,7 +60,7 @@
 
 <button type="button" class="btn btn-info" onclick="return show()">展示视图</button>
 
-<div id="zby" style="float: left; width: 550px; height: 400px; "></div>
+<div id="zby" style="float: left; width: 357px; height: 400px; margin: 0 auto"></div>
 <script th:inline="javascript">
     function show() {
         $.ajax({
@@ -72,8 +72,15 @@
             },
             success:function(result){
                 if(result.flag){
+                    //数据处理
+                    var list = new Array();
+                    for(var key in result.data){
 
-                    // alert(list.length);
+                        var pop = new Array();
+                        pop.push(key);
+                        pop.push(result.data[key]);
+                        list.push(pop);
+                    }
 
                     var chartzby = {
                         plotBackgroundColor: null,
@@ -81,7 +88,7 @@
                         plotShadow: false
                     };
                     var titlezby = {
-                        text: '总花销' + result.data.money
+                        text: '总花销' + result.message
                     };
                     var tooltipzby = {
                         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -102,7 +109,8 @@
                     var serieszby= [{
                         type: 'pie',
                         name: '占比',
-                        data: result.data.info
+                        data: list
+
                     }];
 
                     var json = {};
