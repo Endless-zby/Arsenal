@@ -1,11 +1,9 @@
 package club.zby.newplan.Interceptor;
 
 import feign.RequestTemplate;
-import feign.template.HeaderTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
-import feign.RequestInterceptor;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -23,27 +21,28 @@ public class FeignInterceptor implements feign.RequestInterceptor {
 
     @Override
     public void apply(RequestTemplate template) {
-        template.header("aaa","8888");
-//        System.out.println("*****************");
-//        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder
-//                .getRequestAttributes();
-//        System.out.println(0);
-//        HttpServletRequest request = attributes.getRequest();
-//
-//        System.out.println((String) request.getAttribute("userid"));
-//
-//        Enumeration<String> headerNames = request.getHeaderNames();
-//        System.out.println(1);
-//        if (headerNames != null) {
-//            System.out.println(2);
-//            while (headerNames.hasMoreElements()) {
-//                String name = headerNames.nextElement();
-//                String values = request.getHeader(name);
-//                template.header(name, values);
-//            }
-//            logger.info("feign interceptor header:{}",template);
-//        }
-//        System.out.println(3);
+        System.out.println("*****************");
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder
+                .getRequestAttributes();
+        System.out.println("Feign远程服务调用的请求转发（重写请求模板，转发到B服务）");
+        HttpServletRequest request = attributes.getRequest();
+
+        System.out.println((String) request.getAttribute("userid"));
+
+        Enumeration<String> headerNames = request.getHeaderNames();
+
+        System.out.println("获取A请求头");
+        if (headerNames != null) {
+            System.out.println("遍历Authrorization");
+            while (headerNames.hasMoreElements()) {
+                String name = headerNames.nextElement();
+                String values = request.getHeader(name);
+                template.header(name, values);
+                System.out.println(name +"-----"+  values);
+            }
+            logger.info("feign interceptor header:{}",template);
+        }
+        System.out.println(3);
 
     }
 }

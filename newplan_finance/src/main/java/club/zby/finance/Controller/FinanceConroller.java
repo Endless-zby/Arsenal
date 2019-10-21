@@ -4,18 +4,16 @@ package club.zby.finance.Controller;
 import club.zby.finance.Config.IdWorker;
 import club.zby.finance.Entity.Finance;
 import club.zby.finance.Service.FinanceService;
+import io.jsonwebtoken.Claims;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import club.zby.finance.Config.JwtUtil;
 import org.springframework.web.bind.annotation.*;
 import club.zby.finance.Config.Result;
 import club.zby.finance.Config.StatusCode;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -30,6 +28,8 @@ public class FinanceConroller {
     private IdWorker idWorker;
     @Autowired
     private HttpServletRequest request;
+    @Autowired
+    private JwtUtil jwtUtil;
 
     /**
      * 展示所有的记录
@@ -94,16 +94,28 @@ public class FinanceConroller {
 //    })
     @ResponseBody
     @GetMapping("financeview")
-    public Result financeView(){
+    public Result financeView() {
         //返回提示被放置在financeService中！
-        String authrorization = request.getHeader("Authrorization");
-        String aaa = request.getHeader("aaa");
-        String userid = (String) request.getAttribute("userid");
+        String token = request.getHeader("Authrorization");
 
-        System.out.println("转发的heard：" + authrorization);
-        System.out.println("转发的heard：" + aaa);
-        System.out.println("转发的userid：" + userid);
-        return financeService.findAllByid("66341505371082752");
+        if (token != null && token.startsWith("Bearer ")) {
+            System.out.println("取出转发的heard：" + token);
+            Claims claims = jwtUtil.parseJwt(token.substring(7));
+            if (claims != null) {
+                //管理员
+                if ("1".equals(claims.get("roles")) || "0".equals(claims.get("roles"))) {
+                    String userid = (String) claims.get("jti");
+                    System.out.println("userid：" + userid);
+                    return financeService.findAllByid(userid);
+                } else {
+                    return new Result(false, StatusCode.REMOTEERROR, "权限校验失败！", null);
+                }
+            } else {
+                return new Result(false, StatusCode.LOGINERROR, "身份失效，请重新登录！", null);
+            }
+        }else {
+            return new Result(false, StatusCode.ERROR, "Finance服务未连接，请联系管理员！", null);
+        }
     }
 
 }

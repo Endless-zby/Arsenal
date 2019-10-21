@@ -36,7 +36,10 @@ spring:
     hibernate:
       ddl-auto: update
 
-
+jwt:
+  config:
+    key: zby
+    expire: 86400000
 
 
 #
