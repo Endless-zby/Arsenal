@@ -12,6 +12,12 @@
     <artifactId>newplan</artifactId>
 
     <dependencies>
+        <!-- ftp -->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.6</version>
+        </dependency>
         <!-- qq wx 联合登陆需要的依赖 commons-io， commons-lang3，httpclient，fastjson-->
         <dependency>
             <groupId>org.apache.commons</groupId>

@@ -30,6 +30,10 @@ public class FinanceService {
         return financeDao.findAllByWho(who);
     }
 
+    public List<String> findIdByWho(String who){
+        return financeDao.findIdByWho(who);
+    }
+
     /**
      * 提交记录
      * @param finance
@@ -50,9 +54,9 @@ public class FinanceService {
     }
 
     @Transactional
-    public Result findAllByid(String id){
+    public Result findAllByid(String userid){
         //前端数据处理太慢，放到后端，但是保留前端处理逻辑，必要时候切换逻辑处理的时机
-        List<Finance> allfinance = financeDao.findAllByWho(id);
+        List<Finance> allfinance = financeDao.findAllByWho(userid);
         if(allfinance.size() == 0){
             return new Result(false, StatusCode.RESERROR,"您还没有过数据哦！",null);
         }

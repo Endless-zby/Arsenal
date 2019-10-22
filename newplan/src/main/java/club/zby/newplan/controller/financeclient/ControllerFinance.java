@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 @Api(value = "finance")
 @Controller
@@ -21,19 +20,19 @@ public class ControllerFinance {
     private FinanceClient financeClient;
 
     @ResponseBody
-    @ApiOperation(value="开销", notes="查询")
-    @GetMapping("showfinance/{who}")
-    public Result finAllByWho(@PathVariable("who") String who,HttpServletRequest request){
+    @ApiOperation(value="开销--查询", notes="查询")
+    @GetMapping("showfinance")
+    public Result finAllByWho(HttpServletRequest request){
         String status = (String) request.getAttribute("status");
         System.out.println(status);
         if("404".equals(status) || status == null){
             return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
         }
-        return financeClient.findAllByWho(who);
+        return financeClient.findAllByWho();
     }
 
     @ResponseBody
-    @ApiOperation(value="开销", notes="记录")
+    @ApiOperation(value="开销--记录", notes="记录")
     @PostMapping(value = "savefinance")
     public Result saveFinance(@RequestBody Finance finance,HttpServletRequest request){
         String status = (String) request.getAttribute("status");
@@ -45,8 +44,8 @@ public class ControllerFinance {
     }
 
     @ResponseBody
-    @ApiOperation(value="开销", notes="删除")
-    @PostMapping(value = "delfinance/{id}")
+    @ApiOperation(value="开销--删除", notes="删除")
+    @DeleteMapping(value = "delfinance/{id}")
     public Result delFinance(@PathVariable("id") String id,HttpServletRequest request){
         String status = (String) request.getAttribute("status");
         if("404".equals(status) || status == null){
@@ -56,7 +55,7 @@ public class ControllerFinance {
     }
 
     @ResponseBody
-    @ApiOperation(value="开销", notes="视图")
+    @ApiOperation(value="开销--视图", notes="视图")
     @GetMapping(value = "financeview")
     public Result financeView(HttpServletRequest request){
         String status = (String) request.getAttribute("status");

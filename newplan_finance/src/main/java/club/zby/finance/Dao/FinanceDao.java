@@ -10,10 +10,26 @@ import java.util.List;
 
 public interface FinanceDao extends JpaRepository<Finance,String>, JpaSpecificationExecutor<Finance> {
 
+    /**
+     * 查用户记录列表
+     * @param who
+     * @return
+     */
     @Modifying
     @Query(nativeQuery = true,value = "select * from tb_finance where who = ? order by time ")
     List<Finance> findAllByWho(String who);
 
+
+    @Modifying
+    @Query(nativeQuery = true,value = "select t.id from tb_finance t where who = ?")
+    List<String> findIdByWho(String who);
+
+
+    /**
+     * 根据id删除一条数据
+     * @param id
+     * @return
+     */
     @Modifying
     @Query(nativeQuery = true,value = "delete from tb_finance where id = ? ")
     int delById(String id);

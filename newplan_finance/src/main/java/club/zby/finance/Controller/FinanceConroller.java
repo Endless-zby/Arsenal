@@ -4,6 +4,7 @@ package club.zby.finance.Controller;
 import club.zby.finance.Config.IdWorker;
 import club.zby.finance.Entity.Finance;
 import club.zby.finance.Service.FinanceService;
+import club.zby.finance.Untlis.ToToken;
 import io.jsonwebtoken.Claims;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -29,24 +30,25 @@ public class FinanceConroller {
     @Autowired
     private HttpServletRequest request;
     @Autowired
-    private JwtUtil jwtUtil;
+    private ToToken toToken;
 
     /**
      * 展示所有的记录
-     * @param who
      * @return
      */
 //    @ApiOperation(value = "展示查询所有的记录", notes = "展示查询所有的记录", httpMethod = "GET")
     @ResponseBody
-    @GetMapping("showfinance/{who}")
-    public Result findAllByWho(@PathVariable("who") String who){
-        List<Finance> finances = financeService.findAllByWho(who);
-        System.out.println("---" + finances.size());
-        if(finances.size() == 0){
-            return new Result(false,StatusCode.RESERROR,"查询失败",null);
-        }
+    @GetMapping("showfinance")
+    public Result findAllByWho(){
 
-        return new Result(true,StatusCode.OK,"返回成功",finances);
+        String token = request.getHeader("Authrorization");
+        Result result = toToken.parseToken(token);
+        String userid = (String) result.getData();
+        if(userid != null){
+            List<Finance> finances = financeService.findAllByWho(userid);
+            return new Result(true,StatusCode.OK,"返回成功",finances);
+        }
+        return result;
     }
 
     /**
@@ -58,13 +60,21 @@ public class FinanceConroller {
     @ResponseBody
     @PostMapping("savefinance")
     public Result saveFinance(@RequestBody Finance finance){
-        finance.setId(idWorker.nextId() + "");
-        finance.setTime(new Date());
-        Finance savefinance = financeService.saveFinance(finance);
-        if(savefinance != null){
-            return new Result(true,StatusCode.OK,"添加成功",savefinance);
+
+        String token = request.getHeader("Authrorization");
+        Result result = toToken.parseToken(token);
+        String userid = (String) result.getData();
+        if(userid != null){
+            finance.setWho(userid);
+            finance.setId(idWorker.nextId() + "");
+            finance.setTime(new Date());
+            Finance savefinance = financeService.saveFinance(finance);
+            if(savefinance != null){
+                return new Result(true,StatusCode.OK,"添加成功",savefinance);
+            }
+            return new Result(false,StatusCode.RESERROR,"失败，重试",null);
         }
-        return new Result(false,StatusCode.RESERROR,"失败，重试",null);
+        return result;
     }
 
     /**
@@ -74,13 +84,24 @@ public class FinanceConroller {
      */
 //    @ApiOperation(value = "删除记录", notes = "删除记录", httpMethod = "Delete")
     @ResponseBody
-    @DeleteMapping("delfinance")
+    @DeleteMapping("delfinance/{id}")
     public Result delFinance(@PathVariable("id") String id){
-        int del =  financeService.delFinance(id);
-        if(del > 0){
-            return new Result(true,StatusCode.OK,"删除成功",del);
+
+        //删除前确保所删除的信息是属于当前用户的
+        String token = request.getHeader("Authrorization");
+        Result result = toToken.parseToken(token);
+        String userid = (String) result.getData();
+        if(userid != null){
+            List<String> finances = financeService.findIdByWho(userid);
+            if(finances.contains(id)){
+                int del =  financeService.delFinance(id);
+                if(del > 0){
+                    return new Result(true,StatusCode.OK,"删除成功",del);
+                }
+                return new Result(false,StatusCode.RESERROR,"失败，请刷新",del);
+            }
         }
-        return new Result(false,StatusCode.RESERROR,"失败，请刷新",del);
+        return result;
     }
 
     /**
@@ -97,25 +118,12 @@ public class FinanceConroller {
     public Result financeView() {
         //返回提示被放置在financeService中！
         String token = request.getHeader("Authrorization");
-
-        if (token != null && token.startsWith("Bearer ")) {
-            System.out.println("取出转发的heard：" + token);
-            Claims claims = jwtUtil.parseJwt(token.substring(7));
-            if (claims != null) {
-                //管理员
-                if ("1".equals(claims.get("roles")) || "0".equals(claims.get("roles"))) {
-                    String userid = (String) claims.get("jti");
-                    System.out.println("userid：" + userid);
-                    return financeService.findAllByid(userid);
-                } else {
-                    return new Result(false, StatusCode.REMOTEERROR, "权限校验失败！", null);
-                }
-            } else {
-                return new Result(false, StatusCode.LOGINERROR, "身份失效，请重新登录！", null);
-            }
-        }else {
-            return new Result(false, StatusCode.ERROR, "Finance服务未连接，请联系管理员！", null);
+        Result result = toToken.parseToken(token);
+        String userid = (String) result.getData();
+        if(userid != null){
+            return financeService.findAllByid(userid);
         }
+        return result;
     }
 
 }

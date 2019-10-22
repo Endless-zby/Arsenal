@@ -23,6 +23,8 @@
         <module>newplansms</module>
         <module>newplan_finance</module>
         <module>newplan_express</module>
+        <module>newplan_ftp</module>
+        <module>newplan_commen</module>
     </modules>
 
 

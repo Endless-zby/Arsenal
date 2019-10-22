@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 public class FinanceClientImp implements FinanceClient {
     @Override
-    public Result findAllByWho(String who) {
+    public Result findAllByWho() {
         return new Result(false, StatusCode.RESERROR, "网络开小差了，请重试", null);
     }
 

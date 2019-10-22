@@ -6,18 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MyTime" />
+        <module name="newplan_ftp" />
+        <module name="newplansms" />
+        <module name="projecteureka" />
+        <module name="newplan_express" />
+        <module name="commen" />
         <module name="zuul" />
         <module name="newplan_finance" />
-        <module name="testall" />
-        <module name="newplan" />
-        <module name="commen" />
-        <module name="newplansms" />
-        <module name="userinfo" />
-        <module name="newplan_express" />
         <module name="armstype" />
-        <module name="projecteureka" />
+        <module name="userinfo" />
         <module name="config" />
+        <module name="newplan_commen" />
+        <module name="testall" />
+        <module name="MyTime" />
+        <module name="newplan" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,8 +31,10 @@
       <module name="eureka" target="1.5" />
       <module name="MyTime" target="1.8" />
       <module name="newplan" target="1.8" />
+      <module name="newplan_commen" target="1.5" />
       <module name="newplan_express" target="1.5" />
       <module name="newplan_finance" target="6" />
+      <module name="newplan_ftp" target="6" />
       <module name="newplansms" target="1.5" />
       <module name="projecteureka" target="1.8" />
       <module name="testall" target="1.8" />

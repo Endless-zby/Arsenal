@@ -12,6 +12,11 @@ spring:
   application:
     name: core
 
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+
   datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://cdb-6kot9g5e.cd.tencentcdb.com:10007/newplan?characterEncoding=utf-8&useSSL=true
@@ -66,6 +71,8 @@ spring:
 
     #freemarker配置
 
+
+
 ### QQ
 constants:
   qqAppId: 101523068
@@ -101,4 +108,3 @@ UserInfo:
   Photo: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571302471&di=4ce44558200bd366f7a56c646a24ec45&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.qqzhi.com%2Fuploads%2F2018-11-30%2F021340324.jpg
   Nickname: ZBY-
   Gender: 【未知】
-
