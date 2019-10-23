@@ -1,4 +1,4 @@
-package club.zby.express.Config;
+package club.zby.commen.Config;
 
 import java.io.Serializable;
 

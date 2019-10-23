@@ -1,21 +1,19 @@
 package club.zby.ftp.Controller;
 
-import club.zby.ftp.Config.Result;
-import club.zby.ftp.Config.StatusCode;
-import club.zby.ftp.Untlis.FTPUtil;
+import club.zby.commen.Config.Result;
+import club.zby.commen.Config.StatusCode;
+import club.zby.ftp.Service.DbService;
+import club.zby.ftp.Service.FileService;
+import club.zby.ftp.Untlis.ToToken;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.util.Date;
 
 /**
  * @Author: 赵博雅
@@ -29,41 +27,27 @@ public class ControllerFile {
     @Autowired
     private HttpServletRequest request;
     @Autowired
-    private FTPUtil FTPUtil;
+    private FileService fileService;
+    @Autowired
+    private ToToken toToken;
+    @Autowired
+    private DbService dbService;
 
-    private static final String imageBaseUrl = "ftp://39.96.160.110";
+
 
 
     @ResponseBody
     @ApiOperation(value="ftp文件上传", notes="ftp文件上传测试")
-    @PostMapping(value = "upload")
-    public Result uploadPic(MultipartFile multipartFile) {
-        //获取当前登录者id
-        String userid = (String)request.getAttribute("userid");
-        //获取上传文件(用户头像图片)文件名
-        String oddName = multipartFile.getOriginalFilename();
-        //获取文件名后缀
-        String suffix = oddName.substring(oddName.lastIndexOf("."));
-        //重新命名图片
-        long time = new Date().getTime();
-        //生成新的文件名
-        String newName = "file_" + "_" + time + suffix;
-        //文件存放目录(相对于ftp地址的path，比如这里的地址是/www/wwwroot/zby/Pic)
-        String filepath = "/";
-        //
-        try {
-            Result result = FTPUtil.uploadFile(filepath, newName, multipartFile.getInputStream());
-            if(result.isFlag()){
-                //存数据库  然后返回存储地址(这个还没做)
-                result.setData(imageBaseUrl + filepath + newName);
-                return result;
-            }else {
-                return result;
-            }
-        } catch (IOException e) {
-            return new Result(false, StatusCode.ERROR,"FTP连接失败,请重试",null);
-        }
+    @PostMapping(value = "upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public Result uploadPic(@RequestPart(value = "multipartFile") MultipartFile multipartFile) {
 
+        String token = request.getHeader("Authrorization");
+        Result result = toToken.parseToken(token);
+        String userid = (String) result.getData();
+        if(userid != null){
+            return fileService.uploadPic(multipartFile, userid);
+        }
+        return result;
 
     }
 
@@ -71,16 +55,46 @@ public class ControllerFile {
     @ApiOperation(value="ftp文件列表", notes="ftp文件列表测试")
     @PostMapping(value = "fileList")
     public Result fileList() {
-        return FTPUtil.fileList();
+        return fileService.fileList();
     }
+
+
 
     @ResponseBody
     @ApiOperation(value="下载文件", notes="文件下载测试")
     @PostMapping(value = "downFile")
     public Result downFile(@RequestParam("fileName") String fileName,@RequestParam("localPath") String localPath){
-        return FTPUtil.downFile(fileName, localPath);
+
+        String token = request.getHeader("Authrorization");
+        Result result = toToken.parseToken(token);
+        String userid = (String) result.getData();
+        if(userid != null){
+            return fileService.downFile(fileName, localPath);
+        }
+        return result;
     }
 
+    @ResponseBody
+    @ApiOperation(value="删除文件", notes="文件删除测试")
+    @DeleteMapping(value = "delFile")
+    public Result deleteFile(@RequestParam("fileName") String fileName){
 
+        String token = request.getHeader("Authrorization");
+        Result result = toToken.parseToken(token);
+        String userid = (String) result.getData();
+        if(userid != null){
+            //判断该文件是否属于当前登录者
+            int fileNum = dbService.findIdByFileName(fileName, userid);
+            if(fileNum != 0){       //该文件属于当前用户
+                //删除
+                Result res = fileService.deleteFile(fileName);
+                //更改数据库中对应的数据的状态  tag = 0 ---> tag = 1;
+                if(res.isFlag() && dbService.deleteFile(fileName) != 0){
+                    return res;
+                }
+            }
+        }
+        return result;
 
+    }
 }

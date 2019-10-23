@@ -1,8 +1,8 @@
 package club.zby.finance.Untlis;
 
-import club.zby.finance.Config.JwtUtil;
-import club.zby.finance.Config.Result;
-import club.zby.finance.Config.StatusCode;
+import club.zby.commen.Config.JwtUtil;
+import club.zby.commen.Config.Result;
+import club.zby.commen.Config.StatusCode;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

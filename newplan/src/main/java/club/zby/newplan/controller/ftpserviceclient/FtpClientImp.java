@@ -23,12 +23,16 @@ public class FtpClientImp implements FtpClient {
     public Result fileList(){
         return new Result(false, StatusCode.RESERROR, "网络开小差了，请重试", null);
     }
+
     @Override
     public Result downFile(@RequestParam("fileName") String fileName, @RequestParam("localPath") String localPath){
         return new Result(false, StatusCode.RESERROR, "网络开小差了，请重试", null);
     }
 
-
+    @Override
+    public Result deleteFile(String fileName) {
+        return new Result(false, StatusCode.RESERROR, "网络开小差了，请重试", null);
+    }
 
 
 }

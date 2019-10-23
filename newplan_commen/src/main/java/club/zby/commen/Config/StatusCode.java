@@ -1,4 +1,4 @@
-package club.zby.ftp.Config;
+package club.zby.commen.Config;
 
 public class StatusCode {
     public static final int OK = 20000 ;

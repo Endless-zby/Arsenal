@@ -1,4 +1,4 @@
-package club.zby.finance.Config;
+package club.zby.commen.Config;
 
 import org.springframework.context.annotation.Bean;
 

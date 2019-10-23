@@ -1,7 +1,7 @@
 package club.zby.finance;
 
 
-import club.zby.finance.Config.IdWorker;
+import club.zby.commen.Config.IdWorker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 //import org.springframework.cloud.client.discovery.EnableDiscoveryClient;

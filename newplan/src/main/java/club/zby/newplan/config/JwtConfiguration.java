@@ -32,6 +32,7 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
                 .addPathPatterns("/pages/express")
                 .addPathPatterns("/check/smscheck/phone")
                 .addPathPatterns("/FinanceHandle/**")
+                .addPathPatterns("/FtpHandle/**")
 
 
                 .excludePathPatterns(Arrays.asList("/user/register/**","/user/login/**","/user/reg/**"))

@@ -7,16 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="newplan_ftp" />
-        <module name="newplansms" />
+        <module name="newplan_commen" />
         <module name="projecteureka" />
         <module name="newplan_express" />
         <module name="commen" />
         <module name="zuul" />
         <module name="newplan_finance" />
+        <module name="newplansms" />
         <module name="armstype" />
         <module name="userinfo" />
         <module name="config" />
-        <module name="newplan_commen" />
         <module name="testall" />
         <module name="MyTime" />
         <module name="newplan" />
@@ -32,7 +32,7 @@
       <module name="MyTime" target="1.8" />
       <module name="newplan" target="1.8" />
       <module name="newplan_commen" target="1.5" />
-      <module name="newplan_express" target="1.5" />
+      <module name="newplan_express" target="6" />
       <module name="newplan_finance" target="6" />
       <module name="newplan_ftp" target="6" />
       <module name="newplansms" target="1.5" />

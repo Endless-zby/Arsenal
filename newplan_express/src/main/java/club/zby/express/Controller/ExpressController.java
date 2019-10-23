@@ -1,7 +1,7 @@
 package club.zby.express.Controller;
 
-import club.zby.express.Config.Result;
-import club.zby.express.Config.StatusCode;
+import club.zby.commen.Config.Result;
+import club.zby.commen.Config.StatusCode;
 import club.zby.express.Entity.Express;
 import club.zby.express.Untlis.ExpressUntlis;
 import com.alibaba.fastjson.JSON;

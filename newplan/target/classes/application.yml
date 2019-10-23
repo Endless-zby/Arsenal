@@ -87,6 +87,15 @@ constants:
 feign:
   hystrix:
     enabled: true
+#feign默认调用时间是1s，防止文件还未上传完成就遭到熔断
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
 
 page:
   size: 10

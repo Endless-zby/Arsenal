@@ -1,7 +1,7 @@
 package club.zby.ftp.Untlis;
 
-import club.zby.ftp.Config.Result;
-import club.zby.ftp.Config.StatusCode;
+import club.zby.commen.Config.Result;
+import club.zby.commen.Config.StatusCode;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
@@ -190,6 +190,39 @@ public class FTPUtil {
             }
         }
         return new Result(success, StatusCode.OK, "下载成功", fileName);
+    }
+
+
+    public Result deleteFile(String fileName) {
+        boolean success = false;
+        FTPClient ftp = new FTPClient();
+        ftp.setControlEncoding("GBK");
+        try {
+            int reply;
+            ftp.connect(host, port);// 连接FTP服务器
+            ftp.login(username, password);// 登录
+            reply = ftp.getReplyCode();
+            if (!FTPReply.isPositiveCompletion(reply)) {
+                ftp.disconnect();
+                return new Result(success, StatusCode.ERROR, "FTP连接失败", null);
+            }
+            ftp.setFileType(FTPClient.BINARY_FILE_TYPE);
+            ftp.makeDirectory(basePath);
+            ftp.changeWorkingDirectory(basePath);
+            success = ftp.deleteFile(fileName);
+            ftp.logout();
+        } catch (IOException e) {
+            return new Result(success, StatusCode.ERROR, e.getMessage(), null);
+        } finally {
+            if (ftp.isConnected()) {
+                try {
+                    ftp.disconnect();
+                } catch (IOException ioe) {
+                    return new Result(success, StatusCode.ERROR, ioe.getMessage(), null);
+                }
+            }
+        }
+        return new Result(success, StatusCode.OK, "删除成功", fileName);
     }
 
 
