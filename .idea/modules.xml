@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/config/config.iml" filepath="$PROJECT_DIR$/config/config.iml" />
       <module fileurl="file://$PROJECT_DIR$/newplan/newplan.iml" filepath="$PROJECT_DIR$/newplan/newplan.iml" />
       <module fileurl="file://$PROJECT_DIR$/newplan_commen/newplan_commen.iml" filepath="$PROJECT_DIR$/newplan_commen/newplan_commen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/newplan_elasticsearch/newplan_elasticsearch.iml" filepath="$PROJECT_DIR$/newplan_elasticsearch/newplan_elasticsearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/newplan_express/newplan_express.iml" filepath="$PROJECT_DIR$/newplan_express/newplan_express.iml" />
       <module fileurl="file://$PROJECT_DIR$/newplan_finance/newplan_finance.iml" filepath="$PROJECT_DIR$/newplan_finance/newplan_finance.iml" />
       <module fileurl="file://$PROJECT_DIR$/newplan_ftp/newplan_ftp.iml" filepath="$PROJECT_DIR$/newplan_ftp/newplan_ftp.iml" />

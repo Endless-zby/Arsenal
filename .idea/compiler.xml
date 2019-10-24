@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="newplan_elasticsearch" />
         <module name="newplan_ftp" />
         <module name="newplan_commen" />
         <module name="projecteureka" />
@@ -32,6 +33,7 @@
       <module name="MyTime" target="1.8" />
       <module name="newplan" target="1.8" />
       <module name="newplan_commen" target="1.5" />
+      <module name="newplan_elasticsearch" target="6" />
       <module name="newplan_express" target="6" />
       <module name="newplan_finance" target="6" />
       <module name="newplan_ftp" target="6" />

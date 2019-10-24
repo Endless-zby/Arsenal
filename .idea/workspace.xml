@@ -2,61 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="修补了一些小BUG">
-      <change afterPath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Config/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Untlis/ToToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Config/JwtConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Dao/FileDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/DbService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Untlis/ToToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commen/src/main/java/com/zby/entity/PageResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_commen/src/main/java/club/zby/commen/Config/PageResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_elasticsearch/newplan_elasticsearch.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_elasticsearch/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_elasticsearch/src/main/java/club/zby/elasticsearch/Config/JwtConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_elasticsearch/src/main/java/club/zby/elasticsearch/Config/Swagger2Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_elasticsearch/src/main/java/club/zby/elasticsearch/Controller/EsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_elasticsearch/src/main/java/club/zby/elasticsearch/Dao/EsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_elasticsearch/src/main/java/club/zby/elasticsearch/ElasticsearchApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_elasticsearch/src/main/java/club/zby/elasticsearch/Entity/EsFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_elasticsearch/src/main/java/club/zby/elasticsearch/Service/EsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_elasticsearch/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/newplan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/newplan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/Entity/FileInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ftpserviceclient/ControllerFtp.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ftpserviceclient/ControllerFtp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ftpserviceclient/FtpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ftpserviceclient/FtpClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ftpserviceclient/FtpClientImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/controller/ftpserviceclient/FtpClientImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ftpserviceclient/ControllerFtp.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ftpserviceclient/ControllerFtp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ftpserviceclient/FtpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ftpserviceclient/FtpClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ftpserviceclient/FtpClientImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/controller/ftpserviceclient/FtpClientImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_commen/newplan_commen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_commen/newplan_commen.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_commen/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_commen/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/newplan_express.iml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/newplan_express.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Config/IdWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_commen/src/main/java/club/zby/commen/Config/IdWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Config/Result.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Config/StatusCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Controller/ExpressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/Controller/ExpressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/ExpressApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/src/main/java/club/zby/express/ExpressApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/newplan_finance.iml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/newplan_finance.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/IdWorker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_commen/src/main/java/club/zby/commen/Config/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Config/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_commen/src/main/java/club/zby/commen/Config/StatusCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Controller/FinanceConroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Controller/FinanceConroller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/FinanceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/FinanceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Service/FinanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Service/FinanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Untlis/ToToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Untlis/ToToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/newplan_ftp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/newplan_ftp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Config/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Config/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Config/Result.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Config/StatusCode.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Controller/ControllerFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Controller/ControllerFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Entity/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Entity/FileInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/FtpApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/FtpApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Untlis/FTPUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Untlis/FTPUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Config/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Config/StatusCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/DbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/DbService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Controller/ControllerFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Controller/ControllerFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/FtpApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/FtpApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Untlis/FTPUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Untlis/FTPUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Entity/FileInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Entity/FileInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/DbService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/DbService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/FileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/FileService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +96,7 @@
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565765160347" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/newplan_commen/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/newplan_elasticsearch/src/main/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -137,26 +107,26 @@
     <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Arsenal\Arsenal\newplan_elasticsearch\src\main\resources" />
+      <recent name="E:\Arsenal\Arsenal\newplan_commen\src\main\resources" />
+      <recent name="E:\Arsenal\Arsenal\newplan_commen\src\main\java\club\zby\commen\Config" />
+      <recent name="E:\Arsenal\Arsenal\newplan_ftp\src\main\java\club\zby\ftp\config" />
+      <recent name="E:\Arsenal\Arsenal\newplan_ftp\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="club.zby.elasticsearch" />
+      <recent name="club.zby.commen.Config" />
+      <recent name="com.zby.entity" />
+      <recent name="club.zby.elasticsearch.Config" />
+      <recent name="club.zby.ftp.Untlis" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\images" />
       <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\controller" />
       <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\js" />
       <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\images" />
       <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\css" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="club.zby.ftp.Untlis" />
-      <recent name="club.zby.finance.Untlis" />
-      <recent name="club.zby.express.Untlis" />
-      <recent name="club.zby.commen" />
-      <recent name="club.zby.commen.Config" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Arsenal\Arsenal\newplan_commen\src\main\resources" />
-      <recent name="E:\Arsenal\Arsenal\newplan_commen\src\main\java\club\zby\commen\Config" />
-      <recent name="E:\Arsenal\Arsenal\newplan_ftp\src\main\java\club\zby\ftp\config" />
-      <recent name="E:\Arsenal\Arsenal\newplan_ftp\src\main\resources" />
-      <recent name="E:\Arsenal\Arsenal\newplan_finance\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -204,19 +174,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="club.zby.newplan.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zby.userzuul.filter.test" />
-      <module name="zuul" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zby.userzuul.filter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -280,6 +237,19 @@
     <configuration name="ConfigApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="config" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zby.config.ConfigApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ElasticsearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="newplan_elasticsearch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="club.zby.elasticsearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="club.zby.elasticsearch.ElasticsearchApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -368,7 +338,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.test (1)" />
       <item itemvalue="Application.query" />
       <item itemvalue="Application.KdniaoTrackQueryAPI" />
       <item itemvalue="Application.kdniaoTrackQueryAPI" />
@@ -386,14 +355,15 @@
       <item itemvalue="Spring Boot.ExpressApplication" />
       <item itemvalue="Spring Boot.FtpApplication" />
       <item itemvalue="Spring Boot.EurekaApplication (1)" />
+      <item itemvalue="Spring Boot.ElasticsearchApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ElasticsearchApplication" />
         <item itemvalue="Spring Boot.EurekaApplication (1)" />
         <item itemvalue="Application.kdniaoTrackQueryAPI" />
         <item itemvalue="Application.KdniaoTrackQueryAPI" />
         <item itemvalue="Application.query" />
-        <item itemvalue="Application.test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -516,7 +486,9 @@
       <workItem from="1571707197783" duration="9061000" />
       <workItem from="1571723741000" duration="15745000" />
       <workItem from="1571793382779" duration="10551000" />
-      <workItem from="1571810599142" duration="9455000" />
+      <workItem from="1571810599142" duration="12050000" />
+      <workItem from="1571878293077" duration="10225000" />
+      <workItem from="1571897753179" duration="4526000" />
     </task>
     <servers />
   </component>

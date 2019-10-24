@@ -1,33 +1,38 @@
-package club.zby.ftp.Entity;
+package club.zby.elasticsearch.Entity;
 
 
-import org.springframework.stereotype.Component;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
 import java.io.Serializable;
+
 
 /**
  * @Author: 赵博雅
- * @Date: 2019/10/22 18:27
+ * @Date: 2019/10/24 9:40
  */
-@Entity
-@Table(name = "tb_file")
-public class FileInfo implements Serializable {
-
-
+@Document(indexName = "ftpfile",type = "filename")
+public class EsFile implements Serializable {
+    @Field(index=true ,analyzer = "ik_max_word"   ,searchAnalyzer = "ik_max_word")
     private String userid;
     @Id
     private String id;
+    @Field(index=true ,analyzer = "ik_max_word"   ,searchAnalyzer = "ik_max_word")
     private String filename;
+    @Field(index=true ,analyzer = "ik_max_word"   ,searchAnalyzer = "ik_max_word")
     private Long filesize;
+    @Field(index=true ,analyzer = "ik_max_word"   ,searchAnalyzer = "ik_max_word")
     private int filedownnum;
+    @Field(index=true ,analyzer = "ik_max_word"   ,searchAnalyzer = "ik_max_word")
     private Long timestamp;
+    @Field(index=true ,analyzer = "ik_max_word"   ,searchAnalyzer = "ik_max_word")
     private String filepath;
+    @Field(index=true ,analyzer = "ik_max_word"   ,searchAnalyzer = "ik_max_word")
     private int filetag;
 
-    public FileInfo(String userid, String id, String filename, Long filesize, int filedownnum, Long timestamp, String filepath, int filetag) {
+    public EsFile(String userid, String id, String filename, Long filesize, int filedownnum, Long timestamp, String filepath, int filetag) {
         this.userid = userid;
         this.id = id;
         this.filename = filename;
@@ -38,7 +43,7 @@ public class FileInfo implements Serializable {
         this.filetag = filetag;
     }
 
-    public FileInfo(String id, String filename, Long filesize, int filedownnum, Long timestamp, String filepath, int filetag) {
+    public EsFile(String id, String filename, Long filesize, int filedownnum, Long timestamp, String filepath, int filetag) {
         this.id = id;
         this.filename = filename;
         this.filesize = filesize;
@@ -48,7 +53,7 @@ public class FileInfo implements Serializable {
         this.filetag = filetag;
     }
 
-    public FileInfo() {
+    public EsFile() {
     }
 
     public String getUserid() {

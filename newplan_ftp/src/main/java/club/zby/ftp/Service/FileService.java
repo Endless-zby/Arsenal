@@ -44,11 +44,11 @@ public class FileService {
         //文件存放目录(相对于ftp地址的path，比如这里的地址是/www/wwwroot/zby/Pic)
         String filepath = "/";
         try {
-            Result result = FTPUtil.uploadFile(filepath, newName, multipartFile.getInputStream());
+            Result result = FTPUtil.uploadFile(filepath, oddName, multipartFile.getInputStream());
             if(result.isFlag()){
 //                result.setData(imageBaseUrl + filepath + newName);
 //                return result;
-                String path = dbService.uploadPic(userid, newName, multipartFile.getSize(),imageBaseUrl + filepath + newName);
+                String path = dbService.uploadPic(userid, oddName, multipartFile.getSize(),imageBaseUrl + filepath + oddName);
                 if(path != null){
                     result.setData(path);
                     return result;

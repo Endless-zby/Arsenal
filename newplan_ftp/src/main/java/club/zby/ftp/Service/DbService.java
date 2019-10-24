@@ -34,7 +34,7 @@ public class DbService {
      */
     public String uploadPic(String userid,String filename,Long filesize,String filepath){
         FileInfo fileInfo = new FileInfo();
-        fileInfo.setFileid(idWorker.nextId() + "");
+        fileInfo.setId(idWorker.nextId() + "");
         fileInfo.setUserid(userid);
         fileInfo.setFilename(filename);
         fileInfo.setFilesize(filesize);

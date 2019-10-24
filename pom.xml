@@ -25,6 +25,7 @@
         <module>newplan_express</module>
         <module>newplan_ftp</module>
         <module>newplan_commen</module>
+        <module>newplan_elasticsearch</module>
     </modules>
 
 
