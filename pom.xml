@@ -20,12 +20,14 @@
         <module>testall</module>
         <module>MyTime</module>
         <module>newplan</module>
-        <module>newplansms</module>
+        <module>newplan_sms</module>
         <module>newplan_finance</module>
         <module>newplan_express</module>
         <module>newplan_ftp</module>
         <module>newplan_commen</module>
         <module>newplan_elasticsearch</module>
+        <module>newplan_magic</module>
+        <module>newplan_spider</module>
     </modules>
 
 

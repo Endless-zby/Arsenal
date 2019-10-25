@@ -13,7 +13,9 @@
       <module fileurl="file://$PROJECT_DIR$/newplan_express/newplan_express.iml" filepath="$PROJECT_DIR$/newplan_express/newplan_express.iml" />
       <module fileurl="file://$PROJECT_DIR$/newplan_finance/newplan_finance.iml" filepath="$PROJECT_DIR$/newplan_finance/newplan_finance.iml" />
       <module fileurl="file://$PROJECT_DIR$/newplan_ftp/newplan_ftp.iml" filepath="$PROJECT_DIR$/newplan_ftp/newplan_ftp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/newplansms/newplansms.iml" filepath="$PROJECT_DIR$/newplansms/newplansms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/newplan_magic/newplan_magic.iml" filepath="$PROJECT_DIR$/newplan_magic/newplan_magic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/newplan_sms/newplan_sms.iml" filepath="$PROJECT_DIR$/newplan_sms/newplan_sms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/newplan_spider/newplan_spider.iml" filepath="$PROJECT_DIR$/newplan_spider/newplan_spider.iml" />
       <module fileurl="file://$PROJECT_DIR$/projecteureka/projecteureka.iml" filepath="$PROJECT_DIR$/projecteureka/projecteureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/testall/testall.iml" filepath="$PROJECT_DIR$/testall/testall.iml" />
       <module fileurl="file://$PROJECT_DIR$/userinfo/userinfo.iml" filepath="$PROJECT_DIR$/userinfo/userinfo.iml" />

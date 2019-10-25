@@ -41,14 +41,13 @@ public class ControllerFile {
     @PostMapping(value = "upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Result uploadPic(@RequestPart(value = "multipartFile") MultipartFile multipartFile) {
 
-//        String token = request.getHeader("Authrorization");
-//        Result result = toToken.parseToken(token);
-//        String userid = (String) result.getData();
-//        if(userid != null){
-//            return fileService.uploadPic(multipartFile, userid);
-//        }
-//        return result;
-        return fileService.uploadPic(multipartFile, "66341505371082752");
+        String token = request.getHeader("Authrorization");
+        Result result = toToken.parseToken(token);
+        String userid = (String) result.getData();
+        if(userid != null){
+            return fileService.uploadPic(multipartFile, userid);
+        }
+        return result;
     }
 
     @ResponseBody
@@ -65,14 +64,14 @@ public class ControllerFile {
     @PostMapping(value = "downFile")
     public Result downFile(@RequestParam("fileName") String fileName,@RequestParam("localPath") String localPath){
 
-//        String token = request.getHeader("Authrorization");
-//        Result result = toToken.parseToken(token);
-//        String userid = (String) result.getData();
-//        if(userid != null){
-//            return fileService.downFile(fileName, localPath);
-//        }
-//        return result;
-        return fileService.downFile(fileName, localPath);
+        String token = request.getHeader("Authrorization");
+        Result result = toToken.parseToken(token);
+        String userid = (String) result.getData();
+        if(userid != null){
+            return fileService.downFile(fileName, localPath);
+        }
+        return result;
+
     }
 
     @ResponseBody
