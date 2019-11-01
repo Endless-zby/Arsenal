@@ -1,24 +1,32 @@
 package club.zby.Entity;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @Author: 赵博雅
  * @Date: 2019/10/25 15:12
  */
-@Entity
-@Table(name = "tb_spider_list")
-public class SpiderData {
+public class SpiderData implements Serializable {
 
-    @Id
     private int id;
     private Date releaseTime;
     private String title;
     private Date crawlTime;
     private String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public int getId() {
         return id;
@@ -50,21 +58,5 @@ public class SpiderData {
 
     public void setCrawlTime(Date crawlTime) {
         this.crawlTime = crawlTime;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public SpiderData(int id, Date releaseTime, String title, Date crawlTime, String url) {
-        this.id = id;
-        this.releaseTime = releaseTime;
-        this.title = title;
-        this.crawlTime = crawlTime;
-        this.url = url;
     }
 }

@@ -7,6 +7,7 @@ package club.zby.Spider;
 
 import club.zby.Boot.Boot;
 import club.zby.Boot.Example.ExampleBoot;
+import club.zby.DataService.AbstractDataService;
 import club.zby.DataService.DataService;
 import club.zby.Downloader.DownLoader;
 import club.zby.Downloader.Example.StreamDownloader;
@@ -81,16 +82,16 @@ public class MySpider {
             downloader.reset(scheduleQueue.nextURL());
             File downloadFile = downloader.run();
             MyLogger.log("下载待爬起网页文件完成！");
-//            if(dataService == null){
-//                MyLogger.log("准备解析网页内容。。");
-//                File tempFile = processor.parseToFile(downloadFile);
-//            }else{
-//                List list = processor.parseToList(downloadFile);
-//                dataService.adds(list);
-//            }
+            if(dataService == null){
+                MyLogger.log("准备解析网页内容。。");
+                File tempFile = processor.parseToFile(downloadFile);
+            }else{
+                List list = processor.parseToList(downloadFile);
+                dataService.adds(list);
+            }
 
-            MyLogger.log("准备解析网页内容。。");
-            File tempFile = processor.parseToFile(downloadFile);
+//            MyLogger.log("准备解析网页内容。。");
+//            File tempFile = processor.parseToFile(downloadFile);
 
 
             if(scheduleQueue.size() >= 1){

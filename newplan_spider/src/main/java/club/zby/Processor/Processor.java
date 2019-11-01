@@ -1,6 +1,9 @@
 package club.zby.Processor;
 
+import club.zby.Entity.NewsContext;
+
 import java.io.File;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -14,5 +17,9 @@ public interface Processor<T> {
     File parseToFile(File downloadFile) throws Exception;
 
     List<T> parseToList(File downloadFile) throws Exception;
+
+    File parseToFileContext(URL url) throws Exception;
+
+    NewsContext parseToListContext(URL url) throws Exception;
 
 }

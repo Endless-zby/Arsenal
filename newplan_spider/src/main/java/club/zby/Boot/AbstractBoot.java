@@ -1,6 +1,7 @@
 package club.zby.Boot;
 
 import club.zby.Loguntil.MyLogger;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,6 +16,7 @@ import java.util.Properties;
 public abstract class AbstractBoot implements Boot{
 
     protected static URL bootPropertiesURL;
+    //默认配置文件名：boot.properties
     private static String bootFileName = "boot.properties";
 
 
@@ -48,8 +50,12 @@ public abstract class AbstractBoot implements Boot{
 
 
     protected Properties loadBootProperties() throws IOException, URISyntaxException {
-        MyLogger.log("使用默认boot配置");
-        String url = "file://" + AbstractBoot.class.getResource(File.separator).getPath() + File.separator + "properties" + File.separator + bootFileName;
+        MyLogger.log("使用[默认]boot配置");
+
+        ClassPathResource classPathResource = new ClassPathResource(bootFileName);
+
+        String url = classPathResource.getURL().toString();
+        MyLogger.log("加载[默认]配置文件，路径：" + url);
         bootPropertiesURL = new URL(url);
 
         Properties properties = new Properties();

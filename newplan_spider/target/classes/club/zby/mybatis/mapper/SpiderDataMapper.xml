@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="club.zby.mybatis.mapper.SpiderDataMapper">
+
+	<cache/>
+<!--	<resultMap id="spiderDataResultMap" type="spiderData">-->
+<!--		<id property="id" column="id" javaType="_int" jdbcType="NUMERIC" />-->
+<!--		<result property="releaseTime" column="release_time" javaType="Date" jdbcType="TIMESTAMP"/>-->
+<!--		<result property="title" column="title" javaType="String" jdbcType="VARCHAR"/>-->
+<!--		<result property="crawlTime" column="crawl_time" javaType="Date" jdbcType="TIMESTAMP"/>-->
+<!--	</resultMap>-->
+<!--	<resultMap id="seeShare" type="DataObject.YouthNews">-->
+<!--		<id column="id" property="id" />-->
+<!--		<result column="release_time" property="releaseTime" />-->
+<!--		<result column="title" property="title" />-->
+<!--		<result column="crawl_time" property="crawlTime" />-->
+<!--		<result column="url" property="url" />-->
+<!--	</resultMap>-->
+
+	<!-- crud	-->
+
+
+<!--	<select id="select" resultType="spiderData">
+		select * from YOUTH_NEWS where id = #{id}
+	</select>
+
+	<select id="selectList" resultType="spiderData">
+		select * from YOUTH_NEWS
+	</select>
+
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+		insert into YOUTH_NEWS (
+			release_time,
+			title,
+			crawl_time,
+			url
+		)
+		values (
+			#{releaseTime},
+			#{title},
+			#{crawlTime},
+			#{url}
+
+		)
+	</insert>-->
+
+	<insert id="inserts" useGeneratedKeys="true"
+			keyProperty="id" parameterType="list">
+		insert into YOUTH_NEWS (release_time, title, crawl_time,url) values
+		<foreach collection="list" item="element" open="(" separator="),("  close=")">
+			#{element.releaseTime},
+			#{element.title},
+			#{element.crawlTime},
+			#{element.url}
+		</foreach>
+	</insert>
+
+	<!--<update id="update">
+		update YOUTH_NEWS set
+		release_time = #{releaseTime},
+		title = #{title},
+		crawl_time = #{crawlTime},
+		url = #{url}
+		where id = #{id}
+	</update>
+
+	<delete id="delete">
+		delete from YOUTH_NEWS where id = #{id}
+	</delete>-->
+</mapper>
+
+
+
+

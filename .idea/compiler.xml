@@ -13,15 +13,15 @@
         <module name="newplan_sms" />
         <module name="newplan_express" />
         <module name="commen" />
+        <module name="MyTime" />
         <module name="zuul" />
         <module name="newplan_finance" />
         <module name="newplan_magic" />
         <module name="armstype" />
         <module name="userinfo" />
         <module name="config" />
-        <module name="newplan_spider" />
         <module name="testall" />
-        <module name="MyTime" />
+        <module name="newplan_spider" />
         <module name="newplan" />
       </profile>
     </annotationProcessing>
@@ -41,7 +41,7 @@
       <module name="newplan_ftp" target="6" />
       <module name="newplan_magic" target="6" />
       <module name="newplan_sms" target="1.5" />
-      <module name="newplan_spider" target="7" />
+      <module name="newplan_spider" target="8" />
       <module name="projecteureka" target="1.8" />
       <module name="testall" target="1.8" />
       <module name="userinfo" target="8" />

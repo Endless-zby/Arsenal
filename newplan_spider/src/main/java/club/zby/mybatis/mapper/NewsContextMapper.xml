@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="DatabaseAssist.mybatis.mapper.NewsContextMapper">
+
+    <cache/>
+<!--    <resultMap id="youthNewsResultMap" type="youthNews">-->
+<!--        <id property="id" column="id" javaType="_int" jdbcType="NUMERIC" />-->
+<!--        <result property="releaseTime" column="release_time" javaType="Date" jdbcType="TIMESTAMP"/>-->
+<!--        <result property="title" column="title" javaType="String" jdbcType="VARCHAR"/>-->
+<!--        <result property="crawlTime" column="crawl_time" javaType="Date" jdbcType="TIMESTAMP"/>-->
+<!--    </resultMap>-->
+
+    <insert id="inserts" useGeneratedKeys="true"
+            keyProperty="id" parameterType="list">
+        insert into NEW_CONTEXT (releaseTime, title, context,url,sendtime,editor,author) values
+        <foreach collection="list" item="element" open="(" separator="),("  close=")">
+            #{element.releaseTime},
+            #{element.title},
+            #{element.context},
+            #{element.url},
+            #{element.sendtime},
+            #{element.editor},
+            #{element.author}
+        </foreach>
+    </insert>
+
+</mapper>
+
+
+
+

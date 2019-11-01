@@ -3,10 +3,12 @@ package club.zby.Boot.Example;
 import club.zby.Boot.AbstractBoot;
 import club.zby.Constants.Constants;
 import club.zby.Loguntil.MyLogger;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Properties;
@@ -19,11 +21,16 @@ import java.util.Properties;
  */
 public class ExampleBoot extends AbstractBoot {
 
-    private static String bootFileName = "DemoBoot.properties";
+    //自定义文件名：DemoBoot.properties
+    private static String bootFileName = "custom/DemoBoot.properties";
 
     protected Properties loadBootProperties() throws IOException, URISyntaxException {
-        MyLogger.log("使用自定义boot配置");
-        String url = "file://" + AbstractBoot.class.getResource(File.separator).getPath() + File.separator + "properties" + File.separator + "Example" + File.separator + bootFileName;
+        MyLogger.log("使用[自定义]boot配置");
+
+        ClassPathResource classPathResource = new ClassPathResource(bootFileName);
+
+        String url = classPathResource.getURL().toString();
+        MyLogger.log("加载[自定义]配置文件，路径：" + url);
         bootPropertiesURL = new URL(url);
 
         Properties properties = new Properties();

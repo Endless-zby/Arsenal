@@ -1,15 +1,17 @@
 package club.zby.Until;
 
 import club.zby.Loguntil.MyLogger;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.File;
 import java.io.IOException;
 
 public class FileUtil {
 
+
     public static File createEmptyFile(String directoryPath, String newFileName) throws IOException {
         String newfilePath = directoryPath + File.separator + newFileName;
-        MyLogger.log("start create:" + newfilePath);
+        MyLogger.log("create new file:" + newfilePath);
 
         File dir = new File(directoryPath);
         File newFile = new File(newfilePath);
@@ -40,6 +42,8 @@ public class FileUtil {
         if (RandomNameUtil.isNull(custom)) {
             throw new Exception("getPrefix error");
         }
+
         return "file://" + FileUtil.class.getResource(File.separator).getPath() + File.separator + custom + File.separator;
+
     }
 }
