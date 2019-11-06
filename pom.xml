@@ -28,6 +28,7 @@
         <module>newplan_elasticsearch</module>
         <module>newplan_magic</module>
         <module>newplan_spider</module>
+        <module>newplan_core</module>
     </modules>
 
 

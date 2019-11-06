@@ -19,7 +19,7 @@ public class MainList {
     //创建五个线程
     private static ExecutorService executorService = Executors.newFixedThreadPool(5);
     private static URL[] urls;
-    public static boolean useThreads = true;
+    public static boolean useThreads = false;
 
 
     public static void main(String[] args) throws Exception {

@@ -13,15 +13,16 @@
         <module name="newplan_sms" />
         <module name="newplan_express" />
         <module name="commen" />
-        <module name="MyTime" />
+        <module name="newplan_core" />
         <module name="zuul" />
         <module name="newplan_finance" />
         <module name="newplan_magic" />
         <module name="armstype" />
         <module name="userinfo" />
         <module name="config" />
-        <module name="testall" />
         <module name="newplan_spider" />
+        <module name="testall" />
+        <module name="MyTime" />
         <module name="newplan" />
       </profile>
     </annotationProcessing>
@@ -35,6 +36,7 @@
       <module name="MyTime" target="1.8" />
       <module name="newplan" target="1.8" />
       <module name="newplan_commen" target="1.5" />
+      <module name="newplan_core" target="1.8" />
       <module name="newplan_elasticsearch" target="6" />
       <module name="newplan_express" target="6" />
       <module name="newplan_finance" target="6" />

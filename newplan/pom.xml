@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>newplan</artifactId>
+    <artifactId>club.zby.newplan</artifactId>
 
     <dependencies>
         <dependency>

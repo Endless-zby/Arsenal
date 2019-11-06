@@ -10,7 +10,7 @@
         <property name="password" value="zby123456"/>
 <!--        <property name="driver" value="com.mysql.jdbc.Driver"/> &lt;!&ndash; in mysql8.0.16 This is deprecated  &ndash;&gt;-->
         <property name="driver" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://cdb-6kot9g5e.cd.tencentcdb.com:10007/newplan?characterEncoding=utf-8&amp;useSSL=true"/>
+        <property name="url" value="jdbc:mysql://cdb-6kot9g5e.cd.tencentcdb.com:10007/club.zby.newplan?characterEncoding=utf-8&amp;useSSL=true"/>
         <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/> <!-- 运行时创建这个变量，这个变量启动了第19行使用的默认值的功能 -->
     </properties>
 

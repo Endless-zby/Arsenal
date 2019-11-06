@@ -17,6 +17,8 @@ public class Test {
 //    private static String bootFileName = "custom/DemoBoot.properties";
     private static String bootFileName = "download";
     protected static URL bootPropertiesURL;
+
+
     public static void main(String[] args) throws Exception {
         ClassPathResource classPathResource = new ClassPathResource(bootFileName);
         System.out.println(classPathResource.getURL());
