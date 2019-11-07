@@ -30,7 +30,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("club.zby.club.zby.newplan.controller"))
+                .apis(RequestHandlerSelectors.basePackage("club.zby.newplan.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

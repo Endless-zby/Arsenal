@@ -14,9 +14,63 @@
 	<link th:href="@{/static/css/owl.theme.default.min.css}" rel="stylesheet">
 	<link th:href="@{/static/css/style.css}" rel="stylesheet">
 
+	<script th:src="@{/static/js/jquery.min.js}"></script>
+	<script th:src="@{/static/js/materialize.min.js}"></script>
+	<script th:src="@{/static/js/owl.carousel.min.js}"></script>
+	<script th:src="@{/static/js/main.js}"></script>
+	<!--sweet-->
+
+	<link th:href="@{/static/css/sweetalert.css}" rel="stylesheet">
+	<script th:src="@{/static/js/sweetalert-dev.js}" ></script>
+
+
+	<script>
+
+		$(document).ready(function () {
+
+			if($("#qq_tag").val() == '0'){
+				var qq_token = $("#qq_token").val();
+				var qq_photo = $("#qq_photo").val();
+				var qq_nickname = $("#qq_nickname").val();
+				headerSetup(qq_token,qq_photo,qq_nickname);
+			}
+
+
+			var photo = window.localStorage.getItem("photo");
+			var nickname = window.localStorage.getItem("nickname");
+			if(photo != null){
+				$("#photo").attr("src",photo);
+			}
+			if(nickname != null){
+				document.getElementById("nickname").innerText= nickname;
+			}
+		});
+	</script>
+<script>
+	function headerSetup(qq_token,qq_photo,qq_nickname)
+	{
+		var storage = window.localStorage;
+		if(!storage){
+			// alert("浏览器不支持localstorage");
+			swal("完蛋","您的浏览器不支持Storage","error");
+			return false;
+		}
+		storage.setItem("Authrorization", "Bearer " +qq_token);	//保存token
+		storage.setItem("user_login_time", new Date().getTime());//保存登录时间
+		storage.setItem("photo", qq_photo);//保存头像
+		storage.setItem("nickname", qq_nickname);//保存昵称
+
+	}
+
+</script>
+
+
 </head>
 <body>
-
+	<input id="qq_tag" type="hidden" th:value="${result} == null ? '' : '0' ">
+	<input id="qq_token" type="hidden" th:value="${result} == null ? '' : ${result.message} ">
+	<input id="qq_photo" type="hidden" th:value="${result} == null ? '' : ${result.data.photo} ">
+	<input id="qq_nickname" type="hidden" th:value="${result} == null ? '' : ${result.data.nickname} ">
 	<!-- preloader -->
 	<div class="loader-wrapper">
 		<div class="loader-cube"></div>
@@ -51,8 +105,8 @@
 		<ul id="slide-out" class="collapsible side-nav">
 			<li class="list-top">
 				<div class="user-view">
-					<img th:src="@{/static/images/testimonial1.png}" class="responsive-img" alt="">
-					<h4>Marchel Agata</h4>
+					<img id="photo" th:src="@{/static/images/testimonial1.png}" class="responsive-img" alt="">
+					<h4 id="nickname"></h4>
 					<span>New York</span>
 				</div>
 			</li>
@@ -97,7 +151,7 @@
 				</div>
 			</li>
 			<li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
-			<li><a href="/pages/login"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+			<li><a href="/user/login"><i class="fas fa-sign-in-alt"></i>Login</a></li>
 			<li><a href="register.html"><i class="fas fa-user-plus"></i>Register</a></li>
 			<li><a href="index.html"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
 		</ul>
@@ -303,10 +357,6 @@
 	</footer>
 	<!-- end footer -->
 
-	<script th:src="@{/static/js/jquery.min.js}"></script>
-	<script th:src="@{/static/js/materialize.min.js}"></script>
-	<script th:src="@{/static/js/owl.carousel.min.js}"></script>
-	<script th:src="@{/static/js/main.js}"></script>
 
 </body>
 </html>

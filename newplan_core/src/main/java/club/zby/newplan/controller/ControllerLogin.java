@@ -3,6 +3,7 @@ package club.zby.newplan.controller;
 import club.zby.newplan.Entity.User;
 import club.zby.newplan.config.JwtUtil;
 import club.zby.newplan.result.Result;
+import club.zby.newplan.result.StatusCode;
 import club.zby.newplan.service.LoginService;
 import club.zby.newplan.service.QQService;
 import io.swagger.annotations.ApiOperation;
@@ -11,13 +12,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = "user",produces = "application/json;charset=utf-8")
+//@RequestMapping(value = "user",produces = "application/json;charset=utf-8")
+@RequestMapping(value = "user")
 public class ControllerLogin {
 
     @Autowired
@@ -76,7 +79,7 @@ public class ControllerLogin {
             String token = jwtUtil.creatJWT(user.getId(), user.getUsername(), String.valueOf(user.getType()));
             System.out.println(token);
             result.setMessage(token);
-            return new ModelAndView("view2", "result", result);
+            return new ModelAndView("index", "result", result);
         }else {
             return new ModelAndView("login");
         }
@@ -111,11 +114,12 @@ public class ControllerLogin {
     }
 
     /**
-     * 跳转login
+     * 登录页
+     * @param request
      * @return
      */
     @GetMapping(value = "login")
-    public String login(){
+    public String login(HttpServletRequest request){
         return "login";
     }
 

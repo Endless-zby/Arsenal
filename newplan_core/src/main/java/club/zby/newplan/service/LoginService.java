@@ -42,6 +42,7 @@ public class LoginService {
         //密码解密验证
         if(users != null && encoder.matches(password,users.getPassword())){
             System.out.println(00);
+            //为了安全，将密码置空（虽然加密了）
             return new Result(true, StatusCode.OK,"登录成功",users);
         }
         System.out.println(11);

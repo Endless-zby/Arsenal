@@ -2,165 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="修补了一些小BUG">
-      <change afterPath="$PROJECT_DIR$/newplan_core/newplan_core.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/EmailTemplate/EmailTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/EmailTemplate/EmailTemplateFace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/EmailTemplate/HttpEmail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/EmailTemplate/HttpEmailFace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Entity/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Entity/Finance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Entity/MailBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Entity/QQUserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Interceptor/FeignHystrixConcurrencyStrategyIntellif.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Interceptor/FeignInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Interceptor/JwtInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/NewApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Untlis/HttpClientUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Untlis/URLEncodeUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/IdWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/Swagger2Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/expressclient/ControllerExpress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/expressclient/ExpressClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/expressclient/ExpressClientImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/financeclient/ControllerFinance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/financeclient/FinanceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/financeclient/FinanceClientImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ftpserviceclient/ControllerFtp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ftpserviceclient/FtpClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ftpserviceclient/FtpClientImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/result/PageResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/result/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/result/StatusCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/CheckService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/QQService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/RegisterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/fontawesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/lightbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/loader.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/materialize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/owl.theme.default.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/fonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/about.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/author.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/blog1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/blog2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/blog3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/blog4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/comment1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/comment2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/comment3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/comment4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/course1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/course2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/course3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/course4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/event1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/event2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/event3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/event4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/gallery1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/gallery2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/gallery3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/gallery4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/gallery5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/gallery6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/gallery7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/gallery8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/latest-news1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/latest-news2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/next.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/prev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/slider1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/slider2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/slider3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/teacher1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/teacher2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/teacher3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/teacher4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/testimonial1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/testimonial2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/testimonial3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/lightbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/materialize.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/numscroller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/blog-single.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/course.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/event.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/features.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/page-not-found.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/pricing-table.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/services.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/teacher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_spider/src/main/java/club/zby/main/HttpUntil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_spider/src/main/java/club/zby/main/Tou.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_spider/src/main/java/club/zby/main/TouTiao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_spider/src/main/java/club/zby/main/TouTiaoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/sweetalert.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/qqlogin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/sweetalert-dev.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/java/club/zby/newplan/config/Swagger2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_elasticsearch/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_elasticsearch/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/newplan_spider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_spider/newplan_spider.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_spider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/src/main/java/club/zby/Until/MySpiderContextFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_spider/src/main/java/club/zby/Until/MySpiderContextFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/src/main/java/club/zby/main/MainList.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_spider/src/main/java/club/zby/main/MainList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/src/main/java/club/zby/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_spider/src/main/java/club/zby/main/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_spider/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/target/classes/club/zby/Processor/AbstractProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_spider/target/classes/club/zby/Processor/AbstractProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/target/classes/club/zby/Processor/Processor.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_spider/target/classes/club/zby/Processor/Processor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/target/classes/club/zby/Spider/MySpider.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_spider/target/classes/club/zby/Spider/MySpider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/target/classes/club/zby/main/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_spider/target/classes/club/zby/main/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_spider/target/classes/club/zby/main/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/Swagger2Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/Swagger2Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/service/LoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/static/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +92,7 @@
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565765160347" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/newplan_core/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/newplan_core/src/main/resources/static/images" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -241,12 +103,12 @@
     <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Arsenal\Arsenal\newplan_spider\src\main\resources\custom" />
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\images" />
-      <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\controller" />
-      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\js" />
-      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\images" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Arsenal\Arsenal\newplan_core\src\main\resources\static\images" />
+      <recent name="E:\Arsenal\Arsenal\newplan_core\src\main\java" />
+      <recent name="E:\Arsenal\Arsenal\newplan_core\src\main\resources\static" />
+      <recent name="E:\Arsenal\Arsenal\newplan_core\src\main\resources\templates" />
+      <recent name="E:\Arsenal\Arsenal\newplan_core\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="club.zby.Until" />
@@ -255,12 +117,12 @@
       <recent name="club.zby.Entity" />
       <recent name="club.zby.Processor.Example" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Arsenal\Arsenal\newplan_core\src\main\java" />
-      <recent name="E:\Arsenal\Arsenal\newplan_core\src\main\resources\static" />
-      <recent name="E:\Arsenal\Arsenal\newplan_core\src\main\resources\templates" />
-      <recent name="E:\Arsenal\Arsenal\newplan_core\src\main\resources" />
-      <recent name="E:\Arsenal\Arsenal\newplan_spider\src\main\java\club\zby\mybatis\mapper" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Arsenal\Arsenal\newplan_core\src\main\resources\static\images" />
+      <recent name="E:\Arsenal\Arsenal\newplan_spider\src\main\resources\custom" />
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\resources\static\images" />
+      <recent name="E:\Arsenal\Arsenal\newplan\src\main\java\club\zby\newplan\controller" />
+      <recent name="G:\self-study\arsenal\MyTime\src\main\resources\static\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -495,8 +357,8 @@
       <item itemvalue="Spring Boot.TimeApplication" />
       <item itemvalue="Spring Boot.ExpressApplication" />
       <item itemvalue="Spring Boot.FtpApplication" />
-      <item itemvalue="Spring Boot.EurekaApplication (1)" />
       <item itemvalue="Spring Boot.ElasticsearchApplication" />
+      <item itemvalue="Spring Boot.EurekaApplication (1)" />
       <item itemvalue="Spring Boot.NewApplication (1)" />
     </list>
     <recent_temporary>
@@ -647,6 +509,9 @@
       <workItem from="1573002886773" duration="1090000" />
       <workItem from="1573007417311" duration="3660000" />
       <workItem from="1573020519865" duration="12486000" />
+      <workItem from="1573035627392" duration="76000" />
+      <workItem from="1573088854279" duration="12033000" />
+      <workItem from="1573106859934" duration="15085000" />
     </task>
     <servers />
   </component>
@@ -684,17 +549,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
-          <line>40</line>
+          <line>43</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
-          <line>45</line>
+          <line>48</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerLogin.java</url>
-          <line>47</line>
+          <line>50</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

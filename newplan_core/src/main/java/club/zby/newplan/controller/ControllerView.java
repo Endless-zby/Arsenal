@@ -48,15 +48,7 @@ public class ControllerView {
     public String index(HttpServletRequest request){
         return "index";
     }
-    /**
-     * 登录页
-     * @param request
-     * @return
-     */
-    @GetMapping(value = "login")
-    public String login(HttpServletRequest request){
-        return "login";
-    }
+
     /**
      * 发快递
      * 权限：所有人都可以使用该功能，不需要校验权限

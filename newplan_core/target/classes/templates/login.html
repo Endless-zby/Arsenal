@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
@@ -13,6 +12,99 @@
 	<link th:href="@{/static/css/owl.carousel.min.css}" rel="stylesheet">
 	<link th:href="@{/static/css/owl.theme.default.min.css}" rel="stylesheet">
 	<link th:href="@{/static/css/style.css}" rel="stylesheet">
+
+	<!-- end login -->
+
+	<script th:src="@{/static/js/jquery.min.js}"></script>
+	<script th:src="@{/static/js/materialize.min.js}"></script>
+	<script th:src="@{/static/js/owl.carousel.min.js}"></script>
+	<script th:src="@{/static/js/main.js}"></script>
+
+	<!--sweet-->
+
+	<link th:href="@{/static/css/sweetalert.css}" rel="stylesheet">
+	<script th:src="@{/static/js/sweetalert-dev.js}" ></script>
+
+	<script>
+		// init qq登录的请求地址
+		$(document).ready(function () {
+			var photo = window.localStorage.getItem("photo");
+			var nickname = window.localStorage.getItem("nickname");
+			if(photo != '' || photo != 'null'){
+				$("#photo").attr("src",photo);
+			}
+			if(nickname != '' || nickname != 'null'){
+				document.getElementById("nickname").innerText= nickname;
+			}
+
+			$.ajax({
+				url:"/user/getCode",
+				type:"get",
+				dataType:"text",
+				success:function(code){
+					if(code != null){
+						$("#qqlogin").attr("href",code);
+					}else{
+						$("#qqlogin").attr("href","www.zby123.club");
+					}
+				}
+			})
+		});
+	</script>
+	<script>
+		/*
+            登录请求
+         */
+		function login() {
+			var username=$("#username").val();
+			var password=$("#password").val();
+
+			$.ajax({  // ajax登陆请求
+				url:"/user/login",
+				dataType:'json',
+				// contentType: "application/json;charset=utf-8",
+				type:"POST",
+				data: {
+					"username":username,
+					"password":password
+				},
+				success:function(Result){
+
+					if(Result.flag){
+						swal("登录","登录成功1","success");
+						headerSetup(Result.message,Result.data);
+						window.location.href = '/user/index';
+						// request.setRequestHeader("Authorization", "Bearer " +Result.data);
+						// alert("看放进去没：" + window.localStorage.getItem("Authrorization"));
+						// swal("测试阶段，看一下token！",window.localStorage.getItem("Authrorization"));
+						// window.location.href="/pages/mainview/" + Result.data.id;//view
+
+					}else {
+						document.getElementById('password').value = '' ;
+					}
+				}
+			});
+		}
+
+		/*
+            保存token和基本信息
+         */
+		function headerSetup(token,data)
+		{
+			var storage = window.localStorage;
+			if(!storage){
+				// alert("浏览器不支持localstorage");
+				swal("完蛋","您的浏览器不支持Storage","error");
+				return false;
+			}
+			storage.setItem("Authrorization", "Bearer " +token);	//保存token
+			storage.setItem("user_login_time", new Date().getTime());//保存登录时间
+			storage.setItem("photo", data.photo);//保存头像
+			storage.setItem("nickname", data.nickname);//保存昵称
+
+
+		}
+	</script>
 
 </head>
 <body>
@@ -51,8 +143,8 @@
 		<ul id="slide-out" class="collapsible side-nav">
 			<li class="list-top">
 				<div class="user-view">
-					<img th:src="@{/static/images/testimonial1.png}" class="responsive-img" alt="">
-					<h4>Marchel Agata</h4>
+					<img id="photo" th:src="@{/static/images/testimonial1.png}" class="responsive-img" alt="">
+					<h4 id="nickname">Marchel Agata</h4>
 					<span>New York</span>
 				</div>
 			</li>
@@ -133,7 +225,9 @@
 			</div>
 			<div class="social-login">
 				<div class="social-fb">
-					<h6 id="qqcode"><i class="fab fa-facebook-f"></i>Login With Facebook</h6>
+<!--					<h6><i class="fab fa-facebook-f"></i>Login With QQ</h6>-->
+					<a id="qqlogin" href="" ><img th:src="@{/static/images/qqlogin.png}"><h6><i></i>Login With QQ</h6></a>
+
 				</div>
 				<div class="social-google">
 					<h6><i class="fab fa-google"></i>Login With Google</h6>
@@ -141,18 +235,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- end login -->
-
-	<script th:src="@{/static/js/jquery.min.js}"></script>
-	<script th:src="@{/static/js/materialize.min.js}"></script>
-	<script th:src="@{/static/js/owl.carousel.min.js}"></script>
-	<script th:src="@{/static/js/main.js}"></script>
-	<script th:src="@{/static/js/login.js}"></script>
-
-	<!--sweet-->
-
-	<link th:href="@{http://www.huangwx.cn/css/sweetalert.css}" rel="stylesheet">
-	<script th:src="@{http://www.huangwx.cn/js/sweetalert-dev.js}" ></script>
 
 </body>
 </html>
