@@ -2,27 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="修补了一些小BUG">
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/sweetalert.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/images/qqlogin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/sweetalert-dev.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/Swagger2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/blog-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/blog-single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/event.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/event.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/features.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/features.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/gallery.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/pricing-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/pricing-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/services.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/teacher.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/Swagger2Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/service/LoginService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/static/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/blog-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/blog-single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/event.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/event.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/features.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/features.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/gallery.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/index2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/pricing-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/pricing-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/services.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/teacher.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -512,6 +528,9 @@
       <workItem from="1573035627392" duration="76000" />
       <workItem from="1573088854279" duration="12033000" />
       <workItem from="1573106859934" duration="15085000" />
+      <workItem from="1573122023658" duration="90000" />
+      <workItem from="1573175322580" duration="10950000" />
+      <workItem from="1573193522263" duration="1214000" />
     </task>
     <servers />
   </component>

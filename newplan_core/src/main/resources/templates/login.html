@@ -19,6 +19,7 @@
 	<script th:src="@{/static/js/materialize.min.js}"></script>
 	<script th:src="@{/static/js/owl.carousel.min.js}"></script>
 	<script th:src="@{/static/js/main.js}"></script>
+	<script th:src="@{/static/js/login.js}"></script>
 
 	<!--sweet-->
 
@@ -50,60 +51,6 @@
 				}
 			})
 		});
-	</script>
-	<script>
-		/*
-            登录请求
-         */
-		function login() {
-			var username=$("#username").val();
-			var password=$("#password").val();
-
-			$.ajax({  // ajax登陆请求
-				url:"/user/login",
-				dataType:'json',
-				// contentType: "application/json;charset=utf-8",
-				type:"POST",
-				data: {
-					"username":username,
-					"password":password
-				},
-				success:function(Result){
-
-					if(Result.flag){
-						swal("登录",Result.data.nickname,"success");
-						headerSetup(Result.message,Result.data);
-						window.location.href = '/user/index';
-						// request.setRequestHeader("Authorization", "Bearer " +Result.data);
-						// alert("看放进去没：" + window.localStorage.getItem("Authrorization"));
-						// swal("测试阶段，看一下token！",window.localStorage.getItem("Authrorization"));
-						// window.location.href="/pages/mainview/" + Result.data.id;//view
-
-					}else {
-						document.getElementById('password').value = '' ;
-					}
-				}
-			});
-		}
-
-		/*
-            保存token和基本信息
-         */
-		function headerSetup(token,data)
-		{
-			var storage = window.localStorage;
-			if(!storage){
-				// alert("浏览器不支持localstorage");
-				swal("完蛋","您的浏览器不支持Storage","error");
-				return false;
-			}
-			storage.setItem("Authrorization", "Bearer " +token);	//保存token
-			storage.setItem("user_login_time", new Date().getTime());//保存登录时间
-			storage.setItem("photo", data.photo);//保存头像
-			storage.setItem("nickname", data.nickname);//保存昵称
-
-
-		}
 	</script>
 
 </head>
@@ -191,7 +138,7 @@
 			<li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
 			<li><a href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a></li>
 			<li><a href="register.html"><i class="fas fa-user-plus"></i>Register</a></li>
-			<li><a href="index.html"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+			<li><a href="javascript:void(0);" onclick="log_out()"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
 		</ul>
 	</div>
 	<!-- end sidebar left -->

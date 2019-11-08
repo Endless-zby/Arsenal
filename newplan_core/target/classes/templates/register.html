@@ -14,6 +14,20 @@
 	<link th:href="@{/static/css/owl.theme.default.min.css}" rel="stylesheet">
 	<link th:href="@{/static/css/style.css}" rel="stylesheet">
 
+
+	<script th:src="@{/static/js/jquery.min.js}"></script>
+	<script th:src="@{/static/js/materialize.min.js}"></script>
+	<script th:src="@{/static/js/owl.carousel.min.js}"></script>
+	<script th:src="@{/static/js/main.js}"></script>
+	<script th:src="@{/static/js/register.js}"></script>
+
+	<script th:src="@{https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js}"></script>
+	<script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+	<!--sweet-->
+
+	<link th:href="@{/static/css/sweetalert.css}" rel="stylesheet">
+	<script th:src="@{/static/js/sweetalert-dev.js}" ></script>
+
 </head>
 <body>
 
@@ -51,7 +65,7 @@
 		<ul id="slide-out" class="collapsible side-nav">
 			<li class="list-top">
 				<div class="user-view">
-					<img class="responsive-img" src="images/testimonial1.png" alt="">
+					<img class="responsive-img" th:src="@{/static/images/testimonial1.png}" alt="">
 					<h4>Marchel Agata</h4>
 					<span>New York</span>
 				</div>
@@ -98,8 +112,8 @@
 			</li>
 			<li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
 			<li><a href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a></li>
-			<li><a href="register.html"><i class="fas fa-user-plus"></i>Register</a></li>
-			<li><a href="index.html"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+			<li><a href="/user/register"><i class="fas fa-user-plus"></i>Register</a></li>
+			<li><a href="javascript:void(0);" onclick="log_out()"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
 		</ul>
 	</div>
 	<!-- end sidebar left -->
@@ -112,12 +126,25 @@
 			</div>
 			<div class="wrap-form">
 				<form>
-					<input type="text" placeholder="First Name">
-					<input type="text" placeholder="Last Name">
-					<input type="text" placeholder="Username">
-					<input type="Email" placeholder="Email">
-					<input type="password" placeholder="Password">
-					<input type="password" placeholder="Retype Password">
+					<table border="1">
+						<tr>
+							<td><input id="phone" type="tel" placeholder="输入手机号" pattern="[0-9]{11}" onblur="bluree(this.value)" style="width:220px;"  required/></td>
+							<td><button id="settime" type="button" class="btn btn-info" onclick="return send();">验证码</button></td>
+						</tr>
+					</table>
+
+					<input id="email" type="email" placeholder="输入邮箱" required/>
+					<input id="password" type="password" placeholder="请输入6-25位密码" pattern="[0-9A-Za-z]{6,25}" required/>
+					<input id="passwords" type="password" placeholder="确认密码" pattern="[0-9A-Za-z]{6,25}" required/>
+					<input id="smsCode" type="text" placeholder="输入验证码" pattern="[0-9]{4}" required/>
+
+					<select id="type" name="type">
+						<option value="0">选择角色</option>
+						<option value="0">用户</option>
+						<option value="1">管理员</option>
+					</select>
+
+
 				</form>
 				<button class="button">Register</button>
 			</div>
@@ -128,10 +155,6 @@
 	</div>
 	<!-- end register -->
 
-	<script th:src="@{/static/js/jquery.min.js}"></script>
-	<script th:src="@{/static/js/materialize.min.js}"></script>
-	<script th:src="@{/static/js/owl.carousel.min.js}"></script>
-	<script th:src="@{/static/js/main.js}"></script>
 
 </body>
 </html>

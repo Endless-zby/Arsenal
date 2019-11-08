@@ -47,7 +47,7 @@ public class ControllerRegister {
      * 跳转注册
      * @return
      */
-    @GetMapping(value = "reg")
+    @GetMapping(value = "register")
     public String reg(){
         return "register";
     }

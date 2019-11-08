@@ -31,6 +31,8 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
                 .excludePathPatterns("/static/**/**")
                 .excludePathPatterns("/pages/**")
+                .excludePathPatterns("/check/**/**")
+                .excludePathPatterns("/check/**")
                 .excludePathPatterns("/user/**");
 
     }
