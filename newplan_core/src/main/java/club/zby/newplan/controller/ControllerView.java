@@ -76,9 +76,9 @@ public class ControllerView {
      * @param request
      * @return
      */
-    @GetMapping(value = "FinanceList")
+    @GetMapping(value = "single")
     public String financeList(HttpServletRequest request){
-        return "FinanceList";
+        return "blog-single";
     }
 
     @GetMapping(value = "ShowFinance")

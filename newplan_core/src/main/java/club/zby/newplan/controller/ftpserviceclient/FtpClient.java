@@ -5,10 +5,7 @@ import club.zby.newplan.result.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -24,6 +21,9 @@ public interface FtpClient {
 
     @PostMapping(value = "FtpServer/fileList")
     Result fileList();
+
+    @GetMapping(value = "FtpServer/basefileList")
+    Result basefileList();
 
     @PostMapping(value = "FtpServer/downFile")
     Result downFile(@RequestParam("fileName") String fileName, @RequestParam("localPath") String localPath);

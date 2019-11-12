@@ -7,6 +7,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 @Component
 @FeignClient(name = "finance",fallback = FinanceClientImp.class,configuration = {FeignInterceptor.class})//uereka中的注册服务名，
@@ -14,6 +16,9 @@ public interface FinanceClient {
 
     @GetMapping(value = "Finance/showfinance")
     Result findAllByWho();
+
+    @GetMapping(value = "Finance/selfinance/{page}")
+    Result findAllByPage(@PathVariable("page") int page);
 
     @PostMapping(value = "Finance/savefinance")//原方法执行路径
     Result saveFinance(@RequestBody Finance finance);

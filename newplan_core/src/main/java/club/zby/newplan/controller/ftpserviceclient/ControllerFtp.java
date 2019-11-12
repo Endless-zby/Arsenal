@@ -47,6 +47,14 @@ public class ControllerFtp {
     }
 
     @ResponseBody
+    @ApiOperation(value="数据库文件列表", notes="数据库文件列表测试")
+    @PostMapping(value = "basefileList")
+    public Result basefileList() {
+        return ftpClient.basefileList();
+    }
+
+
+    @ResponseBody
     @ApiOperation(value="下载文件", notes="文件下载测试")
     @PostMapping(value = "downFile")
     public Result downFile(@RequestParam("fileName") String fileName, @RequestParam("localPath") String localPath){

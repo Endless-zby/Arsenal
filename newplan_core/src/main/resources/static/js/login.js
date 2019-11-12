@@ -1,4 +1,4 @@
-document.write("<script type='text/javascript' src='sweetalert-dev.js'></script>");
+document.write("<script type='text/javascript' th:src=@{/static/js/sweetalert-dev.js}'></script>");
 
 /*
    登录请求

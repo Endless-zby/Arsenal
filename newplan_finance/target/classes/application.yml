@@ -41,6 +41,8 @@ jwt:
     key: zby
     expire: 86400000
 
+page:
+  size: 2
 
 #
 ##熔断保护机制

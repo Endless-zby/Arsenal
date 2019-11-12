@@ -6,6 +6,7 @@ import club.zby.newplan.result.StatusCode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,11 @@ public class ControllerFinance {
     @Autowired
     private FinanceClient financeClient;
 
+    /**
+     * 查询all
+     * @param request
+     * @return
+     */
     @ResponseBody
     @ApiOperation(value="开销--查询", notes="查询")
     @GetMapping("showfinance")
@@ -31,6 +37,31 @@ public class ControllerFinance {
         return financeClient.findAllByWho();
     }
 
+    /**
+     * 分页查询
+     * @param page
+     * @param request
+     * @return
+     */
+    @ResponseBody
+    @ApiOperation(value="开销--分页查询", notes="分页查询")
+    @GetMapping("selfinance/{page}")
+    public Result findAllByPage(@PathVariable("page") int page,HttpServletRequest request){
+        String status = (String) request.getAttribute("status");
+        System.out.println(status);
+        if("404".equals(status) || status == null){
+            return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
+        }
+        return financeClient.findAllByPage(page);
+    }
+
+
+    /**
+     * 添加记录
+     * @param finance
+     * @param request
+     * @return
+     */
     @ResponseBody
     @ApiOperation(value="开销--记录", notes="记录")
     @PostMapping(value = "savefinance")
@@ -43,6 +74,12 @@ public class ControllerFinance {
         return financeClient.saveFinance(finance);
     }
 
+    /**
+     * 删除记录
+     * @param id
+     * @param request
+     * @return
+     */
     @ResponseBody
     @ApiOperation(value="开销--删除", notes="删除")
     @DeleteMapping(value = "delfinance/{id}")
@@ -54,6 +91,12 @@ public class ControllerFinance {
         return financeClient.delFinance(id);
     }
 
+
+    /**
+     * 视图
+     * @param request
+     * @return
+     */
     @ResponseBody
     @ApiOperation(value="开销--视图", notes="视图")
     @GetMapping(value = "financeview")

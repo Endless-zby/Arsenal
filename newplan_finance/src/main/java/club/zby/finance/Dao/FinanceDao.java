@@ -1,6 +1,8 @@
 package club.zby.finance.Dao;
 
 import club.zby.finance.Entity.Finance;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
@@ -18,6 +20,16 @@ public interface FinanceDao extends JpaRepository<Finance,String>, JpaSpecificat
     @Modifying
     @Query(nativeQuery = true,value = "select * from tb_finance where who = ? order by time ")
     List<Finance> findAllByWho(String who);
+
+    /**
+     * 分页查询
+     * @param who
+     * @param pageRequest
+     * @return
+     */
+
+    @Query(nativeQuery = true,value = "select * from tb_finance where who = ? order by time ")
+    Page<Finance> selFinance(String who, PageRequest pageRequest);
 
 
     @Modifying

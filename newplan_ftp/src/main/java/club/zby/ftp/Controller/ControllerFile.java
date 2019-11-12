@@ -2,6 +2,7 @@ package club.zby.ftp.Controller;
 
 import club.zby.commen.Config.Result;
 import club.zby.commen.Config.StatusCode;
+import club.zby.ftp.Entity.FileInfo;
 import club.zby.ftp.Service.DbService;
 import club.zby.ftp.Service.FileService;
 import club.zby.ftp.Untlis.ToToken;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * @Author: 赵博雅
@@ -57,6 +59,14 @@ public class ControllerFile {
         return fileService.fileList();
     }
 
+
+    @ResponseBody
+    @ApiOperation(value="数据库文件列表", notes="数据库文件列表测试")
+    @PostMapping(value = "basefileList")
+    public Result basefileList() {
+        List<FileInfo> fileInfos = dbService.basefileList();
+        return new Result(true,StatusCode.OK,"成功",fileInfos);
+    }
 
 
     @ResponseBody

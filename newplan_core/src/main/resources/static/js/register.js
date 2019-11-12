@@ -1,4 +1,4 @@
-document.write("<script type='text/javascript' src='sweetalert-dev.js'></script>");
+document.write("<script type='text/javascript' th:src=@{/static/js/sweetalert-dev.js}'></script>");
 
 function send(obj) {
     var phone = $("#phone").val();
@@ -50,20 +50,14 @@ function register() {
     var type=$("#type").val();
     var password=$("#password").val();
     var passwords=$("#passwords").val();
+    var email=$("#email").val();
 
-    if(document.getElementById('box').checked){
-    }else {
-        document.getElementById('agreement').innerText = '请同意注册协议';
-        return false;
-    }
     if(password == passwords){
     }else {
         document.getElementById('passwords').value = '';
-        document.getElementById('phonecode').innerText = '密码不一致';
-        document.getElementById('phonecode').style.color = '#8B2500' ;
+        swal("提示","两次密码输入不一致！","error");
         return false;
     }
-
 
     $.ajax({  // ajax登陆请求
         url:"/user/register/" + smsCode,
@@ -72,16 +66,17 @@ function register() {
         type:"post",
         data:JSON.stringify({
             "phone":phone,
+            "email":email,
             "type":type,
             "password":password
         }),
         success:function(register){
             if(register.flag){
+                swal("成功","即将跳转","success")
                 window.location.href="/user/login";//跳转login
             }else {
-                document.getElementById('phonecode').innerText = '注册失败！验证码错误' ;
+                swal("提示","验证码失效！","error");
                 return false;
-
             }
         }
 

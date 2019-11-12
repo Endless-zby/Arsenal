@@ -8,6 +8,7 @@ import club.zby.finance.Untlis.ToToken;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import club.zby.commen.Config.Result;
 import club.zby.commen.Config.StatusCode;
@@ -48,6 +49,32 @@ public class FinanceConroller {
         }
         return result;
     }
+
+    /**
+     * 分页查询
+     * @param page
+     * @return
+     */
+    @ApiOperation(value="分页查询", notes="分页查询")
+    @ResponseBody
+    @GetMapping("selfinance/{page}")
+    public Result findAllByPage(@PathVariable("page") int page){
+
+        try {
+            String token = request.getHeader("Authrorization");
+            Result result = toToken.parseToken(token);
+            String userid = (String) result.getData();
+            if(userid != null){
+                Page<Finance> finances = financeService.findAllByPage(userid,page);
+                return new Result(true,StatusCode.OK,"返回成功",finances);
+            }
+        } catch (Exception e){
+            return new Result(false,StatusCode.ERROR,e.getMessage(),null);
+        }
+
+        return new Result(false,StatusCode.ERROR,"请重试",null);
+    }
+
 
     /**
      * 添加记录

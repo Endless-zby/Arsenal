@@ -5,6 +5,9 @@ import club.zby.commen.Config.StatusCode;
 import club.zby.finance.Dao.FinanceDao;
 import club.zby.finance.Entity.Finance;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -17,6 +20,8 @@ public class FinanceService {
 
     @Autowired
     private FinanceDao financeDao;
+    @Value("${page.size}")
+    private int size;
 
     /**
      * 根据who id查询账单记录
@@ -27,6 +32,20 @@ public class FinanceService {
     public List<Finance> findAllByWho(String who){
         return financeDao.findAllByWho(who);
     }
+
+    /**
+     * 分页查询
+     * @param who
+     * @param start
+     * @return
+     */
+    @Transactional
+    public Page<Finance> findAllByPage(String who, int start){
+        PageRequest pagerequest = PageRequest.of(start-1, size);
+        return financeDao.selFinance(who,pagerequest);
+
+    }
+
 
     public List<String> findIdByWho(String who){
         return financeDao.findIdByWho(who);

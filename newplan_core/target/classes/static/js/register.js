@@ -1,9 +1,9 @@
-document.write("<script type='text/javascript' src='sweetalert-dev.js'></script>");
+document.write("<script type='text/javascript' th:src=@{/static/js/sweetalert-dev.js}'></script>");
 
 function send(obj) {
     var phone = $("#phone").val();
     if(phone==""||phone==null){
-        alert("手机号不能为空！");
+        swal("手机号不能为空！");
         return false;
     }
     $.ajax({
@@ -13,7 +13,7 @@ function send(obj) {
         type:"get",
         success:function(Result){
             if (!Result){
-                swal("发送失败")
+                swal("发送失败");
                 return false;
             }
         }
@@ -22,14 +22,14 @@ function send(obj) {
 }
 
 
-var countdown = 10;
+var countdown = 60;
 function setTime(obj) {
     if (countdown == 1) {
         // obj.text = '点击重试！';
         document.getElementById("settime").disabled=false;
         document.getElementById("settime").innerText= '重试！';
         // obj.onclick = send(this);
-        countdown = 10;//60秒过后button上的文字初始化,计时器初始化;
+        countdown = 60;//60秒过后button上的文字初始化,计时器初始化;
         return false;
     } else {
         // obj.text = "("+countdown+"s)" ;
@@ -50,20 +50,14 @@ function register() {
     var type=$("#type").val();
     var password=$("#password").val();
     var passwords=$("#passwords").val();
+    var email=$("#email").val();
 
-    if(document.getElementById('box').checked){
-    }else {
-        document.getElementById('agreement').innerText = '请同意注册协议';
-        return false;
-    }
     if(password == passwords){
     }else {
         document.getElementById('passwords').value = '';
-        document.getElementById('phonecode').innerText = '密码不一致';
-        document.getElementById('phonecode').style.color = '#8B2500' ;
+        swal("提示","两次密码输入不一致！","error");
         return false;
     }
-
 
     $.ajax({  // ajax登陆请求
         url:"/user/register/" + smsCode,
@@ -72,16 +66,17 @@ function register() {
         type:"post",
         data:JSON.stringify({
             "phone":phone,
+            "email":email,
             "type":type,
             "password":password
         }),
         success:function(register){
             if(register.flag){
+                swal("成功","即将跳转","success")
                 window.location.href="/user/login";//跳转login
             }else {
-                document.getElementById('phonecode').innerText = '注册失败！验证码错误' ;
+                swal("提示","验证码失效！","error");
                 return false;
-
             }
         }
 

@@ -90,7 +90,7 @@
 				<div class="collapsible-body">
 					<ul>
 						<li><a href="blog.html">Blog</a></li>
-						<li><a href="blog-single.html">Blog Single</a></li>
+						<li><a href="/pages/single">Blog Single</a></li>
 					</ul>
 				</div>
 			</li>
@@ -131,24 +131,28 @@
 							<td><button id="settime" type="button" class="btn btn-info" onclick="return send();">验证码</button></td>
 						</tr>
 					</table>
-
 					<input id="email" type="email" placeholder="输入邮箱" required/>
 					<input id="password" type="password" placeholder="请输入6-25位密码" pattern="[0-9A-Za-z]{6,25}" required/>
 					<input id="passwords" type="password" placeholder="确认密码" pattern="[0-9A-Za-z]{6,25}" required/>
 					<input id="smsCode" type="text" placeholder="输入验证码" pattern="[0-9]{4}" required/>
+					<table border="1">
+						<tr>
+							<td><select id="type" name="type" class="combobox">
+								<option value="0">选择角色</option>
+								<option value="0">用户</option>
+								<option value="1">管理员</option>
+							</select></td>
+						</tr>
+					</table>
 
-					<select id="type" name="type">
-						<option value="0">选择角色</option>
-						<option value="0">用户</option>
-						<option value="1">管理员</option>
-					</select>
+
 
 
 				</form>
-				<button class="button">Register</button>
+				<button class="button" type="submit" onclick="return register()">Register</button>
 			</div>
 			<div class="info">
-				<p>Have an account?<span><a href="login.html">Login</a></span></p>
+				<p>Have an account?<span><a href="/user/login">Login</a></span></p>
 			</div>
 		</div>
 	</div>

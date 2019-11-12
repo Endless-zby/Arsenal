@@ -14,7 +14,7 @@ spring:
 
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://cdb-6kot9g5e.cd.tencentcdb.com:10007/club.zby.newplan?characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://cdb-6kot9g5e.cd.tencentcdb.com:10007/newplan?characterEncoding=utf-8&useSSL=true
 #    url: jdbc:mysql://localhost:3306/arms?characterEncoding=utf-8
     username: root
     password: zby123456
@@ -41,6 +41,8 @@ jwt:
     key: zby
     expire: 86400000
 
+page:
+  size: 2
 
 #
 ##熔断保护机制
