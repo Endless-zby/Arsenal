@@ -41,6 +41,8 @@ function selFinance(page) {
                         photo = 'https://finance-1257201044.cos.ap-chengdu.myqcloud.com/apps.png';
                     }
 
+                    var ids =  financeList[i].id + "";
+
                     res += "<div class=\"author\">\n" +
                         "                    <img src=" + photo + " alt=\"\">\n" +
                         "                    <div class=\"text\">\n" +
@@ -51,7 +53,7 @@ function selFinance(page) {
                         "                    <li><a href=\"\"><i class=\"fab fa-facebook-f\"></i></a></li>\n" +
                         "                <li><a href=\"\"><i class=\"fab fa-instagram\"></i></a></li>\n" +
                         "                <li><a href=\"\"><i class=\"fab fa-twitter\"></i></a></li>\n" +
-                        "                <li><a href=\"\"><i class=\"fab fa-google\"></i></a></li>\n" +
+                        "                <li><a href=\"javascript:void(0);\" onclick='return delfinance(\""+ids + "\")'><i class=\"fab fa-google\"></i></a></li>\n" +
                         "                </ul>\n" +
                         "                </div>\n" +
                         "                </div>\n" +
@@ -78,9 +80,83 @@ function selFinance(page) {
 }
 
 
+function reqfinance() {
+    document.getElementById("sendfinance").disabled = 'disabled';//失效按钮
+    var purpose=$("#purpose").val();
+    var money=$("#money").val();
+    var remark=$("#remark").val();
+    $.ajax({
+        url:'/FinanceHandle/savefinance',
+        dataType:'json',
+        contentType: "application/json;charset=utf-8",
+        type:"POST",
+        data:JSON.stringify({"purpose":purpose,"money":money,"remark":remark}),
+        headers:{
+            'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
+        },
+        success:function(Result){
+            if(Result.flag == true){
+                document.getElementById("sendfinance").removeAttribute("disabled");//恢复按钮
+                selFinance(1);
+                document.getElementById("purpose").value = '';
+                document.getElementById("money").value = '';
+                document.getElementById("remark").value = '';
+                swal("提示","提交成功","success")
+            }else {
+                swal("提示",Result.data.message,"error")
+            }
+        }
+    });
 
+}
 
+function delfinance(id) {
+    swal(
+        {title:"提示",
+            text:"您确定要删除当前记录吗?",
+            type:"info",
+            showCancelButton:true,
+            confirmButtonText:"删除",
+            cancelButtonText:"取消",
+            closeOnConfirm:false,
+            closeOnCancel:false
+        },
+        function(isConfirm)
+        {
+            if(isConfirm)
+            {
+                //删除
+                $.ajax({
+                    url:'/FinanceHandle/delfinance/' + id,
+                    dataType:'json',
+                    // contentType: "application/json;charset=utf-8",
+                    type:'GET',
+                    // data:JSON.stringify({"_method":"DELETE"}),
+                    headers:{
+                        'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
+                    },
+                    success:function(Result){
+                        if(Result.flag == true){
+                            swal({title:"提示",
+                                text:"您已删除此记录",
+                                type:"success"},function(){selFinance(1)})
+                        }else {
+                            swal("提示",Result.data.message,"error")
+                        }
+                    }
+                });
 
+            }
+            else{
+                //取消
+                swal({title:"提示",
+                    text:"取消删除",
+                    type:"success"})
+            }
+        }
+    )
+
+}
 
 
 

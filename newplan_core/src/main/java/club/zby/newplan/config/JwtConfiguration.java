@@ -27,7 +27,11 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
          * excludePathPatterns ：加入白名单（此请求不拦截）
          * */
         registry.addInterceptor(jwtInterceptor)
+                //拦截
+                .addPathPatterns("/FinanceHandle/**")
+                .addPathPatterns("/FinanceHandle/delfinance/**")
 
+                //不拦截
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
                 .excludePathPatterns("/static/**/**")
                 .excludePathPatterns("/pages/**")

@@ -82,7 +82,7 @@ public class ControllerFinance {
      */
     @ResponseBody
     @ApiOperation(value="开销--删除", notes="删除")
-    @DeleteMapping(value = "delfinance/{id}")
+    @GetMapping(value = "delfinance/{id}")
     public Result delFinance(@PathVariable("id") String id,HttpServletRequest request){
         String status = (String) request.getAttribute("status");
         if("404".equals(status) || status == null){

@@ -42,7 +42,7 @@ jwt:
     expire: 86400000
 
 page:
-  size: 2
+  size: 5
 
 #
 ##熔断保护机制

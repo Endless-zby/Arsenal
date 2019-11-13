@@ -28,7 +28,7 @@ public interface FinanceDao extends JpaRepository<Finance,String>, JpaSpecificat
      * @return
      */
 
-    @Query(nativeQuery = true,value = "select * from tb_finance where who = ? order by time ")
+    @Query(nativeQuery = true,value = "select * from tb_finance where who = ? order by time desc ")
     Page<Finance> selFinance(String who, PageRequest pageRequest);
 
 

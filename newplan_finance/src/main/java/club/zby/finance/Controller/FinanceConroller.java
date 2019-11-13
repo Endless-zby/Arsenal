@@ -33,108 +33,104 @@ public class FinanceConroller {
 
     /**
      * 展示所有的记录
+     *
      * @return
      */
-//    @ApiOperation(value = "展示查询所有的记录", notes = "展示查询所有的记录", httpMethod = "GET")
+    @ApiOperation(value = "展示查询所有的记录", notes = "展示查询所有的记录")
     @ResponseBody
     @GetMapping("showfinance")
-    public Result findAllByWho(){
+    public Result findAllByWho() {
 
         String token = request.getHeader("Authrorization");
         Result result = toToken.parseToken(token);
         String userid = (String) result.getData();
-        if(userid != null){
+        if (userid != null) {
             List<Finance> finances = financeService.findAllByWho(userid);
-            return new Result(true,StatusCode.OK,"返回成功",finances);
+            return new Result(true, StatusCode.OK, "返回成功", finances);
         }
         return result;
     }
 
     /**
      * 分页查询
+     *
      * @param page
      * @return
      */
-    @ApiOperation(value="分页查询", notes="分页查询")
+    @ApiOperation(value = "分页查询", notes = "分页查询")
     @ResponseBody
     @GetMapping("selfinance/{page}")
-    public Result findAllByPage(@PathVariable("page") int page){
+    public Result findAllByPage(@PathVariable("page") int page) {
 
         try {
             String token = request.getHeader("Authrorization");
             Result result = toToken.parseToken(token);
             String userid = (String) result.getData();
-            if(userid != null){
-                Page<Finance> finances = financeService.findAllByPage(userid,page);
-                return new Result(true,StatusCode.OK,"返回成功",finances);
+            if (userid != null) {
+                Page<Finance> finances = financeService.findAllByPage(userid, page);
+                return new Result(true, StatusCode.OK, "返回成功", finances);
             }
-        } catch (Exception e){
-            return new Result(false,StatusCode.ERROR,e.getMessage(),null);
+        } catch (Exception e) {
+            return new Result(false, StatusCode.ERROR, e.getMessage(), null);
         }
 
-        return new Result(false,StatusCode.ERROR,"请重试",null);
+        return new Result(false, StatusCode.ERROR, "请重试", null);
     }
 
 
     /**
      * 添加记录
+     *
      * @param finance
      * @return
      */
-//    @ApiOperation(value = "添加记录", notes = "添加记录", httpMethod = "POST")
+    @ApiOperation(value = "添加记录", notes = "添加记录")
     @ResponseBody
     @PostMapping("savefinance")
-    public Result saveFinance(@RequestBody Finance finance){
+    public Result saveFinance(@RequestBody Finance finance) {
 
-        String token = request.getHeader("Authrorization");
-        Result result = toToken.parseToken(token);
-        String userid = (String) result.getData();
-        if(userid != null){
-            finance.setWho(userid);
+        if (finance.getWho() != null) {
             finance.setId(idWorker.nextId() + "");
             finance.setTime(new Date());
+            finance.setStatus(0);
+            finance.setTag1("1");
             Finance savefinance = financeService.saveFinance(finance);
-            if(savefinance != null){
-                return new Result(true,StatusCode.OK,"添加成功",savefinance);
+            if (savefinance != null) {
+                return new Result(true, StatusCode.OK, "添加成功", savefinance);
             }
-            return new Result(false,StatusCode.RESERROR,"失败，重试",null);
+            return new Result(false, StatusCode.RESERROR, "失败,请重试", null);
         }
-        return result;
+        return new Result(false, StatusCode.RESERROR, "失败,请重试", null);
     }
 
     /**
      * 删除记录   根据id
+     *
      * @param id
      * @return
      */
-//    @ApiOperation(value = "删除记录", notes = "删除记录", httpMethod = "Delete")
+    @ApiOperation(value = "删除记录", notes = "删除记录")
     @ResponseBody
-    @DeleteMapping("delfinance/{id}")
-    public Result delFinance(@PathVariable("id") String id){
+    @GetMapping("delfinance/{id}")
+    public Result delFinance(@PathVariable("id") String id) {
 
-        //删除前确保所删除的信息是属于当前用户的
-        String token = request.getHeader("Authrorization");
-        Result result = toToken.parseToken(token);
-        String userid = (String) result.getData();
-        if(userid != null){
-            List<String> finances = financeService.findIdByWho(userid);
-            if(finances.contains(id)){
-                int del =  financeService.delFinance(id);
-                if(del > 0){
-                    return new Result(true,StatusCode.OK,"删除成功",del);
-                }
-                return new Result(false,StatusCode.RESERROR,"失败，请刷新",del);
-            }
+
+        int del = financeService.delFinance(id);
+        if (del > 0) {
+            return new Result(true, StatusCode.OK, "删除成功", del);
         }
-        return result;
+        return new Result(false, StatusCode.RESERROR, "失败,请刷新重试", del);
+
+
     }
 
     /**
      * 记录的视图展示  数据处理
+     *
      * @param
      * @return
      */
-    @ApiOperation(value = "记录的视图展示", notes = "数据处理", httpMethod = "GET")
+    @ApiOperation(value = "记录的视图展示", notes = "数据处理")
 //    @ApiImplicitParams({
 //            @ApiImplicitParam(paramType="query",name = "userid",required = true, value = "用户标识", dataType = "String" )
 //    })
@@ -145,7 +141,7 @@ public class FinanceConroller {
         String token = request.getHeader("Authrorization");
         Result result = toToken.parseToken(token);
         String userid = (String) result.getData();
-        if(userid != null){
+        if (userid != null) {
             return financeService.findAllByid(userid);
         }
         return result;

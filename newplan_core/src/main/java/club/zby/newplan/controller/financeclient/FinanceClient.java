@@ -23,7 +23,7 @@ public interface FinanceClient {
     @PostMapping(value = "Finance/savefinance")//原方法执行路径
     Result saveFinance(@RequestBody Finance finance);
 
-    @DeleteMapping(value = "Finance/delfinance/{id}")
+    @GetMapping(value = "Finance/delfinance/{id}")
     Result delFinance(@PathVariable("id") String id);
 
     @GetMapping(value = "Finance/financeview")

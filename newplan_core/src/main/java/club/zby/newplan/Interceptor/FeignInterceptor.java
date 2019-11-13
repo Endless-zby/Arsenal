@@ -33,7 +33,7 @@ public class FeignInterceptor implements feign.RequestInterceptor {
 
         System.out.println("获取A请求头");
         if (headerNames != null) {
-            System.out.println("遍历Authrorization");
+            System.out.println("遍历header 获取 Authrorization");
             while (headerNames.hasMoreElements()) {
                 String name = headerNames.nextElement();
                 String values = request.getHeader(name);

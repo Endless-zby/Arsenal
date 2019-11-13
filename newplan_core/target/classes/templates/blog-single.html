@@ -147,19 +147,19 @@
 				<img th:src="@{/static/images/blog1.jpg}" alt="">
 				<div class="text">
 					<h4>开销记录页面</h4>
-					<p class="date">December 28, 2018</p>
+					<p class="date" th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd HH:mm:ss')}"></p>
 					<p>我的标签</p>
 				</div>
 			</div>
 			<div class="content-tag">
 				<ul>
-					<li><a href="#!">交通</a></li>
-					<li><a href="#!">零食</a></li>
-					<li><a href="#!">饮食</a></li>
-					<li><a href="#!">娱乐</a></li>
-					<li><a href="#!">约会</a></li>
-					<li><a href="#!">医疗</a></li>
-					<li><a href="#!">其他</a></li>
+					<li><a href="javascript:void(0);">交通</a></li>
+					<li><a href="javascript:void(0);">零食</a></li>
+					<li><a href="javascript:void(0);">饮食</a></li>
+					<li><a href="javascript:void(0);">娱乐</a></li>
+					<li><a href="javascript:void(0);">约会</a></li>
+					<li><a href="javascript:void(0);">医疗</a></li>
+					<li><a href="javascript:void(0);">其他</a></li>
 				</ul>
 			</div>
 
@@ -171,10 +171,11 @@
 					<span>￥ ---</span>
 					<div class="wrap-social">
 						<ul>
-							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href=""><i class="fab fa-instagram"></i></a></li>
-							<li><a href=""><i class="fab fa-twitter"></i></a></li>
-							<li><a href=""><i class="fab fa-google"></i></a></li>
+<!--							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>-->
+<!--							<li><a href=""><i class="fab fa-instagram"></i></a></li>-->
+<!--							<li><a href=""><i class="fab fa-twitter"></i></a></li>-->
+<!--							<li><a href=""><i class="fab fa-google"></i></a></li>-->
+							<li><a href="javascript:void(0);" onclick="return delfinance(financeList[i].id)" ><i class="fab fa-google"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -190,13 +191,14 @@
 			</div>
 			<div class="comment-form">
 				<div class="wrap-title">
-					<h5>Leave Your Reply</h5>
+					<h5>添加记录</h5>
 				</div>
 				<form>
-					<input type="text" placeholder="Name">
-					<input type="email" placeholder="Email">
-					<textarea cols="30" rows="10" placeholder="Message"></textarea>
-					<button id="sendfinance" class="button">Submit</button>
+					<input name="purpose" id="purpose" type="text" placeholder="用途" required/>
+					<input name="money" id="money" type="text" placeholder="金额" required/>
+<!--					<input name="time" id="time" type="time" placeholder="时间" required/>-->
+					<textarea name="remark" id="remark" cols="30" rows="10" placeholder="备注..." required></textarea>
+					<button id="sendfinance" onclick="return reqfinance()" class="button">Submit</button>
 				</form>
 			</div>
 		</div>
