@@ -51,6 +51,10 @@ FTP:
   password: zby123456
   basePath: /www/wwwroot/zby
   imageBaseUrl: ftp://39.96.160.110
+
+page:
+  size: 8
+
 #
 ##熔断保护机制
 #feign:

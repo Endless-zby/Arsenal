@@ -1,6 +1,7 @@
 package club.zby.ftp.Dao;
 
 import club.zby.ftp.Entity.FileInfo;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -43,5 +44,5 @@ public interface FileDao extends JpaRepository<FileInfo,String>, JpaSpecificatio
     @Query(nativeQuery = true,value = "update tb_file t set t.filedownnum = t.filedownnum + 1 where filename = ?")
     int downNumAddOne(String fileName);
 
-    List<FileInfo> findByOrderByFiledownnumDesc(Pageable pageable);
+    Page<FileInfo> findByOrderByFiledownnumDesc(Pageable pageable);
 }

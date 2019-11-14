@@ -22,8 +22,8 @@ public interface FtpClient {
     @PostMapping(value = "FtpServer/fileList")
     Result fileList();
 
-    @GetMapping(value = "FtpServer/basefileList")
-    Result basefileList();
+    @GetMapping(value = "FtpServer/basefileList/{page}")
+    Result basefileList(@PathVariable("page") Integer page);
 
     @PostMapping(value = "FtpServer/downFile")
     Result downFile(@RequestParam("fileName") String fileName, @RequestParam("localPath") String localPath);

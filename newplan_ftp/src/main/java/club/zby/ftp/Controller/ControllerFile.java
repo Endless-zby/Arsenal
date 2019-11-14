@@ -9,6 +9,7 @@ import club.zby.ftp.Untlis.ToToken;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -62,9 +63,9 @@ public class ControllerFile {
 
     @ResponseBody
     @ApiOperation(value="数据库文件列表", notes="数据库文件列表测试")
-    @PostMapping(value = "basefileList")
-    public Result basefileList() {
-        List<FileInfo> fileInfos = dbService.basefileList();
+    @GetMapping(value = "basefileList/{page}")
+    public Result basefileList(@PathVariable("page") Integer page) {
+        Page<FileInfo> fileInfos = dbService.basefileList(page);
         return new Result(true,StatusCode.OK,"成功",fileInfos);
     }
 

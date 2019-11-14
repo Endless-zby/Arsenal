@@ -24,7 +24,7 @@ public class FtpClientImp implements FtpClient {
     }
 
     @Override
-    public Result basefileList() {
+    public Result basefileList(Integer page) {
         return new Result(false, StatusCode.RESERROR, "网络开小差了，请重试", null);
     }
 

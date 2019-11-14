@@ -37,7 +37,9 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
                 .excludePathPatterns("/pages/**")
                 .excludePathPatterns("/check/**/**")
                 .excludePathPatterns("/check/**")
-                .excludePathPatterns("/user/**");
+                .excludePathPatterns("/user/**")
+                .excludePathPatterns("/FtpHandle/basefileList/**");
+
 
     }
     @Override

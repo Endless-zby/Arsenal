@@ -5,6 +5,8 @@ import club.zby.commen.Config.IdWorker;
 import club.zby.ftp.Dao.FileDao;
 import club.zby.ftp.Entity.FileInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,8 @@ public class DbService {
     private FileDao fileDao;
     @Autowired
     private IdWorker idWorker;
+    @Value("${page.size}")
+    private int size;
 
 
     /**
@@ -84,8 +88,8 @@ public class DbService {
      * 查询下载量排名前三的文件
      * @return
      */
-    public List<FileInfo> basefileList(){
-        PageRequest pagerequest = PageRequest.of(1, 3);
+    public Page<FileInfo> basefileList(Integer page){
+        PageRequest pagerequest = PageRequest.of(page-1, size);
         return fileDao.findByOrderByFiledownnumDesc(pagerequest);
     }
 

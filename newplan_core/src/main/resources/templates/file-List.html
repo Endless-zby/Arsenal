@@ -14,30 +14,28 @@
     <link th:href="@{/static/css/owl.theme.default.min.css}" rel="stylesheet">
     <link th:href="@{/static/css/style.css}" rel="stylesheet">
 
-    <script th:src="@{https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js}"></script>
-<!--    <script th:src="@{/static/js/jquery.min.js}"></script>-->
+    <script th:src="@{/static/js/jquery.min.js}"></script>
     <script th:src="@{/static/js/materialize.min.js}"></script>
     <script th:src="@{/static/js/owl.carousel.min.js}"></script>
     <script th:src="@{/static/js/main.js}"></script>
     <script th:src="@{/static/js/login.js}"></script>
-    <script th:src="@{/static/js/numscroller.js}"></script>
-    <script th:src="@{/static/js/finance.js}"></script>
+    <script th:src="@{/static/js/ftp.js}"></script>
 
     <link th:href="@{/static/css/sweetalert.css}" rel="stylesheet">
     <script th:src="@{/static/js/sweetalert-dev.js}"></script>
 
-	<script th:src="@{/static/js/highcharts.js}"></script>
-
-	<script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <script th:src="@{https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js}"></script>
+    <script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 
     <script>
 
         $(document).ready(function () {
 
+            fileList(1);
+
             if (window.localStorage.getItem("Authrorization") == null) {
 
-                document.getElementById("page").style.display = "none";//隐藏page
-                document.getElementById("sendfinance").disabled = 'disabled';//失效按钮
+                swal("提示", "没有登录的话是不可以下载的呦！", "info")
 
             } else {
                 var photo = window.localStorage.getItem("photo");
@@ -48,8 +46,8 @@
                 if (nickname != null) {
                     document.getElementById("nickname").innerText = nickname;
                 }
-                selFinance(1);
             }
+
         });
     </script>
 
@@ -63,7 +61,7 @@
 <!-- end preloader -->
 
 <!-- navbar -->
-<div class="navbar">
+<div class="navbar navbar-pricing">
     <div class="container">
         <div class="row">
             <div class="col s6">
@@ -145,81 +143,41 @@
 </div>
 <!-- end sidebar left -->
 
-<!-- blog single -->
-<div class="blog-single segments-page">
-    <div class="container">
-        <div class="content-head">
-            <img th:src="@{/static/images/blog1.jpg}" alt="">
-            <div class="text">
-                <h4>开销记录页面</h4>
-                <p class="date" th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd HH:mm:ss')}"></p>
-                <p>我的标签</p>
-            </div>
-        </div>
-        <div class="content-tag">
-            <ul>
-                <li><a href="javascript:void(0);">交通</a></li>
-                <li><a href="javascript:void(0);">零食</a></li>
-                <li><a href="javascript:void(0);">饮食</a></li>
-                <li><a href="javascript:void(0);">娱乐</a></li>
-                <li><a href="javascript:void(0);">约会</a></li>
-                <li><a href="javascript:void(0);">医疗</a></li>
-                <li><a href="javascript:void(0);">其他</a></li>
-            </ul>
-        </div>
-		<table>
-			<tr>
-				<th>
-					<h3>总金额:</h3>
-					<h4 class="numscroller" data-min="1" data-max="1030" data-delay="10" data-increment="2">
-						1030</h4>
-				</th>
-				<th>
-					<button type="button" onclick="return view()" class="btn btn-warning">查看视图</button>
-				</th>
-			</tr>
-		</table>
-
-        <div id="context">
-            <div class="author">
-                <img th:src="@{/static/images/author.png}" alt="">
-                <div class="text">
-                    <h5>【请登录后查看】</h5>
-                    <span>￥ ---</span>
-                    <div class="wrap-social">
+<!-- pricing table -->
+<div class="pricing-table segments-page">
+    <div id="right" class="container">
+        <div class="author">
+            <div class="col s6">
+                <div class="content">
+                    <div class="wrap-head">
+                        <h4>Beginner</h4>
+                    </div>
+                    <div class="wrap-price bg-blue">
+                        <h4><sup>$</sup>40<span>/month</span></h4>
+                    </div>
+                    <div class="wrap-list">
                         <ul>
-                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fab fa-google"></i></a></li>
+                            <li>Ipsum Dolor</li>
+                            <li>Reprehenderit</li>
+                            <li>Excepteur Sint</li>
+                            <li>Deserunt Anim</li>
+                            <li>Consectetur</li>
                         </ul>
                     </div>
+                    <button class="button">Choose</button>
                 </div>
             </div>
         </div>
-        <div id="page" class="pagination">
-            <!--				<li><a href="javascript:void(0);" onclick="return selFinance(2)">0</a></li>-->
-            <!--				<li class="disabled"><a class="active">1</a></li>-->
-            <!--				<li><a href="javascript:void(0);" onclick="return selFinance(2)">2</a></li>-->
-            <!--				<li><a href="javascript:void(0);" onclick="return selFinance(3)">3</a></li>-->
-            <!--				<li><a href="javascript:void(0);" onclick="return selFinance(4)">4</a></li>-->
-            <!--				<li><a href="javascript:void(0);" onclick="return selFinance(5)">5</a></li>-->
-        </div>
-        <div class="comment-form">
-            <div class="wrap-title">
-                <h5>添加记录</h5>
-            </div>
-            <form>
-                <input name="purpose" id="purpose" type="text" placeholder="用途" required/>
-                <input name="money" id="money" type="text" placeholder="金额" required/>
-                <!--					<input name="time" id="time" type="time" placeholder="时间" required/>-->
-                <textarea name="remark" id="remark" cols="30" rows="10" placeholder="备注..." required></textarea>
-                <button id="sendfinance" onclick="return reqfinance()" class="button">Submit</button>
-            </form>
-        </div>
+    </div>
+    <div id="page" class="pagination">
+        <li class="disabled"><a class="active">1</a></li>
+        <li><a href="javascript:void(0);" onclick="return fileList(2)">2</a></li>
+        <li><a href="javascript:void(0);" onclick="return fileList(3)">3</a></li>
+        <li><a href="javascript:void(0);" onclick="return fileList(4)">4</a></li>
+        <li><a href="javascript:void(0);" onclick="return fileList(5)">5</a></li>
     </div>
 </div>
-<!-- end blog single -->
+<!-- end pricing table -->
 
 
 </body>

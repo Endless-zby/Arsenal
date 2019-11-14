@@ -1,4 +1,6 @@
 document.write("<script type='text/javascript' th:src=@{/static/js/sweetalert-dev.js}'></script>");
+document.write("<script type='text/javascript' th:src='@{/static/js/highcharts.js}'></script>");
+
 function selFinance(page) {
 
     var page = page;
@@ -116,6 +118,7 @@ function delfinance(id) {
             text:"您确定要删除当前记录吗?",
             type:"info",
             showCancelButton:true,
+            confirmButtonColor: "#DD6B55",
             confirmButtonText:"删除",
             cancelButtonText:"取消",
             closeOnConfirm:false,
@@ -125,9 +128,6 @@ function delfinance(id) {
         {
             if(isConfirm)
             {
-                alert(id);
-                alert(typeof id);
-
                 //删除
                 $.ajax({
                     url:'/FinanceHandle/delfinance/' + id,
@@ -161,7 +161,81 @@ function delfinance(id) {
 
 }
 
+function view() {
 
+    $.ajax({
+        url:'/FinanceHandle/financeview',
+        type:'get',
+        dataType:'json',
+        headers:{
+            'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
+        },
+        success:function(result){
+            if(result.flag){
+                //数据处理
+                var list = new Array();
+                for(var key in result.data){
+
+                    var pop = new Array();
+                    pop.push(key);
+                    pop.push(result.data[key]);
+                    list.push(pop);
+                }
+
+                var chartzby = {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                };
+                var titlezby = {
+                    text: '总花销' + result.message
+                };
+                var tooltipzby = {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                };
+                var plotOptionszby = {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}%</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                };
+                var serieszby= [{
+                    type: 'pie',
+                    name: '占比',
+                    data: list
+
+                }];
+
+                var json = {};
+                json.chart = chartzby;
+                json.title = titlezby;
+                json.tooltip = tooltipzby;
+                json.series = serieszby;
+                json.plotOptions = plotOptionszby;
+
+                swal({
+                    title: "<small>视图</small>",
+                    text: "<div id='zby' style='float: left; width: 350px; height: 350px; margin: 0 auto'></div>",
+                    html: true
+                });
+                $('#zby').highchartss(json);
+            }else {
+                swal("异常",result.message,"info");
+
+            }
+        }
+
+
+    });
+
+}
 
 
 

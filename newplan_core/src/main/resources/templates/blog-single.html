@@ -1,211 +1,225 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="icon" href="images/favicon.png">
-	<title>Edugo - Education Mobile Template</title>
+    <link rel="icon" href="images/favicon.png">
+    <title>Edugo - Education Mobile Template</title>
 
-	<link th:href="@{/static/css/materialize.css}" rel="stylesheet">
-	<link th:href="@{/static/css/loader.css}" rel="stylesheet">
-	<link th:href="@{/static/css/fontawesome.min.css}" rel="stylesheet">
-	<link th:href="@{/static/css/owl.carousel.min.css}" rel="stylesheet">
-	<link th:href="@{/static/css/owl.theme.default.min.css}" rel="stylesheet">
-	<link th:href="@{/static/css/style.css}" rel="stylesheet">
+    <link th:href="@{/static/css/materialize.css}" rel="stylesheet">
+    <link th:href="@{/static/css/loader.css}" rel="stylesheet">
+    <link th:href="@{/static/css/fontawesome.min.css}" rel="stylesheet">
+    <link th:href="@{/static/css/owl.carousel.min.css}" rel="stylesheet">
+    <link th:href="@{/static/css/owl.theme.default.min.css}" rel="stylesheet">
+    <link th:href="@{/static/css/style.css}" rel="stylesheet">
 
-	<script th:src="@{/static/js/jquery.min.js}"></script>
-	<script th:src="@{/static/js/materialize.min.js}"></script>
-	<script th:src="@{/static/js/owl.carousel.min.js}"></script>
-	<script th:src="@{/static/js/main.js}"></script>
-	<script th:src="@{/static/js/login.js}"></script>
-	<script th:src="@{/static/js/finance.js}"></script>
+    <script th:src="@{https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js}"></script>
+<!--    <script th:src="@{/static/js/jquery.min.js}"></script>-->
+    <script th:src="@{/static/js/materialize.min.js}"></script>
+    <script th:src="@{/static/js/owl.carousel.min.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>
+    <script th:src="@{/static/js/login.js}"></script>
+    <script th:src="@{/static/js/numscroller.js}"></script>
+    <script th:src="@{/static/js/finance.js}"></script>
 
-	<link th:href="@{/static/css/sweetalert.css}" rel="stylesheet">
-	<script th:src="@{/static/js/sweetalert-dev.js}" ></script>
+    <link th:href="@{/static/css/sweetalert.css}" rel="stylesheet">
+    <script th:src="@{/static/js/sweetalert-dev.js}"></script>
 
+	<script th:src="@{/static/js/highcharts.js}"></script>
 
-	<script>
+	<script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 
-		$(document).ready(function () {
+    <script>
 
-			if(window.localStorage.getItem("Authrorization") == null){
+        $(document).ready(function () {
 
-				document.getElementById("page").style.display="none";//隐藏page
-				document.getElementById("sendfinance").disabled = 'disabled';//失效按钮
+            if (window.localStorage.getItem("Authrorization") == null) {
 
-			}else {
-				var photo = window.localStorage.getItem("photo");
-				var nickname = window.localStorage.getItem("nickname");
-				if(photo != null){
-					$("#photo").attr("src",photo);
-				}
-				if(nickname != null){
-					document.getElementById("nickname").innerText= nickname;
-				}
-				selFinance(1);
-			}
-		});
-	</script>
+                document.getElementById("page").style.display = "none";//隐藏page
+                document.getElementById("sendfinance").disabled = 'disabled';//失效按钮
 
-
+            } else {
+                var photo = window.localStorage.getItem("photo");
+                var nickname = window.localStorage.getItem("nickname");
+                if (photo != null) {
+                    $("#photo").attr("src", photo);
+                }
+                if (nickname != null) {
+                    document.getElementById("nickname").innerText = nickname;
+                }
+                selFinance(1);
+            }
+        });
+    </script>
 
 </head>
 <body>
 
-	<!-- preloader -->
-	<div class="loader-wrapper">
-		<div class="loader-cube"></div>
-	</div>
-	<!-- end preloader -->
+<!-- preloader -->
+<div class="loader-wrapper">
+    <div class="loader-cube"></div>
+</div>
+<!-- end preloader -->
 
-	<!-- navbar -->
-	<div class="navbar">
-		<div class="container">
-			<div class="row">
-				<div class="col s6">
-					<div class="content-left">
-						<a href="index.html">
-							<h1>
-								<span class="color-indigo1">E</span><span class="color-indigo2">D</span><span class="color-indigo3">U</span><span class="color-indigo4">G</span><span class="color-indigo5">O</span>
-							</h1>
-						</a>
-					</div>
-				</div>
-				<div class="col s6">
-					<div class="content-right">
-						<a href="#slide-out" data-activates="slide-out" class="sidebar"><i class="fas fa-bars"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end navbar -->
+<!-- navbar -->
+<div class="navbar">
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                <div class="content-left">
+                    <a href="index.html">
+                        <h1>
+                            <span class="color-indigo1">E</span><span class="color-indigo2">D</span><span
+                                class="color-indigo3">U</span><span class="color-indigo4">G</span><span
+                                class="color-indigo5">O</span>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="content-right">
+                    <a href="#slide-out" data-activates="slide-out" class="sidebar"><i class="fas fa-bars"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end navbar -->
 
-	<!-- sidebar left -->
-	<div class="sidebar-panel">
-		<ul id="slide-out" class="collapsible side-nav">
-			<li class="list-top">
-				<div class="user-view">
-					<img class="responsive-img" th:src="@{/static/images/testimonial1.png}" alt="">
-					<h4 id="nickname"></h4>
-					<span>New York</span>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header">
-					<i class="fas fa-home"></i>Home<span><i class="fas fa-angle-right right"></i></span>
-				</div>
-				<div class="collapsible-body">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="index2.html">Home v2</a></li>
-					</ul>
-				</div>
-			</li>
-			<li><a href="course.html"><i class="fas fa-graduation-cap"></i>Course</a></li>
-			<li><a href="teacher.html"><i class="fas fa-user"></i>Teacher</a></li>
-			<li><a href="event.html"><i class="fas fa-calendar-alt"></i>Event</a></li>
-			<li>
-				<div class="collapsible-header">
-					<i class="fas fa-clone"></i>Blog<span><i class="fas fa-angle-right right"></i></span>
-				</div>
-				<div class="collapsible-body">
-					<ul>
-						<li><a href="blog.html">Blog</a></li>
-						<li><a href="/pages/single">Blog Single</a></li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header">
-					<i class="fas fa-clone"></i>Pages<span><i class="fas fa-angle-right right"></i></span>
-				</div>
-				<div class="collapsible-body">
-					<ul>
-						<li><a href="about.html">About</a></li>
-						<li><a href="features.html">Features</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="gallery.html">Gallery</a></li>
-						<li><a href="page-not-found.html">Page Not Found</a></li>
-						<li><a href="pricing-table.html">Pricing</a></li>
-					</ul>
-				</div>
-			</li>
-			<li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
-			<li><a href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a></li>
-			<li><a href="register.html"><i class="fas fa-user-plus"></i>Register</a></li>
-			<li><a href="javascript:void(0);" onclick="log_out()"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
-		</ul>
-	</div>
-	<!-- end sidebar left -->
+<!-- sidebar left -->
+<div class="sidebar-panel">
+    <ul id="slide-out" class="collapsible side-nav">
+        <li class="list-top">
+            <div class="user-view">
+                <img id="photo" th:src="@{/static/images/testimonial1.png}" class="responsive-img" alt="">
+                <h4 id="nickname"></h4>
+                <span>New York</span>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header">
+                <i class="fas fa-home"></i>Home<span><i class="fas fa-angle-right right"></i></span>
+            </div>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index2.html">Home v2</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="course.html"><i class="fas fa-graduation-cap"></i>Course</a></li>
+        <li><a href="teacher.html"><i class="fas fa-user"></i>Teacher</a></li>
+        <li><a href="event.html"><i class="fas fa-calendar-alt"></i>Event</a></li>
+        <li>
+            <div class="collapsible-header">
+                <i class="fas fa-clone"></i>Blog<span><i class="fas fa-angle-right right"></i></span>
+            </div>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="/pages/single">Blog Single</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header">
+                <i class="fas fa-clone"></i>Pages<span><i class="fas fa-angle-right right"></i></span>
+            </div>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="page-not-found.html">Page Not Found</a></li>
+                    <li><a href="/pages/fileList">Pricing</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+        <li><a href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+        <li><a href="register.html"><i class="fas fa-user-plus"></i>Register</a></li>
+        <li><a href="javascript:void(0);" onclick="log_out()"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+    </ul>
+</div>
+<!-- end sidebar left -->
 
-	<!-- blog single -->
-	<div class="blog-single segments-page">
-		<div class="container">
-			<div class="content-head">
-				<img th:src="@{/static/images/blog1.jpg}" alt="">
-				<div class="text">
-					<h4>开销记录页面</h4>
-					<p class="date" th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd HH:mm:ss')}"></p>
-					<p>我的标签</p>
-				</div>
-			</div>
-			<div class="content-tag">
-				<ul>
-					<li><a href="javascript:void(0);">交通</a></li>
-					<li><a href="javascript:void(0);">零食</a></li>
-					<li><a href="javascript:void(0);">饮食</a></li>
-					<li><a href="javascript:void(0);">娱乐</a></li>
-					<li><a href="javascript:void(0);">约会</a></li>
-					<li><a href="javascript:void(0);">医疗</a></li>
-					<li><a href="javascript:void(0);">其他</a></li>
-				</ul>
-			</div>
+<!-- blog single -->
+<div class="blog-single segments-page">
+    <div class="container">
+        <div class="content-head">
+            <img th:src="@{/static/images/blog1.jpg}" alt="">
+            <div class="text">
+                <h4>开销记录页面</h4>
+                <p class="date" th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd HH:mm:ss')}"></p>
+                <p>我的标签</p>
+            </div>
+        </div>
+        <div class="content-tag">
+            <ul>
+                <li><a href="javascript:void(0);">交通</a></li>
+                <li><a href="javascript:void(0);">零食</a></li>
+                <li><a href="javascript:void(0);">饮食</a></li>
+                <li><a href="javascript:void(0);">娱乐</a></li>
+                <li><a href="javascript:void(0);">约会</a></li>
+                <li><a href="javascript:void(0);">医疗</a></li>
+                <li><a href="javascript:void(0);">其他</a></li>
+            </ul>
+        </div>
+		<table>
+			<tr>
+				<th>
+					<h3>总金额:</h3>
+					<h4 class="numscroller" data-min="1" data-max="1030" data-delay="10" data-increment="2">
+						1030</h4>
+				</th>
+				<th>
+					<button type="button" onclick="return view()" class="btn btn-warning">查看视图</button>
+				</th>
+			</tr>
+		</table>
 
-			<div id="context">
-			<div class="author">
-				<img th:src="@{/static/images/author.png}" alt="">
-				<div class="text">
-					<h5>【请登录后查看】</h5>
-					<span>￥ ---</span>
-					<div class="wrap-social">
-						<ul>
-<!--							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>-->
-<!--							<li><a href=""><i class="fab fa-instagram"></i></a></li>-->
-<!--							<li><a href=""><i class="fab fa-twitter"></i></a></li>-->
-<!--							<li><a href=""><i class="fab fa-google"></i></a></li>-->
-							<li><a href="javascript:void(0);" onclick="return delfinance(financeList[i].id)" ><i class="fab fa-google"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			</div>
-			<div id="page" class="pagination">
-<!--				<li><a href="javascript:void(0);" onclick="return selFinance(2)">0</a></li>-->
-<!--				<li class="disabled"><a class="active">1</a></li>-->
-<!--				<li><a href="javascript:void(0);" onclick="return selFinance(2)">2</a></li>-->
-<!--				<li><a href="javascript:void(0);" onclick="return selFinance(3)">3</a></li>-->
-<!--				<li><a href="javascript:void(0);" onclick="return selFinance(4)">4</a></li>-->
-<!--				<li><a href="javascript:void(0);" onclick="return selFinance(5)">5</a></li>-->
-			</div>
-			<div class="comment-form">
-				<div class="wrap-title">
-					<h5>添加记录</h5>
-				</div>
-				<form>
-					<input name="purpose" id="purpose" type="text" placeholder="用途" required/>
-					<input name="money" id="money" type="text" placeholder="金额" required/>
-<!--					<input name="time" id="time" type="time" placeholder="时间" required/>-->
-					<textarea name="remark" id="remark" cols="30" rows="10" placeholder="备注..." required></textarea>
-					<button id="sendfinance" onclick="return reqfinance()" class="button">Submit</button>
-				</form>
-			</div>
-		</div>
-	</div>
-	<!-- end blog single -->
-
-
+        <div id="context">
+            <div class="author">
+                <img th:src="@{/static/images/author.png}" alt="">
+                <div class="text">
+                    <h5>【请登录后查看】</h5>
+                    <span>￥ ---</span>
+                    <div class="wrap-social">
+                        <ul>
+                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fab fa-google"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page" class="pagination">
+            <!--				<li><a href="javascript:void(0);" onclick="return selFinance(2)">0</a></li>-->
+            <!--				<li class="disabled"><a class="active">1</a></li>-->
+            <!--				<li><a href="javascript:void(0);" onclick="return selFinance(2)">2</a></li>-->
+            <!--				<li><a href="javascript:void(0);" onclick="return selFinance(3)">3</a></li>-->
+            <!--				<li><a href="javascript:void(0);" onclick="return selFinance(4)">4</a></li>-->
+            <!--				<li><a href="javascript:void(0);" onclick="return selFinance(5)">5</a></li>-->
+        </div>
+        <div class="comment-form">
+            <div class="wrap-title">
+                <h5>添加记录</h5>
+            </div>
+            <form>
+                <input name="purpose" id="purpose" type="text" placeholder="用途" required/>
+                <input name="money" id="money" type="text" placeholder="金额" required/>
+                <!--					<input name="time" id="time" type="time" placeholder="时间" required/>-->
+                <textarea name="remark" id="remark" cols="30" rows="10" placeholder="备注..." required></textarea>
+                <button id="sendfinance" onclick="return reqfinance()" class="button">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- end blog single -->
 
 
 </body>
