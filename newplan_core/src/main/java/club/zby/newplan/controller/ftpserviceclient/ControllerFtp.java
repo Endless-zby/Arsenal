@@ -31,13 +31,22 @@ public class ControllerFtp {
     @ApiOperation(value="ftp文件上传", notes="ftp文件上传测试")
     @PostMapping(value = "upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Result uploadPic(@RequestPart(value = "multipartFile") MultipartFile multipartFile) {
-        String status = (String) request.getAttribute("status");
-        System.out.println(status);
-        if("404".equals(status) || status == null){
-            return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
-        }
+//        String status = (String) request.getAttribute("status");
+//        System.out.println(status);
+//        if("404".equals(status) || status == null){
+//            return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
+//        }
         return ftpClient.uploadPic(multipartFile);
     }
+
+    @ResponseBody
+    @ApiOperation(value="ftp文件上传--上传进度", notes="ftp文件上传测试--上传进度测试")
+    @GetMapping(value = "size")
+    public Result getProgress(){
+        return ftpClient.getProgress();
+    }
+
+
 
     @ResponseBody
     @ApiOperation(value="ftp文件列表", notes="ftp文件列表测试")
@@ -56,7 +65,7 @@ public class ControllerFtp {
 
     @ResponseBody
     @ApiOperation(value="下载文件", notes="文件下载测试")
-    @PostMapping(value = "downFile")
+    @GetMapping(value = "downFile")
     public Result downFile(@RequestParam("fileName") String fileName, @RequestParam("localPath") String localPath){
         String status = (String) request.getAttribute("status");
         System.out.println(status);
@@ -69,7 +78,7 @@ public class ControllerFtp {
 
     @ResponseBody
     @ApiOperation(value="删除文件", notes="文件删除测试")
-    @DeleteMapping(value = "delFile")
+    @GetMapping(value = "delFile")
     public Result deleteFile(@RequestParam("fileName") String fileName){
         String status = (String) request.getAttribute("status");
         System.out.println(status);

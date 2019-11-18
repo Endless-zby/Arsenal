@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @Author: 赵博雅
  * @Date: 2019/10/22 18:06
@@ -19,16 +21,19 @@ public interface FtpClient {
     @PostMapping(value = "FtpServer/upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     Result uploadPic(@RequestPart(value = "multipartFile") MultipartFile multipartFile);
 
+    @GetMapping(value = "FtpServer/size")
+    Result getProgress();
+
     @PostMapping(value = "FtpServer/fileList")
     Result fileList();
 
     @GetMapping(value = "FtpServer/basefileList/{page}")
     Result basefileList(@PathVariable("page") Integer page);
 
-    @PostMapping(value = "FtpServer/downFile")
+    @GetMapping(value = "FtpServer/downFile")
     Result downFile(@RequestParam("fileName") String fileName, @RequestParam("localPath") String localPath);
 
-    @DeleteMapping(value = "FtpServer/delFile")
+    @GetMapping(value = "FtpServer/delFile")
     public Result deleteFile(@RequestParam("fileName") String fileName);
 
 }

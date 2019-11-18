@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @Author: 赵博雅
  * @Date: 2019/10/22 18:06
@@ -15,6 +17,11 @@ public class FtpClientImp implements FtpClient {
 
    @Override
     public Result uploadPic(MultipartFile multipartFile){
+        return new Result(false, StatusCode.RESERROR, "网络开小差了，请重试", null);
+    }
+
+    @Override
+    public Result getProgress() {
         return new Result(false, StatusCode.RESERROR, "网络开小差了，请重试", null);
     }
 

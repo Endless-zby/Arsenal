@@ -3,6 +3,7 @@ package club.zby.ftp.Controller;
 import club.zby.commen.Config.Result;
 import club.zby.commen.Config.StatusCode;
 import club.zby.ftp.Entity.FileInfo;
+import club.zby.ftp.Entity.Progress;
 import club.zby.ftp.Service.DbService;
 import club.zby.ftp.Service.FileService;
 import club.zby.ftp.Untlis.ToToken;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -37,21 +39,33 @@ public class ControllerFile {
     private DbService dbService;
 
 
-
-
     @ResponseBody
     @ApiOperation(value="ftp文件上传", notes="ftp文件上传测试")
     @PostMapping(value = "upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Result uploadPic(@RequestPart(value = "multipartFile") MultipartFile multipartFile) {
 
-        String token = request.getHeader("Authrorization");
-        Result result = toToken.parseToken(token);
-        String userid = (String) result.getData();
-        if(userid != null){
-            return fileService.uploadPic(multipartFile, userid);
-        }
-        return result;
+//        String token = request.getHeader("Authrorization");
+//        Result result = toToken.parseToken(token);
+//        String userid = (String) result.getData();
+//        if(userid != null){
+//            return fileService.uploadPic(multipartFile, userid);
+//        }
+//        return result;
+        return fileService.uploadPic(multipartFile, "66341505371082752");
     }
+
+
+    @ResponseBody
+    @ApiOperation(value="ftp文件上传--上传进度", notes="ftp文件上传测试--上传进度测试")
+    @GetMapping(value = "size")
+    public Result getProgress(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        Object percent = session.getAttribute("upload_percent");
+        Integer i = null != percent ? (Integer) percent : 0;
+        System.out.println(i);
+        return new Result(true,StatusCode.OK,"测试",i);
+    }
+
 
     @ResponseBody
     @ApiOperation(value="ftp文件列表", notes="ftp文件列表测试")
@@ -72,22 +86,16 @@ public class ControllerFile {
 
     @ResponseBody
     @ApiOperation(value="下载文件", notes="文件下载测试")
-    @PostMapping(value = "downFile")
+    @GetMapping(value = "downFile")
     public Result downFile(@RequestParam("fileName") String fileName,@RequestParam("localPath") String localPath){
 
-        String token = request.getHeader("Authrorization");
-        Result result = toToken.parseToken(token);
-        String userid = (String) result.getData();
-        if(userid != null){
-            return fileService.downFile(fileName, localPath);
-        }
-        return result;
+        return fileService.downFile(fileName, localPath);
 
     }
 
     @ResponseBody
     @ApiOperation(value="删除文件", notes="文件删除测试")
-    @DeleteMapping(value = "delFile")
+    @GetMapping(value = "delFile")
     public Result deleteFile(@RequestParam("fileName") String fileName){
 
         String token = request.getHeader("Authrorization");

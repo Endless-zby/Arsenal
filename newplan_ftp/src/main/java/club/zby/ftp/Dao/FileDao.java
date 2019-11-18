@@ -44,5 +44,11 @@ public interface FileDao extends JpaRepository<FileInfo,String>, JpaSpecificatio
     @Query(nativeQuery = true,value = "update tb_file t set t.filedownnum = t.filedownnum + 1 where filename = ?")
     int downNumAddOne(String fileName);
 
-    Page<FileInfo> findByOrderByFiledownnumDesc(Pageable pageable);
+    /**
+     * 分页查询
+     * @param pageable
+     * @return
+     */
+    @Query(nativeQuery = true,value = "select * from tb_file where filetag = '0' ORDER BY timestamp desc")
+    Page<FileInfo> selectByFiletag(Pageable pageable);
 }

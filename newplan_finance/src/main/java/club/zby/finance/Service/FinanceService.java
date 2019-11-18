@@ -46,6 +46,9 @@ public class FinanceService {
 
     }
 
+    public BigDecimal sumMoney(){
+        return financeDao.sumMoney();
+    }
 
     public List<String> findIdByWho(String who){
         return financeDao.findIdByWho(who);

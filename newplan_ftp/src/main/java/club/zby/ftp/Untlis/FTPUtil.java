@@ -45,6 +45,7 @@ public class FTPUtil {
     public Result uploadFile(String filePath, String filename, InputStream input) {
         boolean result = false;
         FTPClient ftp = new FTPClient();
+
         try {
             int reply;
             ftp.connect(host, port);// 连接FTP服务器

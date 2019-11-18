@@ -47,9 +47,26 @@
                     document.getElementById("nickname").innerText = nickname;
                 }
             }
-
         });
     </script>
+
+    <script type="text/javascript">
+        $(function () {
+            setInterval(function () {
+                $.ajax({
+                    url:"127.0.0.1:10003/FtpServer/size",
+                    dataType:'json',
+                    contentType: "application/json;charset=utf-8",
+                    type:"GET",
+                    success:function(Result){
+                        if (Result){
+                        }
+                    }
+                });
+            }, 500);
+        })
+    </script>
+
 
 </head>
 <body>
@@ -66,7 +83,7 @@
         <div class="row">
             <div class="col s6">
                 <div class="content-left">
-                    <a href="index.html">
+                    <a href="/user/index">
                         <h1>
                             <span class="color-indigo1">E</span><span class="color-indigo2">D</span><span
                                 class="color-indigo3">U</span><span class="color-indigo4">G</span><span
@@ -153,7 +170,7 @@
                         <h4>Beginner</h4>
                     </div>
                     <div class="wrap-price bg-blue">
-                        <h4><sup>$</sup>40<span>/month</span></h4>
+                        <h4><sup>下载</sup>5<span>次</span></h4>
                     </div>
                     <div class="wrap-list">
                         <ul>
@@ -176,6 +193,22 @@
         <li><a href="javascript:void(0);" onclick="return fileList(4)">4</a></li>
         <li><a href="javascript:void(0);" onclick="return fileList(5)">5</a></li>
     </div>
+    <br>
+
+    <div class="container">
+        <div class="content bg-blue">
+            <div class="services-caption">
+                <input type="file" id="multipartFile" name="multipartFile"/>
+                <a href="javascript:void(0);" onclick="return fileupload()"><h4>上传</h4></a>
+            </div>
+            <div class="progress">
+                <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+                    0%
+                </div>
+        </div>
+
+    </div>
+
 </div>
 <!-- end pricing table -->
 

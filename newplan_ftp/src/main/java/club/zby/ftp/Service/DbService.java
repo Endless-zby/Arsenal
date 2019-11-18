@@ -90,7 +90,7 @@ public class DbService {
      */
     public Page<FileInfo> basefileList(Integer page){
         PageRequest pagerequest = PageRequest.of(page-1, size);
-        return fileDao.findByOrderByFiledownnumDesc(pagerequest);
+        return fileDao.selectByFiletag(pagerequest);
     }
 
 }

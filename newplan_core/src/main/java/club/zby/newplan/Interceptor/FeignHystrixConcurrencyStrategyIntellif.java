@@ -32,6 +32,7 @@ import java.util.concurrent.TimeUnit;
  * 另一个解决方法就是自定义Hystrix的隔离策略，
  * 思路是将现有的并发策略作为新并发策略的成员变量,
  * 在新并发策略中，返回现有并发策略的线程池、Queue；将策略加到Spring容器即可；
+ *
  * @Author: 赵博雅
  * @Date: 2019/10/21 17:02
  */

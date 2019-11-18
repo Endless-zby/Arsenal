@@ -14,6 +14,7 @@ import club.zby.commen.Config.Result;
 import club.zby.commen.Config.StatusCode;
 
 import javax.servlet.http.HttpServletRequest;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -68,7 +69,8 @@ public class FinanceConroller {
             String userid = (String) result.getData();
             if (userid != null) {
                 Page<Finance> finances = financeService.findAllByPage(userid, page);
-                return new Result(true, StatusCode.OK, "返回成功", finances);
+                BigDecimal bigDecimal = financeService.sumMoney();
+                return new Result(true, StatusCode.OK, bigDecimal.toString(), finances);
             }
         } catch (Exception e) {
             return new Result(false, StatusCode.ERROR, e.getMessage(), null);
@@ -113,7 +115,6 @@ public class FinanceConroller {
     @ResponseBody
     @GetMapping("delfinance/{id}")
     public Result delFinance(@PathVariable("id") String id) {
-
 
         int del = financeService.delFinance(id);
         if (del > 0) {

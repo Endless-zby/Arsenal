@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface FinanceDao extends JpaRepository<Finance,String>, JpaSpecificationExecutor<Finance> {
@@ -30,6 +31,9 @@ public interface FinanceDao extends JpaRepository<Finance,String>, JpaSpecificat
 
     @Query(nativeQuery = true,value = "select * from tb_finance where who = ? order by time desc ")
     Page<Finance> selFinance(String who, PageRequest pageRequest);
+
+    @Query(nativeQuery = true,value = "SELECT SUM(money) FROM tb_finance")
+    BigDecimal sumMoney();
 
 
     @Modifying

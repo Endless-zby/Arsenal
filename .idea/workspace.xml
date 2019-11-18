@@ -2,42 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="修补了一些小BUG">
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/ftp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/highcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Entity/Progress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/CustomMultipartResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileUploadProgressListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan/src/main/resources/templates/ShowFinance.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/src/main/resources/templates/ShowFinance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/club/zby/newplan/config/Swagger2Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan/target/classes/templates/ShowFinance.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan/target/classes/templates/ShowFinance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Interceptor/FeignHystrixConcurrencyStrategyIntellif.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Interceptor/FeignHystrixConcurrencyStrategyIntellif.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ftpserviceclient/ControllerFtp.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ftpserviceclient/ControllerFtp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ftpserviceclient/FtpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ftpserviceclient/FtpClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ftpserviceclient/FtpClientImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ftpserviceclient/FtpClientImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/finance.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/finance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/ftp.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/ftp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/blog-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/blog-single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/file-List.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/file-List.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/pricing-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/file-List.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/Interceptor/FeignHystrixConcurrencyStrategyIntellif$WrappedCallable.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/Interceptor/FeignHystrixConcurrencyStrategyIntellif$WrappedCallable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/Interceptor/FeignHystrixConcurrencyStrategyIntellif.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/Interceptor/FeignHystrixConcurrencyStrategyIntellif.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ftpserviceclient/ControllerFtp.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ftpserviceclient/ControllerFtp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ftpserviceclient/FtpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ftpserviceclient/FtpClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ftpserviceclient/FtpClientImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ftpserviceclient/FtpClientImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/static/js/finance.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/static/js/finance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/static/js/ftp.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/static/js/ftp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/blog-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/blog-single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/file-List.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/file-List.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/pricing-table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Controller/FinanceConroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Controller/FinanceConroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Dao/FinanceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Dao/FinanceDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Service/FinanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Service/FinanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Controller/FinanceConroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Controller/FinanceConroller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Dao/FinanceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Dao/FinanceDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Service/FinanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_finance/target/classes/club/zby/finance/Service/FinanceService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Controller/ControllerFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Controller/ControllerFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Dao/FileDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Dao/FileDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/FtpApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/FtpApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/DbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/DbService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Untlis/FTPUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Untlis/FTPUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Controller/ControllerFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Controller/ControllerFile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Dao/FileDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Dao/FileDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/DbService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/DbService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Untlis/FTPUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Untlis/FTPUtil.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +162,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.FinanceApplication">
+  <component name="RunManager" selected="Spring Boot.NewApplication (1)">
     <configuration name="HttpUntil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="club.zby.main.HttpUntil" />
       <module name="newplan_spider" />
@@ -359,6 +368,7 @@
     <list>
       <item itemvalue="Application.MainList" />
       <item itemvalue="Application.HttpUntil" />
+      <item itemvalue="Application.test" />
       <item itemvalue="Spring Boot.ArsenalApplication" />
       <item itemvalue="Spring Boot.EurekaApplication" />
       <item itemvalue="Spring Boot.UserZuulApplication" />
@@ -375,7 +385,6 @@
       <item itemvalue="Spring Boot.ElasticsearchApplication" />
       <item itemvalue="Spring Boot.EurekaApplication (1)" />
       <item itemvalue="Spring Boot.NewApplication (1)" />
-      <item itemvalue="Application.test" />
     </list>
     <recent_temporary>
       <list>
@@ -539,7 +548,13 @@
       <workItem from="1573607124845" duration="10365000" />
       <workItem from="1573625177221" duration="18054000" />
       <workItem from="1573693833456" duration="10643000" />
-      <workItem from="1573711288823" duration="14511000" />
+      <workItem from="1573711288823" duration="20361000" />
+      <workItem from="1573780288151" duration="9754000" />
+      <workItem from="1573799538606" duration="11186000" />
+      <workItem from="1573975980721" duration="4945000" />
+      <workItem from="1573993404875" duration="14000" />
+      <workItem from="1574039708773" duration="5262000" />
+      <workItem from="1574057726919" duration="20322000" />
     </task>
     <servers />
   </component>
@@ -558,6 +573,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -566,6 +606,11 @@
           </value>
         </entry>
       </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
@@ -577,7 +622,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan_finance/src/main/java/club/zby/finance/Controller/FinanceConroller.java</url>
-          <line>91</line>
+          <line>93</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

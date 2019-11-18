@@ -25,6 +25,12 @@ function selFinance(page) {
                 var financeList = Result.data.content;
                 var num = Result.data.pageable.pageNumber;
                 var pagenum = Result.data.pageable.totalPages;
+                //更新总金额
+                var numMonry = (Result.message).toString();
+                // document.getElementById("numMonry").data-max = numMonry;
+                // document.getElementById("numMonry").innerText= numMonry;
+
+                //更新列表
                 for (var i = 0; i < financeList.length; i++) {
                     var photo = '';
                     if(financeList[i].purpose == '交通'){
@@ -154,7 +160,7 @@ function delfinance(id) {
                 //取消
                 swal({title:"提示",
                     text:"取消删除",
-                    type:"success"})
+                    type:"error"})
             }
         }
     )
