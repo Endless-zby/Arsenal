@@ -17,7 +17,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -28,6 +31,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "FtpServer")
 public class ControllerFile {
+    private static final long serialVersionUID = -6783491256532300522L;
 
     @Autowired
     private HttpServletRequest request;
@@ -55,15 +59,30 @@ public class ControllerFile {
     }
 
 
+    @CrossOrigin(origins = "*")
     @ResponseBody
     @ApiOperation(value="ftp文件上传--上传进度", notes="ftp文件上传测试--上传进度测试")
     @GetMapping(value = "size")
-    public Result getProgress(HttpServletRequest request){
+    public Result getProgress(HttpServletRequest request, HttpServletResponse response) {
+//        HttpSession session = request.getSession();
+//        Object percent = session.getAttribute("upload_percent");
+//        System.out.println("输出" + (Integer) percent);
+//        Integer i = null != percent ? (Integer) percent : 0;
+//        System.out.println(i);
+//        return new Result(true,StatusCode.OK,"测试",i);
+
+
+        response.setContentType("text/html");
         HttpSession session = request.getSession();
-        Object percent = session.getAttribute("upload_percent");
-        Integer i = null != percent ? (Integer) percent : 0;
-        System.out.println(i);
-        return new Result(true,StatusCode.OK,"测试",i);
+        Object is_begin = session.getAttribute("UPLOAD_PERCENTAGE");
+        if (is_begin == null)
+            return new Result(false,StatusCode.ERROR,"测试",null);
+        if ("0".equals(is_begin.toString()))
+            return new Result(false,StatusCode.ERROR,"测试",null);
+
+        Object upload_percentage = session.getAttribute("UPLOAD_PERCENTAGE");
+        System.out.println("进度：" + upload_percentage.toString());
+        return new Result(true,StatusCode.OK,"测试",upload_percentage.toString());
     }
 
 

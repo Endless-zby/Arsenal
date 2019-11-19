@@ -25,7 +25,7 @@ public class FileUploadProgressListener implements ProgressListener {
     @Override
     public void update(long pBytesRead, long pContentLength, int pItems) {
         int percent = (int) (pBytesRead * 100.0 / pContentLength);
-        System.out.println("当前状态：" + percent);
+        System.out.println("当前状态：" + percent + "%");
         session.setAttribute("upload_percent", percent);
     }
 

@@ -3,6 +3,8 @@
  * @param page
  * @returns {boolean}
  */
+var w;
+
 function fileList(page) {
 
     var page = page;
@@ -111,20 +113,19 @@ function delfile(filename) {
     var filename = filename + "";
 
     swal(
-        {title:"提示",
-            text:"您确定要删除文件【" + filename + "】?",
-            type:"info",
-            showCancelButton:true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText:"删除",
-            cancelButtonText:"取消",
-            closeOnConfirm:false,
-            closeOnCancel:false
-        },
-        function(isConfirm)
         {
-            if(isConfirm)
-            {
+            title: "提示",
+            text: "您确定要删除文件【" + filename + "】?",
+            type: "info",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "删除",
+            cancelButtonText: "取消",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+        function (isConfirm) {
+            if (isConfirm) {
                 //删除
                 $.ajax({
                     url: '/FtpHandle/delFile',
@@ -152,12 +153,13 @@ function delfile(filename) {
                     }
                 });
 
-            }
-            else{
+            } else {
                 //取消
-                swal({title:"提示",
-                    text:"取消删除",
-                    type:"success"})
+                swal({
+                    title: "提示",
+                    text: "取消删除",
+                    type: "success"
+                })
             }
         }
     )
@@ -167,18 +169,18 @@ function delfile(filename) {
  * 文件上传
  */
 function fileupload() {
-    swal({title:"提示",
-        text:"确认上传该文件？",
-        type:"info",
-        showCancelButton:true,
+    swal({
+        title: "提示",
+        text: "确认上传该文件？",
+        type: "info",
+        showCancelButton: true,
         confirmButtonColor: "#CD6600",
-        confirmButtonText:"上传",
-        cancelButtonText:"取消",
-        closeOnConfirm:false,
-        closeOnCancel:false
-    },function (isConfirm) {
-        if(isConfirm){
-            var files = document.getElementById("multipartFile").files[0];
+        confirmButtonText: "上传",
+        cancelButtonText: "取消",
+        closeOnConfirm: false,
+        closeOnCancel: false
+    }, function (isConfirm) {
+        if (isConfirm) {
             var file = $('#multipartFile')[0].files[0];
             var formData = new FormData();
             formData.append("multipartFile", file);
@@ -187,8 +189,8 @@ function fileupload() {
                 type: 'POST',
                 data: formData,
                 dataType: 'json',
-                contentType:false,//告诉jquery不需要增加请求头对于contentType的设置
-                processData:false,//告诉jquery要传输data对象
+                contentType: false,//告诉jquery不需要增加请求头对于contentType的设置
+                processData: false,//告诉jquery要传输data对象
                 headers: {
                     'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
                     // 'Content-Type': 'multipart/form-data'
@@ -212,26 +214,14 @@ function fileupload() {
             });
 
 
-
-        }else {
+        } else {
             //取消
-            swal({title:"提示",
-                text:"取消上传",
-                type:"success"})
+            swal({
+                title: "提示",
+                text: "取消上传",
+                type: "success"
+            })
         }
     })
 }
 
-// function size() {
-//     $.ajax({
-//         url:"/FtpHandle/size",
-//         dataType:'json',
-//         contentType: "application/json;charset=utf-8",
-//         type:"GET",
-//         success:function(Result){
-//             if (Result){
-//                 alert(Result.data);
-//             }
-//         }
-//     });
-// }

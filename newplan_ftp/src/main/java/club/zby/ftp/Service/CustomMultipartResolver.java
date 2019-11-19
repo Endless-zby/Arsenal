@@ -29,6 +29,7 @@ public class CustomMultipartResolver extends CommonsMultipartResolver {
 
         fileUpload.setProgressListener(listener);
         listener.setSession(request.getSession());
+        System.out.println("session:" + request.getSession().getAttribute("upload_percent"));
         try {
             List<FileItem> fileItems = ((ServletFileUpload) fileUpload).parseRequest(request);
             return parseFileItems(fileItems, encoding);
