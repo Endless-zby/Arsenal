@@ -1,16 +1,9 @@
 package club.zby.ftp.Service;
 
-import club.zby.ftp.Entity.Progress;
 import org.apache.commons.fileupload.ProgressListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Component;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.text.NumberFormat;
-import java.util.concurrent.TimeUnit;
+
 
 /**
  * @Author: 赵博雅

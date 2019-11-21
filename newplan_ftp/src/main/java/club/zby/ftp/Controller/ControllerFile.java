@@ -174,6 +174,20 @@ public class ControllerFile {
 //            return "";
         }
     }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/uploadStatus")
+    @ApiOperation(value="ftp文件上传进度测试", notes="ftp文件上传进度测试")
+    @ResponseBody
+    public Integer uploadStatus(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        Object percent = session.getAttribute("upload_percent");
+        return null != percent ? (Integer) percent : 0;
+    }
+
+
+
+
 }
 
 

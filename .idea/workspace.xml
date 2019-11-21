@@ -2,40 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="修补了一些小BUG">
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/ftp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/filetest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Interceptor/FeignInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Interceptor/FeignInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/ftp.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/ftp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/file-List.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/file-List.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/Interceptor/FeignInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/Interceptor/FeignInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/service/LoginService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/static/js/ftp.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/static/js/ftp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/static/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/file-List.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/file-List.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Controller/ControllerFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Controller/ControllerFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Dao/FileDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Dao/FileDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/FtpApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/FtpApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/CustomMultipartResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/CustomMultipartResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/DbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/DbService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileUploadProgressListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileUploadProgressListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Controller/ControllerFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Controller/ControllerFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Dao/FileDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Dao/FileDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/FtpApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/FtpApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/CustomMultipartResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/CustomMultipartResolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/DbService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/DbService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/FileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/FileService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Entity/FileList.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/FileUploadProgressListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/FileUploadProgressListener.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -556,7 +530,7 @@
       <workItem from="1574231027732" duration="5700000" />
       <workItem from="1574240697046" duration="3353000" />
       <workItem from="1574299216789" duration="10448000" />
-      <workItem from="1574316911743" duration="15183000" />
+      <workItem from="1574316911743" duration="17224000" />
     </task>
     <servers />
   </component>

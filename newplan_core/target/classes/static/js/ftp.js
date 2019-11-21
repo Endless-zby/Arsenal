@@ -209,36 +209,6 @@ function fileupload() {
             };
 
             xhr.send(formData); //开始上传，发送form数据
-
-
-            // $.ajax({
-            //     url: "/FtpHandle/upload",
-            //     type: 'POST',
-            //     data: formData,
-            //     dataType: 'json',
-            //     contentType: false,//告诉jquery不需要增加请求头对于contentType的设置
-            //     processData: false,//告诉jquery要传输data对象
-            //     headers: {
-            //         'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
-            //         // 'Content-Type': 'multipart/form-data'
-            //     },
-            //     success: function (Result) {
-            //         if (Result.flag == true) {
-            //             swal({
-            //                 title: "提示",
-            //                 text: "上传成功",
-            //                 type: "success"
-            //             }, function () {
-            //                 fileList(1)
-            //             })
-            //         } else {
-            //             swal("提示", Result.message, "error")
-            //         }
-            //     },
-            //     error: function (err) {
-            //         swal("提示", err.error, "error")
-            //     }
-            // });
         } else {
             //取消
             swal({

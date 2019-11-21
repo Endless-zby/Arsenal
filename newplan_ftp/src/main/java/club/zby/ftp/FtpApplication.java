@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@EnableDiscoveryClient//开启“在注册中心里 发现其他微服务”的功能
+@EnableDiscoveryClient
 @SpringBootApplication
 @EnableFeignClients
 @EnableSwagger2
