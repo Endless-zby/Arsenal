@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -49,6 +50,7 @@ public interface FileDao extends JpaRepository<FileInfo,String>, JpaSpecificatio
      * @param pageable
      * @return
      */
-    @Query(nativeQuery = true,value = "select * from tb_file where filetag = '0' ORDER BY timestamp desc")
-    Page<FileInfo> selectByFiletag(Pageable pageable);
+//    @Query(nativeQuery = true,value = "select * from tb_file where filetag = '0' ORDER BY timestamp desc")
+    @Query(nativeQuery = true,value = "select tb_file.userid,tb_file.id,tb_file.filename,tb_file.filesize,tb_file.filedownnum,tb_file.timestamp,tb_file.filepath,tb_file.filetag,tb_user.nickname from tb_user , tb_file where tb_user.id = tb_file.userid and tb_file.filetag = '0' ORDER BY tb_file.timestamp desc")
+    Page<Map> selectByFiletag(Pageable pageable);
 }

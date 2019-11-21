@@ -44,6 +44,7 @@ jwt:
     key: zby
     expire: 86400000
 
+
 FTP:
   host: 39.96.160.110
   port: 21
@@ -52,8 +53,14 @@ FTP:
   basePath: /www/wwwroot/zby
   imageBaseUrl: ftp://39.96.160.110
 
+#文件页面显示数量
 page:
   size: 8
+
+
+sms:
+  time: 10
+  percenttime: 1
 
 #
 ##熔断保护机制
@@ -62,4 +69,6 @@ page:
 #    enabled: true
 #
 
-
+#resource是测试上传地址，已经废弃
+resource:
+  path: E:\ddd

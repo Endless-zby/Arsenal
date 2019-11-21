@@ -2,15 +2,17 @@ package club.zby.ftp.Controller;
 
 import club.zby.commen.Config.Result;
 import club.zby.commen.Config.StatusCode;
-import club.zby.ftp.Entity.FileInfo;
-import club.zby.ftp.Entity.Progress;
 import club.zby.ftp.Service.DbService;
 import club.zby.ftp.Service.FileService;
 import club.zby.ftp.Untlis.ToToken;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +21,13 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * @Author: 赵博雅
@@ -41,10 +47,15 @@ public class ControllerFile {
     private ToToken toToken;
     @Autowired
     private DbService dbService;
+    @Value("${resource.path}")
+    private String resourcePath;
+    private static final Logger logger = LoggerFactory.getLogger(ControllerFile.class);
 
 
+
+    @CrossOrigin(origins = "*")
     @ResponseBody
-    @ApiOperation(value="ftp文件上传", notes="ftp文件上传测试")
+    @ApiOperation(value="ftp文件上传", notes="ftp文件上传")
     @PostMapping(value = "upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Result uploadPic(@RequestPart(value = "multipartFile") MultipartFile multipartFile) {
 
@@ -63,26 +74,12 @@ public class ControllerFile {
     @ResponseBody
     @ApiOperation(value="ftp文件上传--上传进度", notes="ftp文件上传测试--上传进度测试")
     @GetMapping(value = "size")
-    public Result getProgress(HttpServletRequest request, HttpServletResponse response) {
-//        HttpSession session = request.getSession();
-//        Object percent = session.getAttribute("upload_percent");
-//        System.out.println("输出" + (Integer) percent);
-//        Integer i = null != percent ? (Integer) percent : 0;
-//        System.out.println(i);
-//        return new Result(true,StatusCode.OK,"测试",i);
-
-
-        response.setContentType("text/html");
+    public Result getProgress(HttpServletRequest request) {
         HttpSession session = request.getSession();
-        Object is_begin = session.getAttribute("UPLOAD_PERCENTAGE");
-        if (is_begin == null)
-            return new Result(false,StatusCode.ERROR,"测试",null);
-        if ("0".equals(is_begin.toString()))
-            return new Result(false,StatusCode.ERROR,"测试",null);
-
-        Object upload_percentage = session.getAttribute("UPLOAD_PERCENTAGE");
-        System.out.println("进度：" + upload_percentage.toString());
-        return new Result(true,StatusCode.OK,"测试",upload_percentage.toString());
+        Object percent = session.getAttribute("upload_percent");
+        Integer i = null != percent ? (Integer) percent : 0;
+        System.out.println(i);
+        return new Result(true,StatusCode.OK,"测试",i);
     }
 
 
@@ -98,7 +95,7 @@ public class ControllerFile {
     @ApiOperation(value="数据库文件列表", notes="数据库文件列表测试")
     @GetMapping(value = "basefileList/{page}")
     public Result basefileList(@PathVariable("page") Integer page) {
-        Page<FileInfo> fileInfos = dbService.basefileList(page);
+        Page<Map> fileInfos = dbService.basefileList(page);
         return new Result(true,StatusCode.OK,"成功",fileInfos);
     }
 
@@ -135,4 +132,51 @@ public class ControllerFile {
         return result;
 
     }
+
+
+
+//**********************************************************************************
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/uploads", method = RequestMethod.POST)
+    @ApiOperation(value="ftp文件上传测试", notes="ftp文件上传测试--上传地址：E:\\ddd")
+    @ResponseBody
+    public void upload(@RequestParam(value = "file") MultipartFile file){
+        try {
+            Calendar cal = Calendar.getInstance();
+            Integer year = cal.get(Calendar.YEAR);
+            Integer month = cal.get(Calendar.MONTH)+1;
+            Integer day = cal.get(Calendar.DAY_OF_MONTH);
+
+            String destPath = resourcePath + File.separator + year + File.separator + month + File.separator + day + File.separator;
+            String destUrl = "127.0.0.1:10003" + "/" + year + "/" + month + "/" + day + "/";
+
+            logger.info("目标路径："+destPath);
+            File destFile = new File(destPath);
+            if(!destFile.exists()){
+                logger.info("目标路径不存在，去创建");
+                destFile.mkdirs();
+            }
+
+            //获取文件后缀
+            String sourceFileName=file.getOriginalFilename();
+            String suffix=sourceFileName.substring(sourceFileName.lastIndexOf("."),sourceFileName.length());
+            logger.info("上传文件名称："+sourceFileName);
+
+            //写入目的文件
+            String destFileName = UUID.randomUUID().toString().replaceAll("-", "") + suffix;
+            file.transferTo(new File(destPath + destFileName));
+
+//            return destUrl + destFileName;
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.debug(e.getMessage());
+//            return "";
+        }
+    }
 }
+
+
+
+
+

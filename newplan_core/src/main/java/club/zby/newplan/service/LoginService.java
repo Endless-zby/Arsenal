@@ -6,6 +6,8 @@ import club.zby.newplan.Entity.User;
 import club.zby.newplan.config.IdWorker;
 import club.zby.newplan.result.Result;
 import club.zby.newplan.result.StatusCode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -28,7 +30,7 @@ public class LoginService {
     private QQService qqService;
     @Autowired
     private RedisTemplate redisTemplate;
-
+    private static final Logger logger = LoggerFactory.getLogger(LoginService.class);
     /**
      * 账号登录逻辑
      * @param username
@@ -41,11 +43,12 @@ public class LoginService {
         User users = userDao.findByUsername(username);
         //密码解密验证
         if(users != null && encoder.matches(password,users.getPassword())){
-            System.out.println(00);
+         logger.info("success---登录成功---"+ new Date());
             //为了安全，将密码置空（虽然加密了）
             return new Result(true, StatusCode.OK,"登录成功",users);
         }
-        System.out.println(11);
+        logger.info("error---登录失败---(密码错误或用户不存在)---"+ new Date());
+
         return new Result(false, StatusCode.LOGINERROR,"没有找到该用户",null);
     }
 

@@ -81,11 +81,25 @@ public class ControllerView {
         return "blog-single";
     }
 
+    /**
+     * ftp主页
+     * @param request
+     * @return
+     */
     @GetMapping(value = "fileList")
     public String fileList(HttpServletRequest request){
         return "file-List";
     }
 
+    /**
+     * ftp文件上传测试页面
+     * @param request
+     * @return
+     */
+    @GetMapping(value = "filetest")
+    public String filetest(HttpServletRequest request){
+        return "filetest";
+    }
 
     /**
      * 测试token

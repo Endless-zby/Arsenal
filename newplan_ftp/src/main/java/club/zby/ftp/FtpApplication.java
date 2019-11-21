@@ -26,11 +26,11 @@ public class FtpApplication extends WebMvcConfigurationSupport {
         return new IdWorker(1,1);
     }
 
-    @Bean(name = "multipartResolver")
-    public MultipartResolver multipartResolver()
-    {
-        return new CustomMultipartResolver();
-    }
+//    @Bean(name = "multipartResolver")
+//    public MultipartResolver multipartResolver()
+//    {
+//        return new CustomMultipartResolver();
+//    }
 }
 
 

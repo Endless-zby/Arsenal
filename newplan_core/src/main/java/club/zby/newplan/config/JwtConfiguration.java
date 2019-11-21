@@ -31,9 +31,9 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
                 .addPathPatterns("/FinanceHandle/**")
                 .addPathPatterns("/FinanceHandle/delfinance/**")
                 //ftp
-
                 .addPathPatterns("/FtpHandle/downFile")
                 .addPathPatterns("/FtpHandle/delFile")
+                .excludePathPatterns("/FtpHandle/upload")
 
                 //不拦截
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
@@ -42,9 +42,8 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
                 .excludePathPatterns("/check/**/**")
                 .excludePathPatterns("/check/**")
                 .excludePathPatterns("/user/**")
-                .excludePathPatterns("/FtpHandle/basefileList/**")
-                .excludePathPatterns("/FtpHandle/upload")
-                .excludePathPatterns("/FtpHandle/size");
+                .excludePathPatterns("/FtpHandle/basefileList/**");
+
 
 
 

@@ -16,7 +16,7 @@ import java.util.List;
  * @Author: 赵博雅
  * @Date: 2019/11/18 18:06
  */
-@Component
+
 public class CustomMultipartResolver extends CommonsMultipartResolver {
 
     @Autowired

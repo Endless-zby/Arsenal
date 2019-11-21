@@ -37,7 +37,12 @@ public class FeignInterceptor implements feign.RequestInterceptor {
             while (headerNames.hasMoreElements()) {
                 String name = headerNames.nextElement();
                 String values = request.getHeader(name);
+
+//                if("Content-Type".equals(name) && "multipart/form-data".equals(values)){
+//                    continue;
+//                }
                 template.header(name, values);
+
                 System.out.println(name +"-----"+  values);
             }
             logger.info("feign interceptor header:{}",template);

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Date;
-import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: 赵博雅
@@ -85,10 +85,10 @@ public class DbService {
     }
 
     /**
-     * 查询下载量排名前三的文件
+     * 分页查询
      * @return
      */
-    public Page<FileInfo> basefileList(Integer page){
+    public Page<Map> basefileList(Integer page){
         PageRequest pagerequest = PageRequest.of(page-1, size);
         return fileDao.selectByFiletag(pagerequest);
     }

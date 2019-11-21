@@ -2,20 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="修补了一些小BUG">
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/demo_workers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/css/ftp.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/filetest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Interceptor/FeignInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Interceptor/FeignInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/service/LoginService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/ftp.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/ftp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/file-List.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/file-List.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/Interceptor/FeignInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/Interceptor/FeignInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/service/LoginService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/static/js/ftp.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/static/js/ftp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/static/js/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/file-List.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/file-List.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Controller/ControllerFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Controller/ControllerFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Dao/FileDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Dao/FileDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/FtpApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/FtpApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/CustomMultipartResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/CustomMultipartResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/DbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/DbService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileUploadProgressListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/java/club/zby/ftp/Service/FileUploadProgressListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Controller/ControllerFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Controller/ControllerFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Dao/FileDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Dao/FileDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/FtpApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/FtpApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/CustomMultipartResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/CustomMultipartResolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/DbService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/DbService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/FileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/FileService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/FileUploadProgressListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_ftp/target/classes/club/zby/ftp/Service/FileUploadProgressListener.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,10 +64,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -88,13 +109,14 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565765160347" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/newplan_core/src/main/resources/static/images" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
@@ -132,7 +154,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.FtpApplication">
+  <component name="RunManager" selected="Spring Boot.NewApplication (1)">
     <configuration name="HttpUntil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="club.zby.main.HttpUntil" />
       <module name="newplan_spider" />
@@ -529,7 +551,12 @@
       <workItem from="1574129157558" duration="6693000" />
       <workItem from="1574143814358" duration="5966000" />
       <workItem from="1574149934519" duration="1518000" />
-      <workItem from="1574151571918" duration="12147000" />
+      <workItem from="1574151571918" duration="12277000" />
+      <workItem from="1574211820619" duration="6044000" />
+      <workItem from="1574231027732" duration="5700000" />
+      <workItem from="1574240697046" duration="3353000" />
+      <workItem from="1574299216789" duration="10448000" />
+      <workItem from="1574316911743" duration="15183000" />
     </task>
     <servers />
   </component>

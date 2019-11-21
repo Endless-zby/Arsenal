@@ -19,9 +19,20 @@ function login() {
         success:function(Result){
 
             if(Result.flag){
-                swal("登录",Result.data.nickname,"success");
+                // swal("登录",Result.data.nickname,"success")
                 headerSetup(Result.message,Result.data.photo,Result.data.nickname);
+                // swal({
+                //     title: "两秒后跳转主页",
+                //     showConfirmButton: false,
+                //     imageUrl: "https://finance-1257201044.cos.ap-chengdu.myqcloud.com/timg.gif",
+                //     showCancelButton: false,
+                //     timer:2000
+                // },function () {
+                //     window.location.href = '/user/index';
+                // });
+                swal("登录",Result.data.nickname,"success");
                 window.location.href = '/user/index';
+
                 // request.setRequestHeader("Authorization", "Bearer " +Result.data);
                 // alert("看放进去没：" + window.localStorage.getItem("Authrorization"));
                 // swal("测试阶段，看一下token！",window.localStorage.getItem("Authrorization"));

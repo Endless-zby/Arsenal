@@ -5,6 +5,7 @@ import club.zby.commen.Config.StatusCode;
 import club.zby.ftp.Entity.FileInfo;
 import club.zby.ftp.Untlis.FTPUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,11 +21,13 @@ public class FileService {
 
     @Autowired
     private FTPUtil FTPUtil;
+
     @Autowired
     private DbService dbService;
 
+    @Value("${FTP.imageBaseUrl}")
+    private String imageBaseUrl;
 
-    private static final String imageBaseUrl = "ftp://39.96.160.110";
 
     /**
      * 文件上传
