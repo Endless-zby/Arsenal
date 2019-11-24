@@ -19,7 +19,6 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 @Controller
-//@RequestMapping(value = "user",produces = "application/json;charset=utf-8")
 @RequestMapping(value = "user")
 public class ControllerLogin {
 
@@ -84,8 +83,6 @@ public class ControllerLogin {
             return new ModelAndView("login");
         }
     }
-
-
 
 
     /**

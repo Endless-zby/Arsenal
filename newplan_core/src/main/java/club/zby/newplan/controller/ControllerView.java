@@ -92,7 +92,7 @@ public class ControllerView {
     }
 
     /**
-     * ftp文件上传测试页面
+     * ftp文件上传测试页面（废弃）
      * @param request
      * @return
      */
@@ -100,6 +100,17 @@ public class ControllerView {
     public String filetest(HttpServletRequest request){
         return "filetest";
     }
+
+    /**
+     * 个人主页
+     * @param request
+     * @return
+     */
+    @GetMapping(value = "services")
+    public String services(HttpServletRequest request){
+        return "services";
+    }
+
 
     /**
      * 测试token

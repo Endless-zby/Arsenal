@@ -67,9 +67,6 @@ public class ControllerCheck {
     }
 
 
-
-
-
     @ResponseBody
     @ApiOperation(value="用户名重复校验", notes="用户名输入框取消焦点后立即校验是否合法可用")
     @GetMapping("username/{username}")
