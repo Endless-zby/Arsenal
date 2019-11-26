@@ -29,8 +29,20 @@ public interface UserDao extends JpaRepository<User,String>, JpaSpecificationExe
     @Query(nativeQuery = true,value = "update tb_user f set f.username = ?1,f.password = ?1,f.phone = ?1 where f.Id = ?2")
     int updatePhoneById(String phone, String id);
 
+    /**
+     * 不带手机号
+     */
+    @Modifying
+    @Query(nativeQuery = true,value = "update tb_user f set f.username = ?1,f.nickname = ?2,f.gender = ?3,f.email = ?4,f.updatetime = ?5 where f.Id = ?6")
+    int UpDataInfo(String username,String nickname,String gender,String email,Date time,String id);
 
 
+    /**
+     * 带手机号
+     */
+    @Modifying
+    @Query(nativeQuery = true,value = "update tb_user f set f.username = ?1,f.phone = ?2,f.nickname = ?3,f.gender = ?4,f.email = ?5,f.updatetime = ?6 where f.Id = ?7")
+    int updateUserInfoById(String username,String phone,String nickname,String gender,String email,Date time,String id);
 
 
 }

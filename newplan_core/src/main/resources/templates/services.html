@@ -14,6 +14,57 @@
     <link th:href="@{/static/css/owl.theme.default.min.css}" rel="stylesheet">
     <link th:href="@{/static/css/style.css}" rel="stylesheet">
 
+
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/materialize.min.js}"></script>
+    <script th:src="@{/static/js/owl.carousel.min.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>
+    <script th:src="@{/static/js/userinfo.js}"></script>
+
+    <link th:href="@{/static/css/sweetalert.css}" rel="stylesheet">
+    <script th:src="@{/static/js/sweetalert-dev.js}" ></script>
+
+    <script>
+        $(document).ready(function () {
+            var photo = window.localStorage.getItem("photo");
+            var nickname = window.localStorage.getItem("nickname");
+            if(photo != '' || photo != 'null'){
+                $("#photo").attr("src",photo);
+            }
+            if(nickname != '' || nickname != 'null'){
+                document.getElementById("nickname").innerText= nickname;
+            }
+
+            $.ajax({
+                url:"/userinfo/selfinfo",
+                type:"get",
+                dataType:"json",
+                headers: {
+                    'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
+                },
+                success:function(Result){
+                    if(Result.flag){
+                        $("#username").attr("value",Result.data.username);
+                        $("#nicknames").attr("value",Result.data.nickname);
+                        $("#gender").attr("value",Result.data.gender);
+                        $("#phone").attr("value",Result.data.phone);
+                        $("#email").attr("value",Result.data.email);
+                        $("#updatephoto").attr("src",Result.data.photo);
+
+                        if(Result.data.type == 0){
+                            $("#type").attr("value","用户");
+                        }else {
+                            $("#type").attr("value","管理员");
+                        }
+                    }else{
+
+                    }
+                }
+            })
+        });
+    </script>
+
+
 </head>
 <body>
 
@@ -53,8 +104,8 @@
     <ul id="slide-out" class="collapsible side-nav">
         <li class="list-top">
             <div class="user-view">
-                <img class="responsive-img" src="images/testimonial1.png" alt="">
-                <h4>Marchel Agata</h4>
+                <img id="photo" th:src="@{/static/images/testimonial1.png}" class="responsive-img" alt="">
+                <h4 id="nickname">Marchel Agata</h4>
                 <span>New York</span>
             </div>
         </li>
@@ -110,7 +161,7 @@
     <div class="container">
         <div id="context">
             <div class="author">
-                <img th:src="@{/static/images/author.png}" alt="">
+                <img id="updatephoto" th:src="@{/static/images/author.png}" alt="">
                 <div class="text">
                     <h5>点击修改头像</h5>
                     <div class="wrap-social">
@@ -128,13 +179,13 @@
     <div class="container">
         <div class="content bg-red">
             <div class="services-caption">
-                <input type="text" name="username" id="username" placeholder="Name" value="18220589178">
-                <input type="text" name="nickname" id="nickname" placeholder="昵称">
-                <input type="text" name="gender" id="gender" placeholder="男/女/外星人">
+                <input type="text" name="username" id="username" placeholder="Name" disabled="disabled">
+                <input type="text" name="nicknames" id="nicknames" placeholder="昵称">
+                <input type="text" name="gender" id="gender" placeholder="男/女">
                 <input type="text" name="phone" id="phone" placeholder="电话">
                 <input type="email" name="email" id="email" placeholder="邮件">
-                <input type="text" name="type" id="type" placeholder="用户">
-                <a href="http://astylers.com/edugo/course-single.html"><h4>Class Metting</h4></a>
+                <input type="text" name="type" id="type" placeholder="用户" disabled="disabled">
+                <a href="javascript:void(0);" onclick="update()"><h4>提交</h4></a>
             </div>
         </div>
         <div class="content bg-blue">
@@ -156,10 +207,7 @@
 </div>
 <!-- end services -->
 
-<script th:src="@{/static/js/jquery.min.js}"></script>
-<script th:src="@{/static/js/materialize.min.js}"></script>
-<script th:src="@{/static/js/owl.carousel.min.js}"></script>
-<script th:src="@{/static/js/main.js}"></script>
+
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 package club.zby.newplan.service;
 
+import club.zby.commen.Config.MyLogger;
 import club.zby.newplan.Dao.UserDao;
 import club.zby.newplan.Entity.QQUserInfo;
 import club.zby.newplan.Entity.User;
@@ -43,11 +44,11 @@ public class LoginService {
         User users = userDao.findByUsername(username);
         //密码解密验证
         if(users != null && encoder.matches(password,users.getPassword())){
-         logger.info("success---登录成功---"+ new Date());
+            MyLogger.log("success---登录成功---"+ new Date());
             //为了安全，将密码置空（虽然加密了）
             return new Result(true, StatusCode.OK,"登录成功",users);
         }
-        logger.info("error---登录失败---(密码错误或用户不存在)---"+ new Date());
+        MyLogger.log("error---登录失败---(密码错误或用户不存在)---"+ new Date());
 
         return new Result(false, StatusCode.LOGINERROR,"没有找到该用户",null);
     }

@@ -30,7 +30,7 @@ function login() {
                 // },function () {
                 //     window.location.href = '/user/index';
                 // });
-                swal("登录",Result.data.nickname,"success");
+
                 window.location.href = '/user/index';
 
                 // request.setRequestHeader("Authorization", "Bearer " +Result.data);
