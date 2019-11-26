@@ -1,5 +1,6 @@
 package club.zby.newplan.controller;
 
+import club.zby.commen.Config.MyLogger;
 import club.zby.newplan.Entity.User;
 import club.zby.newplan.result.Result;
 import club.zby.newplan.result.StatusCode;
@@ -49,8 +50,7 @@ public class ControllerUserInfo {
             return new Result(false, StatusCode.PHONEERROR,"该号码已被注册，请更换号码",phone);
         }
         String smsCode = ((int)(Math.random()*9000)+1000) + "";
-        System.out.println("手机号：" + phone);
-        System.out.println("验证码：" + smsCode);
+        MyLogger.log("手机号：" + phone + "-----------" + "验证码：" + smsCode);
         redisTemplate.opsForValue().set("sms_" + phone,smsCode, time, TimeUnit.MINUTES);
         Map<String, String> map = new HashMap<>();
         map.put("phone",phone);
