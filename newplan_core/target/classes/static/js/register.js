@@ -72,8 +72,9 @@ function register() {
         }),
         success:function(register){
             if(register.flag){
-                swal("成功","即将跳转","success")
-                window.location.href="/user/login";//跳转login
+                swal({title:"注册成功",
+                    text:"即将跳转",
+                    type:"success"},function(){window.location='/user/login'})
             }else {
                 swal("提示","验证码失效！","error");
                 return false;
