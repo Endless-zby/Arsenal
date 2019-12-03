@@ -3,8 +3,7 @@ package club.zby.newplan.controller;
 import club.zby.newplan.result.Result;
 import club.zby.newplan.result.StatusCode;
 import club.zby.newplan.test.PayContextStrategy;
-import club.zby.newplan.test.PayMode;
-import club.zby.newplan.test.StrategyFactory;
+import club.zby.newplan.test.OldPay;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +24,12 @@ public class EnumText {
 
     @Autowired
     private PayContextStrategy payContextStrategy;
+    @Autowired
+    private OldPay oldPay;
 
 
     @ResponseBody
-    @ApiOperation(value="支付接口", notes="支付接口")
+    @ApiOperation(value="支付接口", notes="enum形式的调用")
     @GetMapping("test")
     public Result EnumText(String Code){
         String result = null;
@@ -37,6 +38,25 @@ public class EnumText {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        return new Result(true, StatusCode.OK,"调用。。。",result);
+    }
+
+    @ResponseBody
+    @ApiOperation(value="支付接口", notes="map形式的调用")
+    @GetMapping("map")
+    public Result EnumTexts(String Code){
+
+        String result = null;
+        try {
+            result = oldPay.PayModeType(Code);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+
         return new Result(true, StatusCode.OK,"调用。。。",result);
     }
 

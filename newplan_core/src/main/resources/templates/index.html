@@ -33,7 +33,84 @@
 				var qq_token = $("#qq_token").val();
 				var qq_photo = $("#qq_photo").val();
 				var qq_nickname = $("#qq_nickname").val();
+				var qq_phone = $("#qq_phone").val();
 				headerSetup(qq_token,qq_photo,qq_nickname);
+				if(qq_phone == ""){
+					swal({
+								title: "账号绑定",
+								text: "请先绑定您的手机号码",
+								type: "input",
+								showCancelButton: true,
+								closeOnConfirm: false,
+								animation: "slide-from-top",
+								inputPlaceholder: "Write something"
+							},
+							function(inputValue){
+								if (inputValue === false)
+									return false;
+								if(!(/^1[3456789]\d{9}$/.test(inputValue))){
+									swal.showInputError("这玩意不是手机号吧！");
+									return false;
+								}
+								if (inputValue === "") {
+									swal.showInputError("兄弟，总得写点什么吧");
+									return false;
+								}
+								$.ajax({
+									url:'/check/sms/' + inputValue,
+									type:'get',
+									dataType:'json',
+									success:function(Result){
+										if(Result.flag == true){
+											swal("Nice!", "短信验证码已经发送至您的手机：" + inputValue, "success");
+											swal({
+												title: "号码验证",
+												text: "请输入4位验证码",
+												type: "input",
+												showCancelButton: true,
+												closeOnConfirm: false,
+												animation: "slide-from-top",
+												inputPlaceholder: "Write something"
+											},function(inputValue){
+												var reg = /^\d{4}$/;
+
+												if(!reg.test(inputValue)){
+													swal.showInputError("验证码是四位的！");
+													return false;
+												}
+												if (inputValue === "") {
+													swal.showInputError("兄弟，总得写点什么吧");
+													return false;
+												}
+												$.ajax({
+													url:'/check/smscheck/phone',
+													dataType:'json',
+													type:"get",
+													data:{
+														"phone":Result.data,
+														"phonecode":inputValue
+													},
+													headers:{
+														'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
+													},
+													success:function(res){
+														if(res.flag == true){
+															swal("NICE!", "手机绑定成功！", "success");
+														}else{
+															swal("ERROR", "手机绑定失败！", "error");
+														}
+													}
+												})
+											});
+										}else {
+											swal("ERROR", Result.message, "error");
+											return false;
+										}
+									}
+								})
+							});
+				}
+
 			}
 
 
@@ -56,6 +133,7 @@
 	<input id="qq_token" type="hidden" th:value="${result} == null ? '' : ${result.message} ">
 	<input id="qq_photo" type="hidden" th:value="${result} == null ? '' : ${result.data.photo} ">
 	<input id="qq_nickname" type="hidden" th:value="${result} == null ? '' : ${result.data.nickname} ">
+	<input id="qq_phone" type="hidden" th:value="${result} == null ? '' : ${result.data.phone} ">
 	<!-- preloader -->
 	<div class="loader-wrapper">
 		<div class="loader-cube"></div>
@@ -135,7 +213,7 @@
 					</ul>
 				</div>
 			</li>
-			<li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+			<li><a href="/pages/SelectExpress"><i class="fas fa-envelope"></i>快递</a></li>
 			<li><a href="/user/login"><i class="fas fa-sign-in-alt"></i>Login</a></li>
 			<li><a href="/user/register"><i class="fas fa-user-plus"></i>Register</a></li>
 			<li><a href="javascript:void(0);" onclick="log_out()"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>

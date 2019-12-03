@@ -7,10 +7,11 @@ package club.zby.newplan.test;
 
 public enum PayEnum {
     ALI_PAY ("club.zby.newplan.test.ALiPay"),
-    WEI_PAY ("club.zby.newplan.test.WeiChatPay");
+    WEI_PAY ("club.zby.newplan.test.WeiChatPay"),
+    BANK_PAY("club.zby.newplan.test.BankPay");
 
     /**
-     * 策略模式  =  工厂模式 + 枚举类型
+     * 策略模式  ： 工厂模式 + 枚举类型
      * 目的：解决多个if问题
      * @param className
      */

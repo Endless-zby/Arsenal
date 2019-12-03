@@ -67,7 +67,7 @@ public class ControllerView {
      */
     @GetMapping(value = "SelectExpress")
     public String SelectExpress(){
-        return "SelectExpress";
+        return "contact";
     }
 
 

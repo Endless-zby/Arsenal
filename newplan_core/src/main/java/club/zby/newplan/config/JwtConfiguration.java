@@ -27,27 +27,52 @@ public class JwtConfiguration extends WebMvcConfigurationSupport {
          * excludePathPatterns ：加入白名单（此请求不拦截）
          * */
         registry.addInterceptor(jwtInterceptor)
-                //账本
+                /**
+                 * 账本操作
+                 */
                 .addPathPatterns("/FinanceHandle/**")
                 .addPathPatterns("/FinanceHandle/delfinance/**")
-                //ftp
+                /**
+                 * ftp文件操作，针对用户，所以拦截
+                 */
                 .addPathPatterns("/FtpHandle/downFile")
                 .addPathPatterns("/FtpHandle/delFile")
                 .addPathPatterns("/FtpHandle/upload")
-                //个人信息页
+                /**
+                 * 快递查询，暂时拦截
+                 */
+                .addPathPatterns("/ExperssHandle/getOrderTracesByJson")
+                .addPathPatterns("/ExperssHandle/getOrderShipperCode")
+                /**
+                 * 个人信息修改，这个肯定得拦截
+                 */
                 .addPathPatterns("/userinfo/checkNewPhone/**")
                 .addPathPatterns("/userinfo/selfinfo")
                 .addPathPatterns("/userinfo/updatainfo")
                 .addPathPatterns("/userinfo/updatainfo/**")
+                .addPathPatterns("/check/smscheck/phone")
 
 
                 //不拦截
+                /**
+                 * 取消swagger页面拦截
+                 */
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
                 .excludePathPatterns("/static/**/**")
+                /**
+                 * 跳转页面地址拦截
+                 */
                 .excludePathPatterns("/pages/**")
-                .excludePathPatterns("/check/**/**")
-                .excludePathPatterns("/check/**")
+                /**
+                 * 校验信息和用户信息拦截
+                 */
+                .excludePathPatterns("/check/email/**")
+                .excludePathPatterns("/check/sms/**")
+                .excludePathPatterns("/check/username/**")
                 .excludePathPatterns("/user/**")
+                /**
+                 * ftp页面时面向所有人的，所以不拦截，但是拦截对文件所有的操作
+                 */
                 .excludePathPatterns("/FtpHandle/basefileList/**");
 
 

@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="修补了一些小BUG">
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/EnumText.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/ALiPay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/PayContextStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/PayEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/PayMode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/StrategyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/WeiChatPay.java" afterDir="false" />
+    <list default="true" id="b5bf197d-9623-4747-8fe9-d24f80e081e1" name="Default Changelist" comment="测试策略模式的Demo，workspace中添加Service">
+      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/BankPay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/OldPay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/static/js/express.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerUserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerUserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/static/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/static/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/Dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/config/JwtConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/ControllerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/EnumText.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/EnumText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/PayContextStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/PayContextStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/PayEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/PayEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/Dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/config/JwtConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/ControllerView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/EnumText.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/controller/EnumText.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/test/PayContextStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/test/PayContextStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/test/PayEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/club/zby/newplan/test/PayEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_core/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_core/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newplan_express/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/newplan_express/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,10 +54,10 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -135,7 +148,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EurekaApplication (1)">
+  <component name="RunManager" selected="Spring Boot.ExpressApplication">
     <configuration name="HttpUntil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="club.zby.main.HttpUntil" />
       <module name="newplan_spider" />
@@ -361,13 +374,29 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EurekaApplication (1)" />
         <item itemvalue="Spring Boot.NewApplication (1)" />
+        <item itemvalue="Spring Boot.EurekaApplication (1)" />
         <item itemvalue="Application.test" />
         <item itemvalue="Application.MainList" />
         <item itemvalue="Application.HttpUntil" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <option name="contentProportion" value="0.13651878" />
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@25c7d894" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -546,8 +575,17 @@
       <workItem from="1574730565855" duration="6806000" />
       <workItem from="1574742616246" duration="11000" />
       <workItem from="1574749147720" duration="877000" />
-      <workItem from="1575251028655" duration="5636000" />
+      <workItem from="1575251028655" duration="18577000" />
+      <workItem from="1575354571404" duration="11700000" />
     </task>
+    <task id="LOCAL-00001" summary="测试策略模式的Demo，workspace中添加Service">
+      <created>1575256913388</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575256913388</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -599,15 +637,11 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_TABS">
-      <set>
-        <option value="1" />
-      </set>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修补了一些小BUG" />
-    <option name="LAST_COMMIT_MESSAGE" value="修补了一些小BUG" />
+    <MESSAGE value="测试策略模式的Demo，workspace中添加Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试策略模式的Demo，workspace中添加Service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -624,12 +658,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/controller/EnumText.java</url>
-          <line>35</line>
+          <line>36</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/newplan_core/src/main/java/club/zby/newplan/test/PayContextStrategy.java</url>
-          <line>17</line>
+          <line>18</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
