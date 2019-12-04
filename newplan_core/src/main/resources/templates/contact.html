@@ -13,12 +13,14 @@
     <link th:href="@{/static/css/owl.carousel.min.css}" rel="stylesheet">
     <link th:href="@{/static/css/owl.theme.default.min.css}" rel="stylesheet">
     <link th:href="@{/static/css/style.css}" rel="stylesheet">
+    <link th:href="@{/static/css/kdstyles.css}" rel="stylesheet" type="text/css" media="all">
 
     <script th:src="@{/static/js/jquery.min.js}"></script>
     <script th:src="@{/static/js/materialize.min.js}"></script>
     <script th:src="@{/static/js/owl.carousel.min.js}"></script>
     <script th:src="@{/static/js/main.js}"></script>
     <script th:src="@{/static/js/express.js}"></script>
+    <script th:src="@{/static/js/login.js}"></script>
 
     <link th:href="@{/static/css/sweetalert.css}" rel="stylesheet">
     <script th:src="@{/static/js/sweetalert-dev.js}"></script>
@@ -143,11 +145,11 @@
                 <!--    不显示，在正式查询的时候作为快递公司的编码进行传参-->
                 <input type="hidden" id="shipChannel" disabled="disabled" >
 
-                <button class="button" onclick="Status()">查询</button>
+                <button class="button" onclick="Status();return false;">查询</button>
             </form>
         </div>
         <div class="wrap-info">
-            <ul id="ul">
+            <ul id="express">
                 <li><i class="fas fa-map-marker-alt"></i>North Western Chicago, United States</li>
                 <li><i class="fas fa-phone"></i>+1 23 456 789</li>
                 <li><i class="fas fa-envelope"></i>example@domain.com</li>

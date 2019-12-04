@@ -18,11 +18,7 @@ function sel() {
                     document.getElementById("shipChannel").value = '';
                 }
             }else {
-                if(result.code == '20002'){
                     swal("异常",result.message,"warning");
-                }else {
-                    swal("异常",result.message,"error");
-                }
             }
         }
     })
@@ -37,16 +33,20 @@ function Status() {
         type:'get',
         dataType:'json',
         // contentType: "application/json;charset=utf-8",
-        data: {"shipSn":shipSn,
-            "shipChannel":shipChannel},
+        data: {
+               "shipSn":shipSn,
+               "shipChannel":shipChannel
+        },
         headers:{
             'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
         },
         success:function(result){
             var traces = result.data.Traces;
-            var ul = document.getElementById("ul");
+
+            var ul = document.getElementById("express");
             var res = '';
-            if(result.data.Success){
+            if(result.data.Success && traces.length != 0){
+                swal("路径",traces.length,"success")
                 for (var i = 0; i < traces.length; i++) {
 
                     res += "<li>\n" +
@@ -66,11 +66,14 @@ function Status() {
 
             }else {
                 if(result.code == '20002'){
-                    swal("异常",result.message,"warning");
+                    swal("异常",result.message,"warning")
                 }else {
-                    swal("异常",result.message,"error");
+                    swal("提示",result.data.Reason,"info")
                 }
             }
+        },
+        error: function () {
+            swal("异常","未知异常","warning")
         }
     })
 }
