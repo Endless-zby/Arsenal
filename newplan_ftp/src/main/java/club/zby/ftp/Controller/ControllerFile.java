@@ -2,6 +2,7 @@ package club.zby.ftp.Controller;
 
 import club.zby.commen.Config.Result;
 import club.zby.commen.Config.StatusCode;
+import club.zby.ftp.Entity.FileInfo;
 import club.zby.ftp.Service.DbService;
 import club.zby.ftp.Service.FileService;
 import club.zby.ftp.Untlis.ToToken;
@@ -53,24 +54,23 @@ public class ControllerFile {
 
 
 
-    @CrossOrigin(origins = "*")
+
     @ResponseBody
     @ApiOperation(value="ftp文件上传", notes="ftp文件上传")
     @PostMapping(value = "upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Result uploadPic(@RequestPart(value = "multipartFile") MultipartFile multipartFile) {
 
-//        String token = request.getHeader("Authrorization");
-//        Result result = toToken.parseToken(token);
-//        String userid = (String) result.getData();
-//        if(userid != null){
-//            return fileService.uploadPic(multipartFile, userid);
-//        }
-//        return result;
-        return fileService.uploadPic(multipartFile, "66341505371082752");
+        String token = request.getHeader("Authrorization");
+        Result result = toToken.parseToken(token);
+        String userid = (String) result.getData();
+        if(userid != null){
+            return fileService.uploadPic(multipartFile, userid);
+        }
+        return result;
     }
 
 
-    @CrossOrigin(origins = "*")
+
     @ResponseBody
     @ApiOperation(value="ftp文件上传--上传进度", notes="ftp文件上传测试--上传进度测试")
     @GetMapping(value = "size")
@@ -103,7 +103,9 @@ public class ControllerFile {
     @ResponseBody
     @ApiOperation(value="下载文件", notes="文件下载测试")
     @GetMapping(value = "downFile")
-    public Result downFile(@RequestParam("fileName") String fileName,@RequestParam("localPath") String localPath){
+    public Result downFile(@RequestParam("fileId") String fileId,@RequestParam("localPath") String localPath){
+
+        String fileName = dbService.selectFileNameByFileId(fileId);
 
         return fileService.downFile(fileName, localPath);
 
@@ -112,21 +114,24 @@ public class ControllerFile {
     @ResponseBody
     @ApiOperation(value="删除文件", notes="文件删除测试")
     @GetMapping(value = "delFile")
-    public Result deleteFile(@RequestParam("fileName") String fileName){
+    public Result deleteFile(@RequestParam("fileId") String fileId){
 
         String token = request.getHeader("Authrorization");
         Result result = toToken.parseToken(token);
         String userid = (String) result.getData();
         if(userid != null){
             //判断该文件是否属于当前登录者
-            int fileNum = dbService.findIdByFileName(fileName, userid);
-            if(fileNum != 0){       //该文件属于当前用户
+            FileInfo fileInfo = dbService.findIdByFileName(fileId, userid);
+            if(fileInfo != null){       //该文件属于当前用户
                 //删除
-                Result res = fileService.deleteFile(fileName);
+                Result res = fileService.deleteFile(fileInfo.getFilename());
                 //更改数据库中对应的数据的状态  tag = 0 ---> tag = 1;
-                if(res.isFlag() && dbService.deleteFile(fileName) != 0){
+                if(res.isFlag() && dbService.deleteFile(fileId) != 0){
                     return res;
                 }
+            }else {
+                String nickname = dbService.selectNickNameByFileId(fileId);
+                return new Result(false,StatusCode.LOGINERROR,"该文件属于【" + nickname + "】如有侵权，请联系",nickname);
             }
         }
         return result;

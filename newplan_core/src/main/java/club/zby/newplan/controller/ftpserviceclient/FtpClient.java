@@ -31,9 +31,9 @@ public interface FtpClient {
     Result basefileList(@PathVariable("page") Integer page);
 
     @GetMapping(value = "FtpServer/downFile")
-    Result downFile(@RequestParam("fileName") String fileName, @RequestParam("localPath") String localPath);
+    Result downFile(@RequestParam("fileId") String fileId, @RequestParam("localPath") String localPath);
 
     @GetMapping(value = "FtpServer/delFile")
-    public Result deleteFile(@RequestParam("fileName") String fileName);
+    public Result deleteFile(@RequestParam("fileId") String fileId);
 
 }

@@ -3,6 +3,7 @@ document.write("<script type='text/javascript' th:src=@{/static/js/sweetalert-de
 /*
    登录请求
  */
+
 function login() {
     var username=$("#username").val();
     var password=$("#password").val();
@@ -54,12 +55,13 @@ function headerSetup(qq_token,qq_photo,qq_nickname)
     if(!storage){
         // alert("浏览器不支持localstorage");
         swal("完蛋","您的浏览器不支持Storage","error");
-        return false;
+    }else {
+        storage.setItem("Authrorization", "Bearer " +qq_token);	//保存token
+        storage.setItem("user_login_time", new Date().getTime());//保存登录时间
+        storage.setItem("photo", qq_photo);//保存头像
+        storage.setItem("nickname", qq_nickname);//保存昵称
     }
-    storage.setItem("Authrorization", "Bearer " +qq_token);	//保存token
-    storage.setItem("user_login_time", new Date().getTime());//保存登录时间
-    storage.setItem("photo", qq_photo);//保存头像
-    storage.setItem("nickname", qq_nickname);//保存昵称
+
 
 }
 /*

@@ -49,10 +49,10 @@ function fileList(page) {
                         "                            <li>" + [year, month, date].join('-') + "</li>\n" +
                         "                            <li>" + fileList[i].filepath + "</li>\n" +
                         "                            <li>上传用户:" + fileList[i].nickname + "</li>\n" +
-                        "<button onclick='return delfile(\"" + fileList[i].filename + "\")' class=\"btn btn-danger\">删除</button>" +
+                        "<button onclick='return delfile(\"" + fileList[i].filename + "\",\"" + fileList[i].id + "\")' class=\"btn btn-danger\">删除</button>" +
                         "                        </ul>\n" +
                         "                    </div>\n" +
-                        "                    <button class=\"button\" onclick='return download(\"" + fileList[i].filename + "\")'>下载</button>\n" +
+                        "                    <button class=\"button\" onclick='return download(\"" + fileList[i].id + "\")'>下载</button>\n" +
                         "                </div>\n" +
                         "        </div>";
                 }
@@ -80,9 +80,8 @@ function fileList(page) {
  * 文件下载
  * @param filename
  */
-function download(filename) {
+function download(id) {
 
-    var filename = filename + "";
     $.ajax({
         url: "/FtpHandle/downFile",
         dataType: 'json',
@@ -90,7 +89,8 @@ function download(filename) {
         type: "GET",
         async: 'false',
         data: {
-            "fileName": filename,
+            "fileId": id,
+            // "localPath": '/storage/emulated/0/Quark/Download'
             "localPath": 'E:\\ddd'
         },
         headers: {
@@ -113,7 +113,7 @@ function download(filename) {
  * 文件删除
  * @param filename
  */
-function delfile(filename) {
+function delfile(filename,id) {
     var filename = filename + "";
 
     swal(
@@ -137,7 +137,7 @@ function delfile(filename) {
                     // contentType: "application/json;charset=utf-8",
                     type: 'GET',
                     data: {
-                        "fileName": filename
+                        "fileId": id
                     },
                     headers: {
                         'Authrorization': window.localStorage.getItem("Authrorization")//将token放到请求头中
@@ -173,51 +173,70 @@ function delfile(filename) {
  * 文件上传
  */
 function fileupload() {
-    swal({
-        title: "提示",
-        text: "确认上传该文件？",
-        type: "info",
-        showCancelButton: true,
-        confirmButtonColor: "#CD6600",
-        confirmButtonText: "上传",
-        cancelButtonText: "取消",
-        closeOnConfirm: false,
-        closeOnCancel: false
-    }, function (isConfirm) {
-        if (isConfirm) {
-            swal({
-                title: "<small>上传中。。。</small>",
-                text: "<progress id=\"progressBar\" value=\"0\" max=\"100\" style=\"width: 240px;\"></progress>\n" +
-                    "            <span id=\"percentage\"></span><span id=\"time\"></span>",
-                html: true
-            });
-            var file = $('#multipartFile')[0].files[0];
-            var url = "/FtpHandle/upload"; // 接收上传文件的后台地址 /这里在后台做了跨域处理
+    var file = $('#multipartFile')[0].files[0];
+    if(file == null){
+        swal({
+            title: "提示",
+            text: "请选择上传文件",
+            type: "info"
+        })
+    }else if(file.size > 10000000){
+        swal({
+            title: "限制",
+            text: "文件大小不能超过10M",
+            type: "info"
+        })
+    } else {
+        swal({
+            title: "提示",
+            text: "确认上传该文件？\n" +
+                  "文件名称：" + file.name +"\n" +
+                  "文件大小：" + Number(file.size/1000000) + "M\n" +
+                  "文件状态：允许上传",
+            type: "info",
+            showCancelButton: true,
+            confirmButtonColor: "#CD6600",
+            confirmButtonText: "上传",
+            cancelButtonText: "取消",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (isConfirm) {
+            if (isConfirm) {
+                swal({
+                    title: "<small>上传中。。。</small>",
+                    text: "<progress id=\"progressBar\" value=\"0\" max=\"100\" style=\"width: 240px;\"></progress>\n" +
+                        "            <span id=\"percentage\"></span><span id=\"time\"></span>",
+                    html: true
+                });
 
-            var formData = new FormData();// FormData 对象
-            formData.append("multipartFile", file);// 文件对象
+                var url = "/FtpHandle/upload"; // 接收上传文件的后台地址 /这里在后台做了跨域处理
 
-            xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
-            xhr.open("post", url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
-            xhr.onload = uploadComplete; //请求完成
-            xhr.onerror = uploadFailed; //请求失败
-            xhr.setRequestHeader("Authrorization",window.localStorage.getItem("Authrorization"));
-            xhr.upload.onprogress = progressFunction;//【上传进度调用方法实现】
-            xhr.upload.onloadstart = function () {//上传开始执行方法
-                ot = new Date().getTime();   //设置上传开始时间
-                oloaded = 0;//设置上传开始时，以上传的文件大小为0
-            };
+                var formData = new FormData();// FormData 对象
+                formData.append("multipartFile", file);// 文件对象
 
-            xhr.send(formData); //开始上传，发送form数据
-        } else {
-            //取消
-            swal({
-                title: "提示",
-                text: "取消上传",
-                type: "success"
-            })
-        }
-    })
+                xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
+                xhr.open("post", url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
+                xhr.onload = uploadComplete; //请求完成
+                xhr.onerror = uploadFailed; //请求失败
+                xhr.setRequestHeader("Authrorization",window.localStorage.getItem("Authrorization"));
+                xhr.upload.onprogress = progressFunction;//【上传进度调用方法实现】
+                xhr.upload.onloadstart = function () {//上传开始执行方法
+                    ot = new Date().getTime();   //设置上传开始时间
+                    oloaded = 0;//设置上传开始时，以上传的文件大小为0
+                };
+
+                xhr.send(formData); //开始上传，发送form数据
+            } else {
+                //取消
+                swal({
+                    title: "提示",
+                    text: "取消上传",
+                    type: "success"
+                })
+            }
+        })
+    }
+
 }
 
 //上传成功响应

@@ -45,7 +45,7 @@ public class ExpressController {
         params.put("DataSign", expressUntlis.urlEncoder(dataSign, "UTF-8"));
         params.put("DataType", "2");    //请求、返回数据类型：2-json；
 
-        String result=expressUntlis.sendPost(express.getReqURL(), params);
+        String result = expressUntlis.sendPost(express.getReqURL(), params);
         Object parse = JSON.parse(result);
         System.out.println("返回报文：" + parse);
 

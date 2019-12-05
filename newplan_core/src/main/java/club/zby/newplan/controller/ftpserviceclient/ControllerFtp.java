@@ -31,11 +31,11 @@ public class ControllerFtp {
     @ApiOperation(value="ftp文件上传", notes="ftp文件上传测试")
     @PostMapping(value = "upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Result uploadPic(@RequestPart(value = "multipartFile") MultipartFile multipartFile) {
-//        String status = (String) request.getAttribute("status");
-//        System.out.println(status);
-//        if("404".equals(status) || status == null){
-//            return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
-//        }
+        String status = (String) request.getAttribute("status");
+        System.out.println(status);
+        if("404".equals(status) || status == null){
+            return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
+        }
         return ftpClient.uploadPic(multipartFile);
     }
 
@@ -66,26 +66,26 @@ public class ControllerFtp {
     @ResponseBody
     @ApiOperation(value="下载文件", notes="文件下载测试")
     @GetMapping(value = "downFile")
-    public Result downFile(@RequestParam("fileName") String fileName, @RequestParam("localPath") String localPath){
+    public Result downFile(@RequestParam("fileId") String fileId, @RequestParam("localPath") String localPath){
         String status = (String) request.getAttribute("status");
         System.out.println(status);
         if("404".equals(status) || status == null){
             return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
         }
-        return ftpClient.downFile(fileName,localPath);
+        return ftpClient.downFile(fileId,localPath);
     }
 
 
     @ResponseBody
     @ApiOperation(value="删除文件", notes="文件删除测试")
     @GetMapping(value = "delFile")
-    public Result deleteFile(@RequestParam("fileName") String fileName){
+    public Result deleteFile(@RequestParam("fileId") String fileId){
         String status = (String) request.getAttribute("status");
         System.out.println(status);
         if("404".equals(status) || status == null){
             return new Result(false, StatusCode.LOGINERROR,"登录异常",null);
         }
-        return ftpClient.deleteFile(fileName);
+        return ftpClient.deleteFile(fileId);
     }
 
 

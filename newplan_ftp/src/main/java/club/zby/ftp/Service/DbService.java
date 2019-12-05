@@ -56,22 +56,22 @@ public class DbService {
 
     /**
      * 查询文件的所属关系
-     * @param fileName
+     * @param fileId
      * @param userid
      * @return
      */
-    public int findIdByFileName(String fileName,String userid){
-        return fileDao.findAllById(fileName, userid);
+    public FileInfo findIdByFileName(String fileId,String userid){
+        return fileDao.findAllById(fileId, userid);
     }
 
     /**
      * 删除文件（改文件状态）
-     * @param fileName
+     * @param fileId
      * @return
      */
     @Transactional
-    public int deleteFile(String fileName){
-        return fileDao.deleteByFileName(fileName);
+    public int deleteFile(String fileId){
+        return fileDao.deleteByFileName(fileId);
     }
 
     /**
@@ -93,4 +93,21 @@ public class DbService {
         return fileDao.selectByFiletag(pagerequest);
     }
 
+    /**
+     * 根据文件名查询文件的归属人昵称
+     * @param fileid
+     * @return
+     */
+    public String selectNickNameByFileId(String fileid){
+        return fileDao.selectNickNameByFileId(fileid);
+    }
+
+    /**
+     * 根据文件id查询文件名
+     * @param fileid
+     * @return
+     */
+    public String selectFileNameByFileId(String fileid){
+        return fileDao.selectFileNameByFileId(fileid);
+    }
 }
