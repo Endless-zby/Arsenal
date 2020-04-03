@@ -13,14 +13,14 @@ spring:
     name: sms
 
   rabbitmq:
-    host: 106.54.231.246
-    password: guest
-    username: guest
-    port: 5672
+    host: ****
+    password: ****
+    username: ****
+    port: ****
 
 aliyun:
   sms:
-    accessKeyId : LTAILeEkYHKWhrPt
-    accessKeySecret : oKfBo1QIxRKKFFeCSLl51wUPehokFT
-    templateCode: SMS_163851264
-    signName: 蓝桥电商
+    accessKeyId : ****
+    accessKeySecret : ****
+    templateCode: ****
+    signName: ****
